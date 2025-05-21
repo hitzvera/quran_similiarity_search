@@ -1,0 +1,6 @@
+flask
+openai-whisper
+sentence-transformers
+faiss-cpu
+torch
+torchaudio

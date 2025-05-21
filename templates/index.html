@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quran Recitation Similarity Search</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      direction: ltr;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    mark {
+      background-color: yellow;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quran Recitation Similarity Search</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <label for="audio">Upload your recitation (Arabic):</label><br><br>
+    <input type="file" name="audio" accept="audio/*" required>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  {% if transcription %}
+    <h2>Transcribed Text:</h2>
+    <p>{{ transcription }}</p>
+  {% endif %}
+
+  {% if results %}
+    <h2>Top Matching Verses:</h2>
+    <ul>
+      {% for r in results %}
+        <li>
+          <strong>Surah {{ r.surah }} - Ayah {{ r.ayah }}</strong><br>
+          <p style="font-size: 18px;">{{ r.text | safe }}</p>
+          <p><em>Match Score: {{ r.score }}</em></p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
