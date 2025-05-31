@@ -100,8 +100,6 @@ def home():
             result = whisper_model.transcribe(file_path, language='ar')
             transcription = result['text'].strip()
 
-            print(transcription, 'kucing')
-
             query_embedding = sbert_model.encode(remove_diacritics(transcription))
             query_embedding = safe_normalize(query_embedding)
 
