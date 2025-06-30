@@ -1,2 +1,5 @@
 kontemporer: pada masa kini, pada Waktu yang sama
-fonetik: system bunyi suatu bahasa
+fonetik: system bunyi suatu Bahasa
+spektrum: rangkaian atau urutan yang bersinambungan
+aswat: ilmu tentang bunyi bahasa 
+kendati: meskipun
