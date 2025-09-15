@@ -3,3 +3,6 @@ fonetik: system bunyi suatu Bahasa
 spektrum: rangkaian atau urutan yang bersinambungan
 aswat: ilmu tentang bunyi bahasa 
 kendati: meskipun
+akustik: hal-hal yang berhubungan dengan suara itu sendiri, seperti tinggi-rendah nada, keras-pelan suara, irama, dan cara seseorang melafalkan huruf. Intinya, bentuk "gelombang suara" yang terdengar
+semantic: 
+

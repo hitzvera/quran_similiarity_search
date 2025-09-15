@@ -1,0 +1,9 @@
+Draft Proposal
+10 September 2025
+1. Sebelum memutuskan komparasi, harus ada penjelasan ada masalah apa di wav2vec2 dan data2vec sehingga perlu dikomparasi
+2. Tiba2 muncul cosine similarity di sini, nanti saja di teori dan evaluasi. Rumusan masalahnya cukup 1: bagaimana perbandingan kualitas retrieval ayar qur'an berbasis audio menggunakan model wav2vec2 dan data2vec?
+3. Caption tabel itu di atas, caption gambar di bawah. State of the art-nya minimal 10 ya. Setelah tabel SotA belum ada pembeda penelitian dan kelebihan penelitiannya apa dibandingkan penelitian terdahulu?. Jadikan 1 gambar, tidak terpisah halaman. Ini juga bukan tabel ya, tapi gambar
+4. Studi pustakanya masih minim sekali, belum ada referensi juga, belum detail tentang speech recognition, semantik, NLP, word2vec2, data2vec, isi model/algoritmanya seperti apa.
+
+outline 
+1. Self-supervised learning has become a key paradigm in advancing speech representation learning. Among the leading architectures, Wav2Vec2 and Data2Vec stand out for their strong results across multiple speech tasks. Despite their popularity, the two models adopt fundamentally different training strategies—contrastive prediction versus self-distillation—which may lead to varied strengths and weaknesses in downstream applications. Yet, few studies have conducted a direct, controlled comparison between them under the same conditions. This study addresses that gap by evaluating Wav2Vec2 and Data2Vec on the task of Quranic recitation retrieval, where models must handle challenges such as variations in pronunciation, partial inputs, and background noise. Using a unified dataset and evaluation pipeline, we compare their accuracy, robustness, and computational efficiency. The findings provide not only a clearer understanding of each model’s capabilities but also practical guidance for selecting speech representation models in domain-specific applications.
