@@ -1,0 +1,7 @@
+phoneme = fonem, unit suara terkecil dalam Bahasa, example /b/ /u/ /r/ /n/ /i/ /n/ /g/.
+ASR = automatic speech recognition
+shallow = dangkal
+inevitably = tidak dapat dihindarkan
+entangled = terjerat
+entropy = ukuran ketidakaturan atau kekacauan dalam sebuah system.
+discrepancy = perbedaan

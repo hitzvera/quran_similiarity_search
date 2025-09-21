@@ -1,0 +1,10 @@
+1. cari state of the art 5 lagi (on progress)
+ a. 6th state of the art DQ-Data2vec: Decoupling Quantization for
+Multilingual Speech Recognition, 
+  - description ✅
+  - tabel ✅
+ b. 7th SELF-SUPERVISED AUDIO-VISUAL SPEECH REPRESENTATIONS LEARNING BY
+MULTIMODAL SELF-DISTILLATION,
+  - description (on progress)
+
+
