@@ -5,6 +5,7 @@ Multilingual Speech Recognition,
   - tabel ✅
  b. 7th SELF-SUPERVISED AUDIO-VISUAL SPEECH REPRESENTATIONS LEARNING BY
 MULTIMODAL SELF-DISTILLATION,
-  - description (on progress)
+  - description ✅`
+  - table ✅
 
 

@@ -1,0 +1,14 @@
+1. cari state of the art 3 lagi (on progress)
+ a. 8th FINE-TUNING WAV2VEC2 FOR SPEAKER RECOGNITION, 
+  - description ✅
+  - tabel on progress ✅
+
+ b. 9th AV-DATA2VEC: SELF-SUPERVISED LEARNING OF AUDIO-VISUAL SPEECH
+REPRESENTATIONS WITH CONTEXTUALIZED TARGET REPRESENTATIONS, 
+  - description (✅)
+  - tabel (✅)
+
+ c. 10th UNSUPERVISED CROSS-LINGUAL REPRESENTATION
+LEARNING FOR SPEECH RECOGNITION
+  - description (✅)
+  - tabel (✅)
