@@ -1,0 +1,38 @@
+1. Slide 1, introduction ✅
+2. Slide 2, Outline Pembahasan ✅
+3. Slide 3, latar belakang ✅
+3. Slide 4, identifikasi masalah (on progress)
+- latar belakang
+- identifikasi masalah
+- urgensi masalah
+- rumusan masalah & tujuan penelitian
+- batasan masalah
+- tinjauan pustaka
+- metodologi - alur penelitian
+- mekanisme teknis
+- seknario evaluasi
+- target luaran dan manfaat
+- timeline
+
+perubahan kata kata yang terdapat dalam proposal
+1. Latar Belakang, 
+ 1.a perhatikan paragraph satu terkait "pengalih perhatian dan system cerdas" ✅
+ 1.b perbaiki typo pada paragpraph 2, "terbuktu" ✅
+ 1.c perbaiki tata Bahasa pada paragpraph 2, "dicapai" menjadi "memperoleh"
+ 1.d pelajari technical terms "deep learning end-to-end" (TODO)
+ 1.e ubah rekaman menjadi audio saja ✅
+ 1.f cari penjelasan terkait tugas tugas non transkripsi (TODO)
+ 1.g pada paragpraph 4, hapus deskripsi terkait singkatan (AIR) ✅
+ 1.h megapa harus memilih membandingkan dari kedua model (wav2vec2 dan data2vec)
+ = kedua model tersebut sama menggunakan paradigma self supervised learnings. wav2vec2 sebagai model standar yang menggunakan Contrastive learning khusus untuk audio. sedangkan Data2Vec sebagai pendekatan generasi baru menggunakan Self-distillation dan bersifat generalis. urgensinya adalah untuk membuktikan apakah pendekatan generalis mampu menggungguli pendekatan spesialis dalam menangkap detail fonetika halus yang diiperlukan untuk pencarian ayat al quran ✅
+
+1. deep learning end-to-end
+2. spektrum
+3. latent representation
+4. fonetik
+5. tugas tugas non transkripsi
+6. contrastive learning
+7. modality agnostic
+8. inheren
+9. Mean Average Precision (MAP), dan Top-K Accuracy
+10. SSL (self supervised learning)
