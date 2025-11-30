@@ -1,13 +1,10 @@
 1. Slide 1, introduction ✅
 2. Slide 2, Outline Pembahasan ✅
 3. Slide 3, latar belakang ✅
-3. Slide 4, identifikasi masalah (on progress)
-- latar belakang
-- identifikasi masalah
-- urgensi masalah
-- rumusan masalah & tujuan penelitian
-- batasan masalah
-- tinjauan pustaka
+4. Slide 4, rumusan masalah ✅`
+5. Slide 5, Batasan Masalah ✅
+6. Slide 6, Tinjauan Pustaka ✅
+7. Slide 7, Kerangka Berfikir
 - metodologi - alur penelitian
 - mekanisme teknis
 - seknario evaluasi
@@ -36,3 +33,11 @@ perubahan kata kata yang terdapat dalam proposal
 8. inheren
 9. Mean Average Precision (MAP), dan Top-K Accuracy
 10. SSL (self supervised learning)
+11. mindful technology yang dimaksud jarrahi itu apa
+12. empirisi 
+
+
+latar belakang deduktif -> segitiga terbalik
+
+1. fenomena ideal, fenomena actual
+2. variable dependent 
