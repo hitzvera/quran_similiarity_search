@@ -1,0 +1,19 @@
+1. judulnya ganti dengan  
+
+yang sebelumnya "perbandingan wav2vec2 dan data2vec dalam penelusuran ayat al-quran berdasarkan fitur laten audio" menjadi  "perbandingan wav2vec2 dan data2vev terhadap fitur laten audio ayat al-quran"
+
+2. latar belakang method
+ 2.a untuk pergeseran method itu ga terlalu "penting" dalam bidang informatika, jadi harus lebih informatika jadi lebih bandingkan sesuai dengan wav2vec dan data2vec nya,  
+ 2.b research gap jangan bicara belum ada tapi lebih ke pembedanya
+ 2.c untuk latar belakang lebih condong ke mengapa perbandingan ini harus dilakukan 
+
+3. untuk rumusan masalah sudah okay 
+
+4. untuk Batasan masalahnya 
+ 1. sudah okay
+ 2. hilangkan kata hanya (mengkerdilkan penelitian yang dilakukan)
+ 3. hilangkan focus sistemnya, yang ada itu tools comparativenya
+
+5. kerangkan pemikiran bagusnya gambar, harus dijelaskan alurnya, supaya mudah dipahami 
+
+6.metode penelitian sudah okay
