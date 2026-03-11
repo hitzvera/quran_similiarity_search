@@ -1,0 +1,65 @@
+# Audio Embedding Comparison Research Configuration
+
+models:
+  wav2vec2:
+    name: "facebook/wav2vec2-base-960h"
+    embedding_dim: 768
+    sample_rate: 16000
+    framework: "huggingface"
+    
+  data2vec:
+    name: "facebook/data2vec-audio-base"
+    embedding_dim: 768
+    sample_rate: 16000
+    framework: "fairseq"
+
+datasets:
+  # Example datasets for benchmarking
+  librispeech:
+    path: "data/librispeech"
+    subset: "test-clean"
+    sample_rate: 16000
+  
+  custom:
+    path: "data/custom"
+    sample_rate: 16000
+
+embedding:
+  # Layer selection for embedding extraction
+  wav2vec2_layers: [0, 6, 12]  # Initial, middle, final
+  data2vec_layers: [0, 6, 12]
+  
+  # Pooling strategies
+  pooling: ["mean", "cls", "last"]
+  
+  # Sequence handling
+  max_length: 160000  # 10 seconds at 16kHz
+
+evaluation:
+  metrics:
+    - cosine_similarity
+    - euclidean_distance
+    - clustering_quality
+    - classification_accuracy
+    - retrieval_precision
+    - triplet_loss
+    
+  downstream_tasks:
+    - speaker_identification
+    - emotion_recognition
+    - language_identification
+
+visualization:
+  methods:
+    - tsne
+    - umap
+    - pca
+  
+  attention_visualization: true
+  embedding_trajectory: true
+
+output:
+  embeddings_dir: "outputs/embeddings"
+  figures_dir: "outputs/figures"
+  results_dir: "outputs/results"
+  logs_dir: "outputs/logs"
