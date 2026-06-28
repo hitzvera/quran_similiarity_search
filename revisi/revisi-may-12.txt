@@ -1,0 +1,15 @@
+1. tambahin judul untuk tilawah al-quran
+2. rumusan masalah dijadikan paragraph
+3. Batasan masalah, berbahasa arabnya ditake out 
+4. Batasan masalah, terutamanya dihapus
+5. jangan pake abc,
+6. dan untuk state of the art diratakan ke margin terluar
+7. nama dan tahun, metode, data dan hasil
+8. kerangkangka pemikiran diganti dengan 
+9. outputs: performa wav2vec2 dan data2vec.
+10. harusnya ada problem, opportunity, approach, research method, implementasi, hasil
+11. studi literatur kurang banyak
+12. cosine similarity dikasih rumushnya
+13. kurang literaturnya. machine learning lifecycle. di bab 3
+14. deteksi suara machine learning dengan CNN. 
+15. theory untuk top k accuracy ditambahkan
