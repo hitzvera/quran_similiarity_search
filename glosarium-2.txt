@@ -1,0 +1,13 @@
+1. empiris
+2. latent representation
+3. vector embedding
+4. fonetik
+5. testbed
+6. artikulatoris
+
+
+
+[1] framework wav2vec2
+[2] 
+
+PNBN04162607080004
