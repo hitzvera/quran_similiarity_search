@@ -1,4 +1,4 @@
-**=PERBANDINGAN WAV2VEC2 DAN DAN DATA2VEC TERHADAP FITUR LATEN AUDIO
+**PERBANDINGAN WAV2VEC2 DAN DAN DATA2VEC TERHADAP FITUR LATEN AUDIO
 UNTUK TILAWAH\
 AL-QURAN**
 
@@ -55,14 +55,13 @@ height="2.4569444444444444in"}
 [4 Studi Literatur [17](#studi-literatur)](#studi-literatur)
 
 [**7.1 Model Representasi Laten *Self-Supervised* (SSL)**
-[17](#model-representasi-laten-self-supervised-ssl)](#model-representasi-laten-self-supervised-ssl)
+[17](#_Toc234440437)](#_Toc234440437)
 
 [**7.1.1 Wav2vec 2.0: Representasi Kontekstual Melalui Contrastive
-Learning**
-[17](#wav2vec-2.0-representasi-kontekstual-melalui-contrastive-learning)](#wav2vec-2.0-representasi-kontekstual-melalui-contrastive-learning)
+Learning** [17](#_Toc234440438)](#_Toc234440438)
 
 [**7.1.2 Data2Vec: *Embedding* generalis melalui Self-Distillation**
-[17](#data2vec-embedding-generalis-melalui-self-distillation)](#data2vec-embedding-generalis-melalui-self-distillation)
+[17](#_Toc234440439)](#_Toc234440439)
 
 [5 Metode Penelitian [20](#metode-penelitian)](#metode-penelitian)
 
@@ -462,7 +461,7 @@ dari penelitian terdahulu dalam bentuk table.
 |        |                       |                    |                            | (MGB-2); data2vec       |
 |        | Peneliti:             |                    |                            | konsisten mengungguli   |
 |        |                       |                    |                            | wav2vec untuk Arab      |
-|        | Lamya Alkanhal, dkk   |                    |                            | \[14\]                  |
+|        | Lamya Alkanhal, dkk   |                    |                            | \[10\]                  |
 |        | (2021)                |                    |                            |                         |
 +--------+-----------------------+--------------------+----------------------------+-------------------------+
 | 4\.    | Query-by-Example      | *Embedding         | Google FLEURS + Common     | Penelitian ini          |
@@ -509,7 +508,7 @@ dari penelitian terdahulu dalam bentuk table.
 |        |                       | XLSR-53), tanpa    |                            | SOTA; English-mono      |
 |        | Nay San, dkk (2021)   | transkripsi maupun |                            | mengungguli XLSR        |
 |        |                       | fine-tuning        |                            | multibahasa di 4        |
-|        |                       |                    |                            | dataset \[15\]          |
+|        |                       |                    |                            | dataset \[11\]          |
 +--------+-----------------------+--------------------+----------------------------+-------------------------+
 | 6\.    | Improves Neural       | Menggabungkan      | Korpus QbE-STD             | Membuktikan bahwa       |
 |        | Acoustic Word         | Neural Acoustic    |                            | embedding SSL           |
@@ -552,7 +551,7 @@ dari penelitian terdahulu dalam bentuk table.
 |        | Learning Models       | SUPERB SID         |                            | identification) lebih   |
 |        |                       | (*speaker          |                            | buruk, sedangkan dalam  |
 |        | Peneliti:             | identification*) & |                            | ASR menghasilkan hasil  |
-|        |                       | ASR (*automatic    |                            | yang lebih baik \[16\]  |
+|        |                       | ASR (*automatic    |                            | yang lebih baik \[12\]  |
 |        | Tang C, dkk (2022)    | speech             |                            |                         |
 |        |                       | recognition*)      |                            |                         |
 +--------+-----------------------+--------------------+----------------------------+-------------------------+
@@ -564,7 +563,7 @@ dari penelitian terdahulu dalam bentuk table.
 |        | Consistency           | pada lapisan       |                            | dan Speech Enhancement, |
 |        | Regularization        | tugas, sedangkan   |                            | namun sedikit           |
 |        |                       | model utama tidak  |                            | menurunkan performa     |
-|        | Penulis:              | dilakukan          |                            | pada QbE. \[17\]        |
+|        | Penulis:              | dilakukan          |                            | pada QbE. \[13\]        |
 |        |                       | *fine-tune*.       |                            |                         |
 |        | Yoon, dkk (2023)      |                    |                            |                         |
 +--------+-----------------------+--------------------+----------------------------+-------------------------+
@@ -575,7 +574,7 @@ dari penelitian terdahulu dalam bentuk table.
 |        | Peneliti:             | embedding yang     |                            | tetapi kurang optimal   |
 |        |                       | dibekukan (frozen  |                            | pada SID dan OOD-ASR    |
 |        | Yang, dkk (2024)      | embedding) dan     |                            | dibanding HuBERT dan    |
-|        |                       | lightweight        |                            | WavLM \[18\].           |
+|        |                       | lightweight        |                            | WavLM \[14\].           |
 |        |                       | prediction head.   |                            |                         |
 +--------+-----------------------+--------------------+----------------------------+-------------------------+
 
@@ -588,7 +587,7 @@ dari penelitian terdahulu dalam bentuk table.
 > studi lintas bahasa dan adaptasi domain. Sebagaian penelitian lain
 > berfokus pada non-retrieval yang tetap memanfaatkan kualitas embedding
 > SSL, seperti deteksi *spoofing* suara dan identifikasi suarat yang
-> menggabungkan *Siamase Network* pada fitur Wav2vec2 \[12\]. Meskipun
+> menggabungkan *Siamase Network* pada fitur Wav2vec2 \[15\]. Meskipun
 > demikian, Sebagian studi mulai menggeser fokus ke kapabilitas
 > *retrieval* dari *embedding* ini, misalnya penelitian Öberg mengenai
 > audio search berbasis transformasi *embedding* Wav2vec2 dengan
@@ -599,10 +598,10 @@ dari penelitian terdahulu dalam bentuk table.
 > san, dkk telah membuktikan bahwa representasi dari Wav2vec2 dapat
 > melakukan *query-by-example* *spoken term detection* lintas bahasa
 > tanpa transkripsi maupun fine-tuning dengan peningkatan 56%-86% atas
-> *state of the art* sebelumnya \[15\]. Sejalan dengan itu, Zhaoqi Li,
+> *state of the art* sebelumnya \[11\]. Sejalan dengan itu, Zhaoqi Li,
 > dkk membuktikan bahwa *Neural Acoustic Word Embeddings* berbasis
 > pretrain Wav2vec2 mengungguli fitur MFCC untuk retrieval berbasis
-> kemiripan \[19\]. Temuan-temuan ini menegaskan bahwa kualitas
+> kemiripan \[16\]. Temuan-temuan ini menegaskan bahwa kualitas
 > embedding SSL menjadikannya sangat sesuai dengan untuk tugas
 > *similarity search.*
 >
@@ -619,7 +618,7 @@ dari penelitian terdahulu dalam bentuk table.
 > namun kurang optimal dalam identifikasi pembicara. Yoon, dkk
 > mengonfirmasi kecenderungan serupa, Data2vec 2.0 kuat pada tugas
 > berbasis konten seperti ASR, tetapi performa query-by-example nya
-> justru menurun ketika diberi regulasi tambahan \[17\]. Evaluasi
+> justru menurun ketika diberi regulasi tambahan \[13\]. Evaluasi
 > berskala besar yang dilakukan oleh Yang, dkk mempertegas hal ini,
 > menunjukan bahwa Data2vec mencapai performa terbaik pada Voice
 > Conversion dan Phone Recognition, tetapi tertinggal pada Speaker
@@ -646,7 +645,99 @@ dari penelitian terdahulu dalam bentuk table.
 
 ## Studi Literatur
 
-### **2.2.1 Model Representasi Laten *Self-Supervised* (SSL)** 
+1.  **Kecerdasan buatan (Artificial Intelegent)**
+
+> Kecerdasan buatan (Artificial Intelegent) merupakan salah satu cabang
+> ilmu komputer yang mempelajari perancangan sistem yang mampu melakukan
+> kecerdasan manusia, seperti penalaran, persepsi, pembelajaran, dan
+> pengambilan keputusan \[17\]. Russel dan Norvig mengklasifikasikan AI
+> ke dalam empat sudut pandang, yaitu sistem yang berpikir seperti
+> manusia, bertindak seperti manusia, berpikir secara rasional, dan
+> bertindak secara rasional. Pendekatan terakhir yakni rational agent
+> yang bertindak untuk mencapai hasil terbaik menurut ukuran kinerja
+> tertentu, menjadi kerangka dominan dalam AI modern \[17\].
+>
+> Dalam perkembangannya, Machine learning (ML) muncul sebagai sub-bidang
+> AI yang berfokus pada kemampuan sistem untuk belajar pola dari data
+> tanpa dirprogram secara eksplisit untuk setiap kasus \[18\]. ML
+> sendiri terbagi menjadi tiga paradigma utama supervised learning
+> (belajar dari data yang berlabel), unsupervised learning (menemukan
+> struktur dari data tak berlabel), dan self-supervised learning yang
+> menjadi fondasi penelitian ini. Penelitian ini berada dalam ranah AI
+> karena memanfaatkan model pembelajaraan representasi untuk memahami
+> dan mencocokkan sinyal ucapan Al-Qur'an secara otomatis.
+
+2.  **Deep Learning**
+
+> Deep learning adalah cabang dari machine learning yang menggunakan
+> jaringan saraf tiruan berlapis yang jumlahnya sangat banyak (*deep
+> neural networks*) untuk mempelajari representasi data secara
+> berjenjang (*hierarchical representation*) \[19\]. Berbeda dari ML
+> tradisional yang bergantung pada feature engineering manual yang mana,
+> harus membutuhkan manusia untuk memberikan data yang berlabel, deep
+> learning mempelajari fitur secara otomatis. Lapisan-lapisan awal
+> menangkap fitur tingkat rendah (misalnya pola frekuensi pada audio),
+> sedangkan lapisan yang lebih dalam menyusun fitur tingkat tinggi yang
+> lebih abstrak (misalnya unit fonetik) \[19\]
+>
+> Sebuah jaringan saraf tersusun atas neuron-neuron yang
+> mentransformasikan input melalui bobot
+> this equation **W**, bias **b**. Dan fungsi aktivasi non-linear *σ,*
+> sehingga keluaran satu lapisan dinyatakan sebagai
+>
+> $$\mathbf{h} = \sigma\left( \mathbf{Wx} + \mathbf{b} \right)$$
+>
+> Parameter jaringan dioptimasi dengan meminimalkan *loss function*
+> melalui algoritma *backpropagation* dan *gradient descent* \[19\].
+> Arsitektur yang relevan bagi penelitian ini adalah jaringan konvolusi
+> (Convolutional Neural Network, CNN) yang efektif mengekstrak fitur
+> local dari sinyal, dan Transformer \[20\] yang memodelkan
+> ketergantungan jangka Panjang melalui mekanisme self-attention. Kedua
+> arsitektur inilah yang Menyusun tulang punggung model Wav2vec2 2.0 dan
+> varian speech dari Data2Vec.
+
+3.  **Similarity Search**
+
+> Similarity search adalah proses menemukan objek-objek dalam suatu
+> database yang paling mirip dengan sebuah objek kueri (data input),
+> berdasarkan ukuran kemiripan tertentu \[21\]. Dalam paradigma modern,
+> setiap objek, baik teks, gambar, maupun audio, direpresentasikan
+> sebagai vector bilangan riil di ruang berdimensi tinggi, sehingga
+> pencarian kemiripan tereduksi menjadi persoalan *Nearest Neighbor
+> Search* di ruang vector tersebut \[21\]
+>
+> Formalnya, diberikan sebuah vector kueri **q** dan himpunan vector
+> database **\**
+> D={**d**1​,...,**d***N*​} , sistem menghitung skor kemiripan
+> *s*(**q**,**d***i*​) untuk setiap **d***i* , lalu mengurutkan hasilnya
+> secara menurun untuk menghasilkan daftar peringkat (*ranked list*).
+> Pendekatan ini menjadi tulang punggung sistem information retrieval
+> modern \[21\]. Dalam penelitian ini, similarity search diterapkan pada
+> embedding audio ayat Al-Qur'an. Data kueri dibandingkan langsung
+> terhadap database embedding ayat tanpa melalui tahap transkripsi,
+> sehingga menghindari propagasi kesalah dari tahap ASR (*automatic
+> speech recognition*).
+
+4.  **Vector Embedding**
+
+> Vector Embedding adalah representasi suatu objek dalam bentuk vector
+> yang padat berdimensi tetap $v \in R^{d}\$yang dirancang sedemikian
+> rupa sehingga kedekatan geometrics antar-vektor mencerminkan kemiripan
+> semantic atau perseptual antar objek yang diwakilinya \[19\]. Prinsip
+> utamanya adalah distributional hypothesis, yang mana objek objek yang
+> serupa akan menempati posisi yang berdekatan di dalam ruang vector
+> (*embedding space*)
+>
+> Pada domain audio, embedding dihasilkan oleh model self-supervised
+> seperti Wav2vec2 2.0 dan Data2vec, yang memetakan sinyal audio mentah
+> menjadi barisan vector kontekstual. Embedding inilah yan gmenjadi
+> objek perbandingan dalam penelitian ini. Kualitas sebuah embedding
+> untuk tugas retrieval ditentukan oleh sejauh mana ia mengelompokkan
+> (cluster) ayat yang sama secara berdekatan sekaligus memisahkan ayat
+> yang berbeda, suatu sifat geometric yang menjadi dasar hipotesis pada
+> penelitian ini.
+
+5.  **Self-Supervised Learning (SSL)**
 
 > *Self-Supervised Learning (SSL)* adalah paradigma pembelajaran mesin
 > di mana model dilatih untuk mempelajari representasi yang berguna dari
@@ -660,122 +751,282 @@ dari penelitian terdahulu dalam bentuk table.
 > tersembunyi (*masked*) atau bagian yang hilang (*corrupted*) dari data
 > input itu sendiri.
 
-### **2.2.2 Wav2vec 2.0: Representasi Kontekstual Melalui Contrastive Learning** 
+6.  **Wav2vec2 2.0**
 
-> Wav2vec 2.0 merupakan kerangka self-supervised yang menetapkan fondasi
-> kuat dalam pembelajaran representasi ucapan pembelajaran representasi
-> ucapan. Arsitektur ini menggunakan *Feature Encoder* konvolusional
-> untuk mengekstrak representasi skala waktu rendah dari sinyal audio
-> mentah, yang kemudian diumpankan ke jaringan Transformer untuk
-> menghasilkan rerpesentasi konteksual. Mekanisme pelatihannya berpusat
-> pada Contrastive Loss, yang berfungsi memaksa model untuk membedakan
-> segmen ucapan yang di-*masking* dari sejumlah kandidat negatif. Proses
-> ini menghasilkan *embedding* sangat efektif dalam mengambil detail
-> fonetik dan akustik yang merupakan kunci dalam tugas retrieval
-> berbasis *similarity* \[1\]*.*
+> Wav2vec2 2.0 adalah sebuah model self-supervised learning (SSL) yang
+> mempelajari representasi dari ucapan langsung atau audio mentah
+> melalui pendekatan *constrastive learning*. Arsitekturnya terdiri dari
+> tiga komponen inti; feature encoder konvolusional, jaringan konteks
+> berbasis Transformer, dan modul kuantisasi yang bekerja dalam satu
+> tugas pretext. Memprediksi unit terakuntisasi yang benar dari
+> representasi konteks pada posisi yang ditutup (*masked).*
 
-### **7.1.2 Data2Vec: *Embedding* generalis melalui Self-Distillation** 
+1.  **Feature encoder**
 
-> Sebagai model pembanding, Data2Vec memperkenalkan pendekatan
-> *self-supervised* yang bersifat *modality-agnostic*, memungkinkan
-> pembelajaran representasi yang dapat digunakan pada ucapan, teks
-> maupun citra. Perbedaan utama Data2Vec terletak pada mekanisme
-> *Self-Distillation*, di mana *Student Model* dilatih untuk memprediksi
-> representasi laten kontekstual yang dihasilkan oleh *Teacher Model*.
-> Pendekatan ini bertujuan menciptakan *embedding* yang lebih umum dan
-> kurang terikat pada suatu modalitas. Karakteristik Data2Vec yang
-> generalis ini menjadikannya model yang ideal untuk dikomparasi dengan
-> Wav2vec 2.0 yang spesifik ucapan, guna mengevaluasi *trade-off* antara
-> generalisi model dan kualitas *embedding* untuk tugas *retrieval*
-> fonetik \[8\].
+> Sinyal audio mentah $\mathcal{X}$ (16 kHz) diproses oleh tujuh blok
+> konvolusi temporal, masing-masing berisi 512 kanal dengan Layer
+> Normalization dan aktivasi GELU. Susunan stride $(5,2,2,2,2,2,2)$ dan
+> lebar kernel $(10,3,3,3,3,2,2)$ menghasilkan barisan representasi
+> laten $z_{1},\ldots,z_{T}$ pada frekuensi keluaran sekitar 49 Hz
+> (jarak antar-frame $\approx$`<!-- -->`{=html}20 ms), dengan receptive
+> field selebar 400 sampel input atau setara 25 ms audio.
+
+  ------------------------------------------------------------------
+  Blok            Stride           Kernel           Kanal
+  --------------- ---------------- ---------------- ----------------
+  1               5                10               512
+
+  2-5             2                3                512
+
+  6-7             2                2                512
+  ------------------------------------------------------------------
+
+2.  **Jaringan konteks**
+    $\mathbf{g:}\mathcal{Z}\mathbf{\rightarrow}\mathcal{C}$
+
+> Representasi laten $z$ diumpankan ke jaringan Transformer N4 yang
+> memodelkan ketergantungan jangka panjang antar-frame melalui
+> self-attention, menghasilkan representasi kontekstual
+> $c_{1},\ldots,c_{T}$. Konfigurasi Base memakai 12 blok
+> ($d = 768,\ 8\ Head$, sedangkan Large memakai 24 blok ( $d = 1024$, 16
+> head). Informasi posisi ditanamkan melalui relative positional
+> convolutional embedding (kernel 128, 16 grup), bukan positional
+> encoding absolut. Representasi laten $z$ diumpankan ke jaringan
+> Transformer N4 yang memodelkan ketergantungan jangka panjang
+> antar-frame melalui self-attention, menghasilkan representasi
+> kontekstual $c_{1},\ldots,c_{T}$ Konfigurasi Base memakai 12 blok
+> ($d = 768$, 8 head), sedangkan Large memakai 24 blok ($d = 1028$, 16
+> head). Informasi posisi ditanamkan melalui relative positional
+> convolutional embedding (kernel 128, 16 grup), bukan positional
+> encoding absolut
+
+3.  **Modul kuantisasi**
+
+> Secara paralel, laten \$\\mathbf{z}\$ didiskretisasi melalui product
+> quantization N9 dengan \$G=2\$ codebook, masing-masing \$V=320\$
+> entri. Pemilihan entri dibuat terdiferensiasi menggunakan
+> Gumbel-Softmax N7, N8:
 >
-> **7.2 Validasi Kualitas Fitur Laten untuk Pencarian Fonetik**
+> $$p_{g,v} = \frac{\exp{\text{!}\backslash}big\left( \left( l_{g,v} + n_{v} \right)\text{/}\tau\backslash big \right)}{\sum_{k = 1}^{V}\exp{\text{!}\backslash}big\left( \left( l_{g,k} + n_{k} \right)\text{/}\tau\backslash big \right)}$$
 >
-> Sub-bab ini berfokus pada pembuktian bahwa representasi laten yang
-> diekstrak oleh model SSL tidak hanya bersifat abstrak, tetapi
-> terstruktur dan cukup diskriminatif untuk digunakan dalam tugas
-> *Similarity Search* berbasis fonetik.
+> dengan $l_{g,v}$ logit entri $v$ pada grup $g$, $\tau$ temperatur
+> (dijadwalkan turun dari 2 ke 0,5), dan
+> $n_{v} = - \log\left( - \log\left( u_{v} \right) \right)$,
+> $u_{v}\mathcal{\sim U}(0,1)\$derau Gumbel. Pada forward pass dipilih
+> entri diskret $i = \arg{\max_{j}p_{g,j}}$; pada backward pass
+> digunakan gradien fungsi Gumbel-Softmax kontinu (straight-through
+> estimator N10) sehingga tetap dapat dilatih.
+
+4.  **Fungsi Objektif**
+
+> Pelatihan diarahkan gabungan dua komponen
 >
-> **7.2.1 Bukti Struktur Fitur Fontek dalam *Embedding***
+> $$\mathcal{L =}\mathcal{L}_{\mathcal{m}} + \alpha\,\mathcal{L}_{\mathcal{d}},\quad\quad\alpha = 0,1$$
 >
-> Representasi laten yang dihasilkan oleh Wav2Vec 2.0 terbukti memiliki
-> kualitas dan organisasi yang melampaui sekadar representasi akustik
-> sederhana. Penelitian *Searching for Structure*. Memberikan
-> justifikasi teoretis yang kuat dengan menerapkan *Probing Methods*,
-> melatih pengklasifikasi sederhana pada *embedding* yang
-> dibekukan---untuk memprediksi fitur-fitur fonetik spesifik (seperti
-> *voicing, plosive, dan bilabial*). Hasil analisis asosiasi lebih
-> lanjut membuktikan bahwa embedding secara struktural mengorganisasikan
-> fitur fonetik dengan cara yang konsisten dan selaras dengan prinsip
-> fonologi linguistik teoritis. Pembuktian bahwa *embedding* memiliki
-> makna fonetik yang terstruktur ini merupakan landasan ilmiah utama
-> untuk hipotesis penelitian ini: bahwa representasi tersebut mampu
-> membedakan dan mengukur kemiripan antar bacaan Al-Quran berdasarkan
-> kesamaan fonetik dan aturan tajwid yang terinternalisasi.
+> Constrastive loss $\mathcal{L}_{\mathcal{m}}$ memaksa model membedakan
+> target benar $q_{t}$ dari $K = 100$ pengecoh:
 >
-> **7.2.2 Generalisasi dan Adaptasi *Embedding* ke Tugas Kemiripan**
+> $$\mathcal{L}_{\mathcal{m}} = - \log{}\frac{\exp\left( \frac{\text{sim}\left( c_{t},q_{t} \right)}{\kappa} \right)}{\sum_{\widetilde{q} \sim \mathcal{Q}_{\mathcal{t}}}^{}\exp\left( \frac{\text{sim}\left( c_{t},\widetilde{q} \right)}{\kappa} \right)}$$
 >
-> Validitas *embedding* Wav2Vec 2.0 untuk tugas *Similarity Search*
-> diperkuat oleh kemampuan generalisasinya di luar *Aumatic Speech
-> Recognition* (ASR). Fitur laten ini terbukti efektif dalam memetakan
-> kemiripan di berbagai tugas non-ASR lain. Contohnya studi Siamese
-> Network menunjukkan bagaimana fitur Wav2Vec, ketika dipasangkan dengan
-> Contrastive Loss, dapat secara optimal mempelajari metrik jarak untuk
-> tugas diskriminasi. Seperti *anti-spoofing.* Keberhasilan ini
-> menegaskan bahwa embedding tersebut secara inheren cocok utnuk
-> pemetaan kemiripan.
+> Dengan $\kappa = 0,1$ dan
+> $\text{sim}(a,b) = \frac{}{a^{\top b}\text{|}a\text{|}\,\text{|}b\text{|}}$
+> (*cosine similarity*, berpersan sebagai scoring function). Diversity
+> loss $\mathcal{L}_{\mathcal{d}}$ mendorong pemakaian merata seluruh
+> entri codebook via maksimalisasi entropi:
 >
-> **7.2.3 Peningkatan *Robustness* Model Terhadap Domain Baru**
+> $$\mathcal{L}_{\mathcal{d}} = \frac{1}{GV}\sum_{g = 1}^{G}{\sum_{v = 1}^{V}\overline{p_{g,v}\log\overline{p_{g,v}}}}$$
 >
-> Kualitas *embedding* untuk retieval juga bergantung pada stabilitasnya
-> di tengah variasi data. Dalam konteks adaptasi model ke domain baru
-> seperti audio Al-Quran yang mungkin memiliki keragaman *speaker* dan
-> kualitas rekaman, *Continued Pre-training* (CPT) merupakan teknik yang
-> relevan menunjukkan bahwa CPT efektif dalam meningkatkan robustness
-> model dengan mengadaptasi *embedding* ke kondisi akustik yang berbeda
-> (misalnya, kebisingan lingkungan). Pemarapan ini membenarkan bahwa
-> *embedding* dapat dipertahankan stabilitasnya melalui teknik adaptasi
-> domain, memastikan konsistensi fitur yang diekstrak dari data Al-Quran
-> yang bervariasi.
+> Melalui mekanisme kontrastif inilah Wav2vec2 2.0 dihipotesiskan
+> menghasilkan embedding yang lebih clusterable untuk retrieval berbasis
+> cosine \[22\]
+
+![Gambar 2 Arsitektur Wav2vec2 2.0](media/image3.png){width="2.775in"
+height="4.464435695538057in"}
+
+7.  **Data2vec**
+
+> Data2vec merupakan model Self-Supervised Learning (SSL) yang modality
+> agnostic, artinya inputan yang dapat diproses dapat berupa audio,
+> gambar ataupun text. Perbedaan mendasarnya dengan Wav2vec2 2.0
+> terletak pada bentuk prediksi, Data2vec tidak mempredisksi unit
+> diskret terkuantisasi, melainkan representasi laten kontekstual yang
+> bersifat kontinu. Yang dihasilkan oleh model itu sendiri melalui skema
+> self-distillation
+
+1.  **Skema Teacher dan Student (*self-distillation*)**
+
+> Satu arsitektur Transformer \[20\] beroperasi dalam dua peran.
+> Jaringan student yang memproses input yang dimasking dan menghasilkan
+> prediksi $f_{t}(x)$ pada tiap posisi termasking. Jaringan teacher
+> memproses input penuh (tanpa masking) dan menyediakan target regresi
+> $y_{t}$. Student dilatih meregresi target teacher hanya pada posisi
+> termasking
+
+2.  **Pembaruan Teacher via EMA**
+
+> Pembaruan teacher tidak dilakukan oleh gradient, melainkan menggunakan
+> exponential moving average (EMA) dari parameter student
+> $\Delta \leftarrow \tau\,\Delta + (1 - \tau)\,$dengan $\Delta$
+> parameter teacher, $\theta$ parameter student. Nilai $\tau$ dinaikan
+> linear dari $\tau_{0}\ ke{\ \tau}_{e}\$langkah awal lalu ditahan
+> konstan, untuk ucapan $\tau_{0} = 0,,\tau_{e} = 0,,\tau_{n} = 30.0$
+
+3.  **Konstruksi Target Kontekstual**
+
+> Target dibentuk dengan merata-ratakan keluaran $K$ blok Transformer
+> teratas teacher, setelah masing-masing dinormalisasi
 >
-> **7.3.1 Prinsip *Similarity Search* Berbasis Vektor**
+> $$y_{t} = \frac{1}{K}\sum_{l = L - K + 1}^{L}\widehat{a_{t}^{\, l}}$$
 >
-> Metodologi penelitian ini berpusat pada pencarian kemiripan
-> (similarity search) di ruang vektor laten, yang bertujuan menemukan
-> data dalam database yang memiliki representasi vektor terdekat dengan
-> representasi vektor *query* yang diberikan. Dalam konteks penelusuran
-> ayat Al-Qur\'an, tugas ini berarti mencari indeks ayat yang paling
-> mirip (closest match) berdasarkan embedding audio. Pendekatan ini
-> secara fundamental berbeda dari tujuan Automatic Speech Recognition
-> (ASR) konvensional karena model tidak dilatih untuk menghasilkan teks,
-> melainkan untuk mempertahankan kedekatan fonetik dan kontekstual dalam
-> ruang vektor. Keberhasilan dalam tugas ini secara langsung mengukur
-> kualitas embedding untuk memetakan kemiripan audio.
+> Dengan $L$ dengan jumlah total blok (12 pada base), $K = 8$ blok
+> teratas $\widehat{a_{t}^{\, l}}$ keluaran blok $l$ ternormalisasi.
+> Untuk ucapan digunakan *instance nomralization* \[23\]. Untuk gambar
+> layer normalization \[24\]. Normalisasi ini mencegah keruntuhan
+> representasi (representation collapose). Karent target menggabungkan
+> berupa lapisan atas, ia bersifat kontekstual penuh. Hal ini menjadi
+> dasar hipotesis bahwa Data2ve menghasilkan fitur fonetik lebih kaya
+> \[10\], \[14\].
+
+4.  **Fungsi Objektif**
+
+> Student meregresi target dengan Smooth L1 loss (huber):
 >
-> **7.3.2 Metrik Kemiripan Vektor: *Cosine Similarity***
+> $$\mathcal{L}\left( y_{t},f_{t}(x) \right) = \left\{ \begin{matrix}
+> \frac{1}{2}\left( y_{t} - f_{t}(x) \right)^{2}\text{/}\beta, & \left| y_{t} - f_{t}(x) \right| \leq \beta \\
+> \left| y_{t} - f_{t}(x) \right| - \frac{1}{2}\beta, & \text{selainnya}
+> \end{matrix} \right.\ $$
 >
-> Cosine Similarity diimplementasikan sebagai metrik utama untuk
-> mengukur kedekatan antara embedding yang diekstrak dari kedua model
-> SSL (Wav2Vec 2.0 dan Data2Vec). Cosine Similarity mengukur sudut antar
-> dua vektor, sehingga mengukur kesamaan arah dan orientasi fitur sambil
-> mengabaikan perbedaan magnitudo vektor. Metrik ini sangat efektif
-> dalam konteks *similarity* search karena ia fokus pada kesamaan konten
-> fitur yang diwakili oleh arah vektor. Kinerja retrieval kemudian
-> dievaluasi menggunakan metrik berbasis pemeringkatan (ranking),
-> seperti Top-K Accuracy, untuk menilai seberapa efektif setiap model
-> menempatkan ayat target yang benar dalam *K* hasil pencarian teratas.
+> Parameter $\beta$ mengatur peralihan wilaayah kuadratik
+> $\left( l_{2} \right)$ dan linear $\left( l_{1} \right)$ untuk
+> $\beta \rightarrow \infty$ loss menjadi MSE murni yang bekerja baik
+> pada domain ucapan.
+
+![Gambar 3 Arsitektur
+Data2vec](media/image4.png){width="2.4833333333333334in"
+height="4.357854330708661in"}
+
+8.  **Cosine Similarity**
+
+> Cosine Similarity mengukur kemiripan antara dua vektor berdasarkan
+> sudut cosine di antara keduanya, tanpa perlu memperhitungkan besar
+> magnitudonya (bx5)
 >
-> **7.3.3 Metrik *Baseline* Komparatif ASR (WER/CER)**
+> $$\text{sim}\,(q,d) = \cos\theta = \frac{q \cdot d}{\text{|}q\text{|}\,\text{|}d\text{|}} = \frac{\sum_{i = 1}^{d}{q_{i}d_{i}}}{\sqrt{\sum_{i = 1}^{d}q_{i}^{2}}\,\sqrt{\sum_{i = 1}^{d}d_{i}^{2}}}$$
 >
-> Meskipun fokus penelitian adalah *Similarity Search*, metrik ASR
-> tradisional, seperti *Word Error Rate* (WER) dan *Character Error
-> Rate* (CER), akan diukur sebagai metrik *baseline* komparatif.
-> Pengukuran WER/CER bertujuan untuk menilai kapabilitas transkripsi
-> awal model dalam domain audio Al-Qur\'an. Data ini akan digunakan
-> sebagai konteks untuk menganalisis korelasi antara kinerja transkripsi
-> dan kinerja *retrieval* model. Dengan demikian, penekanan utama dan
-> klaim kontribusi penelitian diletakkan secara eksklusif pada metrik
-> *Similarity Search* (Cosine Similarity dan Top-K Accuracy).
+> Nilainya berkisar pada \[-1, 1\], dengan nilai mendekati 1 menandakan
+> arah vektor yang sangat mirip. Perlu ditegakan bahwa dalam bidang
+> retrieval, cosine similarity berperan sebagai fungsi penilaian
+> (*scrolling function*), bukan sebagai metrik evaluasi \[21\]. Manning
+> dkk. Membedakkan secara tegas antara mekanisme scoring ranking dan
+> metrik evaluasi efektivitas sistem. Selain itu cosine distance
+> $\left( 1 - \cos\theta \right)$ bukan metrik jarak matematis, arena
+> melanggar pertidaksamaan segitiga \[25\]. oleh karena itu, dalam
+> penelitian ini cosine similarity digunakan sebagai fungsi penilai
+> kemiripan untuk menghasilkan peringkat, sedangkan efektivitas
+> retrieval diukur menggunakan metrik evaluasi yang dijelaskan pada
+> sub-bab berikutnya.
+
+9.  **Metriks Evaluasi Retrieval**
+
+> Efektivitas sistem retrieval dievaluasi menggunakna metrik yang
+> berbasis pada kualitas peringkat (ranking) hasil pencarian \[21\].
+> Penelitian ini menggunakan tiga metrik utama berikut.
+
+1.  **Top K Accuracy**
+
+> Metrik ini mengukur proporsi kueri yang dokumen relevannya ditemukan
+> dalam K peringkat teratas dalam pencarian
+>
+> $$Top - K\, Accuracy = \ \ 1\  \div |Q|\sum_{q \in Q}^{}{1\left\lbrack rank(q) \leq K \right\rbrack}$$
+>
+> Dengan ∣Q∣ adalah jumlah total kueri, dan 1\[⋅\] adalah fungsi
+> indikator yang bernilai 1 apabila dokumen relevan berada pada
+> peringkat kurang dari atau sama dengan K, dan berniali 0 jika
+> sebaliknya. Metrik ini mencerminkan kegunaan praktis sistem bagi
+> pengguna yang umumnya hanya memeriksa hasil teratas
+
+2.  **Mean Reciprocal Rank (MRR)**
+
+> MRR mengukur seberapa tinggi peringkat dokumen relevan pertama, dengan
+> menghitung rata-rata kebalikan peringkatnya \[21\]. MRR memiliki rumus
+> demikian
+>
+> $$MRR = \frac{1}{|Q|}\sum_{i = 1}^{|Q|}\frac{1}{\text{rank}_{i}}$$
+>
+> Dengan $\text{rank}_{i}$ posisi peringkat dokumen relevan pertama
+> untuk kueri ke-$i$. Nilai MRR mendekati 1 menunjukkan dokumen relevan
+> cenderung berada di peringkat paling atas.
+
+3.  **Mean Average Precision (MAP)**
+
+> MAP merupakan metrik yang paling komprehensif karena memperhitungkan
+> presisi pada setiap posisi dokumen relevan sepanjang daftar peringkat
+> (bx5). Untuk sebuah kueri, Average Precision (AP) dihitung sebagai
+>
+> $$\text{AP} = \frac{1}{|R|}\sum_{k = 1}^{N}{P(k)} \cdot \text{rel}(k)$$
+>
+> Dengan $P(k)$ presisi pada peringkat $k$ $\text{rel}(k)$ fungsi
+> indicator relevansi dokumen di peringkat $k$, $|R|$ jumlah total
+> dokumen relevan, dan $N$ jumlah dokumen. MAP kemudian adalah rata-rata
+> AP atas seluruh kueri
+>
+> $$\text{MAP} = \frac{1}{|Q|}\sum_{q = 1}^{|Q|}{\text{AP}(q)}$$
+>
+> Ketiga metrik ini; Top-K Accuracy, MRR, dan MAP merupakan metrik
+> evaluasi yang secara konseptual berbeda dengan cosine similarity yang
+> berperan sebagai *scoring function*
+
+10. **Dataset Quran-MD**
+
+> Penelitian ini menggunakan dataset Quran-MD (bx7), sebuah dataset
+> multimodal yang tersedia pada platform huggingface. Dataset ini
+> mengintegrasikan dimensi teks, linguistic, dan audio pada tingkat ayat
+> maupun kata. Untuk setiap ayat disediakan teks Arab asli serta rekaman
+> dari 30 pembaca (qori) yang berbeda guna mempresentasikan keragaman
+> gaya bacaan (qiraat) dan nuansa dialetik.
+>
+> Secara kuantitatif, koleksi Quran-MD terdiri atas dua sub-dataset
+> terpisah. sub-dataset ayat (Buraaq/quran-md-ayahs) berisi 187080
+> sampel rekaman ayat lengkap. Dan sub-dataset kata
+> (Buraaq/quran-md-words) berisi 77429 sampel pelafalan kata individual,
+> sehingga totalnya mencakup sekitar 264509 audio format berformat mp3
+> yang meliputi 114 surah dan 6236 ayat unik (bx7). Sesuai batasan
+> masalah penelitian, objek yang digunakan dibatasi pada surah
+> Al-fatihah dan juz 30 dari sub-dataset tingkat ayat. Pasangan
+> audio-teks yang tersedia pada dataset ini memungkinkan penerapan tugas
+> similarity search berbasis suara tanpa transkripsi.
+
+11. **Metode Penelitian CRISP-DM**
+
+> Penelitian ini mengadopsi kerangka kerja (*framework*) Cross-industry
+> Standard Process for Data Mining (CRISP-DM) sebagai metodologi (bx8).
+> CRISP-DM merupakan model process standar yang berisifat iteratif dan
+> tidak bergantung pada industri maupun teknologi tertentu, sehingga
+> sesuai untuk penelitian berbasis data dan machine learning. Kerangka
+> ini terdiri atas enam fase yang saling terikat:
+
+1.  Business Understanding. Merumuskan tujuan penelitian, yaitu
+    membandingkan efektivitas embedding Wav2vec2 dan Data2vec untuk
+    retrieval ayat Al-Qur'an, beserta hipotesis H1 dan H2.
+
+2.  Data understanding. Mengekplorasi karakteristik dataset Quran-MD,
+    mencakup distribusi qari, kualitas audio, dan cakupan surah yang
+    digunakan.
+
+3.  Data preparation. Menyeleksi Surah Al-Fatihah dan Juz Amma,
+    melakukan pre-processing audio dan menyiapkan pasangan kueri dan
+    database untuk pengujian
+
+4.  Modeling. Mengekstrak embedding dari kedua model SSL tanpa adanya
+    fine-tuning, lalu menghitung skor kemiripan menggunakan cosine
+    similarity untuk menghasilkan peringkat retrieval.
+
+5.  Evaluation. Mengukur kinerja retrieval kedua model menggunakan
+    metrik MAP, Top-K Accuracy, dan MRR.
+
+6.  Deployment. Menyusun kesimpulan dan rekomendasi model terbaik
+    sebagai acuan bagi pemngembangan system pembelajaran Al-Quran
+    berbasis audio.
 
 ## Metode Penelitian
 
@@ -783,8 +1034,8 @@ dari penelitian terdahulu dalam bentuk table.
 > berurutan, dimulai dari pengumpulan data hingga analisis perbandingan
 > hasil *retrieval* kedua model seperti yang dipaparkan dalam Gambar 2.
 
-![[]{#_Toc213132314 .anchor}Gambar 3 Metode
-Penelitian](media/image3.png){width="6.268055555555556in"
+![[]{#_Toc213132314 .anchor}Gambar 4 Metode
+Penelitian](media/image5.png){width="6.268055555555556in"
 height="3.3916666666666666in"}
 
 ## Pengumpulan data
@@ -993,66 +1244,70 @@ Phoneme-to-word Transcoder Based Unified Speech Representation Learning
 for Cross-lingual Speech Recognition," in *INTERSPEECH 2023*, Aug. 2023,
 pp. 216--220. doi: 10.21437/Interspeech.2023-746.
 
-\[10\] O. Mohamed and S. A. Aly, "Arabic Speech Emotion Recognition
-Employing Wav2vec2.0 and HuBERT Based on BAVED Dataset," Oct. 09, 2021,
-*arXiv*: arXiv:2110.04425. doi: 10.48550/arXiv.2110.04425.
-
-\[11\] Q. Shao, L. Dong, K. Wei, S. Sun, and L. Xie, "DQ-Data2vec:
-Decoupling Quantization for Multilingual Speech Recognition," Jan. 23,
-2025, *arXiv*: arXiv:2501.13497. doi: 10.48550/arXiv.2501.13497.
-
-\[12\] Y. Xie, Z. Zhang, and Y. Yang, "Siamese Network with wav2vec
-Feature for Spoofing Speech Detection," in *Interspeech 2021*, ISCA,
-Aug. 2021, pp. 4269--4273. doi: 10.21437/Interspeech.2021-847.
-
-\[13\] N. Vaessen and D. A. van Leeuwen, "Fine-tuning wav2vec2 for
-speaker recognition," in *ICASSP 2022 - 2022 IEEE International
-Conference on Acoustics, Speech and Signal Processing (ICASSP)*, May
-2022, pp. 7967--7971. doi: 10.1109/ICASSP43922.2022.9746952.
-
-\[14\] L. Alkanhal, A. Alessa, E. Almahmoud, and R. Alaqil, "Aswat:
+\[10\] L. Alkanhal, A. Alessa, E. Almahmoud, and R. Alaqil, "Aswat:
 Arabic Audio Dataset for Automatic Speech Recognition Using
 Speech-Representation Learning," in *Proceedings of ArabicNLP 2023*,
 Singapore (Hybrid): Association for Computational Linguistics, 2023, pp.
 120--127. doi: 10.18653/v1/2023.arabicnlp-1.10.
 
-\[15\] N. San *et al.*, "Leveraging pre-trained representations to
+\[11\] N. San *et al.*, "Leveraging pre-trained representations to
 improve access to untranscribed speech from endangered languages," Sep.
 14, 2021, *arXiv*: arXiv:2103.14583. doi: 10.48550/arXiv.2103.14583.
 
-\[16\] C. Tang, Y. Wang, X. Chen, and W.-Q. Zhang, "Exploring Effective
+\[12\] C. Tang, Y. Wang, X. Chen, and W.-Q. Zhang, "Exploring Effective
 Fusion Algorithms for Speech Based Self-Supervised Learning Models,"
 Dec. 20, 2022, *arXiv*: arXiv:2212.10092. doi:
 10.48550/arXiv.2212.10092.
 
-\[17\] J. W. Yoon, S. M. Kim, and N. S. Kim, "MCR-Data2vec 2.0:
+\[13\] J. W. Yoon, S. M. Kim, and N. S. Kim, "MCR-Data2vec 2.0:
 Improving Self-supervised Speech Pre-training via Model-level
 Consistency Regularization," Jun. 14, 2023, *arXiv*: arXiv:2306.08463.
 doi: 10.48550/arXiv.2306.08463.
 
-\[18\] S. Yang *et al.*, "A Large-Scale Evaluation of Speech Foundation
+\[14\] S. Yang *et al.*, "A Large-Scale Evaluation of Speech Foundation
 Models," May 29, 2024, *arXiv*: arXiv:2404.09385. doi:
 10.48550/arXiv.2404.09385.
 
-\[19\] Z. Li, L. Wu, T. Li, and Y. Yan, "Improves Neural Acoustic Word
+\[15\] Y. Xie, Z. Zhang, and Y. Yang, "Siamese Network with wav2vec
+Feature for Spoofing Speech Detection," in *Interspeech 2021*, ISCA,
+Aug. 2021, pp. 4269--4273. doi: 10.21437/Interspeech.2021-847.
+
+\[16\] Z. Li, L. Wu, T. Li, and Y. Yan, "Improves Neural Acoustic Word
 Embeddings Query by Example Spoken Term Detection with Wav2vec
 Pretraining and Circle Loss," in *2021 12th International Symposium on
 Chinese Spoken Language Processing (ISCSLP)*, Hong Kong: IEEE, Jan.
 2021, pp. 1--5. doi: 10.1109/ISCSLP49672.2021.9362065.
 
-\[20\] A. Conneau, A. Baevski, R. Collobert, A. Mohamed, and M. Auli,
-"Unsupervised Cross-lingual Representation Learning for Speech
-Recognition," Dec. 15, 2020, *arXiv*: arXiv:2006.13979. doi:
-10.48550/arXiv.2006.13979.
+\[17\] S. J. Russell, S. Russell, and P. Norvig, *Artificial
+Intelligence: A Modern Approach*. in Pearson series in artificial
+intelligence. Pearson, 2020. \[Online\]. Available:
+https://books.google.co.id/books?id=koFptAEACAAJ
 
-\[21\] A. A. Attia, D. Demszky, T. Ogunremi, J. Liu, and C. Espy-Wilson,
-"CPT-Boosted Wav2vec2.0: Towards Noise Robust Speech Recognition for
-Classroom Environments," in *ICASSP 2025 - 2025 IEEE International
-Conference on Acoustics, Speech and Signal Processing (ICASSP)*, Apr.
-2025, pp. 1--5. doi: 10.1109/ICASSP49660.2025.10890830.
+\[18\] T. M. Mitchell, *Machine learning*, Nachdr. in McGraw-Hill series
+in Computer Science. New York: McGraw-Hill, 2013.
 
-\[22\] V. Panayotov, G. Chen, D. Povey, and S. Khudanpur, "Librispeech:
-An ASR corpus based on public domain audio books," in *2015 IEEE
-International Conference on Acoustics, Speech and Signal Processing
-(ICASSP)*, South Brisbane, Queensland, Australia: IEEE, Apr. 2015, pp.
-5206--5210. doi: 10.1109/ICASSP.2015.7178964.
+\[19\] I. Goodfellow, Y. Bengio, and A. Courville, *Deep learning*. in
+Adaptive computation and machine learning. Cambridge, Mass: The MIT
+press, 2016.
+
+\[20\] A. Vaswani *et al.*, "Attention Is All You Need," Aug. 02, 2023,
+*arXiv*: arXiv:1706.03762. doi: 10.48550/arXiv.1706.03762.
+
+\[21\] C. D. Manning, P. Raghavan, and H. Schütze, *Introduction to
+Information Retrieval*, 1st ed. Cambridge University Press, 2008. doi:
+10.1017/CBO9780511809071.
+
+\[22\] T. Wang and P. Isola, "Understanding Contrastive Representation
+Learning through Alignment and Uniformity on the Hypersphere," Aug. 15,
+2022, *arXiv*: arXiv:2005.10242. doi: 10.48550/arXiv.2005.10242.
+
+\[23\] D. Ulyanov, A. Vedaldi, and V. Lempitsky, "Instance
+Normalization: The Missing Ingredient for Fast Stylization," Nov. 06,
+2017, *arXiv*: arXiv:1607.08022. doi: 10.48550/arXiv.1607.08022.
+
+\[24\] J. L. Ba, J. R. Kiros, and G. E. Hinton, "Layer Normalization,"
+Jul. 21, 2016, *arXiv*: arXiv:1607.06450. doi:
+10.48550/arXiv.1607.06450.
+
+\[25\] E. Schubert, "A Triangle Inequality for Cosine Similarity," vol.
+13058, 2021, pp. 32--44. doi: 10.1007/978-3-030-89657-7_3.
