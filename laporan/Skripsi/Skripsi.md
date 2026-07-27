@@ -1,5 +1,5 @@
-**PERBANDINGAN WAV2VEC2 DAN DAN DATA2VEC TERHADAP FITUR LATEN AUDIO
-UNTUK TILAWAH\
+**PERBANDINGAN WAV2VEC2 DAN DATA2VEC TERHADAP FITUR LATEN AUDIO UNTUK
+TILAWAH\
 AL-QURAN**
 
 **TUGAS AKHIR**
@@ -63,26 +63,24 @@ Learning** [17](#_Toc234440438)](#_Toc234440438)
 [**7.1.2 Data2Vec: *Embedding* generalis melalui Self-Distillation**
 [17](#_Toc234440439)](#_Toc234440439)
 
-[5 Metode Penelitian [20](#metode-penelitian)](#metode-penelitian)
+[5 Metode Penelitian [20](#_Toc234440440)](#_Toc234440440)
 
-[1. Pengumpulan data [21](#pengumpulan-data)](#pengumpulan-data)
+[1. Pengumpulan data [21](#_Toc234440441)](#_Toc234440441)
 
-[2. Tahap *Pre-processing* Data
-[21](#tahap-pre-processing-data)](#tahap-pre-processing-data)
+[2. Tahap *Pre-processing* Data [21](#_Toc234440442)](#_Toc234440442)
 
 [3. Tahap Ekstraksi Representasi Laten (Vector *Embedding*)
-[22](#tahap-ekstraksi-representasi-laten-vector-embedding)](#tahap-ekstraksi-representasi-laten-vector-embedding)
+[22](#_Toc234440443)](#_Toc234440443)
 
 [4. Tahap Implementasi *Similarity Search*
-[22](#tahap-implementasi-similarity-search)](#tahap-implementasi-similarity-search)
+[22](#_Toc234440444)](#_Toc234440444)
 
 [5. Tahap Evaluasi Kinerja (Perbandingan)
-[23](#tahap-evaluasi-kinerja-perbandingan)](#tahap-evaluasi-kinerja-perbandingan)
+[23](#_Toc234440445)](#_Toc234440445)
 
-[6. Tahap Analisis Hasil
-[23](#tahap-analisis-hasil)](#tahap-analisis-hasil)
+[6. Tahap Analisis Hasil [23](#_Toc234440446)](#_Toc234440446)
 
-[DAFTAR PUSTAKA [26](#daftar-pustaka)](#daftar-pustaka)
+[DAFTAR PUSTAKA [26](#_Toc234440447)](#_Toc234440447)
 
 # DAFTAR GAMBAR
 
@@ -1028,179 +1026,451 @@ height="4.357854330708661in"}
     sebagai acuan bagi pemngembangan system pembelajaran Al-Quran
     berbasis audio.
 
-## Metode Penelitian
+# BAB III  METODOLOGI PENELITIAN
 
-> Penelitian ini akan dilakukan melalui enam tahapan utama yang
-> berurutan, dimulai dari pengumpulan data hingga analisis perbandingan
-> hasil *retrieval* kedua model seperti yang dipaparkan dalam Gambar 2.
+Metodologi penelitian yang diadaptasi dari penelitian ini yaitu
+*framework* *Cross-Industry Standard Process for Data Mining*
+(CRISP-DM). Dikarenakan framework ini bersifat sistematis, adaptif serta
+iterative dan tidak terikat pada teknologi tertentu, sehingga sesuai
+dengan penelitian berbasis data dan *Machine Learing.* Namun demikian,
+karena penelitian ini bertujuan untuk membandingkan efektivitas fitur
+laten model Self-Supervised Learning tanpa dilakukan *transfer
+learning,* maka terdapat dua fase dalam framework CRISP-DM yang perlu
+disesuaikan agar selaras dengan tujuan penelitian ini, yaitu *Modeling*
+dan *Deployment*. Fase *Modeling* tidak berupa pelatihan model,
+melainkan ekstrasi representasi laten. Sementara fase *Deployment*
+diarahkan pada sintesis temuan, pengujian hipotesis, dan perumusan
+rekomendasi arsitektur, bukan penerapan sistem dalam lingkungan
+produksi. Dengan penyesuaian tersebut, proses penelitian dilaksanakan
+secara terstruktur melalui enam fase, mulai dari *Business
+Understanding*, *Data Understanding*, *Data Preparation*, *Modeling*,
+*Evaluation* dam *Deployment* yang diadaptasi.
 
-![[]{#_Toc213132314 .anchor}Gambar 4 Metode
-Penelitian](media/image5.png){width="6.268055555555556in"
-height="3.3916666666666666in"}
+## 3.1. Business Understanding
 
-## Pengumpulan data
+Fase *business understanding* berfungsi menerjemahkan permasalahan
+penelitian menjadi sasaran analistis yang terukur \[26\]. Tujuan utama
+yang ditetapkan dalam penelitian ini adalah mengukur dan membandingkan
+efektivitas fitur laten dua model Self-Supervised Learning (SSL) model,
+yaitu Wav2vec2 dan Data2vec. Dalam tugas *retrieval* ayat Al-Quran.
+Perbandingan dilakukan dalam kondisi *frozen.*Penelitian ini
+memanfaatkan model *pre-trained* tanpa pelatihan ulang (fine-tuning).
+Sehingga metrik yang dihasilkan merupakan raw performance masing masing
+model.
 
-> Tahap awal penelitian berfokus pada persiapan dan pengumpulan sumber
-> data audio dan teks Al-Quran. Untuk sumber audio, penelitian ini akan
-> menggunakan dataset audio Al-Quran yang terstruktur dan tersedia untuk
-> umum, seperti koleksi Aswat atau dataset serupa yang relevan. Dataset
-> audio ini harus dilengkapi dengan data teks Al-Quran yang berpasangan
-> secara akurat dengan audio, serta memiliki penandaan (anotasi) ayat
-> yang jelas untuk membangun database *retrieval*. Setelah data
-> terkumpul, akan dilakukan pembagian data menjadi dua set utama:
-> Database (D) dan Query Set (Q). Database (D) akan mencakup keseluruhan
-> audio ayat yang berfungsi sebagai target pencarian (*search space*).
-> Sementara itu, Query Set (Q) akan terdiri dari kumpulan audio, baik
-> dalam bentuk potongan ayat maupun ayat penuh, yang akan digunakan
-> sebagai input query untuk menguji dan mengevaluasi kinerja sistem
-> *retrieval*.
+Sasaran tersebut menghasilkan dua hipotesis yang saling berkebalikan
+sebagai inti kontribusi penelitian. Hipotesis pertama memperkirakan
+Data2vec unggul, karena target prediksinya yang berupa representasi
+kontekstual laten penuh berpotensi menghasilkan fitur fonetik yang kaya
+dan umum. Hipotesisi kedua memperkirakan justru Wav2vec2 yang unggul
+pada retrieval. Karena constrastive-loss-nya secara explisit menari
+pasangan positif dan menolak kandidat negatif, sehingga cenderung
+menciptakan ruang embedding yang lebih clusterable dan lebih selaras
+dengan pengukuran jarak consine-properti yang justru menentukan dalam
+kasus retrieval. Penelitian ini tidak hanya membandingkan angka kinerja,
+melainkan menguji apakah keunggulan suatu paradigma pretraining bersifat
+lintas tugas atau justru spesifik terhadap jenis tugas.
 
-## Tahap *Pre-processing* Data
+Agar kedua hipotesis dapat diuji secara objektif, pada fase ini
+ditetapkan pula definisi relevansi yang menjadi dasar penyusunan ground
+truth. Sebuah rekaman dinyatakan relevan terhadap suatu query apabila
+keduanya merupakan ayat yang sama meskipun dibacakan oleh pembaca (qori)
+yang berbeda. Definisi ini memungkinkan sistem retrieval diuji atas
+kemampuannya mengenali kesamaan konten ayat lintas variasi pembaca, gaya
+bacaan, dan nuansa dialektik. Kriteria keberhasilan penelitian kemudian
+ditetapkan menggunakan metrik evaluasi retrieval berbasis kualitas
+peringkat, yaitu Mean Average Precision (MAP), Top-K Accuracy, dan Mean
+Reciprocal Rank (MRR) \[21\]. Sejalan dengan hal tersebut, cosine
+similarity diposisikan sebagai fungsi penilaian (scoring function) untuk
+menghasilkan peringkat, bukan sebagai metrik evaluasi.
 
-> Tahap kedua adalah *pre-processing* data, yang bertujuan untuk
-> menstandarisasi seluruh data audio agar siap digunakan untuk ekstraksi
-> fitur (*feature extraction*). Proses ini dimulai dengan Normalisasi
-> Audio, di mana semua berkas audio dalam *Database* (D) dan *Query Set*
-> (Q) akan diseragamkan ke *sampling rate* dan format yang konsisten,
-> misalnya 16kHz, mono. Langkah krusial berikutnya adalah Segmentasi
-> Ayat, yang memastikan bahwa setiap berkas audio telah tersegmentasi
-> secara akurat sesuai dengan batasan ayat Al-Qur'an yang benar. Selain
-> itu, sebagai langkah opsional untuk mendukung perhitungan *baseline*
-> WER/CER, akan dilakukan Pembersihan Teks Arab, seperti penghilangan
-> tanda diakritik (*harakat*) minor untuk menjaga konsistensi data
-> transkripsi.
+Penelitian ini dibatasi pada penggunakan pre-trained model tanpa
+fine-tuning , dengan objek teliti berupa surah Al-Fatihah dan Juz Amma,
+serta pengujian pada tingkat ayat. Salah satu sasaran analitis yang
+turut dirumuskan adalah identifikasi lapisan (layer) yang paling optimal
+bagi tugas *retrieval* fonetik. Perumusan sasaran ini dilandasi temuan
+bahwa informasi fonetik dan leksikal pada model SSL tidak terdistribusi
+secara merata di seluruh lapisan, melainkan terkonsentrasi pada lapisan
+tertentu yang bergantung pada paradigma pre-training. Pada model yang
+menggunakan constrastive seperti Wav2vec2, informasi fonetik cenderung
+meningkat di layer tengah dan menurun di layer akhir \[27\]. Sehingga
+lapisan terbaik untuk sebuah studi kasus tidak selalu berada pada
+lapisan terkahir. Dengan demikian penelitian ini sejak awal diarahkan
+untuk melakukan ekstrasi secara *layer-wise*.
 
-## Tahap Ekstraksi Representasi Laten (Vector *Embedding*)
+2.  **Data Understanding**
 
-> Tahap ketiga merupakan inti dari penelitian ini, yaitu menghasilkan
-> vector *embedding* dari kedua model *Self-Supervised* (SSL) yang
-> penghilangan tanda diakritik (*harakat*) minor untuk menjaga
-> konsistensi data transkripsi. Langkah awal adalah pemilihan Model, di
-> mana penelitian ini akan menggunakan model Wav2vec2 dan Data2Vec yang
-> telah dilatih (*pre-trained*), idealnya menggunakan versi *large* atau
-> versi yang telah diadaptasi secara spesifik ke domain bahasa Arab,
-> jika tersedia. Proses ekstraksi fitur kemudian dilakukan secara
-> pararel untuk kedua model. Untuk Wav2vec2, setiap berkas audio yang
-> telah di *pre-processing* dari Database (D) dan *Query Set* (Q)
-> diumpankan ke *feature encoder* model. Representasi laten (*hidden
-> states*) yang dihasilkan dari lapisan *Transformer* terakhir kemudian
-> diekstrak. Setelah itu, dilakukan *Pooling Temporal* (misalnya, *Mean
-> Pooling*) pada *hidden states* tersebut untuk mengagregasi seluruh
-> urutan fitur menjadi atau vektor tunggal berdimensi tetap per ayat
-> (atau per *query*), yang kemudian disimpan sebagai *Embedding*
-> Wav2Vec2. Proses yang identik diulangi untuk Model 2 (Data2Vec) guna
-> menghasilkan *Embedding* Data2Vec. Hasil akhir tahap ini adalah dua
-> database vektor yang komprehensif dan siap dibandingkan.
+Fase Data Understanding bertujuan mengenali karakteristik data secara
+menyeluruh sebelum dilakukan pemrosesan mencakup pengumpulan data awal,
+pendeskripsian sifat data, eksplorasi pola, serta verifikasi kualitasnya
+\[26\]. Pada fase data understanding, tidak adanya perubahan data. Namun
+mengamati data dan menilai data, sehingga data data yang ada masih
+mentah. Pemahaman yang ada pada proses ini menjadi landasan untuk proses
+pre-processing kedepannya. Sekaligus memastikan bahwa data yang tersedia
+memang mampu mendukung tujuan penelitian.
 
-## Tahap Implementasi *Similarity Search*
+Data yang akan digunakan bersumber dari dataset Quran-MD yang tersedia
+pada platform HuggingFace, khususnya sub-dataset pada tingkat ayat
+\[28\]. Dataset ini menyediakan pasangan audio-teks untuk setiap ayat
+disertai rekaman audio dari 30 qori yang berbeda yang bertujuan untuk
+merepresentasikan keragaman gaya bacaan ayat Al-Quran. Pada tahap
+pengumpulan awal, akan didokumentasikan struktur dataset yang meliputi
+berkas audio, teks Arab yang berpasangan, serta metadata pendanda ayat
+berupa nomor surah, nomor ayat, dan identitas qori.
 
-> Tahap keempat berfokus pada implementasi mekanisme pencarian kemiripan
-> (*Similarity search*) menggunakan *embedding* vektor yang telah
-> diekstrak, guna menguji perbandingan kedua model. Untuk setiap audio
-> query *q~i~* di *Query Set*. Proses pencarian dilakukan secara
-> terpisah untuk setiap model. Pertama, vektor *query V~q,i~* dari model
-> terkait diekstrak. Kemudian, dilakukan perhitungan cosine similarity
-> antara *V~q,i\ ~*dan seluruh vektor yang tersimpan di dalam *Database
-> (D)* yang bersesuaian (*D~Wav2vec2\ ~*atau D~Data2vec~). Hasil
-> perhitungan ini menghasilkan daftar peringkat (*ranked list*)
-> ayat-ayat di database, yang diturunkan dari skor kemiripan cosine dari
-> tertinggi hingga terendah. Penentuan *Retrieval* dilakukan dengan
-> menganggap ayat yang memiliki skor kemiripan Cosine tertinggi sebagai
-> hasil prediksi model yang paling mendekati *query* audio.
+Selanjutnya akan dilakukan analisis file audio. Mencakup format audio,
+sampling rate asli dan jumlah kanal. Pendeskripsian ini penting karena
+untuk model Wav2vec2 dan Data2vec mengharuskan input audio pada sampling
+rate 16kHz dan pada kanal mono. Selain itu juga akan ada perhitungan
+terkait distribusi jumlah qori per ayat, distribusi durasi rekaman antar
+ayat, serta distribusi jumlah ayat pada tiap surah dalam subset yang
+digunakan. Proses ini memiliki peran krusial karena menentukan banyaknya
+dokumen relevan bagi setiap query, yang secara langsung memengaruhi
+perhitungan metrik Mean Average Precision (MAP) dan Mean Reciprocal Rank
+(MRR). Sementara itu , distribusi durasi ayat perlu dipahami karena
+ketimpangan durasi antara ayat pendek dan ayat panjang berpotensi
+memengaruhi hasil agregasi fitur melalui *temporal pooling* pada tahap
+ekstraksi representasi laten. Temuan dari fase Data Understanding ini
+akan menjadi landasan bagi penetapan prosedur pre-processing dan
+penyususan ground truth pada fase-fase selanjutnya.
 
-## Tahap Evaluasi Kinerja (Perbandingan)
+Dataset yang digunakan dalam penelitian ini terdiri atas rekaman video
+bacaan Juz Amma dan surah Al-Fatihah yang berasal dari mahasiswa Program
+Studi Teknik Informatika UIN Sunan Gunung Djati Bandung. Rekaman
+tersebut dikumpulkan sebagai bagian dari pemenuhan mata kuliah Tahfidz
+dan persyaratan sidang komprehensif. Setiap data disimpan dalam
+direktori yang diidentifikasi berdasarkan kombinasi Nomor Induk
+Mahasiswa (NIM) dan nama mahasiswa, sedangkan setiap direktori memuat
+sejumlah berkas video yang merepresentasikan bacaan surah tertentu.
+Meskipun demikian, konvensi penamaan direktori dan berkas tidak bersifat
+homogen. Ditemukan berbagai variasi penamaan, seperti perbedaan
+kapitalisasi huruf, penggunaan simbol atau karakter khusus yang beragam,
+serta penggunaan format penamaan yang tidak secara eksplisit mengacu
+pada nomor atau nama surah. Heterogenitas struktur penamaan tersebut
+menjadi salah satu tantangan utama dalam tahap prapemrosesan
+(*preprocessing*), sehingga diperlukan proses normalisasi untuk
+menghasilkan representasi data yang konsisten dan dapat diproses secara
+otomatis.
 
-> Tahap kelima bertujuan untuk membandingkan kedua model SSL secara
-> kuantitatif. Evaluasi Kinerja *Retrieval* akan menjadi metrik utama.
-> Metrik yang digunakan meliputi *Top-K Accuracy* untuk mengukur
-> persentase *query* yang berhasil menempatkan ayat target yang benar di
-> dalam *K* peringkat atas (misalnya, Top-1, Top-5, dan Top-10), di mana
-> *Top-1 Accuracy* berfungsi sebagai metrik keberhasilan pencarian yang
-> paling ketat. Selain itu, Mean Average Precision (MAP) akan dihutung
-> sebagai metrik yang lebih komprehensif untuk menilai kualitas urutan
-> peringkat dari seluruh hasil *retrieval*.
+3.  **Data Preparation**
 
-## Tahap Analisis Hasil
+Fase Data Preparation bertujuan mengubah mentah menjadi data yang siap
+digunakan untuk proses ekstrasi representasi laten. Fase ini mencakup
+empat tahap yaitu seleksi data, normalisasi audio, verifikasi segmentasi
+ayat, kontruksi ground truth sebagai dasar evaluasi retrieval.
 
-> Tahap akhir penelitian adalah merumuskan temuan. Perbandingan
-> Kuantitatif akan dilaukan dengan membandingkan secara langsung metrik
-> *Top-K Accuracy* antara Wav2vec2 dan Data2Vec untuk menentukan model
-> SSL mana yang unggul dalam tugas *Audio Retrieval* ayat Al-Quran.
-> Selain itu, akan dilakukan Analisis Kualitatif melalui studi kasus
-> mendalam terhadap *query* yang mengalami kegagalan dan keberhasilan.
-> Analisis ini meliputi pengidentifikasian kasus di mana satu model
-> unggul (misalnya, Data2Vec mencari ayat dengan konteks yang berbeda
-> namun kemiripan fonetik yang kuat), serta menginvestigasi kasus
-> kesalah *retrieval* (misalnya, *query* suatu ayat mencari ayat lain
-> yang memiliki kesamaan *matras* suara yang sangat tinggi) untuk
-> menilai sensitivitas fonetik setiap model. Kesimpulan penelitian yang
-> kemudian dirumuskan utuk menentukan model terbaik dan mengaitkan
-> temuan empiris dengan justrifikasi teoritis struktur *embedding* yang
-> telah dibahas dalam tinjauan pustaka.
->
-> **Lokasi Penelitian**
->
-> Lokasi penelitian dapat dilakukan dimana saja dikarenakan penelitian
-> tidak membutuhkan tempat khusus dalam pengambilan data maupun metode
-> yang digunakan.
+Proses pertama adalah seleksai data sesuai dengan Batasan masalah, yakni
+memilih rekaman dari surah Al-Fatihah dan surah-surah dalam Juz Amma
+yang disusun berdasarkan ayat. Dari proses seleksi ini akan disusun
+identifier yang terdiri dari qori, surah dan ayat. Identifier ini yang
+kelak akan digunakan sebagai referensi yang akan disimpan dalam table
+lain pada database.
 
-**Jadwal Penelitian**
+Proses kedua adalah normalisasi data, normalisasi data adalah
+menstandarisasi seluruh data audio yang akan dijadikan *ground truth*
+dan juga data input query yang nantinya digunakan sebagai data testing.
+Langkah ini untuk menjadi solusi dari pembahasan data understanding yang
+mengungkap bahwa data Quran-MD itu memiliki audio sampling rate dan
+jumlah kanal yang berbeda. Sehingga perlu dilakukan konversi pada data
+yang berbeda untuk sampling rate 16Khz dan jumlah kanal menjadi tunggal
+(*mono*). Hal ini bertujuan supaya hasil dari representasi laten antara
+model Wav2vec2 dan Data2vec berasal dari performa masing-masing model
+tersebut, bukan dari ketidaksesuain data yang ada.
 
-+--------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------+
-| **NO** | **KEGIATAN** | **MINGGU**                                                                                                                                                                        | **HASIL          |
-|        |              |                                                                                                                                                                                   | KESELURUHAN**    |
-|        |              +--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+                  |
-|        |              | **1**        | **2**        | **3**        | **4**        | **5**        | **6**        | **7**        | **8**        | **9**        | **10**       | **11**       | **12**       |                  |
-+========+==============+==============+==============+==============+==============+==============+==============+==============+==============+==============+==============+==============+==============+==================+
-| 1      | Studi        |              |              |              |              |              |              |              |              |              |              |              |              | Landasan teori   |
-|        | Literatur    |              |              |              |              |              |              |              |              |              |              |              |              | yang kuat        |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | mengenai         |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | mekanisme        |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | *Self-Supervised |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | Learning*        |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | (Wav2vec2 dan    |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | Data2Vec),       |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | validasi         |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | kualitas *vector |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | embedding* untuk |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | pencarian        |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | fonetik, dan     |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | penentuan metrik |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | evaluasi         |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | *Similarity      |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | Search* (*Top-K  |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | Accuracy* dan    |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | MAP)             |
-+--------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------+
-| 2      | Pengumpulan  |              |              |              |              |              |              |              |              |              |              |              |              | Dataset siap     |
-|        | dataset      |              |              |              |              |              |              |              |              |              |              |              |              | digunakan        |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | (pembersihan,    |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | normalisasi,     |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | tokenisasi)      |
-+--------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------+
-| 3      | Pembuatan    |              |              |              |              |              |              |              |              |              |              |              |              | Vektor embedding |
-|        | Embedding    |              |              |              |              |              |              |              |              |              |              |              |              | untuk setiap     |
-|        | (Wav2vec2 &  |              |              |              |              |              |              |              |              |              |              |              |              | ayat/bacaan      |
-|        | Data2Vec)    |              |              |              |              |              |              |              |              |              |              |              |              | Qur'an           |
-+--------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------+
-| 4      | Implementasi |              |              |              |              |              |              |              |              |              |              |              |              | Prototipe sistem |
-|        | Sistem       |              |              |              |              |              |              |              |              |              |              |              |              | pencarian        |
-|        | Pencarian    |              |              |              |              |              |              |              |              |              |              |              |              | berbasis         |
-|        | Semantik     |              |              |              |              |              |              |              |              |              |              |              |              | embedding        |
-|        | (Cosine      |              |              |              |              |              |              |              |              |              |              |              |              |                  |
-|        | Similarity + |              |              |              |              |              |              |              |              |              |              |              |              |                  |
-|        | FAISS)       |              |              |              |              |              |              |              |              |              |              |              |              |                  |
-+--------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------+
-| 5      | Evaluasi     |              |              |              |              |              |              |              |              |              |              |              |              | Hasil evaluasi   |
-|        | Model        |              |              |              |              |              |              |              |              |              |              |              |              | performa model   |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | Wav2Vec2 vs      |
-|        |              |              |              |              |              |              |              |              |              |              |              |              |              | Data2Vec         |
-+--------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------+
-| 6      | Penarikan    |              |              |              |              |              |              |              |              |              |              |              |              | Kesimpulan akhir |
-|        | Kesimpulan & |              |              |              |              |              |              |              |              |              |              |              |              | dan naskah       |
-|        | penyusunan   |              |              |              |              |              |              |              |              |              |              |              |              | laporan          |
-|        | laporan      |              |              |              |              |              |              |              |              |              |              |              |              | penelitian       |
-+--------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+------------------+
+Proses ketiga adalah *pre-processing* diawali dengan proses normalisasi
+struktur dataset, yaitu menyeragamkan penamaan direktori dan berkas
+berdasarkan nomor serta nama surah yang sesuai dengan urutan dalam
+Al-Qur\'an. Proses ini dilakukan untuk mengatasi ketidakkonsistenan
+penamaan, seperti perbedaan penggunaan huruf besar dan huruf kecil,
+variasi simbol, maupun format penamaan yang tidak mengikuti konvensi
+tertentu. Hasil normalisasi tersebut digunakan sebagai dasar dalam
+proses identifikasi surah secara otomatis pada tahap selanjutnya.
+
+Setelah proses normalisasi selesai, dilakukan segmentasi ayat dan
+verifikasi terhadap data. Data yang digunakan sebagai *input query*
+berupa rekaman video mahasiswa yang dalam satu videonya membacakan satu
+surah secara utuh, mencakup seluruh surah dalam Juz Amma beserta surah
+Al-Fatihah. Oleh karena itu, setiap rekaman terlebih dahulu diekstraksi
+menjadi berkas audio, kemudian dilakukan proses segmentasi untuk membagi
+audio surah menjadi beberapa segmen yang masing-masing merepresentasikan
+satu ayat. Segmentasi dilakukan dengan memanfaatkan hasil *forced
+alignment* sehingga setiap ayat memiliki batas waktu (*timestamp*) awal
+dan akhir yang akurat. Selanjutnya, setiap hasil segmentasi diverifikasi
+untuk memastikan bahwa batas potong audio sesuai dengan ayat yang
+dibacakan. Hasil akhir dari tahap ini adalah kumpulan berkas audio per
+ayat yang telah terverifikasi dan siap digunakan pada proses ekstraksi
+fitur serta pembentukan *embedding*.
+
+4.  **Modeling**
+
+Fase Modeling pada penelitina ini diadaptasi dari makna aslinya dalam
+*framework* CRISP-DM. karena penelitian ini menggunakan *frozen
+embedding* tanpa fine-tuning atau transfer learning, fase ini tidak
+melibatkan pelatihan model, melainkan befokus pada ekstraksi
+representasi laten dari mdoel pre-trained serta konstruksi *similarity*
+yang menjadi dasar proses retrieval. Fase ini terdiri atas empat
+sub-proses yaitu pemilihan model, ekstraksi representasi laten secara
+layer-wise, agregasi fitur menjadi vektor embedding, dan perhitungan
+skor kemiripan untuk menghasilkan peringkat.
+
+Pada sub proses pertama yaitu pemilihan model, penelitian ini
+menggunakna dua model self-supervised Learning (SSL), yaitu Wav2vecc2
+dan Data2vec, dalam kondisi *frozen*. Keduanya dipilih karena
+menggunakan paradigma pretraining yang berbeda, yaitu pendekatan
+contrastive pada Wav2vec2 dan pendekatan self-distillation dengan target
+laten kontekstual pada Data2vec. Perbedaan paradigma inilah yang menjadi
+objek perbandingan utama dan menjadi dasar bagi pengujian hipotesis H1
+dan H2.
+
+Proses selanjutnya adalah ekstrasi representasi laten. Setiap audio yang
+telah dinormalisasi, baik pada Database (D) maupun Query set (Q),
+diinputkan ke masing-masing model untuk memperoleh representasi laten.
+Ekstrasi tidak dibatasi pada lapisan transformer terkahir, melainkan
+dilakukan pada seluruh lapisan. Pendekatan layer-wise ini diperlukan
+karena informasi fonetika dan leksikal pada model SSL tidak
+terdistribusi merata di seluruh lapisan, melainkan terkonsentrasi pada
+lapisan tertentu yang bergantung pada paradigma pretraining. Pada model
+bertipe bertipe contrastive seperti Wav2vec2, informasi fonetik
+cenderung memuncak di lapisan mengengah dan menurun pada lapisan akhir,
+sehingga lapisan terbaik untuk guatu tugas belum tentu merupakan lapisan
+terakhir \[27\]. Dengan mengekstrasi seluruh lapisan, penelitian dapat
+menganalisis distribusi kinerja antar lapisan dan mengindentifikasi
+laipsan yang paling optimal bagi tugas retrieval fonetik.
+
+Sub proses ketiga adalah agregasi fitur. Representasi laten pada tiap
+lapisan berupa urutan vektor sepanjang durasi audio, sehingga perlu
+digaregasi menjadi satu vector berdimensi tetap agar dapat dibandingkan
+antar audio. Agregasi dilakukan melalui temporal pooling, dalam hal ini
+mean pooling, yang merata-ratakan seluruh vector sepanjang dimensi
+waktu. Hasilnya adalah satu vector embedding per rekaman untuk setiap
+kombinasi model dan lapisan, yang selnajutnya disusun menjadi basis data
+vector terpisah bagi masing-masing kombinasi tersebut.
+
+Sub proses terakhir adalah perhitungan *similarity score*. Untuk setiap
+input query, vector embedding nya akan dibandingkan terhadap seluruh
+vector pada Database menggunakan cosine similarity, kemudian hasilnya
+durutkan dari skor tertinggi hingga terendah untuk membetuk daftar
+peringkat (ranked list). Perlu ditegaskan bahwa dalam penelitian ini
+cosine similarity berperan sebagai scoring function yang menghasilkan
+peringkat, bukan sebagai metrik evaluasi \[21\]. Ayat dengan skor
+kemiripan tertinggi dianggap sebagai hasil retrieval yang paling
+mendekati query, sedangkan kualitas keseluruhan peringat akan diukur
+pada fase valuasi menggunakan metrik yang sesuai.
+
+5.  **Evaluation**
+
+Fase ini bertujuan untuk mengukur efektivitas retrieval dari kedua model
+secara kuantitafif dan menguji hipotesis penelitian berdsaarkan hasil
+yang diperoleh. Pada fase inilah peringkat yang dihasilkan cosine
+similarity akan dinilai menggunakan metrik evaluasi retrieval. Metrik
+evaluasi menilai kualitas keseluruhan peringkat terhadap ground truth,
+bukan menghitung kemiripan antar vector \[21\]. Fase ini terdiri atas
+empat sub proses yaitu perhitungan metrik evaluasi, evaluasi layer-wise,
+pengujian hipotesis dan analisis kualitatif.
+
+Sub proses pertama adalah perhitungan metrik evaluasi retrieval.
+Penelitian ini menggunakan tiga metrik berbasis kualitas peringkat,
+yaitu Top-K Accuracy, Mean Reciprocal Rank (MRR), dan Mean Average
+Precision (MAP). Top-K Accuracy mengukur proporsi query yang dokumen
+relevannya berhasil ditempatkan dalam K peringkat teratas, dengan
+variasi nilai K berupa Top-1, Top-5, dan Top-10, dimana Top-1 berfungsi
+sebagai kriteria keberhasilan yang paling ketat. MRR mengukur seberapa
+tinggi peringkat dokumen relevan pertama, sedangkan MAP menilai kualitas
+peringkat secara meneyrluruh dengna memperhitungkan presisi pada setiap
+posisi dokumen relevan sepanjang daftar. Ketiga metrik dihitung secara
+terpisah untuk Wav2vec2 dan Data2vec agar dapat dibandingkan secara
+langsung.
+
+Sub proses kedua dalah evaluasi layer-wise. Ketiga metrik dihutung pada
+setiap lapisan transfoermer dari kedua model. Hasilnya disusun menjadi
+kurva kinerja terhadapt indeks lapisan sehingga dapat diindentifikasi
+lapisan yang menghasilkan kinerja retrieval tertinggi bagi masing-masing
+model. Evaluasi ini menjadi dasar untuk menjawab pertanyaan penelitian
+mengenai apakah lapisan optimal bagi tugas retrieval fonetik berbeda
+dari lapisan yang selama ini dilaporkan optimal untuk tugas ASR,
+sekaligus menilai implikasinya terhadap pemilihan arsitektur.
+
+Sub proses ketiga adalah pengujian hipotesis. Berdasarkan perbandingan
+fnilai metrik antara kedua model pada lapisan optimalnya masing-masing,
+penelitian menguji dua hipotesis yang saling bersaing. Apabilai Data2vec
+menghasilkan kinerja retrieval yang lebih tinggi, maka hipotesisi
+pertama (H1) terkonfirmasi dan mendukung pandangan bahwa keunggulan
+representasi bersifat lintas tugas. Sebaliknya apabila Wav2vec2 yang
+lebih unggul, maka hipotesis kedua (H2) terkonfirmasi dan menunjukan
+bahwa tugas retrieval mengukur dimensi kualitas representasi yang
+berbeda dari tugas ASR.
+
+Sub proses terakhir adalah analisis kualitatif untuk melengkapi temuan
+kuantitatif. Analisis ini dilakukan melalui studi kasus mendalam
+terhadap query yang berhasil maupun gagal dalam proses retrieval. Kasus
+keberhasilan dan kegagalan ditelaah untuk menilai sensitivitas fonetik
+masing-masing model, misalnya mengidentifikasi kondisi ketika suatu
+model keliru mengambil ayat lain yamg memiliki kemiripan bunyi atau pola
+matra yang tinggi. Hasil analisis ini digunakan untuk mengaitkan temuan
+empiris dengan justifikasi teori mengenai perbedaan struktur embedding
+yang dihasilkan oleh paradigma contrastive leanring dan
+self-distillation.
+
+6.  **Deployment**
+
+Fase Deployment pada penelitian ini diadaptasi dari makna aslinya dalam
+CRISP-DM. Karena penelitian bersifat komparatif dan fasi ini tidak
+melibatkan penerapan model dalam sistem produksi. Melainkan berfokus
+pada sintesis temuan menjadi kesimpulan yang utuh serta perumusan
+rekomendasi bagi penelitian lanjutan. Fase ini terdiri atas tiga sub
+proses yaitu sintesis temuan, perumusan rekomendasi pemilihan model, dan
+identifikasi arah penelitian lanjutan.
+
+Sub proses pertama adalah sintesis temuan. Seluruh hasil dari fase
+evaluation, baik opsiperbandingan metrik antar model, kurva kinerja,
+layer-wise, hasil pengujian hipotesis, maupun temun dari analisis
+kualitatif, dirangkum menjadi satu kesimpulan yang menjawab rumusan
+masalah secara menyeluruh. Sintesis ini menegaskan model mana yang lebih
+unggul untuk tugas retrieval ayat Al-Quran berbasis frozen embedding,
+hipotesis mana yang terkonfirmasi, serta lapisan mana yang paling
+optimal bagi masing-masing model.
+
+Sub proses kedua adalah perumusan rekomendasi pemilihan model.
+Berdasarkan temuan yang telah disintesis, penelitian merumuskan panduan
+praktis mengenai model dan konfigurasi lapisan yang paling sesuai untuk
+membangun sistem pencarian kemiripan ayat Al-Quran tanpa proses
+transkripsi maupun *fine-tuning.* Rekomendasi ini mempertimbangkan tidak
+hanya kualitas retrieval tertinggi, tetapi juga karakteristik
+representasi masing-masing paradigma pretraining sebagaimana terungkap
+dari hasil evaluasi.
+
+Sub proses terkahir adalah identifikasi arah penelitian lanjutan
+berdasarkan keterbatasan yang teridentifikasi selama penelitian,
+dirumuskan sejumlah arah pengembangan yang dapat ditempuh pada
+penelitian berikutnya. Arah tersebut mencakup, antara lain, penerapan
+constrastive fine-tuning untuk menguji apakah adaptasi ringan pada model
+pretrain dapat meningkatkan kualitas retrieval, perluasan cakupan data
+ke seluruh juz Al-Quran, serta pengujian model Self-Supervised Learning
+lain sebagai pembanding tambahan. Arah-arah ini sekaligus menandai batas
+ruang linkgup penelitian saat ini dan potensi kontribusinya di masa
+mendatang.[]{#_Toc234440447 .anchor}
+
+BAB IV
+
+HASIL DAN PEMBAHASAN
+
+1.  **Hasil Business Understanding**
+
+Tahap Business understanding menghasilkan dua output utama sesuai alur
+penelitian, yaitu identifikasi masalah penelitian, yaitu identifikasi
+masalah penelitian beserta tujuan penelitian, serta penetapan hipotesis
+awal dan indicator keberhasilan. Kedua output ini menjadi fondasi arah
+seluruh proses peneltiain yang dilaksanakan, mulai dari pengumpulan data
+audio hingga evaluasi kinerja retrieval kedua model yang dibandingkan.
+
+1.  **Identifikasi Masalah**
+
+Proses identifikasi masalah dilakukan melalui kajian literatur terhadap
+penelitian terdahulu mengenai model Self-Supervised Learning (SSL) untuk
+pemrosesan suara, serta analisis terhadap penerapan model-model tersebut
+pada domain Bahasa Arab. Berdasarkan hasil identifikasi tersebut,
+ditemukan bahwa model SSL yang di-*pretrain* pada data berbahasa Inggris
+cenderung menurun kinerjanya ketika diterapkan pada fonetik Arab, yang
+memiliki karakteristik khas seperti *emphatic consonants* dan
+*pharyngeal sounds* yang tidak dimiliki Bahasa inggris \[29\]. Al
+Qur'an, sebagai teks berbahasa Arab dengan kaidah tajwid yang ketat dan
+presisi tinggi, menjadikan tantangan ini semakin nyata karena pencocokan
+bacaan menuntu ketepatan pada aspek fonetik, bukan sekedar kecocokan
+tekstual.
+
+Analisis lebih lanjut terhadap literatur mengungkapkan tiga kesenjangan
+utama. Pertama, seluruh bukti kegagalan lintas bahasa yang tersedia
+hanya terbatas pada arsitektur berbasis contrastive learning seperti
+wav2vec2, sementara kejiadn terhadap paradigma self-distilation yang
+dimiliki Data2vec dalam scenario serupa masih sangat terbatas. Kedua,
+meskipun penelitian terdahulu telah membandingkan langsung wav2vec2 dan
+Data2vec untuk pengenalan ucapan (ASR) Bahasa Arab, perbandingan
+tersebut dilakukan dengan supervised fine-tuning dan diukur menggunakan
+metrik transkripsi (WER/CER) bukan dalam kondisi frozen embedding tanpa
+fine-tuning dengan metrik retrieval. Ketiga, perbandingan langsung kedua
+model utnuk tugas audio retrieval yang dievaluasi melalui metrik
+similarity search seperti MAP, Top-K Accuracy, dan MRR hingga kini masih
+minim untuk diteliti, sehingga menyisakan pertanyaan fundamental apakah
+keunggulan salah satu paradigma pada ASR akan tetap berlaku pada
+retrieval.
+
+Kesenjangan ini menjadi penting karena retrieval dan transkripsi
+mengukur properti representasi yang berbeda. Pada ASR, fitur diteruskan
+ke kepala klasifikasi yang ikut dilatih secara *supervised.* Sehingga
+metrik seperti WER tidak murni mengukur kualitas embedding awal,
+melainkan separabilitas fitur setelah proses pelatihan tersebut.
+Sebaliknya, pada retrieval berbasis frozen embedding tidak ada kompenen
+yang dilatih, sehingga metrik seperti MAP secara intrinsik mengukur
+koherensi geometris ruang vector itu sendiri. Oleh karena itu,
+keunggulan sebuah model pada ASR tidak dapat langsung diasumsikan
+berlaku pada retrieval dan inilah celah yang menjadi fokut utama
+penelitian ini.
+
+2.  Tujuan Penelitian
+
+Berdasarkan identifikasi masalah tersebut, ditetapkan tujuan penelitina
+ini menghasilkan rekomendasi arsitektur SSL yang paling optimal sebagai
+landasan teknis bagi pengembagan system audio retrieval ayat Al-Qur'an,
+khususnya untuk domain Bahasa Arab yang memiliki karakteristik fonetik
+khas. Untuk mencapai rekomendasi yang objektif, penelitian ini
+membandingkan dua model dengan paradigma pretraining yang berbeda,
+Wav2vec2 dengan paradigma contrastive learning dan Data2vec dengan
+paradigma Self-Distillation dalam skenarion retrieval.
+
+Tujuan tersebut dipaparkan dijelaskan dalam lebih detail menjadi tiga
+tujuan yang spesifik. Pertama, mengevaluasi kinerja retrieval frozen
+embedding wav2vec2 dan Data2vec pada metrik yang sama, yaitu MAP dan
+Top-K Accuracy, dengan cosine similarity sebagai fungsi *scoring.*
+Kedua, membandingkan kedua model secara statistic untuk menentukan
+apakah performa retrieval sejalan dengan performa ASR atau justru
+bersifat orthogonal, sebagai dasar penentuan model terbaik. Ketiga,
+menganalisis distribusi kinerja retrieval pada tiap lapisan (layer-wise)
+dari seluruh 13 lapisan kedua model untuk mengidentifikasi lapisan
+optimal bagi tugas retrieval fonetik, dengan skema pemiilhan laipsan
+terbaik pada himpunan pengembangan 70% dan pelaporan akhir pada himpunan
+uji 30%
+
+3.  **Hipotesis dan kriteria keberhasilan**
+
+Sebagai acuan dalam mengevaluasi pencapaian tujuan penelitian,
+ditetapkan hipotesis awal beserta kriteria keberhasilan yang mencakup
+dua aspek, yaitu aspek validitas eksperimen dan aspek signifikansi
+perbandingan model.
+
+Perbedaan paradigma kedua model memunculkan dua hipotesis yang saling
+berkebalikan. Hipotesis pertama (H1) memperkirakan Data2vec tetap
+unggul, target prediksinya yang berupa representasi kontekstual laten
+penuh berpotensi menghasilkan fitur fonetik yang lebih kaya dan umum,
+sehingga keunggulannya diperkirakan bertahan pada domain retrieval.
+Hipotesis kedua (H2) memperkirakan sebaliknya, bahwa Wav2vec2 justru
+pada domain retrieval, dikarenakan constrastive lossnya secara eksplisit
+menarik pasangan positif dan menolak kandidat negatif, sehingga
+cenderung membentuk ruang embedding yang lebih clusterable dan lebih
+selaras dengan pengukuran jarak cosine. Property yang justru menentukan
+pada retrieval, bukan pada ASR. Jika H1 terkonfirasi, kualitas embedding
+terbukti bersifat lintas tugas. Jika H2 terkonfirmasi, retrieval
+terbukti mengukur dimensi kualitas representasi yang berbeda (ortogonal)
+dari ASR.
+
+Pada aspek validitas eksperimen, kriteria keberhasilan meliputi
+keberhasilan ekstraksi sleuruh pasangan query dan database menjadi
+embedding lapisan-per-lapisan tanpa kegagalan sistematis, serta
+terpenuhinya cakupan relevansi penuh, yaitu setiap ayat query memiliki
+setidaknya satu dokumen relevan di dalam database, sehingga tidak ada
+kueri yang dipaksa bernilai MAP = 0 secara artifisial. Klip yang gagal
+diekstraksi pada model manapun ditangani secara konsisten agar tidak
+masuk dalam perhitungan.
+
+Pada aspek signifikansi perbandingan model, kriteris keberhasilan
+ditetapkan bukan pada ambang metrik absolut, melainkan pada kemampuan
+eksperimen untuk membedakan kinerja kedua model secara meyakinkan.
+Perbedaan MAP antara Data2vec dan Wav2vec2 pada himpunan uji diniliai
+signifikan apabila interval kepercayaan 95% yang dihitung melalui metode
+bootstrap (dengan B = 1000 resampling atas nilai average precision
+per-kueri) tidak memuat nilai nol. Terpenuhinya kriteria ini
+memungkinkan penelitian menyimpulkan secara tegas hipotesis mana H1 atau
+H2 yang didukung oleh bukti empiris, sekaligus menjawab tujuan
+penelitian.
 
 # DAFTAR PUSTAKA
 
@@ -1311,3 +1581,21 @@ Jul. 21, 2016, *arXiv*: arXiv:1607.06450. doi:
 
 \[25\] E. Schubert, "A Triangle Inequality for Cosine Similarity," vol.
 13058, 2021, pp. 32--44. doi: 10.1007/978-3-030-89657-7_3.
+
+\[26\] C. Schröer, F. Kruse, and J. M. Gómez, "A Systematic Literature
+Review on Applying CRISP-DM Process Model," *Procedia Comput. Sci.*,
+vol. 181, pp. 526--534, 2021, doi: 10.1016/j.procs.2021.01.199.
+
+\[27\] A. Pasad, B. Shi, and K. Livescu, "Comparative Layer-Wise
+Analysis of Self-Supervised Speech Models," in *ICASSP 2023 - 2023 IEEE
+International Conference on Acoustics, Speech and Signal Processing
+(ICASSP)*, Rhodes Island, Greece: IEEE, Jun. 2023, pp. 1--5. doi:
+10.1109/ICASSP49357.2023.10096149.
+
+\[28\] M. U. Salman, M. A. Qazi, and M. T. Alam, "Quran-MD: A
+Fine-Grained Multilingual Multimodal Dataset of the Quran," Jan. 25,
+2026, *arXiv*: arXiv:2601.17880. doi: 10.48550/arXiv.2601.17880.
+
+\[29\] X. Chang *et al.*, "An Exploration of Self-Supervised Pretrained
+Representations for End-to-End Speech Recognition," Oct. 09, 2021,
+*arXiv*: arXiv:2110.04590. doi: 10.48550/arXiv.2110.04590.
