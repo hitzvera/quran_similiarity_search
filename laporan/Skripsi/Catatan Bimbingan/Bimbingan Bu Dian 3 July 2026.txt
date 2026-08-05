@@ -1,0 +1,39 @@
+1. ✅ Judul kata "Al Quran di akhir kalimat" tidak perlu dienter
+2. ✅ Daftar isi masih belum sesuai format, ada beberapa font yang masih calibri
+3. ✅ Format Margin disesuaikan (4 cm left, 3 cm top, 3 cm right, 3 cm bottom)
+4. ✅ Numbering sesuaikan font dan formatnya
+
+5. ✅ Hilangkan Hipotesis, Hipotesis dari BAB I hingga akhir, apply science jarang yang pakai hipotesis, takutnya harus dibuktikan tercapai atau tidak
+
+6. ✅ rumusan masalah disesuaikan Kembali menjadi dua point saja, implementasi kedua model wav2vec2 dan data2vec. lalu perbandingan antara keduanya
+
+7. ✅ seusiakan manfaat penelitian, pisah berdasarkan domain (untuk developer, masyarakat, peneliti dll)
+
+8. gambar gambar kurang jelas
+
+9. ✅ perubahan sub judul studi literatur menjadi dasar teori
+
+10. ✅ jarak spacing disesuaikan lagi
+
+11. untuk di bab 3 tidak perlu mendetail penjelasan data understanding, dll. karena untuk lebih lengkapnya itu ada di BAB IV. tolong pindahkan ke BAB IV
+
+12. pada phase modeling dibuatkan table scenario 3 (Skenario A, B, C) untuk tiap tiap model (jadi jumlahnya 6)
+
+13. ✅ penulisan angka pada tabel harus rata kanan, supaya titiknya sejajar
+
+14. ✅ Hilangkan tanda baca yang mencirikan AI —
+
+15. Jika ingin menampilkan perbedaan, lebih dijelaskan lagi untuk data2vec dan wav2vec2nya (bagian bab 1)
+
+16. ✅ Daftar table dan gambar di perbaiki
+
+17. ✅ state of the art judul penelitiannya dihapus saja. untuk menghindari plagiarism, dan juga dipersingkat untuk hasilnya
+
+18. ✅ Perbaiki page number untuk halaman
+
+19. ✅ Manfaat penelitian bisa dipecah terhadap siapa, namun bila difokuskan hanya untuk keinformatikaannya (yang mana hanya focus terhadap satu bidang) maka dibuatkan paragraph saja.
+
+20. ✅ Berikan penomoran dalam rumus di dasar teori, jika ada penjelasan yang merujuk ke rumus itu, bisa disebut nomornya
+
+21. Bab 3 seharusnya hanya rencana belum ada hasil yang ada. pindahkan hasil ke bab 4
+
