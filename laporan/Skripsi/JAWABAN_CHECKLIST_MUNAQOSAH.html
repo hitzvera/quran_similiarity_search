@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jawaban Checklist Munaqosah</title>
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   Academic editorial — warm paper (light) / deep umber (dark).
+   All colors, spacing, radii, and transitions flow from here.
+   No gradients. No orbs. No external assets.
+   ============================================================ */
+:root {
+  /* surfaces */
+  --bg:            #f4efe6;
+  --surface:       #fbf7ef;
+  --surface-alt:   #ede4d1;
+  --surface-hover: #f0e7d5;
+
+  /* text */
+  --text:          #2c241b;
+  --text-muted:    #6b5d4c;
+  --text-subtle:   #928471;
+  --text-inverse:  #fbf7ef;
+
+  /* accents — oxblood / terracotta */
+  --accent:        #7d2e2e;
+  --accent-soft:   #a34747;
+  --accent-bg:     #f0e0d8;
+
+  /* borders */
+  --border:        #d4c8b3;
+  --border-strong: #b8a98d;
+
+  /* code / tags */
+  --code-bg:       #ece4d4;
+  --code-border:   #d4c8b3;
+  --tag-bg:        #e6dcc6;
+  --tag-border:    #c9bca0;
+
+  /* focus */
+  --focus:         #7d2e2e;
+
+  /* typography */
+  --f-display:  Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --f-body:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --f-mono:     ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+
+  /* scale */
+  --s-1: 2px;  --s-2: 4px;  --s-3: 6px;  --s-4: 8px;
+  --s-5: 12px; --s-6: 16px; --s-7: 20px; --s-8: 28px; --s-9: 40px;
+
+  /* radii — max 8px as required */
+  --r-sm: 3px;
+  --r-md: 5px;
+  --r-lg: 8px;
+
+  /* shadows — subtle only */
+  --shadow-sm: 0 1px 0 rgba(44, 36, 27, 0.04);
+  --shadow-md: 0 1px 2px rgba(44, 36, 27, 0.06), 0 1px 1px rgba(44, 36, 27, 0.03);
+
+  /* motion */
+  --t-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --t-med:  200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* layout */
+  --max-w: 940px;
+  --gutter: var(--s-6);
+}
+
+/* dark theme — applied via [data-theme="dark"] on <html> */
+html[data-theme="dark"] {
+  --bg:            #1a1612;
+  --surface:       #231d17;
+  --surface-alt:   #2b241b;
+  --surface-hover: #312821;
+  --text:          #e8dfd0;
+  --text-muted:    #9b8e7a;
+  --text-subtle:   #6b5f4e;
+  --text-inverse:  #1a1612;
+  --accent:        #d4846a;
+  --accent-soft:   #e3a48c;
+  --accent-bg:     #35261f;
+  --border:        #3a3228;
+  --border-strong: #514636;
+  --code-bg:       #2a241c;
+  --code-border:   #3a3228;
+  --tag-bg:        #332b22;
+  --tag-border:    #443a2c;
+  --focus:         #d4846a;
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--f-body);
+  font-size: 14px;
+  line-height: 1.55;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-soft); text-decoration: underline; }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--r-sm);
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.shell {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: var(--s-7) var(--gutter) var(--s-9);
+}
+
+/* ============================================================
+   HEADER — compact, no hero
+   ============================================================ */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--s-6);
+  margin-bottom: var(--s-6);
+}
+.site-header__title {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--s-3);
+  color: var(--text);
+  line-height: 1.2;
+}
+.site-header__topic {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0 0 var(--s-4);
+  line-height: 1.4;
+}
+.site-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4) var(--s-6);
+  font-size: 11.5px;
+  color: var(--text-subtle);
+  letter-spacing: 0.02em;
+}
+.site-header__meta strong { color: var(--text-muted); font-weight: 600; }
+
+/* ============================================================
+   TOOLBAR — search + filters + controls
+   ============================================================ */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: var(--s-5) 0 var(--s-4);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--s-6);
+}
+.toolbar__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s-4);
+  margin-bottom: var(--s-4);
+}
+.toolbar__row:last-child { margin-bottom: 0; }
+
+.search {
+  flex: 1 1 260px;
+  min-width: 200px;
+  position: relative;
+}
+.search__glyph {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-subtle);
+  font-size: 14px;
+  pointer-events: none;
+  font-family: var(--f-body);
+}
+.search__input {
+  width: 100%;
+  font-family: var(--f-body);
+  font-size: 13.5px;
+  padding: 7px 10px 7px 30px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.search__input::placeholder { color: var(--text-subtle); }
+.search__input:focus {
+  border-color: var(--accent);
+  background: var(--surface-alt);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.counter {
+  font-size: 12px;
+  font-family: var(--f-mono);
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  padding: 0 var(--s-3);
+  white-space: nowrap;
+}
+.counter strong { color: var(--text); font-weight: 600; }
+
+/* button system */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--f-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 10px;
+  background: var(--surface);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn:hover {
+  background: var(--surface-alt);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn .sym { font-size: 14px; line-height: 1; }
+
+/* segmented filter — category pills */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+  flex: 1 1 auto;
+}
+.filter__pill {
+  font-family: var(--f-body);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 10px;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+.filter__pill:hover {
+  background: var(--surface-alt);
+  color: var(--text);
+}
+.filter__pill[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--text-inverse);
+  border-color: var(--accent);
+}
+.filter__count {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  opacity: 0.75;
+  margin-left: var(--s-2);
+}
+
+/* ============================================================
+   QA LIST — accordion cards
+   ============================================================ */
+.qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.qa-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: border-color var(--t-fast), background var(--t-fast);
+}
+.qa-card:hover { border-color: var(--border-strong); }
+.qa-card[open] { background: var(--surface); }
+
+.qa-card > summary {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s-5);
+  padding: var(--s-5) var(--s-6);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background var(--t-fast);
+}
+.qa-card > summary::-webkit-details-marker { display: none; }
+.qa-card > summary:hover { background: var(--surface-hover); }
+
+.qa-card__chev {
+  flex: 0 0 auto;
+  width: 16px;
+  color: var(--text-subtle);
+  font-size: 13px;
+  line-height: 1.55;
+  padding-top: 2px;
+  transition: transform var(--t-med), color var(--t-fast);
+  text-align: center;
+}
+.qa-card[open] .qa-card__chev {
+  transform: rotate(90deg);
+  color: var(--accent);
+}
+
+.qa-card__head {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.qa-card__num {
+  display: inline-block;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-subtle);
+  letter-spacing: 0.04em;
+  margin-right: var(--s-3);
+}
+.qa-card__anchor {
+  color: var(--text-subtle);
+  opacity: 0;
+  margin-left: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: 11px;
+  transition: opacity var(--t-fast);
+  text-decoration: none;
+}
+.qa-card__anchor:hover { color: var(--accent); }
+.qa-card > summary:hover .qa-card__anchor,
+.qa-card > summary:focus-within .qa-card__anchor { opacity: 1; }
+
+.qa-card__cat {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-bg);
+  padding: 1px 6px;
+  border-radius: var(--r-sm);
+  margin-right: var(--s-3);
+  vertical-align: 1px;
+}
+
+.qa-card__q {
+  font-family: var(--f-display);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text);
+  letter-spacing: -0.005em;
+}
+
+.qa-card__body {
+  padding: 0 var(--s-6) var(--s-6) calc(var(--s-6) + 16px + var(--s-5));
+  border-top: 1px solid var(--border);
+  margin-top: 0;
+}
+.qa-card__body p { margin: var(--s-5) 0 0; }
+.qa-card__body p:first-child { margin-top: var(--s-5); }
+.qa-card__body p:last-child { margin-bottom: 0; }
+
+.qa-card__followup {
+  margin-top: var(--s-6);
+  padding: var(--s-4) var(--s-5);
+  background: var(--surface-alt);
+  border-left: 2px solid var(--accent);
+  border-radius: var(--r-sm);
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.qa-card__followup-label {
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--s-2);
+}
+
+.qa-card__tags {
+  margin-top: var(--s-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2);
+}
+.qa-tag {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  padding: 1px 6px;
+  border-radius: var(--r-sm);
+}
+
+/* inline code & code blocks */
+.qa-card__body code {
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  padding: 0 4px;
+  border-radius: var(--r-sm);
+  color: var(--text);
+  word-break: break-word;
+}
+.qa-card__body pre {
+  margin: var(--s-5) 0 0;
+  padding: var(--s-4) var(--s-5);
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: var(--r-md);
+  overflow-x: auto;
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text);
+}
+.qa-card__body pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* empty state */
+.empty {
+  padding: var(--s-8) var(--s-6);
+  text-align: center;
+  color: var(--text-muted);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 14px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--r-lg);
+}
+.empty strong { color: var(--text); font-style: normal; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  margin-top: var(--s-8);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--text-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-6);
+  justify-content: space-between;
+}
+.site-footer kbd {
+  font-family: var(--f-mono);
+  font-size: 10.5px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: var(--r-sm);
+  padding: 0 4px;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 640px) {
+  :root { --gutter: var(--s-4); }
+  .site-header__title { font-size: 18px; }
+  .site-header__topic { font-size: 12.5px; }
+  .qa-card > summary { padding: var(--s-4) var(--s-5); gap: var(--s-3); }
+  .qa-card__body { padding: 0 var(--s-5) var(--s-5) calc(var(--s-5) + 16px + var(--s-3)); }
+  .qa-card__q { font-size: 14px; }
+  .filter__pill { font-size: 11.5px; padding: 4px 8px; }
+}
+
+/* ============================================================
+   PRINT — expand all answers, hide chrome
+   ============================================================ */
+@media print {
+  body { background: white; color: black; font-size: 11pt; }
+  .toolbar, .site-footer, .qa-card__anchor { display: none !important; }
+  .shell { max-width: 100%; padding: 0; }
+  .site-header { border-bottom: 1.5pt solid #000; padding-bottom: 6pt; }
+  .site-header__title { color: black; }
+  .site-header__topic, .site-header__meta { color: #333; }
+
+  .qa-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    background: white;
+    border: 0.5pt solid #999;
+    box-shadow: none;
+    margin-bottom: 6pt;
+    border-radius: 2pt;
+  }
+  .qa-card[open] > summary { border-bottom: 0.5pt solid #ccc; }
+  .qa-card > summary { pointer-events: none; }
+  .qa-card__chev { display: none; }
+  .qa-card__body {
+    display: block !important;
+    border-top: none;
+    padding-top: var(--s-4);
+    color: black;
+  }
+  details.qa-card:not([open]) > .qa-card__body,
+  details.qa-card > :not(summary) { display: block !important; }
+  .qa-card__cat {
+    background: transparent;
+    border: 0.5pt solid #666;
+    color: black;
+  }
+  .qa-card__followup {
+    background: transparent;
+    border-left: 1.5pt solid #666;
+    color: #333;
+  }
+  a { color: black; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="shell" id="shell">
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header">
+    <h1 class="site-header__title">Jawaban Checklist Munaqosah</h1>
+    <p class="site-header__topic">
+      PERBANDINGAN WAV2VEC2 DAN DATA2VEC TERHADAP FITUR LATEN AUDIO UNTUK
+      TILAWAH AL-QURAN &mdash; retrieval ayat tanpa transkripsi dan tanpa fine-tuning.
+    </p>
+    <div class="site-header__meta">
+      <span><strong>Penyusun:</strong> Mujahid Ansori Majid &middot; 1197050093</span>
+      <span><strong>Institusi:</strong> UIN SGD Bandung &middot; 2026</span>
+      <span><strong>Total entri:</strong> <span id="meta-total">0</span> jawaban</span>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       TOOLBAR — sticky: search, counter, filter, controls
+       ============================================================ -->
+  <div class="toolbar" role="region" aria-label="Alat bantu penelusuran">
+    <div class="toolbar__row">
+      <label class="search">
+        <span class="search__glyph" aria-hidden="true">&#x2315;</span>
+        <input
+          id="search"
+          class="search__input"
+          type="search"
+          placeholder="Cari pertanyaan, jawaban, tag&hellip;"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Cari jawaban"
+        />
+      </label>
+      <div class="counter" id="counter" aria-live="polite">
+        <strong>0</strong> / <span>0</span>
+      </div>
+      <button class="btn" id="btn-expand" type="button" title="Buka semua jawaban">
+        <span class="sym" aria-hidden="true">&#x229E;</span> Buka Semua
+      </button>
+      <button class="btn" id="btn-collapse" type="button" title="Tutup semua jawaban">
+        <span class="sym" aria-hidden="true">&#x229F;</span> Tutup Semua
+      </button>
+      <button class="btn" id="btn-theme" type="button" title="Ganti tema terang/gelap">
+        <span class="sym" aria-hidden="true" id="theme-sym">&#x25D0;</span>
+        <span id="theme-label">Gelap</span>
+      </button>
+      <button class="btn" id="btn-print" type="button" title="Cetak (semua jawaban terbuka)">
+        <span class="sym" aria-hidden="true">&#x2399;</span> Cetak
+      </button>
+    </div>
+    <div class="toolbar__row">
+      <div class="filter" id="filter" role="group" aria-label="Saring kategori"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       QA LIST — dynamically rendered from QA_DATA
+       ============================================================ -->
+  <main id="qa-list" class="qa-list" aria-label="Daftar jawaban pertanyaan munaqosah"></main>
+
+  <!-- ============================================================
+       FOOTER — keyboard hints
+       ============================================================ -->
+  <footer class="site-footer">
+    <span>Navigate: <kbd>/</kbd> fokus pencarian &middot; <kbd>E</kbd> buka semua &middot; <kbd>Esc</kbd> tutup semua &middot; <kbd>T</kbd> ganti tema</span>
+    <span>Struktur data: <code>QA_DATA[id, num, category, question, answer, followUp?, tags?]</code></span>
+  </footer>
+
+</div>
+
+<script>
+/* ================================================================
+   QA_DATA
+   ----------------------------------------------------------------
+   Struktur data untuk 74 jawaban munaqosah: Q1-Q73 dan Q56A.
+
+   Skema setiap entri:
+     {
+       id:          number,           // 1..74, unik, berurutan
+       num:         string,           // label tampil, mis. "Q1", "Q34"
+       category:    string,           // nama kategori (lihat CATEGORIES)
+       question:    string,           // teks pertanyaan (boleh HTML ringan)
+       answer:      string,           // jawaban utama (HTML diperbolehkan)
+       followUp:    string | null,    // opsional, tindak lanjut / jebakan
+        tags:        string[]          // opsional, kata kunci untuk pencarian
+     }
+
+   Catatan:
+     - `answer` dan `followUp` mendukung HTML ringan: <p>, <code>, <pre>,
+       <strong>, <em>, <ul>/<li>. Hindari tag blok kompleks.
+     - `tags` bersifat opsional; berguna untuk pencarian lintas kategori.
+    ================================================================ */
+const QA_DATA = [
+  { id: 1, num: "Q1", category: "Latar Belakang", question: "Dalam latar belakang disebutkan bahwa Arab monolingual lebih baik dari pre-trained model berbahasa Inggris, lalu mengapa tidak memakai model Arab?", answer: "<p>Model Arab monolingual memang kuat untuk ASR Arab, tetapi penelitian ini tidak sedang mencari model ASR terbaik. Saya membandingkan dua paradigma pralatih yang berbeda, yaitu contrastive learning Wav2Vec2 dan self-distillation Data2Vec, sebagai frozen embedding dalam kondisi sebanding. Memasukkan model Arab spesifik akan menambah faktor bahasa/domain dan mengubah pertanyaan komparatif yang dikendalikan.</p>", followUp: "Bukti Arab monolingual pada Bab I berasal dari tugas ASR; keunggulannya tidak otomatis berpindah ke retrieval tanpa fine-tuning.", tags: ["Arab monolingual", "scope", "ASR"] },
+  { id: 2, num: "Q2", category: "Metodologi", question: "Dalam Bab 3 dijelaskan penelitian bersifat iteratif. Bisa dijelaskan prosesnya?", answer: "<p>Enam fase CRISP-DM dijalankan sebagai siklus: business understanding, data understanding, data preparation, modeling, evaluation, dan deployment konseptual. Iteratif berarti temuan teknis dapat mengembalikan proses ke fase sebelumnya, misalnya audio yang tidak terbaca dikembalikan ke persiapan data; tetapi pemilihan titik tetap hanya memakai development set dan tidak boleh mengulang keputusan berdasarkan test set.</p>", tags: ["CRISP-DM", "iteratif"] },
+  { id: 3, num: "Q3", category: "Metodologi", question: "Bagaimana pemilihan konfigurasi (development set) dan pelaporan hasil? Mengapa harus dipisah?", answer: "<p>Pada setiap sel dan model, development set dipakai menyapu 13 titik representasi dan memilih MAP tertinggi. Setelah titik dipilih, konfigurasi dikunci, lalu test set dipakai sekali untuk melaporkan MAP, MRR, Top-1, Top-5, dan Top-10. Pemisahan ini mencegah informasi test memengaruhi konfigurasi sehingga hasil akhir tetap independen.</p>", tags: ["development", "test", "data leakage"] },
+  { id: 4, num: "Q4", category: "Data dan Persiapan", question: "Apa arti korpus?", answer: "<p>Korpus adalah kumpulan data terstruktur yang menjadi bahan penelitian. Korpus final saya terdiri atas 25.829 klip ayat mahasiswa dan 17.127 referensi Quran-MD yang telah lolos proses teknis; istilah ini dibedakan dari 81 folder awal dan 25.945 kandidat segmentasi yang belum seluruhnya siap dievaluasi.</p>", tags: ["korpus", "jumlah data"] },
+  { id: 5, num: "Q5", category: "Data dan Persiapan", question: "Apa itu union filtering? Bisakah kamu beri contoh?", answer: "<p>Union filtering mengeluarkan indeks yang gagal pada salah satu model dari keluaran kedua model. Contohnya, dari 17.130 baris Quran-MD ada tiga yang gagal diproses; ketiga indeks itu dibuang dari Wav2Vec2 dan Data2Vec sehingga keduanya dinilai pada 17.127 baris identik. Dengan demikian, selisih hasil tidak disebabkan oleh perbedaan data.</p>", tags: ["union filtering", "Quran-MD"] },
+  { id: 6, num: "Q6", category: "Metodologi", question: "Mengapa konfigurasi pencarian titik representasi perlu dipisahkan dengan data uji?", answer: "<p>Jika titik terbaik dipilih dari data uji, hasil uji ikut menjadi informasi optimasi dan nilainya cenderung terlalu optimistis. Karena itu, seluruh titik 0&ndash;12 dibandingkan pada development set, kemudian titik terpilih dikunci sebelum test set dibuka untuk evaluasi akhir.</p>", tags: ["layer sweep", "locked test"] },
+  { id: 7, num: "Q7", category: "Data dan Persiapan", question: "Mengapa Skenario A tidak bisa dibagi menjadi 60:40, 70:30, dan seterusnya?", answer: "<p>Skenario A bukan pembagian pemilik dari satu sumber: seluruh 25.829 klip mahasiswa menjadi kueri dan seluruh 17.127 Quran-MD menjadi basis data. Kedua sisi sudah terpisah secara alami oleh sumber, sehingga tidak ada satu daftar pemilik yang perlu dibagi dengan owner ratio.</p>", tags: ["Skenario A", "owner ratio"] },
+  { id: 8, num: "Q8", category: "Data dan Persiapan", question: "Apa itu rasio pemilik pada Bab 4?", answer: "<p>Owner ratio adalah proporsi identitas pemilik pada sisi basis data dibanding sisi kueri; 70:30 berarti 70% pemilik menjadi basis data dan 30% menjadi kueri. Pada B pemiliknya qari, sedangkan pada C dan D pemiliknya mahasiswa. Pemilik diurutkan lalu dipermutasi secara deterministik dengan seed 42; pembagian ini bukan stratifikasi.</p>", tags: ["owner ratio", "seed 42"] },
+  { id: 9, num: "Q9", category: "Data dan Persiapan", question: "Apa itu rekonsiliasi dan berikan contoh pada studi kasus skripsi kamu?", answer: "<p>Rekonsiliasi adalah pencocokan jumlah data antar-tahap agar setiap pengurangan dapat dijelaskan. Contohnya, 81 folder awal menghasilkan 60 mahasiswa tervalidasi dan 25.945 kandidat klip; 116 berkas nol dikeluarkan sehingga finalnya 25.829 klip. Jumlah provenance juga cocok: 24.872 + 710 + 247 = 25.829.</p>", tags: ["rekonsiliasi", "provenance"] },
+  { id: 10, num: "Q10", category: "Data dan Persiapan", question: "Apa yang dimaksud dengan 116 berkas berukuran nol?", answer: "<p>Itu adalah 116 keluaran segmentasi dengan ukuran 0 byte, bukan 116 kegagalan model embedding. Berkas kosong tidak memuat sinyal audio sehingga dikeluarkan sebelum ekstraksi; dari 25.945 kandidat tersisa 25.829 klip mahasiswa final.</p>", tags: ["zero byte", "validasi"] },
+  { id: 11, num: "Q11", category: "Modeling", question: "Tujuan mean pooling itu untuk apa?", answer: "<p>Mean pooling merata-ratakan representasi sepanjang dimensi waktu agar klip dengan durasi berbeda menjadi satu vektor tetap 768 dimensi. Setiap klip menghasilkan 13 vektor: titik 0 adalah hasil feature projection, sedangkan titik 1&ndash;12 adalah keluaran 12 blok Transformer; jadi bukan 13 lapisan Transformer.</p>", tags: ["mean pooling", "768", "13 titik"] },
+  { id: 12, num: "Q12", category: "Data dan Persiapan", question: "Apa itu union filtering, bisa diberi contoh?", answer: "<p>Union filtering menyatukan daftar indeks gagal dari kedua model, lalu membuang indeks tersebut dari keduanya. Pada Quran-MD, tiga dari 17.130 baris dikeluarkan secara identik sehingga Wav2Vec2 dan Data2Vec sama-sama memakai 17.127 referensi; pada data mahasiswa tidak ada baris ekstraksi yang perlu dibuang.</p>", tags: ["union filtering", "fair comparison"] },
+  { id: 13, num: "Q13", category: "Data dan Persiapan", question: "Apa itu provenance dalam konteks skripsi kamu? Tolong beri contoh.", answer: "<p>Provenance adalah jejak asal dan proses yang dialami klip. Contohnya, manifes dapat menunjukkan NIM, surah, ayat, path, status audit, metode <code>time_proportional</code>, dan alasan fallback. Kategori finalnya 24.872 audit berhasil, 710 fallback proporsional, dan 247 tanpa baris audit pasangan; kategori ini bukan penilaian manual ketepatan batas.</p>", tags: ["provenance", "audit"] },
+  { id: 14, num: "Q14", category: "Data dan Persiapan", question: "Apa maksud pernyataan: penelitian tidak memiliki anotasi batas waktu manual untuk seluruh klip, sehingga ketepatan segmentasi tetap menjadi salah satu sumber ketidakpastian data?", answer: "<p>Artinya batas awal dan akhir ayat dibentuk otomatis dari alignment WhisperX atau fallback proporsional, tetapi tidak seluruh 25.829 klip diperiksa manusia terhadap anotasi waktu acuan. Audit membuktikan proses dan keterlacakan teknis, bukan menjamin setiap batas ayat tepat secara fonetik; karena itu ketepatan segmentasi dinyatakan sebagai keterbatasan.</p>", tags: ["anotasi manual", "ketidakpastian"] },
+  { id: 15, num: "Q15", category: "Data dan Persiapan", question: "Apa itu manifest file, dan tujuannya dalam skripsi kamu buat apa? Berikan contoh.", answer: "<p>Manifest file adalah tabel terstruktur yang menghubungkan setiap baris audio dengan metadata dan baris embedding. Kolomnya antara lain path, pemilik, surah, ayat, sumber, dan provenance. Tujuannya menjaga hubungan satu-banding-satu: baris ke-i pada <code>layer_07.npy</code> tetap dapat ditelusuri ke baris ke-i pada manifes.</p>", followUp: "Contoh struktur: <code>relpath, nim, surah_id, ayah_id, audit_provenance, audit_fallback</code>.", tags: ["manifest", "traceability"] },
+  { id: 16, num: "Q16", category: "Data dan Persiapan", question: "Bisakah beri contoh untuk pernyataan pada data preparation: setiap klip dikaitkan dengan identitas pembaca, nomor surah, nomor ayat, sumber data, lokasi audio, dan informasi provenance?", answer: "<p>Contoh nyata adalah klip <code>1207050036_097_003</code>: pemilik 1207050036, surah 97 ayat 3, sumber mahasiswa, path <code>1207050036_Farzan Argani/al-qadr/ayah_03.mp3</code>, provenance <code>audited_success_fallback</code>, dan metode <code>time_proportional</code>. Jadi satu vektor dapat ditelusuri kembali ke identitas ayat, audio, dan jalur pemrosesannya.</p>", tags: ["manifest example", "metadata"] },
+  { id: 17, num: "Q17", category: "Data dan Persiapan", question: "Bisakah beri contoh data bagaimana proses segmentasi menggunakan WhisperX?", answer: "<p>WhisperX menghasilkan urutan kata beserta waktu, misalnya kata pertama 0,50&ndash;0,90 detik dan kata berikutnya 0,90&ndash;1,20 detik. Program mengalokasikan urutan kata itu ke ayat berdasarkan jumlah kata referensi, mengambil waktu kata pertama dan terakhir sebagai batas, lalu memotong rekaman menjadi <code>ayah_01.mp3</code>, <code>ayah_02.mp3</code>, dan seterusnya. WhisperX memberi timestamp kata, bukan batas ayat secara langsung.</p>", tags: ["WhisperX", "segmentasi"] },
+  { id: 18, num: "Q18", category: "Data dan Persiapan", question: "Apa itu mekanisme fallback dalam segmentasi data kamu, dan berikan contoh dalam script Python yang ada di skripsi kamu.", answer: "<p>Fallback adalah jalur cadangan ketika kata recitation hasil alignment tidak cukup untuk dibagi per ayat. Sistem membagi sisa durasi secara deterministik menurut proporsi jumlah kata referensi dan mencatat alasan serta metode tersebut dalam provenance. Cuplikan berikut disederhanakan untuk memperlihatkan alur utamanya.</p><pre><code># Disederhanakan dari backend-skripsi/pre-processing/remote_segment.py\nspans = allocate_ayah_spans(len(recited), reference_counts)\nif spans is None:\n    audio_duration = get_audio_duration(audio_path)\n    cuts = build_time_proportional_cuts(\n        fallback_start, audio_duration, reference_counts\n    )\n    return {\n        &quot;status&quot;: &quot;ok&quot;,\n        &quot;fallback&quot;: &quot;time_proportional&quot;,\n        &quot;fallback_trigger&quot;: &quot;insufficient_recitation_words&quot;,\n        &quot;segments&quot;: cuts,\n    }</code></pre>", followUp: "Fungsi pembagian proporsional berada di <code>backend-skripsi/pre-processing/ayah_align.py:116-163</code>.", tags: ["fallback", "Python", "remote_segment.py"] },
+  { id: 19, num: "Q19", category: "Data dan Persiapan", question: "Di mana proses normalisasi dilakukan? Tunjukkan dalam bentuk script Python.", answer: "<p>Normalisasi referensi dilakukan di <code>backend-skripsi/pre-processing/normalisasi-data.py</code>; rekaman mahasiswa diseragamkan oleh <code>prepare-audio.py</code>, dan loader model juga memuat audio sebagai mono 16 kHz saat inferensi, termasuk resampling atau penggabungan kanal bila diperlukan. Tujuannya menyeragamkan format teknis, bukan mengubah isi bacaan.</p><pre><code># backend-skripsi/pre-processing/normalisasi-data.py:48-69\naudio_array, original_sr = librosa.load(io.BytesIO(audio_bytes), sr=None)\nif original_sr != 16000:\n    audio_array = librosa.resample(\n        audio_array, orig_sr=original_sr, target_sr=16000\n    )\nif len(audio_array.shape) &gt; 1:\n    audio_array = librosa.to_mono(audio_array.T)\nsf.write(str(output_path), audio_array, 16000, subtype=&quot;PCM_16&quot;)</code></pre>", followUp: "Ekstraksi mahasiswa memakai FFmpeg <code>-ac 1 -ar 16000</code> di <code>backend-skripsi/pre-processing/prepare-audio.py:43-49</code>.", tags: ["normalisasi", "16 kHz", "Python"] },
+  { id: 20, num: "Q20", category: "Data dan Persiapan", question: "Apa itu kanal mono, dan mengapa audio harus dikonversi ke 16 kHz?", answer: "<p>Mono berarti satu kanal sinyal, bukan kanal kiri dan kanan terpisah. Audio dibuat mono dan 16 kHz karena kedua model menerima gelombang ucapan pada format itu; satu detik menjadi 16.000 sampel dan, menurut Nyquist, memuat frekuensi sampai sekitar 8 kHz yang mencakup informasi utama ucapan. Penyeragaman juga mencegah format sumber menjadi faktor pembaur.</p>", tags: ["mono", "sampling rate"] },
+  { id: 21, num: "Q21", category: "Data dan Persiapan", question: "Tolong beri contoh file untuk pernyataan: rekaman mahasiswa memiliki informasi tambahan mengenai rekaman induk dan metode segmentasi untuk menjaga keterlacakan hasil pemotongan.", answer: "<p>Contohnya klip <code>1207050036_097_003</code> pada manifes final di <code>backend-skripsi/embeddings/query-layerwise-20260803-v1/query/wav2vec2/manifest.csv:8234</code>. Baris itu menyimpan path, NIM, surah 97 ayat 3, provenance, fallback, dan detail metode. Rekaman sebelum segmentasi menyimpan sumber induknya pada field <code>source</code> yang dibentuk di <code>pre-processing/prepare-audio.py:95-104</code>.</p>", tags: ["rekaman induk", "manifest.csv"] },
+  { id: 22, num: "Q22", category: "Data dan Persiapan", question: "Pada Skenario B berikan contoh disjoint yang dimaksud.", answer: "<p>Disjoint berarti satu qari hanya berada pada satu sisi. Pada B-70:30, 30 qari dibagi menjadi 21 qari basis data dan 9 qari kueri; semua klip milik qari mengikuti sisinya. Kode memeriksa irisan <code>set(q_owners) &amp; set(db_owners)</code> di <code>backend-skripsi/experiments/scenarios.py:338-350</code> dan menghentikan proses jika ada overlap.</p>", tags: ["disjoint", "Skenario B"] },
+  { id: 23, num: "Q23", category: "Data dan Persiapan", question: "Untuk setiap skenario pembagian datanya, misalnya 60:40 dan 70:30, bagaimana kita membaginya dan mengapa data tersebut ditempatkan di bagian itu?", answer: "<p>Angka pertama adalah proporsi pemilik basis data dan angka kedua pemilik kueri. Daftar pemilik diurutkan, dipermutasi dengan <code>np.random.default_rng(42)</code>, lalu seluruh klip satu pemilik mengikuti sisinya; misalnya 60 mahasiswa pada 70:30 menjadi 42 pemilik basis data dan 18 pemilik kueri. Pemisahan di tingkat pemilik menguji lintas pembaca dan mencegah identitas yang sama muncul pada kedua sisi.</p><pre><code># backend-skripsi/experiments/splits.py:270-281\nowners = sorted({_stable_value(v) for v in manifest[owner_column]})\nrng = np.random.default_rng(seed)\npermutation = rng.permutation(len(owners))\ndatabase_count = int(round(owner_ratio * len(owners)))\ndatabase_owners = [owners[i] for i in permutation[:database_count]]\nquery_owners = sorted(set(owners) - set(database_owners))</code></pre>", tags: ["owner split", "seed 42", "splits.py"] },
+  { id: 24, num: "Q24", category: "Data dan Persiapan", question: "Mengapa rasio pada Skenario A tidak berlaku?", answer: "<p>Karena A menempatkan semua mahasiswa sebagai kueri dan semua Quran-MD sebagai basis data; tidak ada korpus pemilik tunggal yang dibagi. Memberi rasio pada A akan membuang data dan mengubah pertanyaan lintas sumber yang dirancang, sehingga konfigurasi A mencatat owner ratio sebagai tidak berlaku.</p>", tags: ["Skenario A", "not applicable"] },
+  { id: 25, num: "Q25", category: "Data dan Persiapan", question: "Apa itu dilakukan secara stratified?", answer: "<p>Hanya pembagian development/test yang distratifikasi berdasarkan pasangan <code>(surah_id, ayah_id)</code>. Owner split tidak stratified: daftar identitas pemilik dipermutasi secara deterministik dengan seed 42 dan seluruh klip pemilik tetap bersama. Dua mekanisme ini tidak boleh dicampur.</p>", tags: ["stratified", "owner split"] },
+  { id: 26, num: "Q26", category: "Evaluasi dan Hasil", question: "Apa itu nilai AP nol, bagaimana itu bisa terjadi, dan bisakah beri contoh?", answer: "<p>AP nol berarti untuk satu kueri tidak ada hit relevan pada daftar yang dievaluasi. Contoh hipotetisnya kueri Al-Ikhlas ayat 1 melawan basis data yang hanya berisi ayat 2&ndash;4. Dalam pipeline final, kueri tanpa pasangan relevan disaring lebih dahulu dan ranking memakai seluruh basis data, sehingga AP nol tidak muncul hanya karena kelas <code>(surah, ayat)</code> tidak tersedia.</p>", tags: ["Average Precision", "coverage filter"] },
+  { id: 27, num: "Q27", category: "Metodologi", question: "Untuk mencari titik representasi terbaik digunakan development set. Apakah untuk evaluasi berarti hanya menggunakan 30% dari keseluruhan data?", answer: "<p>Tidak. Test set sekitar 30% hanya merujuk pada kueri tercakup di setiap sel, bukan 30% dari gabungan korpus; basis data sesuai skenario tetap digunakan seluruhnya untuk meranking setiap kueri test. Proporsi aktual test juga dapat 30,9%&ndash;42,1% karena pembulatan development per kelompok ayat.</p>", tags: ["test set", "30 persen"] },
+  { id: 28, num: "Q28", category: "Data dan Persiapan", question: "Pada data preparation bisa jelaskan development set dan test set? Apakah ini sama dengan owner ratio?", answer: "<p>Tidak sama. Owner ratio lebih dahulu menentukan pemilik kueri dan basis data pada B, C, dan D. Setelah kueri yang punya pasangan relevan terbentuk, kueri itu dibagi lagi secara stratified menjadi development untuk memilih titik dan test untuk evaluasi final. Skenario A tidak punya owner ratio, tetapi tetap punya development/test.</p>", tags: ["development", "test", "owner ratio"] },
+  { id: 29, num: "Q29", category: "Data dan Persiapan", question: "Bagaimana proses pengacakan deterministik dalam pembagian development set dan test set?", answer: "<p>Program memakai <code>np.random.default_rng(42)</code>, mengelompokkan kueri berdasarkan <code>(surah_id, ayah_id)</code>, lalu mengacak indeks di dalam setiap kelompok. Sekitar 70% masuk development dan sisanya test. Deterministik berarti tetap acak, tetapi input dan seed yang sama menghasilkan split yang sama dan dapat diaudit pada <code>split.json</code>.</p>", tags: ["deterministik", "seed 42", "stratified"] },
+  { id: 30, num: "Q30", category: "Data dan Persiapan", question: "Terdapat pernyataan: karena pembulatan diterapkan secara terpisah pada setiap kelompok ayat, proporsi akhir klip pada development set tidak selalu tepat 70% dari total kueri; pada seluruh sel proporsi aktual development set 57,9% sampai 69,1%. Bagaimana angkanya jatuh sangat jauh?", answer: "<p>Karena kode menghitung <code>max(1, int(n &times; 0.7))</code> pada setiap kelompok ayat, bukan sekali pada total. Kelompok berisi dua klip memberi satu development atau 50%, dan tiga klip memberi dua atau 66,7%. Akumulasi banyak kelompok kecil, ditambah komposisi pemilik yang berbeda, menurunkan proporsi gabungan hingga 57,9% tanpa ada data yang hilang.</p>", tags: ["pembulatan", "57.9 persen"] },
+  { id: 31, num: "Q31", category: "Metodologi", question: "Mengapa pembagian development set dan test set harus 70% dan 30%?", answer: "<p>Rasio 70:30 adalah keputusan desain untuk memberi development cukup banyak kueri agar pemilihan 13 titik stabil, sambil menyisakan test independen yang memadai untuk evaluasi dan bootstrap. Ini bukan aturan universal; yang paling penting adalah fungsi kedua himpunan dipisahkan dan proporsi aktual dilaporkan transparan.</p>", tags: ["70:30", "design choice"] },
+  { id: 32, num: "Q32", category: "Modeling", question: "Pada hasil modeling apa itu artefak akhir?", answer: "<p>Artefak akhir adalah keluaran komputasi yang disimpan dan divalidasi. Untuk embedding, bentuknya manifes serta <code>layer_00.npy</code> sampai <code>layer_12.npy</code>, masing-masing matriks <code>N &times; 768</code> bertipe float32 dan selaras per baris. Artefak evaluasi mencakup konfigurasi, split, sweep development, hasil test, metrik, dan audit.</p>", tags: ["artefak", "npy", "manifest"] },
+  { id: 33, num: "Q33", category: "Evaluasi dan Hasil", question: "Mengapa pengujian pencarian titik menggunakan MAP, bukan MRR atau Top-K?", answer: "<p>Karena satu ayat dapat memiliki banyak dokumen relevan dari pembaca berbeda. MAP mempertimbangkan posisi seluruh dokumen relevan, sedangkan MRR hanya menekankan hit relevan pertama dan Top-K hanya memeriksa keberadaan hit dalam batas K. Sesudah pemilihan dengan MAP, test tetap melaporkan ketiganya. Cosine similarity hanya fungsi skor penyusun ranking, bukan metrik evaluasi.</p>", tags: ["MAP", "MRR", "Top-K"] },
+  { id: 34, num: "Q34", category: "Modeling", question: "Apa penyebabnya mengapa layer terbaik bukan pada akhir layer?", answer: "<p>Kedalaman mengubah representasi, sehingga keluaran tengah dapat lebih sesuai untuk pencocokan akustik ayat daripada keluaran akhir yang makin dipengaruhi tujuan pralatih. Evidence saya hanya MAP retrieval per titik: Wav2Vec2 banyak memilih titik 7 dan Data2Vec titik 5 atau 6. Saya tidak mengukur isi fonetik setiap titik secara langsung, dan Pasad tidak mencakup Data2Vec, jadi penjelasan kandungan layer adalah interpretasi task-dependent.</p>", tags: ["layer tengah", "Pasad"] },
+  { id: 35, num: "Q35", category: "Modeling", question: "Bagaimana cara melakukan evaluasi tiap layer? Tunjukkan script code dan pemanggilan datanya.", answer: "<p>Program memuat 13 matriks menjadi stack <code>(13, N, 768)</code>, mengevaluasi titik yang sama pada kueri dan basis data, menyusun ranking dengan cosine similarity, lalu menghitung metrik pada development. Titik dengan MAP tertinggi dipakai satu kali pada test. Titik 0 adalah feature projection; titik 1&ndash;12 keluaran 12 blok Transformer. Cuplikan berikut menggabungkan bagian pemuatan, sweep, dan pemilihan titik secara ringkas.</p><pre><code># Disederhanakan dari runner.py dan evaluator.py\narrays = [load_layer_embeddings(Path(split_dir), model, layer, manifest)\n          for layer in selected]\nstack = np.stack(arrays, axis=0).astype(np.float32, copy=False)\n\nfor layer in range(n_layers):\n    results[layer] = evaluate_layer(\n        q[layer], d[layer], qkeys, dkeys, dev_indices, top_k=top_k\n    )\nreturn max(results, key=lambda layer: results[layer][&quot;MAP&quot;])</code></pre>", tags: ["layer evaluation", "evaluator.py", "Python"] },
+  { id: 36, num: "Q36", category: "Modeling", question: "Apa yang dimaksud dengan keluaran blok Transformer? Apa hubungannya dengan penelitian Anda?", answer: "<p>Keluaran blok Transformer adalah urutan representasi kontekstual setelah satu blok, berbentuk sekitar <code>(T, 768)</code>. Penelitian merata-ratakan T menjadi satu vektor dan menguji setiap titik sebagai kandidat embedding retrieval. Secara tepat ada 13 titik: titik 0 hasil feature projection sebelum Transformer, lalu titik 1&ndash;12 keluaran blok 1&ndash;12; bukan 13 blok Transformer.</p>", followUp: "Implementasi ada di <code>backend-skripsi/backends/wav2vec2.py:65-72</code> dan <code>data2vec.py:64-71</code> melalui <code>output_hidden_states=True</code> dan <code>hidden.mean(dim=1)</code>.", tags: ["Transformer", "hidden states"] },
+  { id: 37, num: "Q37", category: "Evaluasi dan Hasil", question: "Bagaimana evaluasi owner ratio dan skenario? Berikan contoh script yang digunakan.", answer: "<p>Evaluasi membentuk 13 sel: A tanpa rasio, lalu B, C, dan D masing-masing empat rasio. Tiap sel membentuk membership kueri/basis data, mengaudit overlap, menyaring cakupan relevansi, membagi kueri development/test, memilih titik dengan MAP development, lalu menghitung MAP, MRR, dan Top-K pada test. Cuplikan berikut adalah ringkasan alur; loop per model dan pemilihan indeks tidak ditampilkan.</p><pre><code># Disederhanakan dari backend-skripsi/experiments/runner.py\nmembership = build_scenario_membership(\n    cell, qman, rman, split_artifact=split.to_dict() if split else None,\n    seed=config.seed,\n)\ncoverage = compute_coverage_mask(membership_qkeys, membership_dkeys)\ndev, test = stratified_dev_test_split(\n    membership.query_rows, config.dev_ratio, config.seed, coverage\n)\nresult = run_cell_evaluation(\n    qstack, dstack, qkeys, dkeys, dev, test,\n    config.top_k, config.bootstrap_b, config.seed\n)</code></pre>", tags: ["13 sel", "owner ratio", "runner.py"] },
+  { id: 38, num: "Q38", category: "Evaluasi dan Hasil", question: "Jelaskan apa itu bootstrap dan jelaskan mengapa itu diperlukan dalam penelitian kamu.", answer: "<p>Bootstrap berpasangan mengambil ulang dengan penggantian selisih AP Data2Vec dikurangi Wav2Vec2 untuk kueri yang sama sebanyak 10.000 replikasi dengan seed 42. Persentil 2,5 dan 97,5 membentuk interval kepercayaan 95%; jika interval tidak mencakup nol, selisih MAP dianggap signifikan. Ini diperlukan untuk menilai ketidakpastian perbedaan rata-rata, dan hanya diterapkan pada MAP/AP, bukan MRR atau Top-K.</p>", tags: ["bootstrap", "confidence interval", "MAP"] },
+  { id: 39, num: "Q39", category: "Evaluasi dan Hasil", question: "Apa bedanya hasil dan pembahasan? Jelaskan hasil dan pembahasan dalam skripsi kamu.", answer: "<p>Hasil adalah keluaran faktual eksperimen, misalnya Data2Vec memiliki MAP numerik lebih tinggi pada 9 dari 13 sel dan 11 sel memiliki perbedaan MAP signifikan. Pembahasan menafsirkan pola itu: Wav2Vec2 kuat pada B yang sama-sama Quran-MD, sedangkan Data2Vec cenderung lebih tinggi MAP saat kueri mahasiswa; arah MRR/Top-K dapat berbeda dan tidak diuji inferensial. Interpretasi tidak saya ubah menjadi klaim kausal.</p>", tags: ["hasil", "pembahasan"] },
+  { id: 40, num: "Q40", category: "Evaluasi dan Hasil", question: "Apa yang dimaksud dengan: tetapi nilai tidak terbulat layer 6 sedikit lebih tinggi, sehingga layer 6 terpilih, pada Bab 4 pemilihan layer Skenario D?", answer: "<p>Angka tabel ditampilkan dengan pembulatan dua desimal sehingga dua titik dapat sama-sama terlihat 2,47%, tetapi program memilih memakai nilai float sebelum pembulatan. Pada kasus itu nilai asli titik 6 sedikit lebih besar, jadi titik 6 terpilih. Aturan tie memilih titik lebih rendah hanya dipakai jika nilai asli benar-benar sama; di sini bukan tie sejati.</p>", tags: ["rounding", "tie", "Skenario D"] },
+  { id: 41, num: "Q41", category: "Naskah dan Sidang", question: "Apa tadi judul skripsi Anda? Coba sebutkan!", answer: "<p>Judul persis skripsi saya adalah <strong>PERBANDINGAN WAV2VEC2 DAN DATA2VEC TERHADAP FITUR LATEN AUDIO UNTUK TILAWAH AL-QURAN</strong>.</p>", tags: ["judul", "title"] },
+  { id: 42, num: "Q42", category: "Naskah dan Sidang", question: "Pertanyaan seputar orang-orang dalam kata pengantar: gelar dan jabatan mereka, orang-orang yang menarik perhatian dosen, serta kesalahan penulisan.", answer: "<p>Pada ekstraksi Markdown <code>Skripsi.md</code>, teks Kata Pengantar tidak terlihat, sehingga saya tidak boleh mengarang nama, gelar, jabatan, atau kesalahan spesifik. Strategi aman sebelum sidang adalah membuka naskah final yang diajukan, mencocokkan setiap nama dengan sumber resmi kampus, memeriksa urutan pembimbing dan pejabat, lalu membaca ulang ejaan serta konsistensi gelar. Saat ditanya, saya menjawab hanya berdasarkan halaman Kata Pengantar final tersebut.</p>", tags: ["kata pengantar", "audit naskah"] },
+  { id: 43, num: "Q43", category: "Naskah dan Sidang", question: "Pertanyaan seputar abstrak/abstract, yaitu komposisi/isi abstrak, atau grammar dan pilihan kata pada abstract.", answer: "<p>Teks abstrak juga tidak terlihat pada <code>Skripsi.md</code> hasil ekstraksi, jadi saya tidak akan mengarang hasil atau koreksi grammar. Sebelum sidang saya harus memastikan abstrak final berisi latar belakang singkat, tujuan, metode frozen embedding dan 13 sel, hasil utama yang konsisten dengan Bab IV, serta kesimpulan; versi Inggris harus menyampaikan fakta dan istilah yang sama, lalu diperiksa grammar, tense, angka, dan kata kuncinya kalimat per kalimat.</p>", tags: ["abstrak", "abstract", "grammar"] },
+  { id: 44, num: "Q44", category: "Latar Belakang", question: "Mengapa Anda tertarik untuk meneliti hal tersebut? Memangnya apa pentingnya meneliti ini?", answer: "<p>Saya tertarik karena retrieval ayat langsung dari audio dapat menghindari propagasi kesalahan transkripsi dan mendukung pencarian bacaan berbasis kemiripan. Secara ilmiah, Wav2Vec2 dan Data2Vec memakai paradigma pralatih berbeda, tetapi keunggulan pada ASR belum menjawab kualitas frozen embedding untuk retrieval. Penelitian ini memberi bukti terkontrol tentang model dan titik representasi yang sesuai pada kondisi yang diuji.</p>", tags: ["motivasi", "urgensi"] },
+  { id: 45, num: "Q45", category: "Latar Belakang", question: "Apa yang melatarbelakangi penelitian Anda? Memangnya ada masalah apa?", answer: "<p>Masalahnya adalah bukti lintas bahasa dan perbandingan Wav2Vec2&ndash;Data2Vec banyak berasal dari ASR, padahal transkripsi dan retrieval menilai representasi secara berbeda. Belum jelas apakah perbedaan contrastive learning dan self-distillation menghasilkan ranking ayat yang berbeda ketika parameter dibekukan dan pencocokan dilakukan langsung dari embedding audio.</p>", tags: ["masalah", "research gap"] },
+  { id: 46, num: "Q46", category: "Latar Belakang", question: "Dari mana data masalah ini Anda dapatkan?", answer: "<p>Masalah penelitian diturunkan dari literatur terverifikasi yang dibahas di Bab I dan II: Baevski untuk Wav2Vec2 dan Data2Vec, Alkanhal dkk. 2023 yang membandingkan keduanya pada ASR Arab, studi query-by-example seperti San dan Li, serta evaluasi lintas tugas oleh Yang. Literatur tersebut menunjukkan gap antara hasil ASR/fine-tuning dan retrieval frozen embedding; saya tidak mendasarkan masalah pada klaim paper khusus Al-Qur'an yang belum terverifikasi.</p>", tags: ["literatur", "Aswat", "gap"] },
+  { id: 47, num: "Q47", category: "Latar Belakang", question: "Apa perbedaan penelitian Anda dengan penelitian lainnya?", answer: "<p>Perbedaannya terletak pada tugas dan protokol: penelitian ini melakukan retrieval ayat, bukan ASR; model dibekukan tanpa fine-tuning; relevansi ditentukan oleh kesamaan <code>(surah, ayat)</code>; dan evaluasi memakai 13 sel, layer sweep pada development terkunci, serta bootstrap berpasangan untuk MAP. Kontribusinya adalah rancangan eksperimen komparatif, bukan arsitektur baru.</p>", tags: ["novelty", "perbedaan"] },
+  { id: 48, num: "Q48", category: "Latar Belakang", question: "Mengapa meneliti objek tersebut atau di lokasi tersebut?", answer: "<p>Objek Al-Fatihah dan Juz Amma dipilih sesuai ketersediaan dua sumber yang dapat dipadankan pada tingkat ayat: tugas Tahfidz mahasiswa UIN Sunan Gunung Djati Bandung dan Quran-MD. Bacaan tersebut memiliki label surah-ayat yang jelas serta variasi pembaca untuk retrieval lintas pemilik. Pilihan ini adalah batas korpus penelitian, sehingga hasil tidak otomatis digeneralisasi ke seluruh Al-Qur'an.</p>", tags: ["objek", "lokasi", "batasan"] },
+  { id: 49, num: "Q49", category: "Naskah dan Sidang", question: "Jelaskan definisi dan pemahaman Anda mengenai konsep-konsep yang ada di penelitian ini.", answer: "<p>Konsep intinya: korpus adalah kumpulan audio terstruktur; SSL mempelajari representasi tanpa label transkripsi eksplisit; frozen embedding berarti parameter model tidak diperbarui; feature projection adalah titik 0 dan 12 keluaran blok Transformer adalah titik 1&ndash;12; mean pooling membentuk vektor 768 dimensi; cosine similarity memberi skor ranking; relevansi adalah kesamaan <code>(surah, ayat)</code>; sedangkan MAP, MRR, dan Top-K adalah metrik evaluasi retrieval.</p>", tags: ["definisi", "konsep"] },
+  { id: 50, num: "Q50", category: "Naskah dan Sidang", question: "Apa rumusan masalah dan identifikasi masalah dalam penelitian ini? Dari mana identifikasi masalah ini Anda dapatkan atau turunkan?", answer: "<p>Rumusan masalahnya dua: bagaimana implementasi Wav2Vec2 dan Data2Vec untuk retrieval ayat, dan bagaimana kinerja frozen embedding keduanya. Identifikasi masalah diturunkan dari kajian bahwa hasil ASR Arab dan studi SSL lintas tugas belum menjawab perbandingan langsung pada retrieval tanpa fine-tuning. Jadi rumusan pertama menangani implementasi, sedangkan rumusan kedua menangani evaluasi komparatif.</p>", tags: ["rumusan masalah", "identifikasi"] },
+  { id: 51, num: "Q51", category: "Naskah dan Sidang", question: "Apa tujuan penelitian Anda? Dari mana tujuan ini Anda dapatkan?", answer: "<p>Tujuannya adalah mengimplementasikan Wav2Vec2 dan Data2Vec dalam retrieval ayat Al-Quran serta mengevaluasi kinerja frozen embedding keduanya. Tujuan itu diturunkan langsung dan berurutan dari dua rumusan masalah, sehingga setiap rumusan mempunyai jawaban pada implementasi dan hasil evaluasi.</p>", tags: ["tujuan penelitian"] },
+  { id: 52, num: "Q52", category: "Naskah dan Sidang", question: "Apa manfaat penelitian ini secara teoritis dan manfaat praktisnya?", answer: "<p>Secara teoritis, penelitian menambah bukti empiris tentang perilaku representasi Wav2Vec2 dan Data2Vec pada retrieval audio ayat dalam kondisi frozen. Secara praktis, hasilnya menjadi acuan awal memilih model dan titik representasi menurut skenario, serta dasar pembangkit kandidat Top-K. Manfaat itu belum berarti sistem siap produksi karena latensi, keamanan, skalabilitas, dan verifikasi operasional belum diuji.</p>", tags: ["manfaat", "teoritis", "praktis"] },
+  { id: 53, num: "Q53", category: "Naskah dan Sidang", question: "Apa teori yang Anda gunakan? Siapa penemu teori? Bagaimana sejarah perkembangannya secara singkat? Apa asumsi teori tersebut? Mengapa menggunakan teori tersebut?", answer: "<p>Landasan utamanya adalah deep learning dan Transformer oleh Vaswani dkk.; SSL ucapan; Wav2Vec2 oleh Baevski dkk. 2020 dengan objective contrastive; Data2Vec oleh Baevski dkk. 2022 dengan teacher-student self-distillation; similarity search; serta MAP, MRR, dan Top-K menurut kerangka information retrieval Manning dkk. CRISP-DM dipakai sebagai kerangka proses. Teori-teori itu dipilih karena langsung menjelaskan pembentukan embedding, pemberian skor cosine, dan pengukuran kualitas ranking; cosine adalah fungsi skor, bukan metrik evaluasi.</p>", tags: ["teori", "Wav2Vec2", "Data2Vec"] },
+  { id: 54, num: "Q54", category: "Latar Belakang", question: "Apa perbedaan penelitian Anda dengan penelitian-penelitian sebelumnya?", answer: "<p>Aswat membandingkan Wav2Vec2 dan Data2Vec untuk ASR Arab dengan fine-tuning dan WER, sedangkan penelitian saya membandingkan frozen embedding untuk retrieval dengan MAP, MRR, dan Top-K. Studi query-by-example sebelumnya banyak berfokus pada Wav2Vec2 atau memakai metric learning; penelitian ini membandingkan dua paradigma pada label relevansi surah-ayat dan protokol 13 sel dengan pemisahan pemilik.</p>", tags: ["penelitian terdahulu", "Aswat"] },
+  { id: 55, num: "Q55", category: "Metodologi", question: "Apa hipotesis penelitian ini? Dari mana hipotesis ini Anda turunkan?", answer: "<p>Penelitian menguji dua hipotesis bersaing. <strong>H1:</strong> Data2Vec unggul karena target kontekstual-laten penuh diperkirakan menghasilkan fitur fonetik yang lebih kaya. <strong>H2:</strong> Wav2Vec2 unggul karena objective contrastive diperkirakan menghasilkan embedding yang lebih mudah membentuk klaster untuk retrieval berbasis cosine similarity. Keduanya diturunkan dari perbedaan objective pralatih dan gap apakah keunggulan pada ASR berpindah ke retrieval; karena itu pemenangnya ditentukan secara empiris per skenario.</p>", tags: ["hipotesis", "H1", "H2"] },
+  { id: 56, num: "Q56", category: "Metodologi", question: "Metode apa yang digunakan? Mengapa menggunakan metode tersebut?", answer: "<p>Penelitian menggunakan eksperimen komputasional komparatif dengan adaptasi CRISP-DM. Metode ini cocok karena pekerjaan mencakup pemahaman tujuan, audit dua korpus, persiapan audio, ekstraksi frozen embedding, evaluasi retrieval, dan deployment konseptual, serta memungkinkan iterasi teknis yang terdokumentasi. Perbandingan dikendalikan melalui data identik, dimensi dan pooling sama, split pemilik, development/test terkunci, dan bootstrap MAP.</p>", tags: ["metode", "CRISP-DM"] },
+  { id: 57, num: "Q56A", category: "Data dan Persiapan", question: "Apa data primer dan sekunder penelitian ini? Data primer adalah yang kalian kumpulkan langsung, data sekunder adalah data dari dokumen.", answer: "<p>Data primer penelitian adalah data rekaman internal yang berasal dari pengumpulan tugas Tahfidz mahasiswa, dari 81 folder awal menjadi 60 mahasiswa tervalidasi dan 25.829 klip final. Data sekunder adalah Quran-MD yang sudah tersedia, dengan 17.127 referensi final. Quran-MD berfungsi sebagai korpus sekunder/referensi, bukan ground truth; relevansi evaluasi ditentukan oleh kesamaan label <code>(surah, ayat)</code>.</p>", tags: ["data primer", "data sekunder", "Quran-MD"] },
+  { id: 58, num: "Q57", category: "Data dan Persiapan", question: "Siapa populasi penelitian ini? Sebutkan populasi kalian dan alasannya, ukuran populasinya, serta teknik penarikan sampel yang digunakan. Untuk kualitatif: bagaimana teknik pemilihan informan dan kriterianya?", answer: "<p>Ini eksperimen korpus komputasional, bukan survei responden atau penelitian informan, sehingga istilah populasi-sampel sosial tidak menjadi kerangka utama dan saya tidak mengklaim purposive sampling. Pengumpulan awal memuat 81 folder mahasiswa; 60 mahasiswa lolos validasi teknis. Seluruh 25.829 klip mahasiswa final dan 17.127 referensi Quran-MD digunakan sesuai skenario, tanpa mengambil subsampel baru untuk eksperimen.</p>", tags: ["populasi", "sampling", "korpus"] },
+  { id: 59, num: "Q58", category: "Data dan Persiapan", question: "Apa teknik pengumpulan data yang dilakukan? Bagaimana Anda melakukannya?", answer: "<p>Rekaman mahasiswa dikumpulkan dari tugas Tahfidz, lalu folder dan audionya divalidasi, dinormalisasi, serta rekaman tingkat surah disegmentasi per ayat memakai timestamp kata WhisperX atau fallback proporsional. Quran-MD diperoleh sebagai korpus sekunder yang sudah memiliki audio tingkat ayat dan metadata. Kedua sumber kemudian dibuatkan manifes, diseragamkan ke mono 16 kHz, dan dibersihkan sebelum ekstraksi.</p>", tags: ["pengumpulan data", "WhisperX"] },
+  { id: 60, num: "Q59", category: "Metodologi", question: "Skala apa yang digunakan? Mengapa itu yang digunakan dibandingkan jenis skala lain?", answer: "<p>Kategori skala pengukuran kuesioner seperti nominal, ordinal, interval, dan rasio bukan kerangka utama eksperimen ini. Keluaran penelitian berupa ukuran performa kuantitatif terbatas, yaitu AP/MAP, reciprocal rank/MRR, dan proporsi hit Top-K, yang dipilih karena mewakili aspek ranking berbeda. Saya tidak mengklasifikasikan cosine sebagai skala interval atau seluruh metrik IR sebagai skala Stevens rasio; cosine hanya fungsi skor.</p>", tags: ["skala pengukuran", "metrik retrieval"] },
+  { id: 61, num: "Q60", category: "Metodologi", question: "Apa teknik uji validitas dan reliabilitas yang digunakan? Bagaimana Anda melakukannya? Kalau untuk kualitatif: apa teknik triangulasi yang digunakan?", answer: "<p>Validitas teknis dijaga lewat pemeriksaan keterbacaan, format, bentuk embedding, nilai finite, manifes, dan checksum; validitas konstruk lewat definisi relevansi <code>(surah, ayat)</code> serta pemilihan MAP/MRR/Top-K; validitas internal lewat union filtering, owner-disjoint, dan locked test. Reliabilitas dalam arti reproduksibilitas dijaga dengan pipeline, artefak audit, dan seed 42. Penelitian ini tidak memakai triangulasi kualitatif, dan banyak skenario tidak saya sebut triangulasi.</p>", tags: ["validitas", "reliabilitas", "reproducibility"] },
+  { id: 62, num: "Q61", category: "Naskah dan Sidang", question: "Bagaimana Anda mengolah dan menganalisis data? Apakah Anda mengolah sendiri atau ada yang membantu?", answer: "<p>Saya mengolah data melalui pipeline Python: validasi dan normalisasi, segmentasi, manifes, ekstraksi frozen embedding pada 13 titik, mean pooling, pemeringkatan dengan cosine similarity, evaluasi MAP/MRR/Top-K, lalu bootstrap berpasangan untuk MAP. Proses komputasi dijalankan melalui script dan artefak yang terdokumentasi; jawaban mengenai pihak yang membantu harus mengikuti fakta pelaksanaan pribadi dan Kata Pengantar final, bukan saya tambahkan tanpa bukti.</p>", tags: ["pengolahan", "analisis", "Python"] },
+  { id: 63, num: "Q62", category: "Evaluasi dan Hasil", question: "Bagaimana hasil penelitiannya?", answer: "<p>Pada MAP test, Data2Vec lebih tinggi secara numerik pada 9 dari 13 sel, yaitu A, seluruh C, dan seluruh D; Wav2Vec2 lebih tinggi pada 4 sel B. Bootstrap AP berpasangan menunjukkan 11 dari 13 perbedaan MAP signifikan, sedangkan C-60:40 dan C-80:20 tidak. MRR dan Top-K kadang berlawanan arah dengan MAP dan hanya dibahas deskriptif karena tidak diuji signifikansinya.</p>", tags: ["hasil", "9 dari 13", "11 signifikan"] },
+  { id: 64, num: "Q63", category: "Kesimpulan", question: "Apa kesimpulan penelitian Anda?", answer: "<p>Kedua model berhasil diimplementasikan sebagai frozen feature extractor untuk retrieval ayat tanpa transkripsi, dengan pemisahan konfigurasi dan evaluasi yang terkunci. Tidak ada pemenang universal: Wav2Vec2 konsisten kuat pada B yang sama-sama Quran-MD, sedangkan Data2Vec cenderung lebih tinggi MAP saat kueri mahasiswa. Titik tengah lebih sesuai pada korpus ini, tetapi kandungan layer tidak diukur langsung dan hasil tidak otomatis berlaku di luar cakupan.</p>", tags: ["kesimpulan", "no universal winner"] },
+  { id: 65, num: "Q64", category: "Kesimpulan", question: "Mengapa Anda memberikan saran-saran tersebut? Hasil apa yang membuat Anda memberikan saran tersebut?", answer: "<p>Saran fine-tuning dan metric learning berasal dari kinerja absolut lintas sumber dan basis data gabungan yang masih rendah; perluasan korpus berasal dari batas Al-Fatihah dan Juz Amma; pooling alternatif berasal dari penggunaan mean pooling saja; dan audit manual berasal dari belum adanya anotasi batas waktu menyeluruh. Jadi setiap saran menjawab temuan atau keterbatasan tertentu, bukan tambahan umum.</p>", tags: ["saran", "keterbatasan"] },
+  { id: 66, num: "Q65", category: "Evaluasi dan Hasil", question: "Apakah hipotesis terbukti? Ada yang tidak terbukti? Mengapa demikian?", answer: "<p>Dukungan terhadap hipotesis bersifat kondisional. H1 didukung pada A serta sel C dan D yang perbedaan MAP-nya signifikan; H2 didukung pada seluruh sel B. Pada C-60:40 dan C-80:20, Data2Vec memang lebih tinggi secara numerik, tetapi interval kepercayaan mencakup nol sehingga bukti belum cukup untuk mendukung salah satu hipotesis. Jadi tidak ada satu hipotesis yang berlaku universal untuk semua skenario.</p>", tags: ["hipotesis", "H1", "H2", "hasil empiris"] },
+  { id: 67, num: "Q66", category: "Naskah dan Sidang", question: "Mengapa buku ini ada di daftar pustaka tetapi di dalam skripsi Anda tidak ada, atau sebaliknya, mengapa buku ini Anda kutip tetapi dalam daftar pustaka tidak ada?", answer: "<p>Konsistensi sitasi harus diaudit dua arah sebelum naskah final: setiap sitasi harus memiliki entri dan setiap entri harus benar-benar dipakai. Saya tidak akan mengklaim seluruhnya bersih tanpa audit. Temuan yang sudah terkonfirmasi ialah tahun Alkanhal pada tabel harus 2023, tahun Xie harus 2021, sitasi Quran-MD yang tertulis <code>[28]</code> harus merujuk <code>[27]</code>, penulis baris SotA <code>[a]</code> harus Baevski dkk. 2020, dan kolom Tujuan baris <code>[f]</code> perlu mengganti isi yang tersalin dari baris <code>[e]</code>. Audit final juga harus mencocokkan penulis, tahun, nomor, DOI, serta entri yang tidak digunakan.</p>", tags: ["daftar pustaka", "audit sitasi"] },
+  { id: 68, num: "Q67", category: "Naskah dan Sidang", question: "Dosen juga bisa bertanya tentang lampiran, misalnya coding book dan coding sheet untuk penelitian kuantitatif atau transkrip wawancara untuk penelitian kualitatif.", answer: "<p>Karena ini eksperimen komputasional, bukti pendukung yang relevan bukan coding book atau transkrip wawancara, melainkan script normalisasi, segmentasi, ekstraksi dan evaluasi; manifes serta provenance; matriks <code>.npy</code>; konfigurasi, split, log, checksum, dan hasil agregat. Saya harus menunjukkan lampiran yang benar-benar tercantum pada naskah final dan menjelaskan artefak yang hanya tersedia di repositori secara terpisah.</p>", tags: ["lampiran", "artefak"] },
+  { id: 69, num: "Q68", category: "Evaluasi dan Hasil", question: "Pada hasil evaluation kenapa Data2Vec bisa memenangkan dalam metrik MAP, tetapi tidak dengan yang lain?", answer: "<p>MAP menilai posisi seluruh dokumen relevan, MRR hanya posisi relevan pertama, dan Top-K hanya apakah minimal satu hit muncul dalam K teratas. Karena itu Data2Vec dapat menyebarkan banyak dokumen relevan lebih baik sehingga MAP naik, sementara Wav2Vec2 menempatkan hit pertama lebih awal sehingga MRR atau Top-K lebih tinggi. Penelitian tidak mengukur geometri atau kandungan layer secara langsung, dan signifikansi hanya diuji untuk MAP/AP.</p>", tags: ["MAP", "MRR", "Top-K"] },
+  { id: 70, num: "Q69", category: "Evaluasi dan Hasil", question: "Owner ratio mana yang lebih baik antara keempat varian 60:40, 70:30, 80:20, dan 90:10, dan mengapa? Jika bisa dukung dengan penelitian pendukung.", answer: "<p>Tidak ada rasio universal terbaik karena pergantian rasio sekaligus mengubah pemilik kueri, basis data, dan ukuran test. Secara deskriptif, B tertinggi pada 60:40 untuk kedua model; C tertinggi MAP pada 80:20; D tertinggi MAP Wav2Vec2 pada 80:20 dan Data2Vec pada 90:10. Saya tidak mengklaim rasio menyebabkan perubahan atau memaksakan dukungan literatur yang tidak menguji matriks korpus ini.</p>", tags: ["owner ratio", "rasio terbaik"] },
+  { id: 71, num: "Q70", category: "Evaluasi dan Hasil", question: "Arti masing-masing faktor dalam kausal?", answer: "<p>Penelitian ini tidak membuktikan kausalitas. Faktor yang divariasikan atau berasosiasi dengan hasil adalah model, titik representasi, sumber/skema skenario, owner ratio, komposisi kueri, dan ukuran basis data. Karena beberapa faktor berubah bersamaan, misalnya owner ratio mengubah komposisi dan ukuran, saya hanya menyatakan asosiasi dan pola deskriptif, bukan bahwa satu faktor menyebabkan kenaikan MAP.</p>", tags: ["kausal", "asosiasi"] },
+  { id: 72, num: "Q71", category: "Naskah dan Sidang", question: "Dengan tools apa kamu membuat data visualisasi?", answer: "<p>Visualisasi hasil yang dapat diverifikasi di repositori dibuat dengan Python dan Matplotlib, termasuk script <code>backend-skripsi/visualization/generate_bab4_result_figures.py</code>; beberapa visualisasi eksplorasi memakai Seaborn, misalnya <code>visualize_mahasiswa_data.py</code>. Diagram alur pada BAB IV revisi ditulis dengan Mermaid. Tabel hasil dibentuk dari keluaran Python/CSV; saya hanya menyebut alat yang ada buktinya di repositori.</p>", tags: ["Matplotlib", "Seaborn", "Mermaid"] },
+  { id: 73, num: "Q72", category: "Metodologi", question: "Apa arti inferensial, dan jelaskan dalam studi kasus penelitian kamu.", answer: "<p>Inferensial berarti menggunakan data sampel untuk menilai ketidakpastian kesimpulan yang lebih umum. Dalam penelitian ini, selisih AP berpasangan per kueri di-resample 10.000 kali untuk memperoleh interval kepercayaan 95% selisih MAP; interval yang tidak mencakup nol dianggap mendukung perbedaan. Hanya MAP yang mendapat analisis inferensial, sedangkan MRR dan Top-K tetap deskriptif.</p>", tags: ["inferensial", "bootstrap"] },
+  { id: 74, num: "Q73", category: "Kesimpulan", question: "Mengapa Anda menyarankan hal demikian dalam kesimpulan? Apakah saran Anda akan membawa perbaikan dalam penelitian selanjutnya?", answer: "<p>Saran saya langsung menargetkan keterbatasan: adaptasi domain untuk kinerja absolut yang rendah, korpus lebih luas untuk menguji generalisasi, pooling lain karena penelitian hanya memakai mean pooling, dan analisis kesalahan serta audit batas manual untuk memahami kegagalan. Langkah-langkah itu berpotensi memperbaiki validitas atau performa, tetapi tidak saya jamin otomatis berhasil; manfaatnya harus dibuktikan dengan protokol evaluasi baru yang tetap memisahkan development dan test.</p>", tags: ["saran", "penelitian lanjutan"] }
+];
+
+/* Teks pertanyaan mengikuti CHECKLIST_MUNAQOSAH.md dalam urutan asli. */
+const CHECKLIST_QUESTIONS = [
+  "Dalam latar belakang disebutkan bahwa Arab monolingual lebih baik dari pre train model dengan Bahasa inggris, terus kenapa ga pake yang arabnya?",
+  "dalam bab 3 dijelaskan penelitian berisfatt iterative. bisa dijelaskan secara proses?",
+  "bagaimana pemilihan konfigurasi (development set) dan dan pelaporan hasil? kenapa harus dipisah",
+  "apa arti korpus",
+  "apa itu union filtering? bisakah kamu beri contoh?",
+  "mengapa konfigurasi pencarian titik representasi perlu dipisahkan dengan data uji?",
+  "mengapa scenario a tidak bisa displit menjadi 60:40, 70:30 dst",
+  "apa itu rasio pemilih pada bab 4",
+  "apa itu rekonsiliasi dan berikan contoh pada studi kasus skripsi kamu",
+  "apa yang dimaksud dengan 116 berkas berukuran nol",
+  "tujuan mean pooling itu untuk apa",
+  "apa itu union filtering, bisa diberi contoh?",
+  "apa itu provenence dalam konteks skripsi kamu, tolong beri contoh",
+  "maksud dari ini Penelitian tidak memiliki anotasi batas waktu manual untuk seluruh klip, sehingga ketepatan segmentasi tetap menjadi salah satu sumber kepastian data.",
+  "apa itu manifest file, dan tujuannya dalam skripsi kamu buat apa? berikan contoh",
+  "bisakah beri contoh untuk statement ini pada data preparation \"Setiap klip dikaitkan dengan identitas pembaca, nomor surah, nomor ayat, sumber data, lokasi audio, dan informasi provenance.\"",
+  "bisakah beri contoh datta bagaimana proses segmentasi menggunakan whisper x",
+  "apa itu mekanisme fallback dalam segmentasi data kamu, dan berikan contoh dalam script python yang ada di skripsi kamu",
+  "dimana proses normalisasi dilakukan (tunjukkan dalam bentuk script python)",
+  "apa itu kanal mono, dan mengapa audio harus di convert ke 16 khz",
+  "tolong beri contoh file \"Rekaman mahasiswa memiliki informasi tambahan mengenai rekaman induk dan metode segmenetasi untuk menjaga keterlacakan hasil pemotongan.\" ini",
+  "pada scenario B berikan contoh distjoin yang dimaksud",
+  "untuk setiap scenario pembagian datanya missal 60:40, 70:30 bagaimana kita membagi datanya, dan mengapa data tersebut di bagian itu?",
+  "mengapa rasio pada scenario A tidak berlaku",
+  "apa itu dilakukan secara stratified?",
+  "Apa itu nilai AP nol, bagaimana itu bisa terjadi, dan bisakah beri contoh",
+  "untuk mencari titik representasi terbaik digunakannya development set. apakah untuk evaluasi berarti hanya menggunakan 30% dari keseluruhan data?",
+  "pada data preparation bisa jelaskan development set dan test set? apakah ini sama dengan owner ratio?",
+  "bagaimana proses pengacakan determenistik dalam pembagian development set dan test set?",
+  "terdapat statement \"Karena pembulatan diterapkan secara terpisah pada setiap kelompok ayat, proporsi akhir klip pada development set tidak selalu tepat 70% dari total kueri. Pada seluruh sel, proporsi aktual development set berada pada kisaran 57,9% hingga 69,1%.\" bagaimana angkanya jatuh sangat jauh",
+  "mengapa pembagian development set dan test set harus 70% dan 30%",
+  "pada hasil modeling apa itu artefak akhir?",
+  "mengapa pengujian pencarian titik menggunakan MAP, bukan MRR atau Top-K",
+  "apa penyebabnya mengapa layer terbaik bukan pada akhir layer?",
+  "Bagaimana cara melalukan evaluasi tiap layer, tunjukan script code dan pemanggilan datanya",
+  "apa yang dimaksud dengan keluaran blok transformer? apa hubungannya dengan penelitian anda",
+  "Bagaimana evaluasi owner ration dan Skenario, berikan contoh script yang digunakan",
+  "jelaskan apa itu bootstrap dan jelaskan mengapa itu diperlukan dalam penelitian kamu",
+  "apa bedanya hasil dan pembahasan, jelaskan hasil dan pembahhasan dalam skripsi kamu?",
+  "apa yang dimaksud dengan \"tetapi nilai tidak-terbulat layer 6 sedikit lebih tinggi, sehingga layer 6 terpilih. K\" pada bab 4 pemilihan layer Skenario D",
+  "Apa tadi judul skripsi anda? coba sebutkan!",
+  "Pertanyaan seputar orang-orang dalam kata pengantar. Gelar dan jabatan mereka, dan orang-orang yang menarik perhatian dosen, juga kesalahan-kesalahan penulisan.",
+  "Pertanyaan seputar abstrak/abstract, yaitu komposisi/isi abstrak, atau grammar dan pilihan kata pada abstract.",
+  "Mengapa Anda tertarik untuk meneliti hal tersebut? Memangnya apa pentingnya meneliti ini?",
+  "Apa yang melatarbelakangi penelitian Anda? Memangnya ada masalah apa?",
+  "Dari mana data masalah ini anda dapatkan? (pertanyaan ini diajukan jika pada latar belakang kalian tidak mencantumkan referensi/rujukan/sitasi).",
+  "Apa perbedaan penelitian Anda dengan penelitian lainnya?",
+  "Mengapa meneliti objek tersebut (atau di lokasi tersebut)?",
+  "Seputar definisi dan pemahaman kalian mengenai konsep-konsep yang ada di penelitian kalian?",
+  "Apa rumusan masalah dan identifikasi masalah dalam penelitian ini? Darimana identifikasi masalah ini Anda dapatkan/turunkan?",
+  "Apa tujuan penelitian Anda? Dari mana tujuan ini Anda dapatkan?",
+  "Apa manfaat penelitian ini secara teoritis dan manfaat praktisnya?",
+  "Apa teori yang Anda gunakan? Siapa penemu teori? Bagaimana sejarah perkembangannya secara singkat?, Apa asumsi teori tersebut? Mengapa menggunakan teori tersebut? (Pertanyaan ini biasanya diajukan untuk penelitian kuantitatif karena teori sebagai landasan penelitian, namun pada penelitian kualitatif mungkin saja juga diajukan karena teori digunakan untuk membahas hasil penelitian)",
+  "Apa perbedaan penelitian anda dengan penelitian-penelitian sebelumnya? (hihihi ini pertanyaannya mirip dengan nomor 7)",
+  "Apa hipotesis penelitian ini? Dari mana hipotesis ini anda turunkan?",
+  "Metode apa yang digunakan? Mengapa menggunakan metode tersebut?",
+  "Pertanyaan empat belasn Apa data primer dan sekunder penelitian ini? Data primer adalah yang kalian kumpulkan langsung, data sekunder adalah data dari dokumen.",
+  "Siapa populasi penelitian ini? Sebutkan populasi kalian, dan siapkan juga alasannya. Biasanya ditanya juga ukuran populasinya. Apa teknik penarikan sampel yang digunakan? Sebutkan tekniknya. Bagaimana anda melakukannya? Untuk kualitatif, pertanyaannya: bagaimana teknik pemilihan informan? Apa kriteria pemilihannya?",
+  "Apa teknik pengumpulan data yang dilakukan? Bagaimana anda melakukannya?",
+  "Skala apa yang digunakan? Ini pertanyaan kuantitatif. Mengapa itu yang digunakan dibandingkan jenis skala yang lain? Dan biasanya pertanyaan ini merembet ke uji statistic kalian.",
+  "Apa teknik uji validitas dan reliabilitas yang digunakan? Bagaimana anda melakukannya? Kalau untuk kualitatif: apa teknik triangulasi yang digunakan.",
+  "Bagaimana anda mengolah dan menganalisis data? Apakah anda mengolah sendiri atau ada yang membantu?",
+  "Bagaimana hasil penelitiannya? Dosen akan bertanya secara detail tentang hasil yang kalian peroleh.",
+  "Apa kesimpulan penelitian anda? Biasanya dosen bertanya simpulan kalau jumlahnya tidak sama dengan identifikasi masalah atau tujuan penelitian.",
+  "Mengapa anda memberikan saran-saran tersebut? Biasanya akan dilanjut dengan pertanyaan Memangnya hasil apa yang membuat anda memberikan saran tersebut?",
+  "Apakah hipotesis terbukti? Ada yang tidak terbukti? Mengapa demikian (ini pertanyaan bab IV hehe)",
+  "Mengapa buku ini ada di daftar pustaka tapi di dalam skripsi anda tidak ada? (atau sebaliknya, mengapa buku ini anda kutip tapi dalam daftar pustaka tidak ada)",
+  "Dosen juga bisa jadi bertanya tentang lampiran (misalnya coding book dan coding sheet penelitian untuk yang kuantitatif, atau transkrip wawancara untuk yang kualitatif)",
+  "pada hasil evaluation kenapa bisa data2vec bisa memenangkan dadam metrics MAP, tapi tidak dengan yang lain",
+  "owner ratio mana yang lebih baik antara ke empat varian (60:40, 70:30, 80:20, 90:10) dan mengapa? jika bisa dukung dengan penelitian pendukung",
+  "Arti masing-masing factor dalam kausal?",
+  "dengan tools apa kamu membuat data visualisasi?",
+  "apa arti inferensial, dan jelaskan dalam studi kasus penelitian kamu",
+  "Mengapa anda menyarankan hal demikian dalam kesimpulan? apakah saran anda akan membawa perbaikan dalam penelitian selanjutnya?"
+];
+
+if (CHECKLIST_QUESTIONS.length !== QA_DATA.length) {
+  throw new Error("Jumlah pertanyaan checklist tidak sama dengan jumlah jawaban.");
+}
+QA_DATA.forEach((item, index) => { item.question = CHECKLIST_QUESTIONS[index]; });
+
+/* ================================================================
+   CATEGORIES — urutan tampil di filter (segmented pills).
+   Tambahkan/hapus kategori di sini bila struktur bab berubah.
+   ================================================================ */
+const CATEGORIES = [
+  "Latar Belakang",
+  "Metodologi",
+  "Data dan Persiapan",
+  "Modeling",
+  "Evaluasi dan Hasil",
+  "Kesimpulan",
+  "Naskah dan Sidang"
+];
+
+/* ================================================================
+   RENDER
+   ================================================================ */
+const $list      = document.getElementById("qa-list");
+const $filter    = document.getElementById("filter");
+const $search    = document.getElementById("search");
+const $counter   = document.getElementById("counter");
+const $metaTotal = document.getElementById("meta-total");
+const $btnExpand   = document.getElementById("btn-expand");
+const $btnCollapse = document.getElementById("btn-collapse");
+const $btnTheme    = document.getElementById("btn-theme");
+const $btnPrint    = document.getElementById("btn-print");
+const $themeSym    = document.getElementById("theme-sym");
+const $themeLabel  = document.getElementById("theme-label");
+
+const state = {
+  query: "",
+  category: null, // null === "Semua"
+  expanded: new Set() // ids currently open (optional — not persisted)
+};
+
+/** Escape HTML for safe injection when needed. */
+function escapeHTML(s) {
+  return String(s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;").replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+/** Strip HTML for search matching. */
+function stripHTML(html) {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = html || "";
+  return tmp.textContent || "";
+}
+
+/** Build category filter pills (with counts). */
+function renderFilter() {
+  // count per category
+  const counts = new Map();
+  CATEGORIES.forEach(c => counts.set(c, 0));
+  QA_DATA.forEach(q => {
+    if (counts.has(q.category)) counts.set(q.category, counts.get(q.category) + 1);
+  });
+
+  const pills = [];
+  // "Semua" pill
+  const totalVisible = QA_DATA.length;
+  const allPressed = state.category === null;
+  pills.push(
+    `<button class="filter__pill" data-cat="" aria-pressed="${allPressed}" type="button">` +
+    `Semua<span class="filter__count">${totalVisible}</span></button>`
+  );
+  CATEGORIES.forEach(c => {
+    const n = counts.get(c) || 0;
+    const pressed = state.category === c;
+    pills.push(
+      `<button class="filter__pill" data-cat="${escapeHTML(c)}" aria-pressed="${pressed}" type="button">` +
+      `${escapeHTML(c)}<span class="filter__count">${n}</span></button>`
+    );
+  });
+  $filter.innerHTML = pills.join("");
+
+  // attach listeners
+  $filter.querySelectorAll(".filter__pill").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const cat = btn.getAttribute("data-cat");
+      state.category = cat === "" ? null : cat;
+      renderFilter();
+      renderList();
+    });
+  });
+}
+
+/** Build the QA card HTML. */
+function cardHTML(q) {
+  const id = `q-${q.num.slice(1).toLowerCase()}`;
+  const chevron = "&#x25B8;"; // ▸
+  const tags = (q.tags && q.tags.length)
+    ? `<div class="qa-card__tags">${q.tags.map(t =>
+        `<span class="qa-tag">${escapeHTML(t)}</span>`).join("")}</div>`
+    : "";
+  const followUp = q.followUp
+    ? `<div class="qa-card__followup">
+         <span class="qa-card__followup-label">Follow-up</span>
+         ${q.followUp}
+       </div>`
+    : "";
+  return `
+    <details class="qa-card" id="${id}" data-id="${q.id}" data-category="${escapeHTML(q.category)}">
+      <summary>
+        <span class="qa-card__chev" aria-hidden="true">${chevron}</span>
+        <div class="qa-card__head">
+          <span class="qa-card__num">${escapeHTML(q.num)}</span>
+          <span class="qa-card__cat">${escapeHTML(q.category)}</span>
+          <a class="qa-card__anchor" href="#${id}" title="Salin tautan ke ${escapeHTML(q.num)}" aria-label="Tautan ${escapeHTML(q.num)}">&para;</a>
+          <div class="qa-card__q">${q.question}</div>
+        </div>
+      </summary>
+      <div class="qa-card__body">
+        ${q.answer}
+        ${followUp}
+        ${tags}
+      </div>
+    </details>
+  `;
+}
+
+/** Apply current filters + query, render visible cards. */
+function renderList() {
+  const q = state.query.trim().toLowerCase();
+  const cards = [];
+  let visibleCount = 0;
+
+  QA_DATA.forEach(item => {
+    if (state.category && item.category !== state.category) return;
+
+    if (q) {
+      const hay = [
+        item.num, item.category, item.question,
+        stripHTML(item.answer),
+        stripHTML(item.followUp || ""),
+        (item.tags || []).join(" ")
+      ].join(" ").toLowerCase();
+      if (!hay.includes(q)) return;
+    }
+
+    cards.push(cardHTML(item));
+    visibleCount++;
+  });
+
+  $list.innerHTML = cards.length
+    ? cards.join("")
+    : `<div class="empty">Tidak ada entri cocok untuk <strong>&ldquo;${escapeHTML(state.query)}&rdquo;</strong> pada kategori ini.</div>`;
+
+  // update counter
+  $counter.innerHTML = `<strong>${visibleCount}</strong> / ${QA_DATA.length}`;
+
+  // reattach anchor handlers
+  $list.querySelectorAll(".qa-card__anchor").forEach(a => {
+    a.addEventListener("click", ev => {
+      ev.preventDefault();
+      ev.stopPropagation();
+      const href = a.getAttribute("href");
+      const card = $list.querySelector(href);
+      if (card) {
+        card.setAttribute("open", "");
+        history.replaceState(null, "", href);
+        card.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      // copy URL to clipboard
+      const url = location.origin + location.pathname + href;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).catch(() => {});
+      }
+    });
+  });
+}
+
+/* ================================================================
+   EVENT HANDLERS
+   ================================================================ */
+
+/* search — debounced */
+let _searchT;
+$search.addEventListener("input", () => {
+  clearTimeout(_searchT);
+  _searchT = setTimeout(() => {
+    state.query = $search.value;
+    renderList();
+  }, 120);
+});
+
+/* expand/collapse all */
+$btnExpand.addEventListener("click", () => {
+  $list.querySelectorAll(".qa-card").forEach(c => c.setAttribute("open", ""));
+});
+$btnCollapse.addEventListener("click", () => {
+  $list.querySelectorAll(".qa-card").forEach(c => c.removeAttribute("open"));
+  // also collapse the filtered-away cards if any are still in DOM
+});
+
+/* theme toggle */
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (theme === "dark") {
+    $themeSym.textContent = "\u25D1"; // ◑
+    $themeLabel.textContent = "Terang";
+  } else {
+    $themeSym.textContent = "\u25D0"; // ◐
+    $themeLabel.textContent = "Gelap";
+  }
+  try { localStorage.setItem("jcm-theme", theme); } catch (_) {}
+}
+$btnTheme.addEventListener("click", () => {
+  const cur = document.documentElement.getAttribute("data-theme") || "light";
+  applyTheme(cur === "light" ? "dark" : "light");
+});
+
+/* print — beforeprint also handles direct browser print and active filters */
+$btnPrint.addEventListener("click", () => {
+  window.print();
+});
+
+let printView = null;
+window.addEventListener("beforeprint", () => {
+  printView = { query: state.query, category: state.category, search: $search.value };
+  state.query = "";
+  state.category = null;
+  renderList();
+  $list.querySelectorAll(".qa-card").forEach(c => c.setAttribute("open", ""));
+});
+window.addEventListener("afterprint", () => {
+  if (!printView) return;
+  state.query = printView.query;
+  state.category = printView.category;
+  $search.value = printView.search;
+  printView = null;
+  renderFilter();
+  renderList();
+});
+
+/* keyboard shortcuts */
+document.addEventListener("keydown", ev => {
+  const tag = (ev.target.tagName || "").toLowerCase();
+  const inField = tag === "input" || tag === "textarea" || ev.target.isContentEditable;
+  if (ev.key === "/" && !inField) {
+    ev.preventDefault();
+    $search.focus();
+    $search.select();
+  } else if (ev.key === "Escape") {
+    if (document.activeElement === $search) {
+      $search.value = "";
+      state.query = "";
+      renderList();
+      $search.blur();
+    } else {
+      $list.querySelectorAll(".qa-card").forEach(c => c.removeAttribute("open"));
+    }
+  } else if ((ev.key === "e" || ev.key === "E") && !inField) {
+    $list.querySelectorAll(".qa-card").forEach(c => c.setAttribute("open", ""));
+  } else if ((ev.key === "t" || ev.key === "T") && !inField) {
+    $btnTheme.click();
+  }
+});
+
+/* ================================================================
+   INIT
+   ================================================================ */
+(function init() {
+  // theme: prefer saved, else system, else light
+  let saved = null;
+  try { saved = localStorage.getItem("jcm-theme"); } catch (_) {}
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(saved || (prefersDark ? "dark" : "light"));
+
+  $metaTotal.textContent = String(QA_DATA.length);
+  renderFilter();
+  renderList();
+
+  // handle anchor on load: Q1-Q73 plus the inserted Q56A
+  if (location.hash && /^#q-(?:\d+|56a)$/.test(location.hash)) {
+    const card = document.querySelector(location.hash);
+    if (card) {
+      card.setAttribute("open", "");
+      setTimeout(() => card.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+    }
+  }
+})();
+</script>
+
+</body>
+</html>

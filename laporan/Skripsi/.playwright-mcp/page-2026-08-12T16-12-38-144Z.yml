@@ -1,0 +1,78 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - heading "Jawaban Checklist Munaqosah" [level=1] [ref=e4]
+    - paragraph [ref=e5]: PERBANDINGAN WAV2VEC2 DAN DATA2VEC TERHADAP FITUR LATEN AUDIO UNTUK TILAWAH AL-QURAN — retrieval ayat tanpa transkripsi dan tanpa fine-tuning.
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - strong [ref=e8]: "Penyusun:"
+        - text: Mujahid Ansori Majid · 1197050093
+      - generic [ref=e9]:
+        - strong [ref=e10]: "Pembimbing:"
+        - text: UIN SGD Bandung, 2026
+      - generic [ref=e11]:
+        - strong [ref=e12]: "Total entri:"
+        - text: 74 jawaban
+  - region "Alat bantu penelusuran" [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic: ⌕
+        - searchbox "Cari jawaban" [ref=e16]: bootstrap
+      - generic [ref=e17]:
+        - strong [ref=e635]: "3"
+        - text: / 74
+      - button "Buka Semua" [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: ⊞
+        - text: Buka Semua
+      - button "Tutup Semua" [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: ⊟
+        - text: Tutup Semua
+      - button "Terang" [ref=e636] [cursor=pointer]:
+        - generic [ref=e24]: ◑
+      - button "Cetak" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: ⎙
+        - text: Cetak
+    - group "Saring kategori" [ref=e29]:
+      - button "Semua74" [ref=e637] [cursor=pointer]
+      - button "Latar Belakang7" [ref=e638] [cursor=pointer]
+      - button "Metodologi10" [ref=e639] [cursor=pointer]
+      - button "Data dan Persiapan26" [ref=e640] [cursor=pointer]
+      - button "Modeling5" [ref=e641] [cursor=pointer]
+      - button "Evaluasi dan Hasil11" [pressed] [ref=e642] [cursor=pointer]
+      - button "Kesimpulan3" [ref=e643] [cursor=pointer]
+      - button "Naskah dan Sidang12" [ref=e644] [cursor=pointer]
+  - main "Daftar jawaban pertanyaan munaqosah" [ref=e38]:
+    - group [ref=e645]:
+      - generic "Q37 Evaluasi dan Hasil Tautan Q37 Bagaimana evaluasi owner ration dan Skenario, berikan contoh script yang digunakan" [ref=e646] [cursor=pointer]:
+        - generic [ref=e647]: ▸
+        - generic [ref=e648]:
+          - generic [ref=e649]: Q37
+          - generic [ref=e650]: Evaluasi dan Hasil
+          - link "Tautan Q37" [ref=e651]:
+            - /url: "#q-37"
+            - text: ¶
+          - generic [ref=e652]: Bagaimana evaluasi owner ration dan Skenario, berikan contoh script yang digunakan
+    - group [ref=e653]:
+      - generic "Q38 Evaluasi dan Hasil Tautan Q38 jelaskan apa itu bootstrap dan jelaskan mengapa itu diperlukan dalam penelitian kamu" [ref=e654] [cursor=pointer]:
+        - generic [ref=e655]: ▸
+        - generic [ref=e656]:
+          - generic [ref=e657]: Q38
+          - generic [ref=e658]: Evaluasi dan Hasil
+          - link "Tautan Q38" [ref=e659]:
+            - /url: "#q-38"
+            - text: ¶
+          - generic [ref=e660]: jelaskan apa itu bootstrap dan jelaskan mengapa itu diperlukan dalam penelitian kamu
+    - group [ref=e661]:
+      - generic "Q62 Evaluasi dan Hasil Tautan Q62 Bagaimana hasil penelitiannya? Dosen akan bertanya secara detail tentang hasil yang kalian peroleh." [ref=e662] [cursor=pointer]:
+        - generic [ref=e663]: ▸
+        - generic [ref=e664]:
+          - generic [ref=e665]: Q62
+          - generic [ref=e666]: Evaluasi dan Hasil
+          - link "Tautan Q62" [ref=e667]:
+            - /url: "#q-63"
+            - text: ¶
+          - generic [ref=e668]: Bagaimana hasil penelitiannya? Dosen akan bertanya secara detail tentang hasil yang kalian peroleh.
+  - contentinfo [ref=e631]:
+    - generic [ref=e632]: "Navigate: / fokus pencarian · E buka semua · Esc tutup semua · T ganti tema"
+    - generic [ref=e633]:
+      - text: "Struktur data:"
+      - code [ref=e634]: QA_DATA[id, num, category, question, answer, followUp?, tags?]

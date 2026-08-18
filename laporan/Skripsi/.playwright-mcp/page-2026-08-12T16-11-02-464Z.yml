@@ -1,0 +1,788 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - heading "Jawaban Checklist Munaqosah" [level=1] [ref=e4]
+    - paragraph [ref=e5]: PERBANDINGAN WAV2VEC2 DAN DATA2VEC TERHADAP FITUR LATEN AUDIO UNTUK TILAWAH AL-QURAN — retrieval ayat tanpa transkripsi dan tanpa fine-tuning.
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - strong [ref=e8]: "Penyusun:"
+        - text: Mujahid Ansori Majid · 1197050093
+      - generic [ref=e9]:
+        - strong [ref=e10]: "Pembimbing:"
+        - text: UIN SGD Bandung, 2026
+      - generic [ref=e11]:
+        - strong [ref=e12]: "Total entri:"
+        - text: 74 jawaban
+  - region "Alat bantu penelusuran" [ref=e13]:
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic: ⌕
+        - searchbox "Cari jawaban" [ref=e16]
+      - generic [ref=e17]:
+        - strong [ref=e18]: "74"
+        - text: / 74
+      - button "Buka Semua" [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: ⊞
+        - text: Buka Semua
+      - button "Tutup Semua" [ref=e21] [cursor=pointer]:
+        - generic [ref=e22]: ⊟
+        - text: Tutup Semua
+      - button "Gelap" [ref=e23] [cursor=pointer]:
+        - generic [ref=e24]: ◐
+      - button "Cetak" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: ⎙
+        - text: Cetak
+    - group "Saring kategori" [ref=e29]:
+      - button "Semua74" [pressed] [ref=e30] [cursor=pointer]
+      - button "Latar Belakang7" [ref=e31] [cursor=pointer]
+      - button "Metodologi10" [ref=e32] [cursor=pointer]
+      - button "Data dan Persiapan26" [ref=e33] [cursor=pointer]
+      - button "Modeling5" [ref=e34] [cursor=pointer]
+      - button "Evaluasi dan Hasil11" [ref=e35] [cursor=pointer]
+      - button "Kesimpulan3" [ref=e36] [cursor=pointer]
+      - button "Naskah dan Sidang12" [ref=e37] [cursor=pointer]
+  - main "Daftar jawaban pertanyaan munaqosah" [ref=e38]:
+    - group [ref=e39]:
+      - generic "Q1 Latar Belakang Tautan Q1 Dalam latar belakang disebutkan bahwa Arab monolingual lebih baik dari pre train model dengan Bahasa inggris, terus kenapa ga pake yang arabnya?" [ref=e40] [cursor=pointer]:
+        - generic [ref=e41]: ▸
+        - generic [ref=e42]:
+          - generic [ref=e43]: Q1
+          - generic [ref=e44]: Latar Belakang
+          - link "Tautan Q1" [ref=e45]:
+            - /url: "#q-1"
+            - text: ¶
+          - generic [ref=e46]: Dalam latar belakang disebutkan bahwa Arab monolingual lebih baik dari pre train model dengan Bahasa inggris, terus kenapa ga pake yang arabnya?
+    - group [ref=e47]:
+      - generic "Q2 Metodologi Tautan Q2 dalam bab 3 dijelaskan penelitian berisfatt iterative. bisa dijelaskan secara proses?" [ref=e48] [cursor=pointer]:
+        - generic [ref=e49]: ▸
+        - generic [ref=e50]:
+          - generic [ref=e51]: Q2
+          - generic [ref=e52]: Metodologi
+          - link "Tautan Q2" [ref=e53]:
+            - /url: "#q-2"
+            - text: ¶
+          - generic [ref=e54]: dalam bab 3 dijelaskan penelitian berisfatt iterative. bisa dijelaskan secara proses?
+    - group [ref=e55]:
+      - generic "Q3 Metodologi Tautan Q3 bagaimana pemilihan konfigurasi (development set) dan dan pelaporan hasil? kenapa harus dipisah" [ref=e56] [cursor=pointer]:
+        - generic [ref=e57]: ▸
+        - generic [ref=e58]:
+          - generic [ref=e59]: Q3
+          - generic [ref=e60]: Metodologi
+          - link "Tautan Q3" [ref=e61]:
+            - /url: "#q-3"
+            - text: ¶
+          - generic [ref=e62]: bagaimana pemilihan konfigurasi (development set) dan dan pelaporan hasil? kenapa harus dipisah
+    - group [ref=e63]:
+      - generic "Q4 Data dan Persiapan Tautan Q4 apa arti korpus" [ref=e64] [cursor=pointer]:
+        - generic [ref=e65]: ▸
+        - generic [ref=e66]:
+          - generic [ref=e67]: Q4
+          - generic [ref=e68]: Data dan Persiapan
+          - link "Tautan Q4" [ref=e69]:
+            - /url: "#q-4"
+            - text: ¶
+          - generic [ref=e70]: apa arti korpus
+    - group [ref=e71]:
+      - generic "Q5 Data dan Persiapan Tautan Q5 apa itu union filtering? bisakah kamu beri contoh?" [ref=e72] [cursor=pointer]:
+        - generic [ref=e73]: ▸
+        - generic [ref=e74]:
+          - generic [ref=e75]: Q5
+          - generic [ref=e76]: Data dan Persiapan
+          - link "Tautan Q5" [ref=e77]:
+            - /url: "#q-5"
+            - text: ¶
+          - generic [ref=e78]: apa itu union filtering? bisakah kamu beri contoh?
+    - group [ref=e79]:
+      - generic "Q6 Metodologi Tautan Q6 mengapa konfigurasi pencarian titik representasi perlu dipisahkan dengan data uji?" [ref=e80] [cursor=pointer]:
+        - generic [ref=e81]: ▸
+        - generic [ref=e82]:
+          - generic [ref=e83]: Q6
+          - generic [ref=e84]: Metodologi
+          - link "Tautan Q6" [ref=e85]:
+            - /url: "#q-6"
+            - text: ¶
+          - generic [ref=e86]: mengapa konfigurasi pencarian titik representasi perlu dipisahkan dengan data uji?
+    - group [ref=e87]:
+      - generic "Q7 Data dan Persiapan Tautan Q7 mengapa scenario a tidak bisa displit menjadi 60:40, 70:30 dst" [ref=e88] [cursor=pointer]:
+        - generic [ref=e89]: ▸
+        - generic [ref=e90]:
+          - generic [ref=e91]: Q7
+          - generic [ref=e92]: Data dan Persiapan
+          - link "Tautan Q7" [ref=e93]:
+            - /url: "#q-7"
+            - text: ¶
+          - generic [ref=e94]: mengapa scenario a tidak bisa displit menjadi 60:40, 70:30 dst
+    - group [ref=e95]:
+      - generic "Q8 Data dan Persiapan Tautan Q8 apa itu rasio pemilih pada bab 4" [ref=e96] [cursor=pointer]:
+        - generic [ref=e97]: ▸
+        - generic [ref=e98]:
+          - generic [ref=e99]: Q8
+          - generic [ref=e100]: Data dan Persiapan
+          - link "Tautan Q8" [ref=e101]:
+            - /url: "#q-8"
+            - text: ¶
+          - generic [ref=e102]: apa itu rasio pemilih pada bab 4
+    - group [ref=e103]:
+      - generic "Q9 Data dan Persiapan Tautan Q9 apa itu rekonsiliasi dan berikan contoh pada studi kasus skripsi kamu" [ref=e104] [cursor=pointer]:
+        - generic [ref=e105]: ▸
+        - generic [ref=e106]:
+          - generic [ref=e107]: Q9
+          - generic [ref=e108]: Data dan Persiapan
+          - link "Tautan Q9" [ref=e109]:
+            - /url: "#q-9"
+            - text: ¶
+          - generic [ref=e110]: apa itu rekonsiliasi dan berikan contoh pada studi kasus skripsi kamu
+    - group [ref=e111]:
+      - generic "Q10 Data dan Persiapan Tautan Q10 apa yang dimaksud dengan 116 berkas berukuran nol" [ref=e112] [cursor=pointer]:
+        - generic [ref=e113]: ▸
+        - generic [ref=e114]:
+          - generic [ref=e115]: Q10
+          - generic [ref=e116]: Data dan Persiapan
+          - link "Tautan Q10" [ref=e117]:
+            - /url: "#q-10"
+            - text: ¶
+          - generic [ref=e118]: apa yang dimaksud dengan 116 berkas berukuran nol
+    - group [ref=e119]:
+      - generic "Q11 Modeling Tautan Q11 tujuan mean pooling itu untuk apa" [ref=e120] [cursor=pointer]:
+        - generic [ref=e121]: ▸
+        - generic [ref=e122]:
+          - generic [ref=e123]: Q11
+          - generic [ref=e124]: Modeling
+          - link "Tautan Q11" [ref=e125]:
+            - /url: "#q-11"
+            - text: ¶
+          - generic [ref=e126]: tujuan mean pooling itu untuk apa
+    - group [ref=e127]:
+      - generic "Q12 Data dan Persiapan Tautan Q12 apa itu union filtering, bisa diberi contoh?" [ref=e128] [cursor=pointer]:
+        - generic [ref=e129]: ▸
+        - generic [ref=e130]:
+          - generic [ref=e131]: Q12
+          - generic [ref=e132]: Data dan Persiapan
+          - link "Tautan Q12" [ref=e133]:
+            - /url: "#q-12"
+            - text: ¶
+          - generic [ref=e134]: apa itu union filtering, bisa diberi contoh?
+    - group [ref=e135]:
+      - generic "Q13 Data dan Persiapan Tautan Q13 apa itu provenence dalam konteks skripsi kamu, tolong beri contoh" [ref=e136] [cursor=pointer]:
+        - generic [ref=e137]: ▸
+        - generic [ref=e138]:
+          - generic [ref=e139]: Q13
+          - generic [ref=e140]: Data dan Persiapan
+          - link "Tautan Q13" [ref=e141]:
+            - /url: "#q-13"
+            - text: ¶
+          - generic [ref=e142]: apa itu provenence dalam konteks skripsi kamu, tolong beri contoh
+    - group [ref=e143]:
+      - generic "Q14 Data dan Persiapan Tautan Q14 maksud dari ini Penelitian tidak memiliki anotasi batas waktu manual untuk seluruh klip, sehingga ketepatan segmentasi tetap menjadi salah satu sumber kepastian data." [ref=e144] [cursor=pointer]:
+        - generic [ref=e145]: ▸
+        - generic [ref=e146]:
+          - generic [ref=e147]: Q14
+          - generic [ref=e148]: Data dan Persiapan
+          - link "Tautan Q14" [ref=e149]:
+            - /url: "#q-14"
+            - text: ¶
+          - generic [ref=e150]: maksud dari ini Penelitian tidak memiliki anotasi batas waktu manual untuk seluruh klip, sehingga ketepatan segmentasi tetap menjadi salah satu sumber kepastian data.
+    - group [ref=e151]:
+      - generic "Q15 Data dan Persiapan Tautan Q15 apa itu manifest file, dan tujuannya dalam skripsi kamu buat apa? berikan contoh" [ref=e152] [cursor=pointer]:
+        - generic [ref=e153]: ▸
+        - generic [ref=e154]:
+          - generic [ref=e155]: Q15
+          - generic [ref=e156]: Data dan Persiapan
+          - link "Tautan Q15" [ref=e157]:
+            - /url: "#q-15"
+            - text: ¶
+          - generic [ref=e158]: apa itu manifest file, dan tujuannya dalam skripsi kamu buat apa? berikan contoh
+    - group [ref=e159]:
+      - generic "Q16 Data dan Persiapan Tautan Q16 bisakah beri contoh untuk statement ini pada data preparation \"Setiap klip dikaitkan dengan identitas pembaca, nomor surah, nomor ayat, sumber data, lokasi audio, dan informasi provenance.\"" [ref=e160] [cursor=pointer]:
+        - generic [ref=e161]: ▸
+        - generic [ref=e162]:
+          - generic [ref=e163]: Q16
+          - generic [ref=e164]: Data dan Persiapan
+          - link "Tautan Q16" [ref=e165]:
+            - /url: "#q-16"
+            - text: ¶
+          - generic [ref=e166]: bisakah beri contoh untuk statement ini pada data preparation "Setiap klip dikaitkan dengan identitas pembaca, nomor surah, nomor ayat, sumber data, lokasi audio, dan informasi provenance."
+    - group [ref=e167]:
+      - generic "Q17 Data dan Persiapan Tautan Q17 bisakah beri contoh datta bagaimana proses segmentasi menggunakan whisper x" [ref=e168] [cursor=pointer]:
+        - generic [ref=e169]: ▸
+        - generic [ref=e170]:
+          - generic [ref=e171]: Q17
+          - generic [ref=e172]: Data dan Persiapan
+          - link "Tautan Q17" [ref=e173]:
+            - /url: "#q-17"
+            - text: ¶
+          - generic [ref=e174]: bisakah beri contoh datta bagaimana proses segmentasi menggunakan whisper x
+    - group [ref=e175]:
+      - generic "Q18 Data dan Persiapan Tautan Q18 apa itu mekanisme fallback dalam segmentasi data kamu, dan berikan contoh dalam script python yang ada di skripsi kamu" [ref=e176] [cursor=pointer]:
+        - generic [ref=e177]: ▸
+        - generic [ref=e178]:
+          - generic [ref=e179]: Q18
+          - generic [ref=e180]: Data dan Persiapan
+          - link "Tautan Q18" [ref=e181]:
+            - /url: "#q-18"
+            - text: ¶
+          - generic [ref=e182]: apa itu mekanisme fallback dalam segmentasi data kamu, dan berikan contoh dalam script python yang ada di skripsi kamu
+    - group [ref=e183]:
+      - generic "Q19 Data dan Persiapan Tautan Q19 dimana proses normalisasi dilakukan (tunjukkan dalam bentuk script python)" [ref=e184] [cursor=pointer]:
+        - generic [ref=e185]: ▸
+        - generic [ref=e186]:
+          - generic [ref=e187]: Q19
+          - generic [ref=e188]: Data dan Persiapan
+          - link "Tautan Q19" [ref=e189]:
+            - /url: "#q-19"
+            - text: ¶
+          - generic [ref=e190]: dimana proses normalisasi dilakukan (tunjukkan dalam bentuk script python)
+    - group [ref=e191]:
+      - generic "Q20 Data dan Persiapan Tautan Q20 apa itu kanal mono, dan mengapa audio harus di convert ke 16 khz" [ref=e192] [cursor=pointer]:
+        - generic [ref=e193]: ▸
+        - generic [ref=e194]:
+          - generic [ref=e195]: Q20
+          - generic [ref=e196]: Data dan Persiapan
+          - link "Tautan Q20" [ref=e197]:
+            - /url: "#q-20"
+            - text: ¶
+          - generic [ref=e198]: apa itu kanal mono, dan mengapa audio harus di convert ke 16 khz
+    - group [ref=e199]:
+      - generic "Q21 Data dan Persiapan Tautan Q21 tolong beri contoh file \"Rekaman mahasiswa memiliki informasi tambahan mengenai rekaman induk dan metode segmenetasi untuk menjaga keterlacakan hasil pemotongan.\" ini" [ref=e200] [cursor=pointer]:
+        - generic [ref=e201]: ▸
+        - generic [ref=e202]:
+          - generic [ref=e203]: Q21
+          - generic [ref=e204]: Data dan Persiapan
+          - link "Tautan Q21" [ref=e205]:
+            - /url: "#q-21"
+            - text: ¶
+          - generic [ref=e206]: tolong beri contoh file "Rekaman mahasiswa memiliki informasi tambahan mengenai rekaman induk dan metode segmenetasi untuk menjaga keterlacakan hasil pemotongan." ini
+    - group [ref=e207]:
+      - generic "Q22 Data dan Persiapan Tautan Q22 pada scenario B berikan contoh distjoin yang dimaksud" [ref=e208] [cursor=pointer]:
+        - generic [ref=e209]: ▸
+        - generic [ref=e210]:
+          - generic [ref=e211]: Q22
+          - generic [ref=e212]: Data dan Persiapan
+          - link "Tautan Q22" [ref=e213]:
+            - /url: "#q-22"
+            - text: ¶
+          - generic [ref=e214]: pada scenario B berikan contoh distjoin yang dimaksud
+    - group [ref=e215]:
+      - generic "Q23 Data dan Persiapan Tautan Q23 untuk setiap scenario pembagian datanya missal 60:40, 70:30 bagaimana kita membagi datanya, dan mengapa data tersebut di bagian itu?" [ref=e216] [cursor=pointer]:
+        - generic [ref=e217]: ▸
+        - generic [ref=e218]:
+          - generic [ref=e219]: Q23
+          - generic [ref=e220]: Data dan Persiapan
+          - link "Tautan Q23" [ref=e221]:
+            - /url: "#q-23"
+            - text: ¶
+          - generic [ref=e222]: untuk setiap scenario pembagian datanya missal 60:40, 70:30 bagaimana kita membagi datanya, dan mengapa data tersebut di bagian itu?
+    - group [ref=e223]:
+      - generic "Q24 Data dan Persiapan Tautan Q24 mengapa rasio pada scenario A tidak berlaku" [ref=e224] [cursor=pointer]:
+        - generic [ref=e225]: ▸
+        - generic [ref=e226]:
+          - generic [ref=e227]: Q24
+          - generic [ref=e228]: Data dan Persiapan
+          - link "Tautan Q24" [ref=e229]:
+            - /url: "#q-24"
+            - text: ¶
+          - generic [ref=e230]: mengapa rasio pada scenario A tidak berlaku
+    - group [ref=e231]:
+      - generic "Q25 Data dan Persiapan Tautan Q25 apa itu dilakukan secara stratified?" [ref=e232] [cursor=pointer]:
+        - generic [ref=e233]: ▸
+        - generic [ref=e234]:
+          - generic [ref=e235]: Q25
+          - generic [ref=e236]: Data dan Persiapan
+          - link "Tautan Q25" [ref=e237]:
+            - /url: "#q-25"
+            - text: ¶
+          - generic [ref=e238]: apa itu dilakukan secara stratified?
+    - group [ref=e239]:
+      - generic "Q26 Evaluasi dan Hasil Tautan Q26 Apa itu nilai AP nol, bagaimana itu bisa terjadi, dan bisakah beri contoh" [ref=e240] [cursor=pointer]:
+        - generic [ref=e241]: ▸
+        - generic [ref=e242]:
+          - generic [ref=e243]: Q26
+          - generic [ref=e244]: Evaluasi dan Hasil
+          - link "Tautan Q26" [ref=e245]:
+            - /url: "#q-26"
+            - text: ¶
+          - generic [ref=e246]: Apa itu nilai AP nol, bagaimana itu bisa terjadi, dan bisakah beri contoh
+    - group [ref=e247]:
+      - generic "Q27 Metodologi Tautan Q27 untuk mencari titik representasi terbaik digunakannya development set. apakah untuk evaluasi berarti hanya menggunakan 30% dari keseluruhan data?" [ref=e248] [cursor=pointer]:
+        - generic [ref=e249]: ▸
+        - generic [ref=e250]:
+          - generic [ref=e251]: Q27
+          - generic [ref=e252]: Metodologi
+          - link "Tautan Q27" [ref=e253]:
+            - /url: "#q-27"
+            - text: ¶
+          - generic [ref=e254]: untuk mencari titik representasi terbaik digunakannya development set. apakah untuk evaluasi berarti hanya menggunakan 30% dari keseluruhan data?
+    - group [ref=e255]:
+      - generic "Q28 Data dan Persiapan Tautan Q28 pada data preparation bisa jelaskan development set dan test set? apakah ini sama dengan owner ratio?" [ref=e256] [cursor=pointer]:
+        - generic [ref=e257]: ▸
+        - generic [ref=e258]:
+          - generic [ref=e259]: Q28
+          - generic [ref=e260]: Data dan Persiapan
+          - link "Tautan Q28" [ref=e261]:
+            - /url: "#q-28"
+            - text: ¶
+          - generic [ref=e262]: pada data preparation bisa jelaskan development set dan test set? apakah ini sama dengan owner ratio?
+    - group [ref=e263]:
+      - generic "Q29 Data dan Persiapan Tautan Q29 bagaimana proses pengacakan determenistik dalam pembagian development set dan test set?" [ref=e264] [cursor=pointer]:
+        - generic [ref=e265]: ▸
+        - generic [ref=e266]:
+          - generic [ref=e267]: Q29
+          - generic [ref=e268]: Data dan Persiapan
+          - link "Tautan Q29" [ref=e269]:
+            - /url: "#q-29"
+            - text: ¶
+          - generic [ref=e270]: bagaimana proses pengacakan determenistik dalam pembagian development set dan test set?
+    - group [ref=e271]:
+      - generic "Q30 Data dan Persiapan Tautan Q30 terdapat statement \"Karena pembulatan diterapkan secara terpisah pada setiap kelompok ayat, proporsi akhir klip pada development set tidak selalu tepat 70% dari total kueri. Pada seluruh sel, proporsi aktual development set berada pada kisaran 57,9% hingga 69,1%.\" bagaimana angkanya jatuh sangat jauh" [ref=e272] [cursor=pointer]:
+        - generic [ref=e273]: ▸
+        - generic [ref=e274]:
+          - generic [ref=e275]: Q30
+          - generic [ref=e276]: Data dan Persiapan
+          - link "Tautan Q30" [ref=e277]:
+            - /url: "#q-30"
+            - text: ¶
+          - generic [ref=e278]: terdapat statement "Karena pembulatan diterapkan secara terpisah pada setiap kelompok ayat, proporsi akhir klip pada development set tidak selalu tepat 70% dari total kueri. Pada seluruh sel, proporsi aktual development set berada pada kisaran 57,9% hingga 69,1%." bagaimana angkanya jatuh sangat jauh
+    - group [ref=e279]:
+      - generic "Q31 Metodologi Tautan Q31 mengapa pembagian development set dan test set harus 70% dan 30%" [ref=e280] [cursor=pointer]:
+        - generic [ref=e281]: ▸
+        - generic [ref=e282]:
+          - generic [ref=e283]: Q31
+          - generic [ref=e284]: Metodologi
+          - link "Tautan Q31" [ref=e285]:
+            - /url: "#q-31"
+            - text: ¶
+          - generic [ref=e286]: mengapa pembagian development set dan test set harus 70% dan 30%
+    - group [ref=e287]:
+      - generic "Q32 Modeling Tautan Q32 pada hasil modeling apa itu artefak akhir?" [ref=e288] [cursor=pointer]:
+        - generic [ref=e289]: ▸
+        - generic [ref=e290]:
+          - generic [ref=e291]: Q32
+          - generic [ref=e292]: Modeling
+          - link "Tautan Q32" [ref=e293]:
+            - /url: "#q-32"
+            - text: ¶
+          - generic [ref=e294]: pada hasil modeling apa itu artefak akhir?
+    - group [ref=e295]:
+      - generic "Q33 Evaluasi dan Hasil Tautan Q33 mengapa pengujian pencarian titik menggunakan MAP, bukan MRR atau Top-K" [ref=e296] [cursor=pointer]:
+        - generic [ref=e297]: ▸
+        - generic [ref=e298]:
+          - generic [ref=e299]: Q33
+          - generic [ref=e300]: Evaluasi dan Hasil
+          - link "Tautan Q33" [ref=e301]:
+            - /url: "#q-33"
+            - text: ¶
+          - generic [ref=e302]: mengapa pengujian pencarian titik menggunakan MAP, bukan MRR atau Top-K
+    - group [ref=e303]:
+      - generic "Q34 Modeling Tautan Q34 apa penyebabnya mengapa layer terbaik bukan pada akhir layer?" [ref=e304] [cursor=pointer]:
+        - generic [ref=e305]: ▸
+        - generic [ref=e306]:
+          - generic [ref=e307]: Q34
+          - generic [ref=e308]: Modeling
+          - link "Tautan Q34" [ref=e309]:
+            - /url: "#q-34"
+            - text: ¶
+          - generic [ref=e310]: apa penyebabnya mengapa layer terbaik bukan pada akhir layer?
+    - group [ref=e311]:
+      - generic "Q35 Modeling Tautan Q35 Bagaimana cara melalukan evaluasi tiap layer, tunjukan script code dan pemanggilan datanya" [ref=e312] [cursor=pointer]:
+        - generic [ref=e313]: ▸
+        - generic [ref=e314]:
+          - generic [ref=e315]: Q35
+          - generic [ref=e316]: Modeling
+          - link "Tautan Q35" [ref=e317]:
+            - /url: "#q-35"
+            - text: ¶
+          - generic [ref=e318]: Bagaimana cara melalukan evaluasi tiap layer, tunjukan script code dan pemanggilan datanya
+    - group [ref=e319]:
+      - generic "Q36 Modeling Tautan Q36 apa yang dimaksud dengan keluaran blok transformer? apa hubungannya dengan penelitian anda" [ref=e320] [cursor=pointer]:
+        - generic [ref=e321]: ▸
+        - generic [ref=e322]:
+          - generic [ref=e323]: Q36
+          - generic [ref=e324]: Modeling
+          - link "Tautan Q36" [ref=e325]:
+            - /url: "#q-36"
+            - text: ¶
+          - generic [ref=e326]: apa yang dimaksud dengan keluaran blok transformer? apa hubungannya dengan penelitian anda
+    - group [ref=e327]:
+      - generic "Q37 Evaluasi dan Hasil Tautan Q37 Bagaimana evaluasi owner ration dan Skenario, berikan contoh script yang digunakan" [ref=e328] [cursor=pointer]:
+        - generic [ref=e329]: ▸
+        - generic [ref=e330]:
+          - generic [ref=e331]: Q37
+          - generic [ref=e332]: Evaluasi dan Hasil
+          - link "Tautan Q37" [ref=e333]:
+            - /url: "#q-37"
+            - text: ¶
+          - generic [ref=e334]: Bagaimana evaluasi owner ration dan Skenario, berikan contoh script yang digunakan
+    - group [ref=e335]:
+      - generic "Q38 Evaluasi dan Hasil Tautan Q38 jelaskan apa itu bootstrap dan jelaskan mengapa itu diperlukan dalam penelitian kamu" [ref=e336] [cursor=pointer]:
+        - generic [ref=e337]: ▸
+        - generic [ref=e338]:
+          - generic [ref=e339]: Q38
+          - generic [ref=e340]: Evaluasi dan Hasil
+          - link "Tautan Q38" [ref=e341]:
+            - /url: "#q-38"
+            - text: ¶
+          - generic [ref=e342]: jelaskan apa itu bootstrap dan jelaskan mengapa itu diperlukan dalam penelitian kamu
+    - group [ref=e343]:
+      - generic "Q39 Evaluasi dan Hasil Tautan Q39 apa bedanya hasil dan pembahasan, jelaskan hasil dan pembahhasan dalam skripsi kamu?" [ref=e344] [cursor=pointer]:
+        - generic [ref=e345]: ▸
+        - generic [ref=e346]:
+          - generic [ref=e347]: Q39
+          - generic [ref=e348]: Evaluasi dan Hasil
+          - link "Tautan Q39" [ref=e349]:
+            - /url: "#q-39"
+            - text: ¶
+          - generic [ref=e350]: apa bedanya hasil dan pembahasan, jelaskan hasil dan pembahhasan dalam skripsi kamu?
+    - group [ref=e351]:
+      - generic "Q40 Evaluasi dan Hasil Tautan Q40 apa yang dimaksud dengan \"tetapi nilai tidak-terbulat layer 6 sedikit lebih tinggi, sehingga layer 6 terpilih. K\" pada bab 4 pemilihan layer Skenario D" [ref=e352] [cursor=pointer]:
+        - generic [ref=e353]: ▸
+        - generic [ref=e354]:
+          - generic [ref=e355]: Q40
+          - generic [ref=e356]: Evaluasi dan Hasil
+          - link "Tautan Q40" [ref=e357]:
+            - /url: "#q-40"
+            - text: ¶
+          - generic [ref=e358]: apa yang dimaksud dengan "tetapi nilai tidak-terbulat layer 6 sedikit lebih tinggi, sehingga layer 6 terpilih. K" pada bab 4 pemilihan layer Skenario D
+    - group [ref=e359]:
+      - generic "Q41 Naskah dan Sidang Tautan Q41 Apa tadi judul skripsi anda? coba sebutkan!" [ref=e360] [cursor=pointer]:
+        - generic [ref=e361]: ▸
+        - generic [ref=e362]:
+          - generic [ref=e363]: Q41
+          - generic [ref=e364]: Naskah dan Sidang
+          - link "Tautan Q41" [ref=e365]:
+            - /url: "#q-41"
+            - text: ¶
+          - generic [ref=e366]: Apa tadi judul skripsi anda? coba sebutkan!
+    - group [ref=e367]:
+      - generic "Q42 Naskah dan Sidang Tautan Q42 Pertanyaan seputar orang-orang dalam kata pengantar. Gelar dan jabatan mereka, dan orang-orang yang menarik perhatian dosen, juga kesalahan-kesalahan penulisan." [ref=e368] [cursor=pointer]:
+        - generic [ref=e369]: ▸
+        - generic [ref=e370]:
+          - generic [ref=e371]: Q42
+          - generic [ref=e372]: Naskah dan Sidang
+          - link "Tautan Q42" [ref=e373]:
+            - /url: "#q-42"
+            - text: ¶
+          - generic [ref=e374]: Pertanyaan seputar orang-orang dalam kata pengantar. Gelar dan jabatan mereka, dan orang-orang yang menarik perhatian dosen, juga kesalahan-kesalahan penulisan.
+    - group [ref=e375]:
+      - generic "Q43 Naskah dan Sidang Tautan Q43 Pertanyaan seputar abstrak/abstract, yaitu komposisi/isi abstrak, atau grammar dan pilihan kata pada abstract." [ref=e376] [cursor=pointer]:
+        - generic [ref=e377]: ▸
+        - generic [ref=e378]:
+          - generic [ref=e379]: Q43
+          - generic [ref=e380]: Naskah dan Sidang
+          - link "Tautan Q43" [ref=e381]:
+            - /url: "#q-43"
+            - text: ¶
+          - generic [ref=e382]: Pertanyaan seputar abstrak/abstract, yaitu komposisi/isi abstrak, atau grammar dan pilihan kata pada abstract.
+    - group [ref=e383]:
+      - generic "Q44 Latar Belakang Tautan Q44 Mengapa Anda tertarik untuk meneliti hal tersebut? Memangnya apa pentingnya meneliti ini?" [ref=e384] [cursor=pointer]:
+        - generic [ref=e385]: ▸
+        - generic [ref=e386]:
+          - generic [ref=e387]: Q44
+          - generic [ref=e388]: Latar Belakang
+          - link "Tautan Q44" [ref=e389]:
+            - /url: "#q-44"
+            - text: ¶
+          - generic [ref=e390]: Mengapa Anda tertarik untuk meneliti hal tersebut? Memangnya apa pentingnya meneliti ini?
+    - group [ref=e391]:
+      - generic "Q45 Latar Belakang Tautan Q45 Apa yang melatarbelakangi penelitian Anda? Memangnya ada masalah apa?" [ref=e392] [cursor=pointer]:
+        - generic [ref=e393]: ▸
+        - generic [ref=e394]:
+          - generic [ref=e395]: Q45
+          - generic [ref=e396]: Latar Belakang
+          - link "Tautan Q45" [ref=e397]:
+            - /url: "#q-45"
+            - text: ¶
+          - generic [ref=e398]: Apa yang melatarbelakangi penelitian Anda? Memangnya ada masalah apa?
+    - group [ref=e399]:
+      - generic "Q46 Latar Belakang Tautan Q46 Dari mana data masalah ini anda dapatkan? (pertanyaan ini diajukan jika pada latar belakang kalian tidak mencantumkan referensi/rujukan/sitasi)." [ref=e400] [cursor=pointer]:
+        - generic [ref=e401]: ▸
+        - generic [ref=e402]:
+          - generic [ref=e403]: Q46
+          - generic [ref=e404]: Latar Belakang
+          - link "Tautan Q46" [ref=e405]:
+            - /url: "#q-46"
+            - text: ¶
+          - generic [ref=e406]: Dari mana data masalah ini anda dapatkan? (pertanyaan ini diajukan jika pada latar belakang kalian tidak mencantumkan referensi/rujukan/sitasi).
+    - group [ref=e407]:
+      - generic "Q47 Latar Belakang Tautan Q47 Apa perbedaan penelitian Anda dengan penelitian lainnya?" [ref=e408] [cursor=pointer]:
+        - generic [ref=e409]: ▸
+        - generic [ref=e410]:
+          - generic [ref=e411]: Q47
+          - generic [ref=e412]: Latar Belakang
+          - link "Tautan Q47" [ref=e413]:
+            - /url: "#q-47"
+            - text: ¶
+          - generic [ref=e414]: Apa perbedaan penelitian Anda dengan penelitian lainnya?
+    - group [ref=e415]:
+      - generic "Q48 Latar Belakang Tautan Q48 Mengapa meneliti objek tersebut (atau di lokasi tersebut)?" [ref=e416] [cursor=pointer]:
+        - generic [ref=e417]: ▸
+        - generic [ref=e418]:
+          - generic [ref=e419]: Q48
+          - generic [ref=e420]: Latar Belakang
+          - link "Tautan Q48" [ref=e421]:
+            - /url: "#q-48"
+            - text: ¶
+          - generic [ref=e422]: Mengapa meneliti objek tersebut (atau di lokasi tersebut)?
+    - group [ref=e423]:
+      - generic "Q49 Naskah dan Sidang Tautan Q49 Seputar definisi dan pemahaman kalian mengenai konsep-konsep yang ada di penelitian kalian?" [ref=e424] [cursor=pointer]:
+        - generic [ref=e425]: ▸
+        - generic [ref=e426]:
+          - generic [ref=e427]: Q49
+          - generic [ref=e428]: Naskah dan Sidang
+          - link "Tautan Q49" [ref=e429]:
+            - /url: "#q-49"
+            - text: ¶
+          - generic [ref=e430]: Seputar definisi dan pemahaman kalian mengenai konsep-konsep yang ada di penelitian kalian?
+    - group [ref=e431]:
+      - generic "Q50 Naskah dan Sidang Tautan Q50 Apa rumusan masalah dan identifikasi masalah dalam penelitian ini? Darimana identifikasi masalah ini Anda dapatkan/turunkan?" [ref=e432] [cursor=pointer]:
+        - generic [ref=e433]: ▸
+        - generic [ref=e434]:
+          - generic [ref=e435]: Q50
+          - generic [ref=e436]: Naskah dan Sidang
+          - link "Tautan Q50" [ref=e437]:
+            - /url: "#q-50"
+            - text: ¶
+          - generic [ref=e438]: Apa rumusan masalah dan identifikasi masalah dalam penelitian ini? Darimana identifikasi masalah ini Anda dapatkan/turunkan?
+    - group [ref=e439]:
+      - generic "Q51 Naskah dan Sidang Tautan Q51 Apa tujuan penelitian Anda? Dari mana tujuan ini Anda dapatkan?" [ref=e440] [cursor=pointer]:
+        - generic [ref=e441]: ▸
+        - generic [ref=e442]:
+          - generic [ref=e443]: Q51
+          - generic [ref=e444]: Naskah dan Sidang
+          - link "Tautan Q51" [ref=e445]:
+            - /url: "#q-51"
+            - text: ¶
+          - generic [ref=e446]: Apa tujuan penelitian Anda? Dari mana tujuan ini Anda dapatkan?
+    - group [ref=e447]:
+      - generic "Q52 Naskah dan Sidang Tautan Q52 Apa manfaat penelitian ini secara teoritis dan manfaat praktisnya?" [ref=e448] [cursor=pointer]:
+        - generic [ref=e449]: ▸
+        - generic [ref=e450]:
+          - generic [ref=e451]: Q52
+          - generic [ref=e452]: Naskah dan Sidang
+          - link "Tautan Q52" [ref=e453]:
+            - /url: "#q-52"
+            - text: ¶
+          - generic [ref=e454]: Apa manfaat penelitian ini secara teoritis dan manfaat praktisnya?
+    - group [ref=e455]:
+      - generic "Q53 Naskah dan Sidang Tautan Q53 Apa teori yang Anda gunakan? Siapa penemu teori? Bagaimana sejarah perkembangannya secara singkat?, Apa asumsi teori tersebut? Mengapa menggunakan teori tersebut? (Pertanyaan ini biasanya diajukan untuk penelitian kuantitatif karena teori sebagai landasan penelitian, namun pada penelitian kualitatif mungkin saja juga diajukan karena teori digunakan untuk membahas hasil penelitian)" [ref=e456] [cursor=pointer]:
+        - generic [ref=e457]: ▸
+        - generic [ref=e458]:
+          - generic [ref=e459]: Q53
+          - generic [ref=e460]: Naskah dan Sidang
+          - link "Tautan Q53" [ref=e461]:
+            - /url: "#q-53"
+            - text: ¶
+          - generic [ref=e462]: Apa teori yang Anda gunakan? Siapa penemu teori? Bagaimana sejarah perkembangannya secara singkat?, Apa asumsi teori tersebut? Mengapa menggunakan teori tersebut? (Pertanyaan ini biasanya diajukan untuk penelitian kuantitatif karena teori sebagai landasan penelitian, namun pada penelitian kualitatif mungkin saja juga diajukan karena teori digunakan untuk membahas hasil penelitian)
+    - group [ref=e463]:
+      - generic "Q54 Latar Belakang Tautan Q54 Apa perbedaan penelitian anda dengan penelitian-penelitian sebelumnya? (hihihi ini pertanyaannya mirip dengan nomor 7)" [ref=e464] [cursor=pointer]:
+        - generic [ref=e465]: ▸
+        - generic [ref=e466]:
+          - generic [ref=e467]: Q54
+          - generic [ref=e468]: Latar Belakang
+          - link "Tautan Q54" [ref=e469]:
+            - /url: "#q-54"
+            - text: ¶
+          - generic [ref=e470]: Apa perbedaan penelitian anda dengan penelitian-penelitian sebelumnya? (hihihi ini pertanyaannya mirip dengan nomor 7)
+    - group [ref=e471]:
+      - generic "Q55 Metodologi Tautan Q55 Apa hipotesis penelitian ini? Dari mana hipotesis ini anda turunkan?" [ref=e472] [cursor=pointer]:
+        - generic [ref=e473]: ▸
+        - generic [ref=e474]:
+          - generic [ref=e475]: Q55
+          - generic [ref=e476]: Metodologi
+          - link "Tautan Q55" [ref=e477]:
+            - /url: "#q-55"
+            - text: ¶
+          - generic [ref=e478]: Apa hipotesis penelitian ini? Dari mana hipotesis ini anda turunkan?
+    - group [ref=e479]:
+      - generic "Q56 Metodologi Tautan Q56 Metode apa yang digunakan? Mengapa menggunakan metode tersebut?" [ref=e480] [cursor=pointer]:
+        - generic [ref=e481]: ▸
+        - generic [ref=e482]:
+          - generic [ref=e483]: Q56
+          - generic [ref=e484]: Metodologi
+          - link "Tautan Q56" [ref=e485]:
+            - /url: "#q-56"
+            - text: ¶
+          - generic [ref=e486]: Metode apa yang digunakan? Mengapa menggunakan metode tersebut?
+    - group [ref=e487]:
+      - generic "Q56A Data dan Persiapan Tautan Q56A Pertanyaan empat belasn Apa data primer dan sekunder penelitian ini? Data primer adalah yang kalian kumpulkan langsung, data sekunder adalah data dari dokumen." [ref=e488] [cursor=pointer]:
+        - generic [ref=e489]: ▸
+        - generic [ref=e490]:
+          - generic [ref=e491]: Q56A
+          - generic [ref=e492]: Data dan Persiapan
+          - link "Tautan Q56A" [ref=e493]:
+            - /url: "#q-57"
+            - text: ¶
+          - generic [ref=e494]: Pertanyaan empat belasn Apa data primer dan sekunder penelitian ini? Data primer adalah yang kalian kumpulkan langsung, data sekunder adalah data dari dokumen.
+    - group [ref=e495]:
+      - 'generic "Q57 Data dan Persiapan Tautan Q57 Siapa populasi penelitian ini? Sebutkan populasi kalian, dan siapkan juga alasannya. Biasanya ditanya juga ukuran populasinya. Apa teknik penarikan sampel yang digunakan? Sebutkan tekniknya. Bagaimana anda melakukannya? Untuk kualitatif, pertanyaannya: bagaimana teknik pemilihan informan? Apa kriteria pemilihannya?" [ref=e496] [cursor=pointer]':
+        - generic [ref=e497]: ▸
+        - generic [ref=e498]:
+          - generic [ref=e499]: Q57
+          - generic [ref=e500]: Data dan Persiapan
+          - link "Tautan Q57" [ref=e501]:
+            - /url: "#q-58"
+            - text: ¶
+          - generic [ref=e502]: "Siapa populasi penelitian ini? Sebutkan populasi kalian, dan siapkan juga alasannya. Biasanya ditanya juga ukuran populasinya. Apa teknik penarikan sampel yang digunakan? Sebutkan tekniknya. Bagaimana anda melakukannya? Untuk kualitatif, pertanyaannya: bagaimana teknik pemilihan informan? Apa kriteria pemilihannya?"
+    - group [ref=e503]:
+      - generic "Q58 Data dan Persiapan Tautan Q58 Apa teknik pengumpulan data yang dilakukan? Bagaimana anda melakukannya?" [ref=e504] [cursor=pointer]:
+        - generic [ref=e505]: ▸
+        - generic [ref=e506]:
+          - generic [ref=e507]: Q58
+          - generic [ref=e508]: Data dan Persiapan
+          - link "Tautan Q58" [ref=e509]:
+            - /url: "#q-59"
+            - text: ¶
+          - generic [ref=e510]: Apa teknik pengumpulan data yang dilakukan? Bagaimana anda melakukannya?
+    - group [ref=e511]:
+      - generic "Q59 Metodologi Tautan Q59 Skala apa yang digunakan? Ini pertanyaan kuantitatif. Mengapa itu yang digunakan dibandingkan jenis skala yang lain? Dan biasanya pertanyaan ini merembet ke uji statistic kalian." [ref=e512] [cursor=pointer]:
+        - generic [ref=e513]: ▸
+        - generic [ref=e514]:
+          - generic [ref=e515]: Q59
+          - generic [ref=e516]: Metodologi
+          - link "Tautan Q59" [ref=e517]:
+            - /url: "#q-60"
+            - text: ¶
+          - generic [ref=e518]: Skala apa yang digunakan? Ini pertanyaan kuantitatif. Mengapa itu yang digunakan dibandingkan jenis skala yang lain? Dan biasanya pertanyaan ini merembet ke uji statistic kalian.
+    - group [ref=e519]:
+      - 'generic "Q60 Metodologi Tautan Q60 Apa teknik uji validitas dan reliabilitas yang digunakan? Bagaimana anda melakukannya? Kalau untuk kualitatif: apa teknik triangulasi yang digunakan." [ref=e520] [cursor=pointer]':
+        - generic [ref=e521]: ▸
+        - generic [ref=e522]:
+          - generic [ref=e523]: Q60
+          - generic [ref=e524]: Metodologi
+          - link "Tautan Q60" [ref=e525]:
+            - /url: "#q-61"
+            - text: ¶
+          - generic [ref=e526]: "Apa teknik uji validitas dan reliabilitas yang digunakan? Bagaimana anda melakukannya? Kalau untuk kualitatif: apa teknik triangulasi yang digunakan."
+    - group [ref=e527]:
+      - generic "Q61 Naskah dan Sidang Tautan Q61 Bagaimana anda mengolah dan menganalisis data? Apakah anda mengolah sendiri atau ada yang membantu?" [ref=e528] [cursor=pointer]:
+        - generic [ref=e529]: ▸
+        - generic [ref=e530]:
+          - generic [ref=e531]: Q61
+          - generic [ref=e532]: Naskah dan Sidang
+          - link "Tautan Q61" [ref=e533]:
+            - /url: "#q-62"
+            - text: ¶
+          - generic [ref=e534]: Bagaimana anda mengolah dan menganalisis data? Apakah anda mengolah sendiri atau ada yang membantu?
+    - group [ref=e535]:
+      - generic "Q62 Evaluasi dan Hasil Tautan Q62 Bagaimana hasil penelitiannya? Dosen akan bertanya secara detail tentang hasil yang kalian peroleh." [ref=e536] [cursor=pointer]:
+        - generic [ref=e537]: ▸
+        - generic [ref=e538]:
+          - generic [ref=e539]: Q62
+          - generic [ref=e540]: Evaluasi dan Hasil
+          - link "Tautan Q62" [ref=e541]:
+            - /url: "#q-63"
+            - text: ¶
+          - generic [ref=e542]: Bagaimana hasil penelitiannya? Dosen akan bertanya secara detail tentang hasil yang kalian peroleh.
+    - group [ref=e543]:
+      - generic "Q63 Kesimpulan Tautan Q63 Apa kesimpulan penelitian anda? Biasanya dosen bertanya simpulan kalau jumlahnya tidak sama dengan identifikasi masalah atau tujuan penelitian." [ref=e544] [cursor=pointer]:
+        - generic [ref=e545]: ▸
+        - generic [ref=e546]:
+          - generic [ref=e547]: Q63
+          - generic [ref=e548]: Kesimpulan
+          - link "Tautan Q63" [ref=e549]:
+            - /url: "#q-64"
+            - text: ¶
+          - generic [ref=e550]: Apa kesimpulan penelitian anda? Biasanya dosen bertanya simpulan kalau jumlahnya tidak sama dengan identifikasi masalah atau tujuan penelitian.
+    - group [ref=e551]:
+      - generic "Q64 Kesimpulan Tautan Q64 Mengapa anda memberikan saran-saran tersebut? Biasanya akan dilanjut dengan pertanyaan Memangnya hasil apa yang membuat anda memberikan saran tersebut?" [ref=e552] [cursor=pointer]:
+        - generic [ref=e553]: ▸
+        - generic [ref=e554]:
+          - generic [ref=e555]: Q64
+          - generic [ref=e556]: Kesimpulan
+          - link "Tautan Q64" [ref=e557]:
+            - /url: "#q-65"
+            - text: ¶
+          - generic [ref=e558]: Mengapa anda memberikan saran-saran tersebut? Biasanya akan dilanjut dengan pertanyaan Memangnya hasil apa yang membuat anda memberikan saran tersebut?
+    - group [ref=e559]:
+      - generic "Q65 Evaluasi dan Hasil Tautan Q65 Apakah hipotesis terbukti? Ada yang tidak terbukti? Mengapa demikian (ini pertanyaan bab IV hehe)" [ref=e560] [cursor=pointer]:
+        - generic [ref=e561]: ▸
+        - generic [ref=e562]:
+          - generic [ref=e563]: Q65
+          - generic [ref=e564]: Evaluasi dan Hasil
+          - link "Tautan Q65" [ref=e565]:
+            - /url: "#q-66"
+            - text: ¶
+          - generic [ref=e566]: Apakah hipotesis terbukti? Ada yang tidak terbukti? Mengapa demikian (ini pertanyaan bab IV hehe)
+    - group [ref=e567]:
+      - generic "Q66 Naskah dan Sidang Tautan Q66 Mengapa buku ini ada di daftar pustaka tapi di dalam skripsi anda tidak ada? (atau sebaliknya, mengapa buku ini anda kutip tapi dalam daftar pustaka tidak ada)" [ref=e568] [cursor=pointer]:
+        - generic [ref=e569]: ▸
+        - generic [ref=e570]:
+          - generic [ref=e571]: Q66
+          - generic [ref=e572]: Naskah dan Sidang
+          - link "Tautan Q66" [ref=e573]:
+            - /url: "#q-67"
+            - text: ¶
+          - generic [ref=e574]: Mengapa buku ini ada di daftar pustaka tapi di dalam skripsi anda tidak ada? (atau sebaliknya, mengapa buku ini anda kutip tapi dalam daftar pustaka tidak ada)
+    - group [ref=e575]:
+      - generic "Q67 Naskah dan Sidang Tautan Q67 Dosen juga bisa jadi bertanya tentang lampiran (misalnya coding book dan coding sheet penelitian untuk yang kuantitatif, atau transkrip wawancara untuk yang kualitatif)" [ref=e576] [cursor=pointer]:
+        - generic [ref=e577]: ▸
+        - generic [ref=e578]:
+          - generic [ref=e579]: Q67
+          - generic [ref=e580]: Naskah dan Sidang
+          - link "Tautan Q67" [ref=e581]:
+            - /url: "#q-68"
+            - text: ¶
+          - generic [ref=e582]: Dosen juga bisa jadi bertanya tentang lampiran (misalnya coding book dan coding sheet penelitian untuk yang kuantitatif, atau transkrip wawancara untuk yang kualitatif)
+    - group [ref=e583]:
+      - generic "Q68 Evaluasi dan Hasil Tautan Q68 pada hasil evaluation kenapa bisa data2vec bisa memenangkan dadam metrics MAP, tapi tidak dengan yang lain" [ref=e584] [cursor=pointer]:
+        - generic [ref=e585]: ▸
+        - generic [ref=e586]:
+          - generic [ref=e587]: Q68
+          - generic [ref=e588]: Evaluasi dan Hasil
+          - link "Tautan Q68" [ref=e589]:
+            - /url: "#q-69"
+            - text: ¶
+          - generic [ref=e590]: pada hasil evaluation kenapa bisa data2vec bisa memenangkan dadam metrics MAP, tapi tidak dengan yang lain
+    - group [ref=e591]:
+      - generic "Q69 Evaluasi dan Hasil Tautan Q69 owner ratio mana yang lebih baik antara ke empat varian (60:40, 70:30, 80:20, 90:10) dan mengapa? jika bisa dukung dengan penelitian pendukung" [ref=e592] [cursor=pointer]:
+        - generic [ref=e593]: ▸
+        - generic [ref=e594]:
+          - generic [ref=e595]: Q69
+          - generic [ref=e596]: Evaluasi dan Hasil
+          - link "Tautan Q69" [ref=e597]:
+            - /url: "#q-70"
+            - text: ¶
+          - generic [ref=e598]: owner ratio mana yang lebih baik antara ke empat varian (60:40, 70:30, 80:20, 90:10) dan mengapa? jika bisa dukung dengan penelitian pendukung
+    - group [ref=e599]:
+      - generic "Q70 Evaluasi dan Hasil Tautan Q70 Arti masing-masing factor dalam kausal?" [ref=e600] [cursor=pointer]:
+        - generic [ref=e601]: ▸
+        - generic [ref=e602]:
+          - generic [ref=e603]: Q70
+          - generic [ref=e604]: Evaluasi dan Hasil
+          - link "Tautan Q70" [ref=e605]:
+            - /url: "#q-71"
+            - text: ¶
+          - generic [ref=e606]: Arti masing-masing factor dalam kausal?
+    - group [ref=e607]:
+      - generic "Q71 Naskah dan Sidang Tautan Q71 dengan tools apa kamu membuat data visualisasi?" [ref=e608] [cursor=pointer]:
+        - generic [ref=e609]: ▸
+        - generic [ref=e610]:
+          - generic [ref=e611]: Q71
+          - generic [ref=e612]: Naskah dan Sidang
+          - link "Tautan Q71" [ref=e613]:
+            - /url: "#q-72"
+            - text: ¶
+          - generic [ref=e614]: dengan tools apa kamu membuat data visualisasi?
+    - group [ref=e615]:
+      - generic "Q72 Metodologi Tautan Q72 apa arti inferensial, dan jelaskan dalam studi kasus penelitian kamu" [ref=e616] [cursor=pointer]:
+        - generic [ref=e617]: ▸
+        - generic [ref=e618]:
+          - generic [ref=e619]: Q72
+          - generic [ref=e620]: Metodologi
+          - link "Tautan Q72" [ref=e621]:
+            - /url: "#q-73"
+            - text: ¶
+          - generic [ref=e622]: apa arti inferensial, dan jelaskan dalam studi kasus penelitian kamu
+    - group [ref=e623]:
+      - generic "Q73 Kesimpulan Tautan Q73 Mengapa anda menyarankan hal demikian dalam kesimpulan? apakah saran anda akan membawa perbaikan dalam penelitian selanjutnya?" [ref=e624] [cursor=pointer]:
+        - generic [ref=e625]: ▸
+        - generic [ref=e626]:
+          - generic [ref=e627]: Q73
+          - generic [ref=e628]: Kesimpulan
+          - link "Tautan Q73" [ref=e629]:
+            - /url: "#q-74"
+            - text: ¶
+          - generic [ref=e630]: Mengapa anda menyarankan hal demikian dalam kesimpulan? apakah saran anda akan membawa perbaikan dalam penelitian selanjutnya?
+  - contentinfo [ref=e631]:
+    - generic [ref=e632]: "Navigate: / fokus pencarian · E buka semua · Esc tutup semua · T ganti tema"
+    - generic [ref=e633]:
+      - text: "Struktur data:"
+      - code [ref=e634]: QA_DATA[id, num, category, question, answer, followUp?, tags?]

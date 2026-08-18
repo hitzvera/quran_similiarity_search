@@ -35,5 +35,5 @@
 
 20. ✅ Berikan penomoran dalam rumus di dasar teori, jika ada penjelasan yang merujuk ke rumus itu, bisa disebut nomornya
 
-21. Bab 3 seharusnya hanya rencana belum ada hasil yang ada. pindahkan hasil ke bab 4
+21. ✅ Bab 3 seharusnya hanya rencana belum ada hasil yang ada. pindahkan hasil ke bab 4
 
