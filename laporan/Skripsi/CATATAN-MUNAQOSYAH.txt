@@ -1,0 +1,41 @@
+1. et al -> pake dkk
+2. ✅ halaman 30 tidak perlu dibold untuk Skenario-Skenario
+3. ✅ Judul di halaman 35 di sub bab, sampe 36 pada miring seharusnya tidak dibikin miring
+4. ✅ halaman 37 kosongnya hamper seluruh halaman dibuat agar proporsioal
+ = Gambar di page selanjutnya dibikin lebih kecil
+5. ✅ Caption gambar dan table tidak perlu dibold.
+6. ✅ penulisan daftar Pustaka spasinya belum 1.5
+7. [ON PROGRESS] tidak ada demo, harusnya dibikinkan streamlit
+8. di bab 3 dibikin gambaran besarnya sebelum mendapatkan hasil.
+9. business understanding lebih ke masalah penelitian bukan goals yang akan dicapainya apa dulu
+10. latar belakang harus ditekankan masalah penelitiannya terkait dengan domain penelitian (Al-Quran recitation)
+11. Top K harus ada penjelasannya terkait Evaluasi.
+12. Perbandingannya kurang kuat untuk perbandingan kedua modelnya, dan kurang Analisa atas hasil yang sudah didapat
+13. Kebanyakan ungkapan dalam Bahasa asing belum menggunakan italic
+ 13.1 dalam abstract khususnya
+14. landasan teori tambahkan fitur laten audio
+15. rumusan masalah tambahkan terkait perbandingan untuk sekarang hanya implementasi dan hasil dari masing-masing performa model untuk wav2vec2 dan data2vec
+16. tambahkan daftar rumus setelah daftar table
+17. state of the art ditambah 5 menjadi 15 pcs
+18. manfaat penelitian dipisahkan menjadi untuk akademik (teori) dan praktiknya seperti apa
+19. jelaskan perbandingannya dalam kesimpulannya
+20. ✅ halaman 9 untuk penulisan bab tidak perlu menggunakan titik dua langsung saja BAB I PENDAHULUAN
+21. kesimpulan mana model yang unggul
+22. ✅ typo di judul memperoleh
+23. ✅ abstrak disesuaikan lagi
+Komponen	Bagian dalam abstrakmu	Penilaian
+Latar belakang	“Pencarian berbasis suara untuk menemukan ayat Al-Qur’an memerlukan representasi ucapan yang mempertahankan informasi fonetik tanpa bergantung pada transkripsi.”	✅ Jelas
+Tujuan	“Penelitian ini bertujuan membandingkan Wav2Vec2 dan Data2Vec sebagai representasi vektor tanpa fine-tuning untuk pencarian kemiripan ayat.”	✅ Sangat jelas
+Metode	Dataset, 13 titik lapisan, cosine similarity, MAP, MRR, Top-K, serta pemisahan development dan test set	✅ Lengkap
+Hasil	Data2Vec unggul pada 9/13 lapisan, Wav2Vec2 pada 4/13, serta hasil uji bootstrap 11/13 signifikan	✅ Ada hasil kuantitatif
+Kesimpulan	“Tidak terdapat model yang unggul secara universal, sehingga pemilihan model dan lapisan representasi perlu mempertimbangkan karakteristik skenario pencarian.”	✅ Ada interpretasi/dampak
+
+24. untuk singkatan lebih dijelaskan lagi dalam bahasan sebelumnya, contohnya ASR, itu pertama-tama harus dijelaskan terlebih dahulu singkatan dari apa, baru bisa disingkat kedepannya
+25. ✅ halaman 5 masih banyak space kosong.
+26. untuk angka yang masih terbaca di tengah usahakan di tengah
+27. jelaskan evaluasi pada bab 3 menggunakan apa
+28. typo di bab 4 halaman 42 "diatus"
+29. belum ada halaman di daftar isi dll (sebelum bab 1)
+30. halamanan 48 tidak perlu diitalic
+31. ✅ Hapus dibuat oleh dalam abstrak
+32. ✅ Batasan  masalah diganti perayat menjadi per-ayat, terus surah-surah dalam juz amma menjadi Al fatihah dan Juz Amma

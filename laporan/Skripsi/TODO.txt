@@ -1,4 +1,0 @@
-1. Update daftar isi, kondisi sekarang Ketika update table si imagenya masuk daftar isi
-2. rapihin lagi untuk gambar landasan teori wav2vec2 dan data2vec
-
-sci-ea85c5-a4a139-bfbdec-e83178-12f0a2-e3421d
