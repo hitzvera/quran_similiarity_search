@@ -1,0 +1,4 @@
+akustik: berhubungan dengan organ pendengar, suara, atau ilmu bunyi
+korpus: kumpulan ujaran yang tertulis atau lisan yang digunakan untuk menyokong atau menguji hipotesis tentang struktur bahasa
+fonetik: sistem bunyi suatu Bahasa
+fonem: satuan bunyi terkecil 
