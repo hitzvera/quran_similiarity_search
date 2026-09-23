@@ -1,0 +1,29 @@
+1. cek plagiarism tidak boleh lebih dari 25%
+2. [TINGGAL PRINT] bukti lembar persetujuan pembimbing
+3. [TINGGAL PRINT] lembar bimbingan dan konsultasi skripsi dari pembimbing 1 dan 2
+4. ✅ lunas spp
+5. ✅ scan asli sk pembimbing skripsi
+6. [TINGGAL PRINT] lembar pendaftaran yang sudah di tanda tangan
+7. ✅ draft laporan 
+
+197811182009121002
+
+4661601255107523
+10/28
+405
+
+oot        2474  2.3  0.0  57948 51592 pts/1
+
+scp -P 31511  "$LOCAL\pre-processing\*.py" "$LOCAL\pre-processing\setup_gpu.sh" `
+    root@191.223.212.127:/workspace/segmentation/pre-processing/
+
+$VAST_PORT = 33154
+$VAST_HOST = "142.111.146.204"
+$LOCAL     = "C:\skripsi\quran_similiarity_search\backend-skripsi"
+
+
+scp -P 33105 "C:\skripsi\quran_similiarity_search\backend-skripsi\pre-processing\surah_reference.py" `
+    "C:\skripsi\quran_similiarity_search\backend-skripsi\pre-processing\ayah_align.py" `
+    "C:\skripsi\quran_similiarity_search\backend-skripsi\pre-processing\surah_map.py" `
+    "C:\skripsi\quran_similiarity_search\backend-skripsi\pre-processing\remote_segment.py" `
+    root@142.111.146.204:/workspace/segmentation/pre-processing/

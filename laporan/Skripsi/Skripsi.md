@@ -12,6 +12,8 @@ Universitas Islam Negeri Sunan Gunung Djati Bandung
 MUJAHID ANSORI MAJID\
 1197050093~­~**
 
+**­**
+
 ![Logo Description automatically generated with medium
 confidence](media/image1.png){width="1.7048611111111112in"
 height="2.4569444444444444in"}
@@ -24,7 +26,7 @@ height="2.4569444444444444in"}
 >
 > **BANDUNG**
 >
-> **2026 M / 1448 H**
+> **­**
 
 # LEMBAR PERSETUJUAN
 
@@ -180,17 +182,17 @@ Quran-MD. Representasi vektor dihasilkan pada 13 titik lapisan dari
 setiap model. Kemiripan antara kueri dan *database* referensi dihitung
 menggunakan *cosine similarity* untuk menghasilkan skor kemiripan.
 Kinerja dievaluasi menggunakan *Mean Average Precision* (MAP), *Mean
-Reciprocal Rank* (MRR), dan *Top-K* dengan pemisahan himpunan
-pengembangan dan himpunan pengujian. Pada 13 lapisan evaluasi, Data2Vec
-menghasilkan nilai MAP lebih tinggi pada 9 lapisan, sedangkan Wav2Vec2
-lebih tinggi pada 4 lapisan. Uji *bootstrap* berpasangan menunjukkan
-perbedaan MAP yang signifikan pada 11 dari 13 perbandingan, sementara 2
-perbandingan lainnya tidak menunjukkan perbedaan yang signifikan. MRR
-dan Top-K digunakan sebagai analisis deskriptif untuk melengkapi
-evaluasi. Temuan menunjukkan bahwa kinerja kedua model bervariasi antar
-lapisan dan skenario, sehingga tidak terdapat model yang unggul secara
-universal dan pemilihan model serta lapisan representasi perlu
-mempertimbangkan karakteristik skenario pencarian.
+Reciprocal Rank* (MRR), dan Top-K dengan pemisahan himpunan pengembangan
+dan himpunan pengujian. Pada 13 lapisan evaluasi, Data2Vec menghasilkan
+nilai MAP lebih tinggi pada 9 lapisan, sedangkan Wav2Vec2 lebih tinggi
+pada 4 lapisan. Uji *bootstrap* berpasangan menunjukkan perbedaan MAP
+yang signifikan pada 11 dari 13 perbandingan, sementara 2 perbandingan
+lainnya tidak menunjukkan perbedaan yang signifikan. MRR dan Top-K
+digunakan sebagai analisis deskriptif untuk melengkapi evaluasi. Temuan
+menunjukkan bahwa kinerja kedua model bervariasi antar lapisan dan
+skenario, sehingga tidak terdapat model yang unggul secara universal dan
+pemilihan model serta lapisan representasi perlu mempertimbangkan
+karakteristik skenario pencarian.
 
 **Kata Kunci**: pencarian kemiripan audio, vektor embedding, Wav2vec2,
 Data2vec, Al-Qur'an
@@ -388,37 +390,22 @@ rahmat, hidayah, dan ridha-Nya kepada kita semua.
 
 [*3.3.* *Data Preparation* [33](#data-preparation)](#data-preparation)
 
-[3.3.1. Seleksi dan normalisasi identitas
+[3.3.1 Seleksi dan normalisasi identitas
 [35](#seleksi-dan-normalisasi-identitas)](#seleksi-dan-normalisasi-identitas)
 
 [3.3.2. Segmentasi rekaman mahasiswa
 [35](#segmentasi-rekaman-mahasiswa)](#segmentasi-rekaman-mahasiswa)
 
-[3.3.3. Validasi dan pembentukan manifest
+[3.3.3. Validasi dan pembentukan manifes
 [36](#validasi-dan-pembentukan-manifest)](#validasi-dan-pembentukan-manifest)
 
-[3.3.4. Pemisahan data dan peran sumber
-[37](#pemisahan-data-dan-peran-sumber)](#pemisahan-data-dan-peran-sumber)
+[*3.4.* *Modeling* [36](#modeling)](#modeling)
 
-[*3.4.* *Modeling* [38](#modeling)](#modeling)
-
-[3.4.1. Ekstraksi representasi layerwise
-[38](#ekstraksi-representasi-layerwise)](#ekstraksi-representasi-layerwise)
-
-[3.4.2. Pembersihan data hasil ekstraksi
+[3.3.1. Cleaning hasil ekstraksi
 [38](#pembersihan-data-hasil-ekstraksi)](#pembersihan-data-hasil-ekstraksi)
 
-[3.4.3. Pemilihan lapisan representasi per sel
-[39](#pemilihan-lapisan-representasi-per-sel)](#pemilihan-lapisan-representasi-per-sel)
-
-[3.4.4. Evaluasi MAP development per skenario
-[39](#evaluasi-map-development-per-skenario)](#evaluasi-map-development-per-skenario)
-
-[3.4.5. Ringkasan pemilihan layer
-[39](#ringkasan-pemilihan-layer)](#ringkasan-pemilihan-layer)
-
-[3.4.6. Skor dan pemeringkatan
-[40](#skor-dan-pemeringkatan)](#skor-dan-pemeringkatan)
+[3.4.2. Skor dan pemeringkatan
+[39](#skor-dan-pemeringkatan)](#skor-dan-pemeringkatan)
 
 [*3.5.* *Evaluation* [39](#_Toc237480653)](#_Toc237480653)
 
@@ -436,37 +423,19 @@ rahmat, hidayah, dan ridha-Nya kepada kita semua.
 [4.3. Hasil Data Preparation
 [47](#hasil-data-preparation)](#hasil-data-preparation)
 
-[4.3.1. Hasil Seleksi dan normalisasi identitas
-[47](#hasil-seleksi-dan-normalisasi-identitas)](#hasil-seleksi-dan-normalisasi-identitas)
-
-[4.3.2. Hasil Segmentasi rekaman mahasiswa
-[48](#hasil-segmentasi-rekaman-mahasiswa)](#hasil-segmentasi-rekaman-mahasiswa)
-
-[4.3.3. Hasil Validasi dan pembentukan manifest
-[49](#hasil-validasi-dan-pembentukan-manifest)](#hasil-validasi-dan-pembentukan-manifest)
-
-[4.3.4. Hasil Pemisahan data dan peran sumber
-[50](#hasil-pemisahan-data-dan-peran-sumber)](#hasil-pemisahan-data-dan-peran-sumber)
+[4.3.1. Permisahan Dataset dan Peran Sumber
+[48](#hasil-pemisahan-dataset-dan-peran-sumber-data)](#hasil-pemisahan-dataset-dan-peran-sumber-data)
 
 [4.4. Hasil Modeling [53](#hasil-modeling)](#hasil-modeling)
 
-[4.4.1. Hasil Ekstraksi representasi layerwise
-[53](#hasil-ekstraksi-representasi-layerwise)](#hasil-ekstraksi-representasi-layerwise)
+[4.4.1. Pemilihan lapisan representasi per Sel
+[54](#_Toc237480661)](#_Toc237480661)
 
-[4.4.2. Hasil Pembersihan data hasil ekstraksi
-[53](#hasil-pembersihan-data-hasil-ekstraksi)](#hasil-pembersihan-data-hasil-ekstraksi)
+[4.4.2. Evaluasi MAP Development per Skenario
+[55](#evaluasi-map-development-per-skenario-1)](#evaluasi-map-development-per-skenario-1)
 
-[4.4.3. Hasil Pemilihan lapisan representasi per sel
-[54](#hasil-pemilihan-lapisan-representasi-per-sel)](#hasil-pemilihan-lapisan-representasi-per-sel)
-
-[4.4.4. Hasil Evaluasi MAP Development per Skenario
-[55](#hasil-evaluasi-map-development-per-skenario)](#hasil-evaluasi-map-development-per-skenario)
-
-[4.4.5. Hasil Ringkasan Pemilihan Layer
-[60](#hasil-ringkasan-pemilihan-layer)](#hasil-ringkasan-pemilihan-layer)
-
-[4.4.6. Hasil Skor dan pemeringkatan
-[62](#hasil-skor-dan-pemeringkatan)](#hasil-skor-dan-pemeringkatan)
+[4.4.3. Ringkasan Pemilihan Layer
+[60](#ringkasan-pemilihan-layer-1)](#ringkasan-pemilihan-layer-1)
 
 [4.5. Hasil Evaluation dan Pembahasan
 [63](#hasil-evaluation-dan-pembahasan)](#hasil-evaluation-dan-pembahasan)
@@ -488,140 +457,160 @@ rahmat, hidayah, dan ridha-Nya kepada kita semua.
 
 # DAFTAR GAMBAR
 
-[Gambar 1.1 Kerangka Pemikiran [6](#_Toc236767899)](#_Toc236767899)
+[*Gambar 1.1 Kerangka Pemikiran [7](#_Toc236767899)*](#_Toc236767899)
 
-[Gambar 2.1 Arsitektur Wav2vec2 [20](#_Toc236767908)](#_Toc236767908)
+[*Gambar 2.1 Arsitektur Wav2vec2 [22](#_Toc236767908)*](#_Toc236767908)
 
-[Gambar 2.2 Arsitektur Data2vec [22](#_Toc236767909)](#_Toc236767909)
+[*Gambar 2.2 Arsitektur Data2vec [24](#_Toc236767909)*](#_Toc236767909)
 
-[Gambar 3.1 Adaptasi CRISP-DM [29](#_Toc237464121)](#_Toc237464121)
+[*Gambar 3.1 Adaptasi CRISP-DM [31](#_Toc237464121)*](#_Toc237464121)
 
-[Gambar 3.2 Persiapan data Quran-MD dan mahasiswa
-[34](#_Toc237464122)](#_Toc237464122)
+[*Gambar 3.2 Persiapan data Quran-MD dan mahasiswa
+[36](#_Toc237464122)*](#_Toc237464122)
 
-[Gambar 3.3 Jumlah variasi alias nama surah terdaftar per surah sasaran
-[35](#gambar-33-jumlah-variasi-alias-nama-surah-terdaftar-per-surah-sasaran)](#gambar-33-jumlah-variasi-alias-nama-surah-terdaftar-per-surah-sasaran)
+[*Gambar 3.4 Ekstraksi identitas pembaca dan slug
+[40](#_Toc239590310)*](#_Toc239590310)
 
-[Gambar 3.4 Alur validasi dan pembentukan manifest tervalidasi
-[36](#gambar-34-alur-validasi-dan-pembentukan-manifest-tervalidasi)](#gambar-34-alur-validasi-dan-pembentukan-manifest-tervalidasi)
+[*Gambar 3.5 Penanganan anomali [41](#_Toc239590311)*](#_Toc239590311)
 
-[Gambar 3.5 Ekstraksi layerwise, checkpoint, manifest dan matriks akhir
-[38](#_Toc237464123)](#_Toc237464123)
+[*Gambar 3.6 Normalisasi audio di kedua sumber data
+[42](#_Toc239590312)*](#_Toc239590312)
 
-[Gambar 3.6 Evaluasi skenario A, B, C, dan D
-[40](#_Toc237464124)](#_Toc237464124)
+[*Gambar 3.7 Ekstraksi layerwise, checkpoint, manifest dan matriks akhir
+[47](#_Toc237464123)*](#_Toc237464123)
 
-[Gambar 4.1 Rekonsiliasi data [44](#_Toc236984558)](#_Toc236984558)
+[*Gambar 3.8 Evaluasi skenario A, B, C
+[49](#_Toc237464124)*](#_Toc237464124)
 
-[Gambar 4.2 Distribusi pemicu *fallback* alokasi waktu proporsional
-[49](#gambar-42-distribusi-pemicu-fallback-alokasi-waktu-proporsional)](#gambar-42-distribusi-pemicu-fallback-alokasi-waktu-proporsional)
+[*Gambar 4.1 Rekonsiliasi data [53](#_Toc236984558)*](#_Toc236984558)
 
-[Gambar 4.3 Alur validasi dan pembentukan *manifest* tervalidasi beserta
-jumlah berkas
-[50](#gambar-43-alur-validasi-dan-pembentukan-manifest-tervalidasi-beserta-jumlah-berkas)](#gambar-43-alur-validasi-dan-pembentukan-manifest-tervalidasi-beserta-jumlah-berkas)
+[*Gambar 4.2 Ukuran query dan database pada scenario A, B, C
+[55](#_Toc236984559)*](#_Toc236984559)
 
-[Gambar 4.4 Layer representasi terpilih
-[63](#_Toc237463888)](#_Toc237463888)
+[*Gambar 4.3 Layer representasi terpilih
+[71](#_Toc239590298)*](#_Toc239590298)
 
-[Gambar 4.5 Perbandingan MAP Final per Sel
-[68](#_Toc237463889)](#_Toc237463889)
+[*Gambar 4.4 Perbandingan MAP Final per Sel
+[76](#_Toc239590299)*](#_Toc239590299)
 
-[Gambar 4.6 Tren MAP final terhadap *owner ratio* *database*
-[69](#_Toc237463890)](#_Toc237463890)
+[*Gambar 4.5 Tren MAP final terhadap owner ration database
+[77](#_Toc239590300)*](#_Toc239590300)
 
-[Gambar 4.7 Ringkasan rasio terbaik per metrik
-[70](#_Toc237463891)](#_Toc237463891)
+[*Gambar 4.6 Ringkasan rasio terbaik per metrik
+[78](#_Toc239590301)*](#_Toc239590301)
 
-[Gambar 4.8 Rancangan konseptual deployment *retrieval*
-[72](#_Toc236984561)](#_Toc236984561)
+[*Gambar 4.7 Rancangan konseptual deployment retrieval
+[80](#_Toc236984561)*](#_Toc236984561)
 
 # DAFTAR TABEL
 
-Tabel 2.1 *State of the art* [11](#_Toc236748112)
+[Tabel 2.1 *State of the art* [11](#_Toc236748112)](#_Toc236748112)
 
-Tabel 2.2 Konfigurasi Blok Konvolusi Temporal pada Encoder Audio
-[18](#_Toc236748113)
+[Tabel 2.2 Konfigurasi Blok Konvolusi Temporal pada *Encoder* *Audio*
+[20](#_Toc236748113)](#_Toc236748113)
 
-Tabel 3.1 Gambaran peran sumber data pada Skenario A, B, C, dan D [31]
+[Tabel 3.1 Gambaran peran sumber data pada Skenario A, B, C, dan D
+[33](#_Toc239590163)](#_Toc239590163)
 
-Tabel 3.2 Peran sumber data dalam rancangan eksperimen
-[32](#_Toc236984596)
+[Tabel 3.2 Peran sumber data dalam rancangan eksperimen
+[34](#_Toc236984596)](#_Toc236984596)
 
-Tabel 3.3 Skema pemetaan nama berkas mahasiswa menuju identitas surah
-baku [35]
+[Tabel 3.3 Contoh pemetaan nama berkas mahasiswa menuju identitas surah
+terstandarisasi [38](#_Toc239590165)](#_Toc239590165)
 
-Tabel 3.4 Variasi alias terdaftar untuk surah terpilih [35]
+[Tabel 3.4 Variasi alias terdaftar untuk surah terpilih
+[38](#_Toc239590166)](#_Toc239590166)
 
-Tabel 3.5 Ilustrasi alokasi kata terdeteksi menjadi batas ayat [35]
+[Tabel 3.5 Ilustrasi alokasi kata terdeteksi menjadi batas ayat
+[43](#_Toc239590167)](#_Toc239590167)
 
-Tabel 3.6 Gerbang validasi akhir beserta kriteria dan perlakuan
-kegagalan [36]
+[Tabel 4.1 Rekonsiliasi validasi [53](#_Toc236984570)](#_Toc236984570)
 
-Tabel 3.7 Skema baris *manifest* tervalidasi beserta kelas *provenance*
-(kolom diringkas) [37]
+[Tabel 4.2 Ukuran final skenario *retrieval*
+[55](#_Toc236984571)](#_Toc236984571)
 
-Tabel 3.8 Aturan perhitungan jumlah pemilik pada tiap rasio [37]
+[Tabel 4.3 Ukuran Query dan *database* referensi pada Skenario A
+[59](#_Toc239590203)](#_Toc239590203)
 
-Tabel 4.1 Rekonsiliasi validasi [44](#_Toc236984570)
+[Tabel 4.4 Ukuran *query* dan *database* referensi pada Skenario B
+[59](#_Toc239590204)](#_Toc239590204)
 
-[Tabel 4.2 Ukuran Query dan *database* referensi pada Skenario A
-[50](#_Toc237464297)](#_Toc237464297)
+[Tabel 4.5 Ukuran *query* dan *database* referensi pada Skenario C
+[60](#_Toc239590205)](#_Toc239590205)
 
-[Tabel 4.3 Ukuran *query* dan *database* referensi pada Skenario B
-[50](#_Toc237464298)](#_Toc237464298)
+[Tabel 4.6 Ukuran *query* dan *database* referensi pada Skenario D
+[60](#_Toc239590206)](#_Toc239590206)
 
-[Tabel 4.4 Ukuran *query* dan *database* referensi pada Skenario C
-[51](#_Toc237464299)](#_Toc237464299)
+[Tabel 4.7 Pembagian *development set* dan *test set* pada setiap sel
+[63](#_Toc239590207)](#_Toc239590207)
 
-[Tabel 4.5 Ukuran *query* dan *database* referensi pada Skenario D
-[51](#_Toc237464300)](#_Toc237464300)
+[Tabel 4.8 Evluasi layer dengan MAP Skenario A (n_dev = 17.839)
+[64](#_Toc239590208)](#_Toc239590208)
 
-[Tabel 4.6 Pembagian *development set* dan *test set* pada setiap sel
-[54](#_Toc237464301)](#_Toc237464301)
+[Tabel 4.9 Evaluasi layer dengan MAP Skenario B Wav2vec2
+[65](#_Toc239590209)](#_Toc239590209)
 
-[Tabel 4.7 Evaluasi layer dengan MAP Skenario A (n_dev = 17.839)
-[55](#_Toc237464302)](#_Toc237464302)
+[Tabel 4.10 Evaluasi layer dengan MAP Skenario B Data2vec
+[66](#_Toc239590210)](#_Toc239590210)
 
-[Tabel 4.8 Evaluasi layer dengan MAP Skenario B Wav2vec2
-[56](#_Toc237464303)](#_Toc237464303)
+[Tabel 4.11 Evaluasi layer dengan MAP Skenario C Wav2vec2
+[67](#_Toc239590211)](#_Toc239590211)
 
-[Tabel 4.9 Evaluasi layer dengan MAP Skenario B Data2vec
-[57](#_Toc237464304)](#_Toc237464304)
+[Tabel 4.12 Evaluasi layer dengan MAP Skenario C Data2vec
+[67](#_Toc239590212)](#_Toc239590212)
 
-[Tabel 4.10 Evaluasi layer dengan MAP Skenario C Wav2vec2
-[58](#_Toc237464305)](#_Toc237464305)
+[Tabel 4.13 Evaluasi layer dengan MAP Skenario D Wav2vec2
+[68](#_Toc239590213)](#_Toc239590213)
 
-[Tabel 4.11 Evaluasi layer dengan MAP Skenario C Data2vec
-[58](#_Toc237464306)](#_Toc237464306)
+[Tabel 4.14 Evaluation layer dengan MAP Skenario D Data2vec
+[69](#_Toc239590214)](#_Toc239590214)
 
-[Tabel 4.12 Evaluasi layer dengan MAP Skenario D Wav2vec2
-[59](#_Toc237464307)](#_Toc237464307)
+[Tabel 4.15 Ringkasan layer terpilih dan MAP development
+[70](#_Toc239590215)](#_Toc239590215)
 
-[Tabel 4.13 Evaluasi layer dengan MAP Skenario D Data2vec
-[60](#_Toc237464308)](#_Toc237464308)
+[Tabel 4.16 Hasil Evaluasi Skenario A
+[72](#_Toc239590216)](#_Toc239590216)
 
-[Tabel 4.14 Ringkasan layer terpilih dan MAP development
-[61](#_Toc237464309)](#_Toc237464309)
+[Tabel 4.17 Hasil Evaluasi *Owner Ratio* 60:40 pada Skenario B, C, dan D
+[73](#_Toc239590217)](#_Toc239590217)
 
-[Tabel 4.15 Hasil Evaluasi Skenario A
-[64](#_Toc237464310)](#_Toc237464310)
+[Tabel 4.18 Hasil Evaluasi *owner ratio* 70:30 pada skenario B, C, dan D
+[73](#_Toc239590218)](#_Toc239590218)
 
-[Tabel 4.16 Hasil Evaluasi *Owner Ratio* 60:40 pada Skenario B, C, dan D
-[64](#_Toc237464311)](#_Toc237464311)
+[Tabel 4.19 Hasil Evaluasi *owner ration* 80:20 pada skenario B, C, dan
+D [74](#_Toc239590219)](#_Toc239590219)
 
-[Tabel 4.17 Hasil Evaluasi *owner ratio* 70:30 pada skenario B, C, dan D
-[65](#_Toc237464312)](#_Toc237464312)
+[Tabel 4.20 Hasil Evaluasi owner ration 90:10 pada skenario B, C, dan D
+[75](#_Toc239590220)](#_Toc239590220)
 
-[Tabel 4.18 Hasil Evaluasi *owner ratio* 80:20 pada skenario B, C, dan
-D [65](#_Toc237464313)](#_Toc237464313)
+[Tabel 4.21 Perbandingan *bootstrap* selisih MAP
+[79](#_Toc236984574)](#_Toc236984574)
 
-[Tabel 4.19 Hasil Evaluasi owner ratio 90:10 pada skenario B, C, dan D
-[66](#_Toc237464314)](#_Toc237464314)
+**DAFTAR RUMUS**
 
-[Tabel 4.20 Perbandingan *bootstrap* selisih MAP
-[71](#_Toc236984574)](#_Toc236984574)
+[Rumus (2.1) [18](#_Toc239590104)](#_Toc239590104)
 
-DAFTAR RUMUS
+[Rumus (2.2) [21](#_Toc239590105)](#_Toc239590105)
+
+[Rumus (2.3) [21](#_Toc239590106)](#_Toc239590106)
+
+[Rumus (2.4) [21](#_Toc239590107)](#_Toc239590107)
+
+[Rumus (2.5) [22](#_Toc239590108)](#_Toc239590108)
+
+[Rumus (2.6) [23](#_Toc239590109)](#_Toc239590109)
+
+[Rumus (2.7) [24](#_Toc239590110)](#_Toc239590110)
+
+[Rumus (2.8) [25](#_Toc239590111)](#_Toc239590111)
+
+[Rumus (2.9) [25](#_Toc239590112)](#_Toc239590112)
+
+[Rumus (2.10) [26](#_Toc239590113)](#_Toc239590113)
+
+[Rumus (2.11) [26](#_Toc239590114)](#_Toc239590114)
+
+[Rumus (2.12) [26](#_Toc239590115)](#_Toc239590115)
 
 # BAB I PENDAHULUAN
 
@@ -768,7 +757,7 @@ pada tugas *retrieval* audio ayat Al-Qur\'an serta mengetahui apakah
 perbedaan paradigma *pretraining* menghasilkan pola kinerja *retrieval*
 yang berbeda.
 
-## Rumusan Masalah
+##  Rumusan Masalah
 
 Berdasarkan Rumusan masalah terbagi menjadi beberapa point
 
@@ -802,49 +791,48 @@ Batasan masalah dari penelitian ini adalah sebagai berikut:
 
 ##  Manfaat Penelitian
 
-a.  Bagi Peneliti
+Penelitian ini diharapkan memberikan manfaat yang dipaparkan sebagai
+berikut:
 
-Bagi peneliti dan akademisi, penelitian ini diharapkan dapat memberikan
-referensi empiris mengenai kemampuan representasi audio dari model SSL,
-khususnya Wav2Vec2 dan Data2Vec, dalam tugas *retrieval* audio ayat
-Al-Qur\'an. Hasil penelitian dapat menjadi dasar untuk memahami
-perbedaan karakteristik representasi yang dihasilkan oleh paradigma
-*contrastive learning* dan *self-distillation* ketika digunakan tanpa
-*fine-tuning* pada domain pembacaan Al-Qur\'an. Selain itu, penelitian
-ini dapat menjadi referensi bagi penelitian selanjutnya yang
-mengembangkan metode adaptasi, *fine-tuning*, atau pendekatan
-representasi audio yang lebih sesuai untuk tugas *Quranic speech
-processing*.
+1.  Manfaat teoritis, penelitian ini memberikan kontribusi terhadap
+    pemahaman mengenai perbedaan karakteristik representasi yang
+    dihasilkan oleh dua paradigma *self-supervised learning* yang
+    berbeda, yaitu *contrastive learning* pada Wav2Vec 2.0 dan
+    *self-distillation* pada Data2Vec, ketika diterapkan tanpa
+    *fine-tuning* pada domain pembacaan Al-Qur\'an. Temuan mengenai
+    lapisan representasi yang menghasilkan kinerja terbaik pada
+    masing-masing model dapat menjadi referensi bagi kajian teoretis
+    tentang distribusi informasi pada arsitektur *Transformer* berlapis
+    dalam konteks tugas *retrieval* audio.
 
-b.  Bagi pengembang perangkat lunak
+2.  Manfaat praktis, Secara praktis, penelitian ini menyediakan bukti
+    empiris yang dapat dijadikan dasar bagi pengembang perangkat lunak
+    dalam memilih model representasi dan lapisan model yang sesuai untuk
+    sistem pencarian ayat Al-Qur\'an berbasis audio. Penelitian ini
+    tidak hanya menghasilkan temuan numerik, tetapi juga meletakkan
+    prosedur metodologis yang dapat direplikasi dan dikembangkan oleh
+    penelitian selanjutnya.
 
-Bagi pengembang perangkat lunak, penelitian ini dapat memberikan
-informasi mengenai kelayakan penggunaan representasi audio *pretrained*
-sebagai komponen awal dalam sistem *retrieval* bacaan Al-Qur\'an. Hasil
-evaluasi dapat digunakan sebagai pertimbangan dalam memilih model
-representasi dan lapisan model yang sesuai sebelum menerapkan metode
-adaptasi atau pengembangan sistem lebih lanjut. Dengan demikian, hasil
-penelitian dapat membantu pengembang memahami keterbatasan dan potensi
-penggunaan Wav2Vec2 dan Data2Vec untuk pencocokan audio bacaan
-Al-Qur\'an.
-
-c.  Bagi masyarakat
-
-Bagi masyarakat, khususnya pengguna teknologi pembelajaran dan pencarian
-bacaan Al-Qur\'an, penelitian ini diharapkan dapat menjadi salah satu
-landasan teknis bagi pengembangan sistem yang mampu melakukan pencarian
-ayat berdasarkan masukan audio. Pengembangan lebih lanjut berdasarkan
-hasil penelitian ini berpotensi mendukung teknologi pembelajaran
-Al-Qur\'an yang memungkinkan pengguna menemukan ayat yang sesuai dari
-suatu rekaman bacaan tanpa harus memasukkan teks secara manual.
+3.  Manfaat di bidang audio, Di bidang pemrosesan audio, penelitian ini
+    menunjukkan kelayakan penggunaan representasi laten dari model
+    *self-supervised* sebagai dasar sistem *retrieval* audio tanpa
+    memerlukan tahap transkripsi. Pendekatan ini menghindari
+    ketergantungan pada sistem *Automatic Speech Recognition* (ASR) yang
+    pada umumnya belum tersedia secara memadai untuk pembacaan
+    Al-Qur\'an dengan gaya tartil maupun mujawwad. Temuan penelitian ini
+    dapat menjadi landasan bagi pengembangan sistem pencarian audio yang
+    bekerja langsung pada tingkat representasi akustik, sehingga
+    berpotensi mendukung teknologi pembelajaran Al-Qur\'an yang
+    memungkinkan pengguna menemukan ayat dari rekaman bacaan tanpa
+    memasukkan teks secara manual.
 
 ##  Kerangka Pemikiran
 
 Kerangkan pemikiran dipetakan dalam gambar sebagai berikut
 
 ![[]{#_Toc236767899 .anchor}Gambar 1.1 Kerangka
-Pemikiran](media/image2.png){width="5.4538582677165355in"
-height="2.9895833333333335in"}
+Pemikiran](media/image2.png){width="4.951388888888889in"
+height="2.7141502624671916in"}
 
 Penelitian ini berangkat dari sebuah fenomena dalam bidang pemrosessan
 audio, yaitu kemampuan model *Self-Supervised Learning* (SSL) seperti
@@ -1245,11 +1233,12 @@ mentransformasikan input melalui bobot this equation **W**, bias **b**.
 Dan fungsi aktivasi non-linear *σ,* sehingga keluaran satu lapisan
 dinyatakan sebagai berikut
 
-  -----------------------------------------------------------------------------
-     $$\mathbf{h} = \sigma\left( \mathbf{Wx} + \mathbf{b} \right)$$   (2.1)
-  -- ---------------------------------------------------------------- ---------
+  ---------------------------------------------------------------------------------------
+     $$\mathbf{h} = \sigma\left( \mathbf{Wx} + \mathbf{b} \right)$$   []{#_Toc239590104
+                                                                      .anchor}(2.1)
+  -- ---------------------------------------------------------------- -------------------
 
-  -----------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------
 
 Parameter jaringan dioptimasi dengan meminimalkan *loss function*
 melalui algoritma *backpropagation* dan *gradient descent* \[27\].
@@ -1344,7 +1333,7 @@ selebar 400 sampel input atau setara 25 ms audio.
           6-7                  2                 2              512
   -----------------------------------------------------------------------
 
-  : []{#_Toc236748113 .anchor}**Tabel 2.2** Konfigurasi Blok Konvolusi
+  : []{#_Toc236748113 .anchor}Tabel 2.2 Konfigurasi Blok Konvolusi
   Temporal pada *Encoder* *Audio*
 
 2.  **Jaringan konteks**
@@ -1371,11 +1360,12 @@ Secara paralel, laten $z$ didiskretisasi melalui *product quantization*
 N9 dengan $G = 2$ *codebook*, masing-masing $V = 320$ entri. Pemilihan
 entri dibuat terdiferensiasi menggunakan Gumbel-Softmax N7, N8
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     $$p_{g,v} = \frac{\exp\left( \left( l_{g,v} + n_{g,v} \right)\text{/}\tau \right)}{\sum_{k = 1}^{V}\exp\left( \left( l_{g,k} + n_{g,k} \right)\text{/}\tau \right)}$$   (2.2)
-  -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     $$p_{g,v} = \frac{\exp\left( \left( l_{g,v} + n_{g,v} \right)\text{/}\tau \right)}{\sum_{k = 1}^{V}\exp\left( \left( l_{g,k} + n_{g,k} \right)\text{/}\tau \right)}$$   []{#_Toc239590105
+                                                                                                                                                                             .anchor}(2.2)
+  -- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------
 
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 dengan $l_{g,v}$ logit entri $v$ pada grup $g$, $\tau$ temperatur
 (dijadwalkan turun dari 2 ke 0,5), dan
@@ -1389,20 +1379,22 @@ estimator* N10) sehingga tetap dapat dilatih.
 
 Pelatihan diarahkan gabungan dua komponen
 
-  --------------------------------------------------------------------------------------------------------------------
-     $$\mathcal{L =}\mathcal{L}_{\mathcal{m}} + \alpha\,\mathcal{L}_{\mathcal{d}},\quad\quad\alpha = 0,1$$   (2.3)
-  -- ------------------------------------------------------------------------------------------------------- ---------
+  ------------------------------------------------------------------------------------------------------------------------------
+     $$\mathcal{L =}\mathcal{L}_{\mathcal{m}} + \alpha\,\mathcal{L}_{\mathcal{d}},\quad\quad\alpha = 0,1$$   []{#_Toc239590106
+                                                                                                             .anchor}(2.3)
+  -- ------------------------------------------------------------------------------------------------------- -------------------
 
-  --------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------------------------
 
 *Constrastive loss* $\mathcal{L}_{\mathcal{m}}$ memaksa model membedakan
 target benar $q_{t}$ dari $K = 100$ pengecoh
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     $$\mathcal{L}_{\mathcal{m}} = - \log{}\frac{\exp\left( \frac{\text{sim}\left( c_{t},q_{t} \right)}{\kappa} \right)}{\sum_{\widetilde{q} \sim \mathcal{Q}_{\mathcal{t}}}^{}\exp\left( \frac{\text{sim}\left( c_{t},\widetilde{q} \right)}{\kappa} \right)}$$   (2.4)
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     $$\mathcal{L}_{\mathcal{m}} = - \log{}\frac{\exp\left( \frac{\text{sim}\left( c_{t},q_{t} \right)}{\kappa} \right)}{\sum_{\widetilde{q} \sim \mathcal{Q}_{\mathcal{t}}}^{}\exp\left( \frac{\text{sim}\left( c_{t},\widetilde{q} \right)}{\kappa} \right)}$$   []{#_Toc239590107
+                                                                                                                                                                                                                                                                   .anchor}(2.4)
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Dengan $\kappa = 0,1$ dan
 $sim(a,b) = \frac{a^{T}b}{\text{|}a\text{||}b\text{|}}$ (*cosine
@@ -1410,11 +1402,12 @@ similarity*, berperan sebagai *scoring function*). *Diversity loss*
 $\mathcal{L}_{\mathcal{d}}$ mendorong pemakaian merata seluruh entri
 *codebook* via maksimalisasi entropi
 
-  ------------------------------------------------------------------------------------------------------------------------------------
-     $$\mathcal{L}_{\mathcal{d}} = \frac{1}{G}\sum_{g = 1}^{G}{\sum_{v = 1}^{V}\overline{p_{g,v}}\log\overline{p_{g,v}}}$$   (2.5)
-  -- ----------------------------------------------------------------------------------------------------------------------- ---------
+  ----------------------------------------------------------------------------------------------------------------------------------------------
+     $$\mathcal{L}_{\mathcal{d}} = \frac{1}{G}\sum_{g = 1}^{G}{\sum_{v = 1}^{V}\overline{p_{g,v}}\log\overline{p_{g,v}}}$$   []{#_Toc239590108
+                                                                                                                             .anchor}(2.5)
+  -- ----------------------------------------------------------------------------------------------------------------------- -------------------
 
-  ------------------------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------------------------------
 
 Melalui mekanisme kontrastif, Wav2Vec2 membentuk representasi dengan
 membedakan unit positif dan unit negatif pada ruang representasi.
@@ -1460,11 +1453,12 @@ ucapan $\tau_{0} = 0,,\tau_{e} = 0,,\tau_{n} = 30.0$
 Target dibentuk dengan merata-ratakan keluaran $K$ blok *Transformer*
 teratas *teacher*, setelah masing-masing dinormalisasi
 
-  ------------------------------------------------------------------------------------
-     $$y_{t} = \frac{1}{K}\sum_{l = L - K + 1}^{L}\widehat{a_{t}^{\, l}}$$   (2.6)
-  -- ----------------------------------------------------------------------- ---------
+  ----------------------------------------------------------------------------------------------
+     $$y_{t} = \frac{1}{K}\sum_{l = L - K + 1}^{L}\widehat{a_{t}^{\, l}}$$   []{#_Toc239590109
+                                                                             .anchor}(2.6)
+  -- ----------------------------------------------------------------------- -------------------
 
-  ------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------
 
 Dengan $L$ dengan jumlah total blok (12 pada base), $K = 8$ blok teratas
 $\widehat{a_{t}^{\, l}}$ keluaran blok $l$ ternormalisasi. Untuk ucapan
@@ -1477,20 +1471,20 @@ Wav2Vec2. Karakteristik ini telah dikaitkan dengan kemampuan
 menghasilkan representasi yang informatif pada sejumlah tugas pemrosesan
 suara \[13\], \[19\]. Dalam penelitian ini, karakteristik tersebut
 dianalisis melalui penerapan Data2Vec pada tugas *retrieval* audio ayat
-Al-Qur\'an.
+Al-Qur\'an
 
 4.  **Fungsi Objektif**
 
 *Student* meregresi target dengan *Smooth L1 loss* (*huber*):
 
-  ---------------------------------------------------------------------------------------------------------------------------
-     $$\mathcal{L}\left( y_{t},f_{t}(x) \right) = \left\{ \begin{matrix}                                            (2.7)
-     \frac{1}{2}\left( y_{t} - f_{t}(x) \right)^{2}\text{/}\beta, & \left| y_{t} - f_{t}(x) \right| \leq \beta \\   
+  -------------------------------------------------------------------------------------------------------------------------------------
+     $$\mathcal{L}\left( y_{t},f_{t}(x) \right) = \left\{ \begin{matrix}                                            []{#_Toc239590110
+     \frac{1}{2}\left( y_{t} - f_{t}(x) \right)^{2}\text{/}\beta, & \left| y_{t} - f_{t}(x) \right| \leq \beta \\   .anchor}(2.7)
      \left| y_{t} - f_{t}(x) \right| - \frac{1}{2}\beta, & \text{selainnya}                                         
      \end{matrix} \right.\ $$                                                                                       
-  -- -------------------------------------------------------------------------------------------------------------- ---------
+  -- -------------------------------------------------------------------------------------------------------------- -------------------
 
-  ---------------------------------------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------------------------------------------------
 
 Parameter $\beta$ mengatur peralihan wilayah kuadratik
 $\left( l_{2} \right)$ dan linear $\left( l_{1} \right)$ untuk
@@ -1507,11 +1501,12 @@ height="4.357854330708661in"}
 sudut *cosine* di antara keduanya, tanpa perlu memperhitungkan besar
 magnitudonya \[29\]
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-     $$\text{sim}\,(q,d) = \cos\theta = \frac{q \cdot d}{\text{|}q\text{|}\,\text{|}d\text{|}} = \frac{\sum_{i = 1}^{d}{q_{i}d_{i}}}{\sqrt{\sum_{i = 1}^{d}q_{i}^{2}}\,\sqrt{\sum_{i = 1}^{d}d_{i}^{2}}}$$   (2.8)
-  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---------
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     $$\text{sim}\,(q,d) = \cos\theta = \frac{q \cdot d}{\text{|}q\text{|}\,\text{|}d\text{|}} = \frac{\sum_{i = 1}^{d}{q_{i}d_{i}}}{\sqrt{\sum_{i = 1}^{d}q_{i}^{2}}\,\sqrt{\sum_{i = 1}^{d}d_{i}^{2}}}$$   []{#_Toc239590111
+                                                                                                                                                                                                             .anchor}(2.8)
+  -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -------------------
 
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Nilainya berkisar pada \[-1, 1\], dengan nilai mendekati 1 menandakan
 arah vektor yang sangat mirip. Perlu ditegakan bahwa dalam bidang
@@ -1537,11 +1532,12 @@ Penelitian ini menggunakan tiga metrik utama berikut.
 Metrik ini mengukur proporsi *query* yang dokumen relevannya ditemukan
 dalam K peringkat teratas dalam pencarian
 
-  ---------------------------------------------------------------------------------------------------------------------
-     $$Top - K\, Accuracy = \ \ 1\  \div |Q|\sum_{q \in Q}^{}{1\left\lbrack rank(q) \leq K \right\rbrack}$$   (2.9)
-  -- -------------------------------------------------------------------------------------------------------- ---------
+  -------------------------------------------------------------------------------------------------------------------------------
+     $$Top - K\, Accuracy = \ \ 1\  \div |Q|\sum_{q \in Q}^{}{1\left\lbrack rank(q) \leq K \right\rbrack}$$   []{#_Toc239590112
+                                                                                                              .anchor}(2.9)
+  -- -------------------------------------------------------------------------------------------------------- -------------------
 
-  ---------------------------------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------------------------------------------
 
 Dengan ∣Q∣ adalah jumlah total *query*, dan 1\[⋅\] adalah fungsi
 indikator yang bernilai 1 apabila dokumen relevan berada pada peringkat
@@ -1555,11 +1551,12 @@ MRR mengukur seberapa tinggi peringkat dokumen relevan pertama, dengan
 menghitung rata-rata kebalikan peringkatnya \[29\]. MRR memiliki rumus
 demikian.
 
-  ---------------------------------------------------------------------------------
-     $$MRR = \frac{1}{|Q|}\sum_{i = 1}^{|Q|}\frac{1}{\text{rank}_{i}}$$   (2.10)
-  -- -------------------------------------------------------------------- ---------
+  -------------------------------------------------------------------------------------------
+     $$MRR = \frac{1}{|Q|}\sum_{i = 1}^{|Q|}\frac{1}{\text{rank}_{i}}$$   []{#_Toc239590113
+                                                                          .anchor}(2.10)
+  -- -------------------------------------------------------------------- -------------------
 
-  ---------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------
 
 Dengan $\text{rank}_{i}$ posisi peringkat dokumen relevan pertama untuk
 *query* ke-$i$. Nilai MRR mendekati 1 menunjukkan dokumen relevan
@@ -1571,22 +1568,24 @@ MAP merupakan metrik yang paling komprehensif karena memperhitungkan
 presisi pada setiap posisi dokumen relevan sepanjang daftar peringkat
 \[29\]. Untuk sebuah *query*, *Average Precision* (AP) dihitung sebagai
 
-  --------------------------------------------------------------------------------------
-     $$\text{AP} = \frac{1}{|R|}\sum_{k = 1}^{N}{P(k)} \cdot \text{rel}(k)$$   (2.11)
-  -- ------------------------------------------------------------------------- ---------
+  ------------------------------------------------------------------------------------------------
+     $$\text{AP} = \frac{1}{|R|}\sum_{k = 1}^{N}{P(k)} \cdot \text{rel}(k)$$   []{#_Toc239590114
+                                                                               .anchor}(2.11)
+  -- ------------------------------------------------------------------------- -------------------
 
-  --------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
 Dengan $P(k)$ presisi pada peringkat $k$ $\text{rel}(k)$ fungsi
 *indicator* relevansi dokumen di peringkat $k$, $|R|$ jumlah total
 dokumen relevan, dan $N$ jumlah dokumen. MAP kemudian adalah rata-rata
 AP atas seluruh *query*
 
-  -----------------------------------------------------------------------------
-     $$\text{MAP} = \frac{1}{|Q|}\sum_{q = 1}^{|Q|}{\text{AP}(q)}$$   (2.12)
-  -- ---------------------------------------------------------------- ---------
+  ---------------------------------------------------------------------------------------
+     $$\text{MAP} = \frac{1}{|Q|}\sum_{q = 1}^{|Q|}{\text{AP}(q)}$$   []{#_Toc239590115
+                                                                      .anchor}(2.12)
+  -- ---------------------------------------------------------------- -------------------
 
-  -----------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------
 
 Ketiga metrik ini; *Top-K Accuracy*, MRR, dan MAP merupakan metrik
 evaluasi yang secara konseptual berbeda dengan *cosine similarity* yang
@@ -1598,7 +1597,7 @@ Penelitian ini menggunakan dataset Quran-MD \[4\], sebuah dataset
 multimodal yang tersedia pada platform *HuggingFace*. Dataset ini
 mengintegrasikan dimensi teks, *linguistic*, dan audio pada tingkat ayat
 maupun kata. Untuk setiap ayat disediakan teks Arab asli serta rekaman
-dari 30 pembaca (qori) yang berbeda guna mempresentasikan keragaman gaya
+dari 30 pembaca (qari) yang berbeda guna mempresentasikan keragaman gaya
 bacaan (qiraat) dan nuansa dialetik.
 
 Secara kuantitatif, koleksi Quran-MD terdiri atas dua sub-dataset
@@ -1627,7 +1626,7 @@ a.  *Business Understanding*. Merumuskan tujuan penelitian, yaitu
     evaluasi dan skema perbandingan kedua model.
 
 b.  *Data understanding*. Mengekplorasi karakteristik dataset Quran-MD,
-    mencakup distribusi qori, kualitas audio, dan cakupan surah yang
+    mencakup distribusi qari, kualitas audio, dan cakupan surah yang
     digunakan.
 
 c.  *Data preparation*. Menyeleksi Surah Al-Fatihah dan Juz Amma,
@@ -1676,16 +1675,15 @@ set*, kemudian dipatenkan sebelum evaluasi akhir dilakukan pada himpunan
 
 ##  *Business Understanding* 
 
-Fase *business understanding* menerjemahkan masalah penelitian menjadi
-tujuan teknis dan ukuran evaluasi yang dapat diuji. Masalah utama
-penelitian adalah belum diketahuinya representasi bawaan Wav2vec2 dan
-Data2vec dalam tugas mencocokkan bacaan ayat Al-Qur\'an secara langsung
-dari *audio*. Kedua model memiliki mekanisme *pretraining* yang berbeda.
-Wav2vec2 menggunakan *constrastive learning* \[1\], sedangkan Data2vec
-menggunakan *self-distillation* dengan target representasi kontekstual
-\[8\]. Perbedaan tersebut perlu dinilai pada tugas *retrieval,* sebab
-keberhasilan pada pengenalan ucapan tidak dapat langsung dianggap
-berlaku pada pemeringkatan *audio*.
+Fase *business understanding* menjelaskan mengenai masalah penelitian
+yang dihadapi. Masalah utama penelitian adalah belum diketahuinya
+representasi bawaan Wav2vec2 dan Data2vec dalam tugas mencocokkan bacaan
+ayat Al-Qur\'an secara langsung dari *audio*. Kedua model memiliki
+mekanisme *pretraining* yang berbeda. Wav2vec2 menggunakan *constrastive
+learning* \[1\], sedangkan Data2vec menggunakan *self-distillation*
+dengan target representasi kontekstual \[8\]. Perbedaan tersebut perlu
+dinilai pada tugas *retrieval,* sebab keberhasilan pada pengenalan
+ucapan tidak dapat langsung dianggap berlaku pada pemeringkatan *audio*.
 
 Tujuan operasional penelitian terdiri atas dua bagian. Pertama,
 membangun alur yang dapat mengubah klip *audio* menjadi *frozen
@@ -1721,7 +1719,7 @@ panah dua arah yang menunjukkan bahwa pemeriksaan kualitas dapat
 mengulang tahap sebelumnya (iteratif), tanpa membuka kembali himpunan
 pengujian untuk pemilihan konfigurasi.
 
-![[]{#_Toc237464121 .anchor}Gambar 3.1 Adaptasi
+![[]{#_Toc237464121 .anchor}Gambar 3. Adaptasi
 CRISP-DM](media/image5.png){width="2.1666666666666665in"
 height="5.00429571303587in"}
 
@@ -1736,10 +1734,12 @@ penelitian tetap mengikuti urutan CRISP-DM tanpa menyatakan bahwa
 
 Penelitian menggunakan dua sumber data, yaitu rekaman mahasiswa dan
 Quran-MD \[4\]. Rekaman mahasiswa berasal dari pengumpulan tugas
-Tahfidz. Satu rekaman dapat berisi bacaan satu surah sehingga perlu
-dibagi menjadi klip per ayat. Quran-MD telah menyediakan *audio* pada
-tingkat ayat beserta identitas qori, surah, dan ayat. Ruang lingkup
-keduanya dibatasi pada Surah Al-Fatihah dan surah dalam Juz Amma.
+Tahfidz. Satu rekaman dapat berisi bacaan satu surah bahkan satu rekaman
+terdapat beberapa surah sehingga perlu diproses untuk menghasilkan
+berkas per ayat. Sedangkan untuk sumber data dalam Quran-MD telah
+tersedia *audio* pada tingkat ayat beserta identitas qari, surah, dan
+ayat. Kedua sumber data hanya diambil untuk surah Al-fatihah dan Surah
+dalam juz Amma.
 
 Kedua sumber data tidak selalu ditempatkan pada sisi yang sama dalam
 proses *retrieval*. Suatu sumber dapat berperan sebagai data *query*,
@@ -1757,8 +1757,8 @@ a.  Skenario A menggunakan rekaman mahasiswa sebagai *query* dan
     referensi berasal dari proses pengambilan yang berbeda.
 
 b.  Skenario B menggunakan Quran-MD sebagai sumber *query* sekaligus
-    *database* referensi. Identitas qori pada kedua sisi dipisahkan agar
-    model tidak mencocokkan bacaan dari qori yang sama.
+    *database* referensi. Identitas qari pada kedua sisi dipisahkan agar
+    model tidak mencocokkan bacaan dari qari yang sama.
 
 c.  Skenario C menggunakan rekaman mahasiswa sebagai sumber *query*
     sekaligus *database* referensi. Identitas mahasiswa pada sisi
@@ -1787,8 +1787,8 @@ set.* Untuk tiap skenario juga dapatkan digambarkan dalam tabel berikut.
                                                 alami karena     
                                                 berbeda sumber   
 
-        B        Quran-MD       Quran-MD        Qori *query* dan       4
-                                                qori *database*  
+        B        Quran-MD       Quran-MD        Qari *query* dan       4
+                                                qari *database*  
                                                 referensi tidak  
                                                 terikat          
 
@@ -1800,11 +1800,12 @@ set.* Untuk tiap skenario juga dapatkan digambarkan dalam tabel berikut.
 
         D        Mahasiswa      Mahasiswa       Mahasiswa query        4
                                 lain + seluruh  dan mahasiswa    
-                                Quran-MD        database referensi 
-                                                tidak terikat   
+                                Quran-MD        database refensi 
+                                                tidak terikatt   
   ----------------------------------------------------------------------------
 
-  : Tabel 3.1 Gambaran peran sumber data pada Skenario A, B, C, dan D
+  : []{#_Toc239590163 .anchor}Tabel 3. Gambaran peran sumber data pada
+  Skenario A, B, C, dan D
 
 Tabel 3.1 memberikan gambaran *high-level* mengenai pembentukan Skenario
 A, B, C, dan D berdasarkan hubungan antara sumber *query* dan sumber
@@ -1843,7 +1844,7 @@ Tabel 3.2
                                             D              
   -------------------------------------------------------------------------
 
-  : []{#_Toc236984596 .anchor}Tabel 3.2 Peran sumber data dalam rancangan
+  : []{#_Toc236984596 .anchor}Tabel 3. Peran sumber data dalam rancangan
   eksperimen
 
 Berdasarkan Tabel 3.2, rekaman mahasiswa dan Quran-MD memiliki unit awal
@@ -1877,9 +1878,9 @@ yang sama.
 Pemeriksaan kelengkapan awal dilakukan dengan memindai seluruh folder
 mahasiswa, menghitung jumlah berkas rekaman per mahasiswa, memetakan
 setiap nama berkas ke surah sasaran, dan mencatat surah yang belum
-tersedia; hasilnya berupa *metadata* kelengkapan per mahasiswa yang
-menjadi dasar pemantauan proses pengumpulan data. Inventaris ini bersifat
-administratif dan tidak menggantikan validasi teknis pada tahap
+tersedia; hasilnya berupa metadata kelengkapan per mahasiswa yang
+menjadi dasar pemantauan proses pengumpulan data. Inventaris ini
+bersifat administratif dan tidak menggantikan validasi teknis pada tahap
 persiapan data, sebab keberadaan berkas belum menjamin keterbacaan
 maupun kesahihan identitasnya.
 
@@ -1898,14 +1899,14 @@ Fase persiapan data mengubah dua sumber yang berbeda menjadi audio
 tingkat ayat dengan label dan format masukan yang konsisten. Proses
 dilaksanakan melalui empat tahap, yaitu seleksi cakupan dan normalisasi
 identitas, segmentasi rekaman mahasiswa, validasi teknis beserta
-pembentukan *manifest*, dan pemisahan data menurut peran sumber.
+pembentukan manifest, dan pemisahan data menurut peran sumber.
 
 Gambar 3.2 merinci dua cabang persiapan. Cabang Quran-MD tidak melalui
 segmentasi karena unit datanya sudah berupa ayat. Cabang mahasiswa
 memerlukan stempel waktu kata dan penentuan batas ayat sebelum kedua
 cabang dipertemukan pada format audio dan skema *metadata* yang sama.
 
-![[]{#_Toc237464122 .anchor}Gambar 3.2 Persiapan data Quran-MD dan
+![[]{#_Toc237464122 .anchor}Gambar 3. Persiapan data Quran-MD dan
 mahasiswa](media/image6.png){width="3.2916666666666665in"
 height="5.558318022747157in"}
 
@@ -1919,124 +1920,148 @@ sama.
 
 ### Seleksi dan normalisasi identitas 
 
-Tahap pertama menetapkan cakupan korpus secara terprogram pada 38
-surah, yang terdiri atas Surah Al-Fatihah (surah nomor 1) dan seluruh 37
-surah Juz Amma (Juz 30) dengan nomor surah 78 sampai 114. Cakupan ini
-dideklarasikan sebagai satu konstanta himpunan nomor surah sehingga
-seluruh tahap berikutnya—pemetaan nama berkas, inventaris kelengkapan,
-penentuan jumlah ayat sasaran, hingga validasi akhir—mengacu pada
-definisi yang sama tanpa bergantung pada penomoran manual. Berdasarkan
-cakupan tersebut, jumlah ayat sasaran adalah 571 ayat, yaitu tujuh ayat
-Al-Fatihah ditambah 564 ayat Juz Amma.
+Tahap pertama menetapkan cakupan korpus secara terprogram pada 38 surah,
+yang terdiri atas surah Al-Fatihah dan seluruh surah dalam Juz Amma
+dengan nomor surah dari 78 sampai 114. Tiap surah yang dipilih akan
+ditetapkan sebagai konstanta atau master data yang akan digunakan dalam
+proses berikutnya, seperti pemetaan nama berkas, pengecekan kelengkapan,
+penentuan jumlah ayat yang sedang diproses, hingga validasi akhir. Yang
+akan mengacu pada definisi cakupan tersebut, jumlah ayat yang dipakai
+adalah 571 ayat, yaitu 7 surah ayat Al-Fatihah ditambah 564 ayat Juz
+Amma.
 
-Variasi penamaan folder serta berkas mahasiswa diselesaikan melalui
-prosedur dua tahap. Pada tahap pertama, nama berkas dinormalisasi:
-seluruh huruf diubah ke huruf kecil, tanda pisah berupa garis bawah,
-tanda hubung, dan titik disamakan perlakuannya, spasi dihapus, serta
-prefiks label seperti QS, Q.S, dan Surah dibuang. Deretan digit panjang
-pada akhir nama yang menyerupai nomor induk mahasiswa juga diabaikan
-agar identitas pada nama berkas tidak mengganggu pencocokan nama surah.
-Hasil normalisasi kemudian dicocokkan secara eksak terhadap tabel alias
-yang memuat variasi ejaan transliterasi bagi setiap surah sasaran.
-Tabel alias tersebut merupakan masukan metode yang disusun secara manual
-dan dideklarasikan sebagai konstanta pada kode pra-pemrosesan, bukan
-hasil pemindaian data; sebagai contoh, surah Al-Mutaffifin diberi empat
-belas entri alias untuk mengakomodasi variasi transliterasi yang lazim
-pada penamaan berkas. Pencocokan eksak dipilih agar tidak terdapat
-pemetaan yang dikaburkan oleh kemiripan sebagian; variasi yang belum
-terdaftar tidak ditebak, melainkan dilanjutkan ke tahap kedua. Pada
-tahap kedua, nomor surah diekstrak dari awal nama berkas dan diterima
-hanya apabila termasuk dalam cakupan penelitian. Dengan prosedur ini, dua ejaan
-berbeda dari surah yang sama tidak diperlakukan sebagai dua kelas yang
-berbeda. Tabel 3.3 memperlihatkan contoh pemetaan nama berkas mahasiswa
-menuju identitas surah baku, sedangkan Tabel 3.4 merangkum variasi alias
-terdaftar pada beberapa surah terpilih.
+Variasi penamaan *folder* serta berkas mahasiswa diselesaikan melalui
+prosedur dua tahap. Pada tahap pertama, nama berkas dinormalisasi.
+Seluruh huruf diubah menjadi huruf kecil, spasi atau simbol yang
+memisahkan kata diubah menjadi garis bawah, dan juga *prefix* seperti
+QS, Q.S, dan Surah dihilangkan. Deretan digit panjang pada akhir nama
+yang menyerupai nomor induk mahasiswa juga diabaikan agar identitas pada
+nama berkas tidak mengganggu pencocokan nama surah. Hasil normalisasi
+kemudian dicocokan secara tepat terhadap *master data* alias yang memuat
+variasi ejaan seperti contohnya sarah satu surah *mutaffifin,
+muthaffifin, muthoffifin,* dan *muthaffifiin.* Pencocokan ini dilakukan
+agar audio yang diproses yang memiliki variasi penamaan menjadi
+terstandarisasi. Jika surah tidak terbaca pada salah satu *master data*
+maka akan dilanjutkan pada proses kedua. Pada tahap kedua, nomor surah
+diekstrak dari awal nama berkas dan diterima hanya apabila termasuk
+dalam cakupan penelitian. Dengan prosedur ini, dua ejaan berbeda dari
+surah yang samat tidak diperlakukan sebagai dua kelas yang berbeda.
+Tabel 3.3 memperlihatkan contoh pemetaan nama berkas mahasiswa menuju
+identitas yang terstandarisasi, sedangkan Tabel 3.4 merangkum variasi
+alias terdaftar pada beberapa surah terpilih.
 
-| **Nama berkas asli** | **Hasil normalisasi** | **Cara identifikasi** | **Nomor surah** | **Slug kanonis** |
-|---|---|---|---|---|
-| Al-Fatihah.mp4 | alfatihah | Alias eksak | 1 | al-faatiha |
-| Q.S An-Naba.mp4 | annaba | Alias eksak (prefiks QS dibuang) | 78 | an-naba |
-| 114 - An Naas_\<NIM\>.mp4 | 114annaas\<NIM\> | Alias eksak (digit awal dan NIM pada akhir dibuang) | 114 | an-naas |
-| surah al mutaffifin.mp4 | almutaffifin | Alias eksak (prefiks Surah dibuang) | 83 | al-mutaffifin |
-| ALKAUTSAR.mp4 | alkautsar | Alias eksak | 108 | al-kawthar |
-| NN-MM. \<Surah A\> - \<Surah B\>.mp4 | (tidak dipetakan) | Deteksi rentang multi-surah, dikeluarkan | — | — |
+  -------------------------------------------------------------------------------------
+  **Nama berkas asli**  **Hasil            **Cara              **Nomor  **Slug
+                        normalisasi**      identifikasi**      surah**  kanonis**
+  --------------------- ------------------ ------------------ --------- ---------------
+  Al-Fatihah.mp4        alfatihah          Alias eksak            1     al-faatiha
 
-: Tabel 3.3 Skema pemetaan nama berkas mahasiswa menuju identitas surah
-baku
+  Q.S An-Naba.mp4       annaba             Alias eksak           78     an-naba
+                                           (prefiks QS                  
+                                           dibuang)                     
 
-Pola nama pada Tabel 3.3 bersifat skematis dan disusun untuk
-memperlihatkan setiap cara identifikasi yang ditangani prosedur; NIM
-serta nama surah pada baris rentang multi-surah ditampilkan sebagai
-tempat penanda. Jumlah berkas yang benar-benar dipetakan maupun
-dikeluarkan pada setiap kategori dilaporkan pada BAB IV.
+  114 - An              114annaas\<NIM\>   Alias eksak (digit    114    an-naas
+  Naas\_\<NIM\>.mp4                        awal dan NIM pada            
+                                           akhir dibuang)               
 
-| **Nomor surah** | **Nama baku** | **Contoh variasi alias terdaftar** | **Jumlah alias** |
-|---|---|---|---|
-| 83 | Al-Mutaffifin | mutaffifin, muthaffifin, muthoffifin, muthafifin, muthaffifiin, … | 14 |
-| 102 | At-Takasur | takasur, takatsur, taqasur, takastur, takaatsur, … | 11 |
-| 86 | At-Tariq | tariq, thoriq, thariq, thaariq, atariq, … | 10 |
-| 108 | Al-Kausar | kausar, kautsar, atkautsar | 5 |
+  surah al              almutaffifin       Alias eksak           83     al-mutaffifin
+  mutaffifin.mp4                           (prefiks Surah               
+                                           dibuang)                     
 
-: Tabel 3.4 Variasi alias terdaftar untuk surah terpilih
+  ALKAUTSAR.mp4         alkautsar          Alias eksak           108    al-kawthar
 
-Gambar 3.3 menyajikan jumlah variasi alias terdaftar untuk seluruh 38
-surah sasaran. Jumlah alias per surah berbeda-beda karena tabel alias
-disusun untuk mengakomodasi variasi transliterasi yang lazim pada
-penamaan berkas; surah yang transliterasinya lebih beragam diberi lebih
-banyak entri alias daripada surah yang penamaannya konsisten. Baik tabel
-maupun gambar tersebut menggambarkan konfigurasi masukan metode,
-sehingga keduanya tidak bergantung pada hasil pemrosesan korpus.
+  102-114.              (tidak dipetakan)  Deteksi rentang       ---    ---
+  At-Takatsur -                            multi-surah,                 
+  An-Nas.mp4                               dikeluarkan                  
+  -------------------------------------------------------------------------------------
 
-![Gambar 3.3 Jumlah variasi alias nama surah terdaftar per surah
-sasaran](media/bab3_prep_alias_variations.png){width="6.5in"
-height="2.69in"}
+  : []{#_Toc239590165 .anchor}Tabel 3. Contoh pemetaan nama berkas
+  mahasiswa
 
-Identitas pembaca diekstrak dari nama folder yang mengikuti pola NIM
-diikuti nama mahasiswa, dengan pemisahan hanya pada garis bawah pertama
-sehingga garis bawah pada bagian nama tetap dipertahankan. Bentuk baku
-kemudian diterapkan pada keluaran proses: setiap surah yang
-teridentifikasi dipetakan ke nomor surah dan penanda kanonis (*slug*)
-yang menjadi nama direktori hasil, misalnya surah 1 menjadi *al-faatiha*
-dan surah 114 menjadi *an-naas*. Berkas sumber tidak diubah namanya;
-pembakuan terjadi pada identitas numerik surah dan struktur keluaran.
-Prosedur ini juga menetapkan penanganan bagi tiga kelas anomali penamaan
-yang mungkin muncul. Pertama, rekaman multi-surah yang memuat rentang
-lebih dari dua surah dideteksi untuk dikeluarkan dari segmentasi otomatis
-agar tidak dianggap sebagai surah tunggal. Kedua, apabila terdapat
-duplikasi berkas untuk surah yang sama pada satu mahasiswa, aturan
-penanganannya adalah mempertahankan satu berkas menurut urutan nama.
-Ketiga, berkas yang tetap tidak teridentifikasi dicatat sebagai tidak
-terpetakan alih-alih diperbaiki secara diam-diam. Jumlah kejadian pada
-setiap kelas anomali dilaporkan pada BAB IV.
+  -----------------------------------------------------------------------
+  **Nomor surah**   **Nama baku**     **Contoh variasi  **Jumlah alias**
+                                      alias terdaftar** 
+  ----------------- ----------------- ----------------- -----------------
+  83                Al-Mutaffifin     mutaffifin,       14
+                                      muthaffifin,      
+                                      muthoffifin,      
+                                      muthafifin,       
+                                      muthaffifiin, ... 
+
+  102               At-Takasur        takasur,          11
+                                      takatsur,         
+                                      taqasur,          
+                                      takastur,         
+                                      takaatsur, ...    
+
+  86                At-Tariq          tariq, thoriq,    10
+                                      thariq, thaariq,  
+                                      atariq, ...       
+
+  108               Al-Kausar         kausar, kautsar,  5
+                                      atkautsar         
+  -----------------------------------------------------------------------
+
+  : []{#_Toc239590166 .anchor}Tabel 3. Variasi alias terdaftar untuk
+  surah terpilih
+
+Identitas pembaca diekstrak dari nama folder yang mengikuti pola NIM dan
+diikuti oleh nama mahasiswa, dengan pemisahan hanya pada garis bawah
+pertama sehingga garis bawah pada bagian nama tetap dipertahankan.
+Bentuk baku kemudian diterapkan pada keluaran proses, setiap surah yang
+berhasil diidentifikasi dipetakan ke nomor surah dan penanda *slug* yang
+menjadi nama direktori hasil, misalnya surah 1 menjadi *al-faatiha* dan
+surah 114 menjadi *an-naas.* Berkas sumber tidak diubah namanya.
+Standarisasi terjadi pada identitas numerik surah dan struktur keluaran.
+Lebih jelasnya dijelaskan dalam Gambar 3.4
+
+![[]{#_Toc239590310 .anchor}Gambar 3. Ekstraksi identitas pembaca dan
+*slug*](media/image7.png){width="2.977002405949256in"
+height="2.9938921697287837in"}
+
+Prosedur ini juga menganani tiga anomali penamaan yang ditemukan pada
+data. pertama, rekamanan multi surah yang memuat rentang lebih dari dua
+surah dideteksi dan dikeluarkan dari segmentasi otomatis agar tidak
+dianggap sebagai surah tunggal. Kedua, duplikasi berkas untuk surah yang
+sama pada satu mahasiswa diselesaikan dengan mempertahankan satu berkas
+menurut urutan nama. Ketiga, berkas yang tetap tidak teridentifikasi
+dicatat sebagai data yang tidak terpetakan. Yang dijelaskan dalam Gambar
+3.5 berikut
+
+![[]{#_Toc239590311 .anchor}Gambar 3. Penanganan
+anomali](media/image8.png){width="5.160667104111986in"
+height="3.298611111111111in"}
 
 Normalisasi audio diterapkan pada kedua cabang sumber dengan spesifikasi
 keluaran yang sama, yaitu gelombang satu kanal pada laju sampel 16 kHz.
 Pada cabang mahasiswa, komponen audio diekstrak dari berkas video tanpa
-mengubah isi gelombang, kemudian disimpan sebagai audio antara mono
-16 kHz; variasi ekstensi video diterima sepanjang komponen audionya
-dapat dibaca. Pada cabang Quran-MD, data sumber berupa dataset
-bertingkat ayat dalam format Parquet yang menyertai identitas qori,
-surah, dan ayat. Baris di luar cakupan 38 surah disaring terlebih
-dahulu, kemudian setiap audio dikonversi menjadi WAV PCM 16-bit mono
-16 kHz dan divalidasi ulang pada kedua properti tersebut. Cabang
-Quran-MD tidak melalui segmentasi karena unit datanya telah berupa
-ayat. Format penyimpanan antara pada kedua cabang tidak mengubah
-spesifikasi gelombang yang diberikan kepada model; hasil segmentasi
-akhir pada cabang mahasiswa dapat tersimpan sebagai MP3, tetapi yang
-dibaca model tetap gelombang mono 16 kHz hasil pembacaan ulang berkas
-tersebut.
+mengubah isi gelombang, kemudian disimpan sebagai audio antara mono 16
+kHz; variasi ekstensi video diterima sepanjang komponen audionya dapat
+dibaca. Pada cabang Quran-MD, data sumber berupa dataset bertingkat ayat
+dalam format Parquet yang menyertai identitas qari, surah, dan ayat.
+Baris di luar cakupan 38 surah disaring terlebih dahulu, kemudian setiap
+audio dikonversi menjadi WAV PCM 16-bit mono 16 kHz dan divalidasi ulang
+pada kedua properti tersebut. Cabang Quran-MD tidak melalui segmentasi
+karena unit datanya telah berupa ayat. Format penyimpanan antara pada
+kedua cabang tidak mengubah spesifikasi gelombang yang diberikan kepada
+model; hasil segmentasi akhir pada cabang mahasiswa dapat tersimpan
+sebagai MP3, tetapi yang dibaca model tetap gelombang mono 16 kHz hasil
+pembacaan ulang berkas tersebut. Proses berikut dapat digambarkan dalam
+Gambar 3.6 sebagai berikut.
+
+![[]{#_Toc239590312 .anchor}Gambar 3. Normalisasi audio di kedua sumber
+data](media/image9.png){width="2.712962598425197in"
+height="6.180036089238845in"}
 
 ### Segmentasi rekaman mahasiswa 
 
-Sebelum segmentasi, teks referensi Al-Qur'an edisi Utsmani bagi 38 surah
-sasaran dibangun dan disimpan sebagai berkas rujukan bersama. Dari teks
-tersebut disimpulkan dua hal: jumlah kata setiap ayat, yang menjadi
-dasar alokasi batas, dan kata pertama bacaan isi surah, yang menjadi
-penanda awal bacaan. Khusus Surah Al-Fatihah, basmalah diperlakukan
-sebagai ayat pertama sehingga tidak dibuang, sedangkan pada surah lain
-kata pertama diambil setelah basmalah agar pencarian awal bacaan tidak
-terhenti pada bagian pembuka.
-
+Sebelum segmentasi dilakukan, teks referensi Al-Qur\'an edisi Utsmani
+untuk 38 surah disiapkan sebagai rujukan. Dari teks ini diambil dua
+informasi yaitu jumlah kata per ayat (untuk menentukan batas segmentasi)
+dan kata pertama isi bacaan (sebagai penanda awal). Pada Surah
+Al-Fatihah, basmalah dihitung sebagai ayat pertama sehingga tetap
+disertakan. Pada surah lainnya, kata pertama diambil setelah basmalah,
+agar pencarian awal bacaan tidak salah berhenti di bagian pembuka.
 Segmentasi dijalankan secara bertahap sebagai berikut.
 
 a.  Rekaman tingkat surah dipetakan ke nomor surah baku dan komponen
@@ -2052,212 +2077,233 @@ c.  Jumlah kata setiap ayat digunakan untuk membagi urutan stempel
 
 d.  Batas mulai klip diambil dari awal kata pertama yang dialokasikan,
     sedangkan batas akhir diambil dari akhir kata terakhir dalam alokasi
-    ayat tersebut. Durasi setiap potongan dipaksa minimal 200 ms agar
-    tidak dihasilkan berkas kosong.
+    ayat tersebut.
 
-e.  Apabila hasil transkripsi tidak menyediakan penyelarasan yang dapat
-    dipakai—karena awal isi surah tidak ditemukan, atau karena jumlah
-    kata yang terdeteksi lebih sedikit daripada jumlah ayat—durasi
-    rekaman dibagi secara proporsional menurut jumlah kata referensi
-    sebagai mekanisme cadangan. Klip hasil mekanisme ini ditandai secara
-    terpisah pada catatan audit.
+e.  Apabila hasil audit tidak menyediakan penyelarasan kata yang dapat
+    dipakai, durasi rekaman dibagi secara proporsional menurut jumlah
+    kata sebagai mekanisme cadangan.
 
 f.  Setiap potongan disimpan bersama identitas rekaman induk, metode
     segmentasi, surah, dan ayat agar asalnya dapat diaudit.
 
 Tabel 3.5 memperlihatkan ilustrasi alokasi kata terdeteksi menjadi batas
 ayat pada sebuah rekaman. Kata-kata pada bagian pembuka tidak dipotong
-karena bukan bagian ayat; alokasi dimulai dari kata pertama bacaan isi
-surah dan mengikuti jumlah kata referensi setiap ayat secara kumulatif.
+karena bukan bagian ayat. Alokasi dimulai dari kata pertama bacaan isi
+surah dan mengikut jumlah kata referensi setiap ayat secara kumulatif.
 
-| **Bagian** | **Jumlah kata referensi** | **Indeks kata terdeteksi** | **Batas klip** |
-|---|---|---|---|
-| Pembuka (bukan ayat) | — | kata ke-1 s.d. ke-3 | tidak dipotong |
-| Ayat 1 | 4 | kata ke-4 s.d. ke-7 | mulai kata ke-4, akhir kata ke-7 |
-| Ayat 2 | 6 | kata ke-8 s.d. ke-13 | mulai kata ke-8, akhir kata ke-13 |
-| Ayat 3 | 5 | kata ke-14 s.d. ke-18 | mulai kata ke-14, akhir kata ke-18 |
+  -----------------------------------------------------------------------
+  **Bagian**        **Jumlah kata     **Indeks kata     **Batas klip**
+                    referensi**       terdeteksi**      
+  ----------------- ----------------- ----------------- -----------------
+  Pembuka (bukan    ---               kata ke-1 s.d.    tidak dipotong
+  ayat)                               ke-3              
 
-: Tabel 3.5 Ilustrasi alokasi kata terdeteksi menjadi batas ayat
+  Ayat 1            4                 kata ke-4 s.d.    mulai kata ke-4,
+                                      ke-7              akhir kata ke-7
 
-Angka pada Tabel 3.5 bersifat ilustratif; alokasi sebenarnya mengikuti
+  Ayat 2            6                 kata ke-8 s.d.    mulai kata ke-8,
+                                      ke-13             akhir kata ke-13
+
+  Ayat 3            5                 kata ke-14 s.d.   mulai kata ke-14,
+                                      ke-18             akhir kata ke-18
+  -----------------------------------------------------------------------
+
+  : []{#_Toc239590167 .anchor}Tabel 3.5 Ilustrasi alokasi kata
+  terdeteksi menjadi batas ayat
+
+Angka pada Tabel 3.5 bersifat ilustratif. Alokasi sebenarnya mengikuti
 jumlah kata referensi setiap ayat, dan durasi setiap potongan dipaksa
 minimal 200 ms. Pembagian berdasarkan jumlah kata mengasumsikan urutan
-kata terdeteksi secara memadai. Kesalahan transkripsi, bagian pembuka, jeda panjang,
-pengulangan, atau kata yang terlewat dapat menggeser batas. Oleh sebab
-itu, status audit berhasil menunjukkan keberhasilan prosedur teknis,
-bukan jaminan manual bahwa batas klip tepat pada setiap ayat. Kategori
-fallback juga dipertahankan dalam *metadata* agar ketidakpastian tidak
-disembunyikan.
+kata terdeteksi secara memadai. Kesalahan transkripsi, bagian pembuka,
+jeda panjang, pengulangan, atau kata yang terlewat dapat menggeser
+batas. Oleh sebab itu, status audit berhasil menunjukkan keberhasilan
+prosedur teknis bukan jaminan manual bahwa batas klip tepat pada setiap
+ayat.
 
 ### Validasi dan pembentukan *manifest* 
 
 Keluaran segmentasi diperiksa ulang oleh validator akhir sebelum masuk
 ke tahap ekstraksi representasi. Validator mewajibkan struktur direktori
 baku berupa folder mahasiswa, diikuti penanda kanonis surah, diikuti
-berkas ayat bernomor dua digit. Identitas folder diurai kembali dengan
+berkas ayat bernomor dua digit. Identitas folder diurai Kembali dengan
 syarat lebih ketat, yaitu NIM harus berupa digit dan nama tidak boleh
 kosong. Setiap berkas diuji keterbacaannya melalui pemeriksaan durasi
 dan keterbacaan audio, berkas berukuran nol ditolak, dan nomor ayat
-harus berada dalam rentang jumlah ayat surah yang bersangkutan.
-Rincian seluruh gerbang beserta perlakuan kegagalannya dirangkum pada
-Tabel 3.6.
+harus berada dalam rentang jumlah ayat surah yang sedang diproses.
+Rincian prosesnya dirangkum dalam Tabel 3.6
 
-| **Pemeriksaan** | **Kriteria lolos** | **Perlakuan bila gagal** |
-|---|---|---|
-| Struktur folder mahasiswa | Pola NIM_nama; NIM berupa digit; nama tidak kosong | Berkas di bawah folder ditolak |
-| Penanda kanonis surah | Salah satu dari 38 *slug* terdaftar | Berkas ditolak |
-| Nama berkas ayat | Pola ayah_NN.mp3 dengan dua digit | Berkas ditolak |
-| Rentang nomor ayat | 1 sampai jumlah ayat surah | Berkas ditolak |
-| Ukuran berkas | Lebih besar dari nol bita | Berkas ditolak |
-| Keterbacaan audio | Terbaca oleh pemeriksa durasi; durasi positif | Berkas ditolak |
-| Keunikan identitas | Kunci NIM-surah-ayat tidak berulang | Seluruh kelompok tabrakan ditolak |
-| Rekonsiliasi audit | Jumlah berkas cocok dengan catatan audit | Dilaporkan sebagai temuan |
-| Status audit | Hanya informasi *provenance*, bukan syarat inklusi | Klip valid tetap dimasukkan |
+  -----------------------------------------------------------------------
+  **Pemeriksaan**         **Kriteria lolos**      **Perlakuan bila
+                                                  gagal**
+  ----------------------- ----------------------- -----------------------
+  Struktur folder         Pola NIM_nama; NIM      Berkas di bawah folder
+  mahasiswa               berupa digit; nama      ditolak
+                          tidak kosong            
 
-: Tabel 3.6 Gerbang validasi akhir beserta kriteria dan perlakuan
-kegagalan
+  Penanda kanonis surah   Salah satu dari 38 slug Berkas ditolak
+                          terdaftar               
 
-Gambar 3.4 merangkum alur validasi dan pembentukan *manifest*. Klip
-kandidat hasil segmentasi melewati dua kelompok pemeriksaan, yaitu
-struktur beserta identitas dan keterbacaan berkas, sebelum status audit
-ditempelkan sebagai *metadata* dan baris yang lolos dicatat ke dalam
-*manifest* tervalidasi. Penolakan terjadi pada kedua pemeriksaan; setiap
-penolakan dicatat alasannya sehingga keputusan eksklusi dapat diaudit.
+  Nama berkas ayat        Pola ayah_NN.mp3 dengan Berkas ditolak
+                          dua digit               
 
-![Gambar 3.4 Alur validasi dan pembentukan manifest
-tervalidasi](media/bab3_prep_manifest_flow.png){width="6.5in"
-height="2.0in"}
+  Rentang nomor ayat      1 sampai jumlah ayat    Berkas ditolak
+                          surah                   
 
-Validasi membedakan dua hal yang berbeda: validitas berkas dan
+  Ukuran berkas           Lebih besar dari nol    Berkas ditolak
+                          bita                    
+
+  Keterbacaan audio       Terbaca oleh pemeriksa  Berkas ditolak
+                          durasi; durasi positif  
+
+  Keunikan identitas      Kunci NIM-surah-ayat    Seluruh kelompok
+                          tidak berulang          tabrakan ditolak
+
+  Rekonsiliasi audit      Jumlah berkas cocok     Dilaporkan sebagai
+                          dengan catatan audit    temuan
+
+  Status audit            Hanya informasi         Klip valid tetap
+                          provenance, bukan       dimasukkan
+                          syarat inklusi          
+  -----------------------------------------------------------------------
+
+  : Tabel 3.6 Validasi akhir beserta kriteria dan perlakuan kegagalan
+
+Validasi membedakan dua hal yang berbeda validitas berkas dan
 ketertelusuran proses. Kegagalan atau ketiadaan catatan audit segmentasi
 tidak serta-merta membuang klip yang terbukti valid secara struktural
-dan audio; sebaliknya, klip yang tidak valid tetap ditolak meskipun
+dan audio sebaliknya, klip yang tidak valid tetap ditolak meskipun
 auditnya menyatakan berhasil. Kebijakan ini menjaga agar keputusan
 inklusi didasarkan pada bukti berkas, sementara status audit
-dipertahankan sebagai informasi *provenance* pada *manifest*. Identitas
+dipertahankan sebagai informasi *provenance* pada manifest. Identitas
 ganda dideteksi melalui kunci identitas yang dibentuk dari NIM, nomor
-surah, dan nomor ayat; apabila terjadi tabrakan, seluruh anggota
-kelompok tabrakan ditolak tanpa pemilihan arbitrer.
+surah, dan nomor ayat apabila terjadi tabrakan, seluruh anggota kelompok
+tabrakan ditolak tanpa pemilihan arbitrer. Berkas berukuran nol
+dikeluarkan sebelum ekstraksi model. Berkas yang lolos dicatat dalam
+manifes dengan urutan tetap. Manifes menyimpan lokasi audio, identitas
+pembaca, nomor surah, nomor ayat, sumber data, dan informasi
+*provenance* segmentasi. Hubungan satu banding satu antara baris manifes
+dan baris embedding menjadi dasar keterlacakan sepanjang eksperimen.
 
-Keluaran validasi berupa *manifest* tervalidasi yang memuat lokasi
-audio, identitas pembaca, nomor surah, nomor ayat, sumber data, durasi,
-dan status audit setiap klip, disertai artefak rekonsiliasi yang
-mencocokkan jumlah berkas pada penyimpanan dengan catatan audit.
-Skenario validasi dinyatakan lulus hanya apabila seluruh gerbang
-terpenuhi: tidak ada identitas ganda yang lolos, tidak ada berkas
-kosong atau tak terbaca yang lolos, dan setiap berkas yang dikeluarkan
-memiliki alasan yang tercatat. Tabel 3.7 memperlihatkan skema baris
-*manifest* tervalidasi beserta tiga kelas *provenance* yang mungkin
-muncul pada kolom status audit.
+Keluaran validasi berupa manifest tervalidasi yang memuat lokasi audio,
+identitas pembaca, nomor surah, nomor ayat, sumber data, durasi, dan
+status audit setiap klip, disertai artefak rekonsiliasi yang mencocokkan
+jumlah berkas pada penyimpanan dengan catatan audit. Skenario validasi
+dinyatakan lulus hanya apabila seluruh gerbang terpenuhi: tidak ada
+identitas ganda yang lolos, tidak ada berkas kosong atau tak terbaca
+yang lolos, dan setiap berkas yang dikeluarkan memiliki alasan yang
+tercatat. Tabel 3.7 memperlihatkan skema baris manifest tervalidasi
+beserta tiga kelas provenance yang mungkin muncul pada kolom status
+audit.
 
-| ***query_id*** | **NIM** | **Surah** | **Ayat** | **Lokasi berkas** | **Durasi (dtk)** | ***Provenance* audit** |
-|---|---|---|---|---|---|---|
-| \<NIM\>_093_001 | \<NIM\> | 93 | 1 | \<NIM\>_\<nama\>/ad-dhuhaa/ayah_01.mp3 | \<durasi\> | sukses teraudit |
-| \<NIM\>_112_001 | \<NIM\> | 112 | 1 | \<NIM\>_\<nama\>/al-ikhlaas/ayah_01.mp3 | \<durasi\> | sukses teraudit (*fallback* waktu proporsional) |
-| \<NIM\>_080_001 | \<NIM\> | 80 | 1 | \<NIM\>_\<nama\>/abasa/ayah_01.mp3 | \<durasi\> | tanpa baris audit |
+  ----------------------------------------------------------------------------------------------------------------------------
+  **query_id**       **NIM**   **Surah**   **Ayat**   **Lokasi berkas**                          **Durasi     ***Provenance*
+                                                                                                 (dtk)**      audit**
+  ------------------ --------- ----------- ---------- ------------------------------------------ ------------ ----------------
+  \<NIM\>\_093_001   \<NIM\>   93          1          \<NIM\>\_\<nama\>/ad-dhuhaa/ayah_01.mp3    \<durasi\>   sukses teraudit
 
-: Tabel 3.7 Skema baris *manifest* tervalidasi beserta kelas *provenance*
-(kolom diringkas)
+  \<NIM\>\_112_001   \<NIM\>   112         1          \<NIM\>\_\<nama\>/al-ikhlaas/ayah_01.mp3   \<durasi\>   sukses teraudit
+                                                                                                              (fallback waktu
+                                                                                                              proporsional)
 
-Tabel 3.7 bersifat skematis: NIM, nama, dan durasi ditampilkan sebagai
+  \<NIM\>\_080_001   \<NIM\>   80          1          \<NIM\>\_\<nama\>/abasa/ayah_01.mp3        \<durasi\>   tanpa baris
+                                                                                                              audit
+  ----------------------------------------------------------------------------------------------------------------------------
+
+  : Tabel 3. Skema baris *manifest* tervalidasi beserta kelas
+  *prevenance*
+
+Tabel 3.7 bersifat skematis NIM, nama, dan durasi ditampilkan sebagai
 tempat penanda karena nilainya baru terbentuk setelah validasi
 dijalankan. Kolom durasi diisi dari hasil pemeriksaan keterbacaan audio,
-sedangkan kolom *provenance* audit hanya dapat memuat salah satu dari
-tiga kelas pada tabel tersebut. Jumlah baris pada tiap kelas beserta
-statistik durasi korpus dilaporkan pada BAB IV.
+sedangkan kolom provenance audio hanya dapat memuat salah satu dari tig
+akelas pada table tersebut.
 
-*Manifest* lengkap memuat lima belas kolom, yaitu *query_id*, jalur
-berkas, jalur relatif, NIM, nama, *slug* surah, nomor surah, nama
-surah, nomor ayat, durasi, ukuran berkas, status audit, kelas
-*provenance*, penanda *fallback*, dan rincian audit; tabel hanya
-menampilkan kolom yang menjelaskan struktur. *query_id* dibentuk dari
-NIM, nomor surah tiga digit, dan nomor ayat tiga digit, serta menjadi
-kunci identitas unik yang dipakai untuk mendeteksi identitas ganda.
-Hubungan satu banding satu antara baris *manifest* dan baris *embedding*
-selanjutnya menjadi dasar keterlacakan sepanjang eksperimen.
-
-Konsekuensi dari kebijakan tersebut terhadap korpus dinyatakan secara
-eksplisit. Kelengkapan mahasiswa dihitung dari *manifest* tervalidasi,
-bukan dari keberadaan folder atau berkas semata, sehingga mahasiswa
-yang tidak memiliki satu pun klip lolos validasi tidak terwakili pada
-*manifest* dan otomatis keluar dari korpus eksperimen. Dengan demikian,
-populasi awal pengumpulan data dapat berbeda dengan jumlah mahasiswa
-yang benar-benar membentuk sel eksperimen.
+*Manifest* lengkap memuat lima belas kolom, yaitu query_id, *file path*,
+*relative path*, NIM, nama, *slug* surah, nomor surah, nama surah, nomor
+ayat, durasi, ukuran berkas, status audit, kelas *provenance*, penanda
+*fallback*, dan rincian audit. Tabel hanya menampilkan kolom yang
+menjelaskan struktur. *query_id* dibentuk dari NIM, nomor surah tiga
+digit, dan nomor ayat tiga digit, serta menjadi kunci identitas unik
+yang dipakai untuk mendeteksi identitas ganda. Hubungan satu banding
+satu antara baris *manifest* dan baris *embedding* selanjutnya menjadi
+dasar keterlacakan sepanjang eksperimen.
 
 ### Pemisahan data dan peran sumber
 
 Setelah *manifest* terbentuk, data ditempatkan sebagai *query* dan
-*database* referensi menurut tiga belas sel eksperimen. Skenario A
-menggunakan seluruh klip mahasiswa sebagai *query* dan seluruh Quran-MD
-sebagai *database* referensi sehingga pemisahan terjadi karena
-perbedaan sumber. Skenario B, C, dan D membagi data pada domain yang
-sama menggunakan rasio pemilik 60:40, 70:30, 80:20, dan 90:10, dengan
-rasio didefinisikan sebagai proporsi pemilik pada sisi *database*
-referensi. Pemilik didefinisikan sebagai qori pada skenario B dan
-mahasiswa pada skenario C, sedangkan skenario D menggunakan mahasiswa
-untuk *query* dan gabungan mahasiswa lain dengan seluruh Quran-MD untuk
-*database* referensi. Penugasan pemilik dilakukan melalui permutasi
-acak deterministik dengan *seed* 42, bukan melalui pengurutan
-identitas, sehingga pembagian bersifat dapat direproduksi tanpa
-mengikuti urutan NIM maupun nama qori. Artefak pembagian disertai
-*checksum* SHA-256 sehingga setiap perubahan pada artefak terdeteksi,
-dan pembagian yang tidak sesuai *manifest* akan ditolak. Jumlah pemilik
-pada setiap sisi tidak ditetapkan sebagai angka tetap, melainkan dihitung
-pada saat pembentukan sel dari jumlah pemilik tervalidasi $N$ yang
-tersedia pada *manifest*. Aturan perhitungannya dirangkum pada Tabel 3.8.
+*database* referensi berdasarkan scenario dalam tiga belas sel
+eksperimen. Skenairo A menggunakan seluruh klip mahasiswa sebagai
+*query* dan seluruh Quran-MD sebagai *database* referensi, sehingga
+pemisahan terjadi karena sumber data yang berbeda. Skenario B, C, dan D
+membagi data pada domain yang sama menggunakan rasio pemilik 60:40,
+70:30, 80:20, 90:10, dengan rasio didefinisikan sebagai proporsi pemilik
+pada sisi *database* referensi. Pemilik didefinisikan sebagai qari pada
+skenario B dan mahasiswa pada skenario C, sedangkan skenario D
+menggunakan mahasiswa untuk *query* dan gabungan mahasiswa lain dengan
+seluruh Quran-MD untuk *database* referensi. Penugasan pemilik dilkaukan
+melalui permutasi acak deterministic dengan seed 42, bukan melalui
+pengurutan identitas, sehingga pembagian bersifat dapat direproduksi
+tanpa mengikuti urutan NIM maupun nama qari. Jumlah pemilik pada setiap
+sisi tidak ditetapkan sebagai angka tetap, melainkan dihitung pada saat
+pembentukan seld ari jumlah pemilik tervalidasi *N* yang tersedia pada
+*manifest*. Aturan perhitungannya dirangkum pada table 3.8.
 
-| **Rasio (*database*:*query*)** | **Pemilik *database*** | **Pemilik *query*** |
-|---|---|---|
-| 60:40 | $\lbrack 0,60 \times N\rbrack$ | $N - \lbrack 0,60 \times N\rbrack$ |
-| 70:30 | $\lbrack 0,70 \times N\rbrack$ | $N - \lbrack 0,70 \times N\rbrack$ |
-| 80:20 | $\lbrack 0,80 \times N\rbrack$ | $N - \lbrack 0,80 \times N\rbrack$ |
-| 90:10 | $\lbrack 0,90 \times N\rbrack$ | $N - \lbrack 0,90 \times N\rbrack$ |
+  -----------------------------------------------------------------------
+          **Rasio          **Pemilik database**      **Pemilik query**
+    (database:query)**                            
+  ----------------------- ----------------------- -----------------------
+           60:40               \[0,60 × N\]          N − \[0,60 × N\]
 
-: Tabel 3.8 Aturan perhitungan jumlah pemilik pada tiap rasio
+           70:30               \[0,70 × N\]          N − \[0,70 × N\]
 
-Notasi $\lbrack\ \rbrack$ menyatakan pembulatan ke bilangan bulat
-terdekat, dan sisa pemilik seluruhnya dialokasikan ke sisi *query*
-sehingga kedua sisi selalu berjumlah $N$. Nilai $N$ berbeda menurut
-definisi pemilik pada masing-masing skenario, yaitu jumlah mahasiswa
-tervalidasi pada skenario C dan D serta jumlah qori pada skenario B.
-Karena $N$ merupakan keluaran tahap validasi, jumlah pemilik aktual pada
-setiap rasio baru dapat dilaporkan setelah *manifest* terbentuk dan
-disajikan pada BAB IV.
+           80:20               \[0,80 × N\]          N − \[0,80 × N\]
 
-Pencegahan kebocoran data diterapkan dan diaudit secara konstruktif
-pada skenario B, C, dan D. Pertama, tidak ada pemilik yang muncul pada
-kedua sisi *query* dan *database*. Kedua, tidak ada jalur berkas yang
-sama antara kedua sisi. Ketiga, duplikasi identitas pada sisi mana pun
-menghentikan proses konstruksi sel, bukan diperbaiki secara diam-diam.
-Setelah setiap sel terbentuk, *query* hanya dipertahankan apabila
-*database* referensi memuat sedikitnya satu dokumen dengan pasangan
-surah dan ayat yang sama, sehingga metrik peringkat tidak menurun
-semata-mata karena kelas relevan tidak tersedia.
+           90:10               \[0,90 × N\]          N − \[0,90 × N\]
+  -----------------------------------------------------------------------
+
+  : Tabel 3.8 Aturan perhitungan jumlah pemilik pada tiap rasio
+
+Notasi \[ \] menyatakan pembulatan ke bilangan bulat terdekat, dan sisa
+pemilik seluruhnya dialokasikan ke sisi *query* sehingga kedua sisi
+selalu berjumlah *N*. Nilai *N* berbeda menurut definisi pemilik pada
+masing-masing skenario, yaitu jumlah mahasiswa tervalidasi pada skenario
+C dan D serta jumlah qari pada skenario B. Karena *N* merupakan keluaran
+tahap validasi,
+
+Pencegahan kebocoran data diterapkan dan diaudit secara konstruktif pada
+skenario B, C, dan D. Pertama, tidak ada pemilik yang muncul pada kedua
+sisi *query* dan *database* referensi. Kedua, tidak ada jalur berkas
+yang sama antara kedua sisi. Ketiga, duplikasi identitas pada sisi mana
+pun menghentikan proses konstruksi sel. Setelah setiap sel terbentuk,
+*query* hanya dipertahankan apabila *database* referensi memuat
+sedikitnya satu dokumen dengan pasangan surah dan ayat yang sama,
+sehingga metrik peringkat tidak menurun semata-mata karena kelas relevan
+tidak tersedia.
 
 Setiap sel kemudian membagi *query* menjadi dua himpunan. Pembagian
 dilakukan secara terstratifikasi berdasarkan pasangan (surah, ayat)
 dengan *seed* 42: pada setiap kelompok pasangan ayat, sekitar tujuh
 puluh persen klip, dibulatkan ke bawah dengan minimal satu klip,
 dialokasikan ke *development set* dan sisanya ke *test set*.
-*Development set* digunakan untuk menyapu seluruh titik representasi
-dan memilih konfigurasi terbaik, sedangkan *test set* dikunci dan hanya
+*Development set* digunakan untuk menyapu seluruh titik representasi dan
+memilih konfigurasi terbaik, sedangkan *test set* dikunci dan hanya
 digunakan satu kali untuk evaluasi akhir setelah konfigurasi ditetapkan.
 
 ## *Modeling* 
 
 Fase *modeling* dirancang melalui empat tahap, yaitu ekstraksi
-representasi *layerwise*, pembersihan data hasil ekstraksi, pemilihan
+representasi *layerwise,* pembersihan data hasil ekstraksi, pemilihan
 titik representasi per sel, dan penskoran beserta pemeringkatan. Tahap
-pemilihan titik representasi diuraikan lebih lanjut menjadi protokol
-pemilihan, tata cara penyajian MAP *development* per skenario, dan
-ringkasan titik terpilih. Rancangan setiap tahap diuraikan pada sub-bab
+pemilihan titik representasi diuraikan lebih lanjut menjadi protocol
+pemilihan, tata cara penyajian MAP development per scenario, dan
+ringkasan titik terpilih. Rancangan setiap tahap diuraikan sebagai
 berikut.
 
 ### Ekstraksi representasi *layerwise*
 
 Fase *modeling* menggunakan Wav2Vec2 dan Data2Vec dalam keadaan beku.
-Tidak ada fine-tuning, pembaruan gradien, atau kepala prediksi yang
-dilatih dengan label ayat. Kedua model menerima gelombang mono 16 kHz
+Tidak ada *fine-tuning*, pembaruan gradien, atau kepala prediksi yang
+dilatih dengan label ayat. Kedua model menerima gelombang *mono* 16 kHz
 dan menghasilkan urutan representasi kontekstual berdimensi 768.
 Perbedaan mekanisme pralatih tetap dipertahankan, tetapi prosedur
 masukan, agregasi, penyimpanan, dan pembersihan dibuat setara.
@@ -2282,14 +2328,14 @@ berdimensi tetap. Pendekatan ini juga memastikan bahwa perbedaan hasil
 antartitik berasal dari representasi model, bukan dari perbedaan dimensi
 embedding.
 
-Gambar 3.5 menunjukkan alur ekstraksi dan penyimpanan. Checkpoint per
+Gambar 3.3 menunjukkan alur ekstraksi dan penyimpanan. Checkpoint per
 baris diperlukan agar proses berskala besar dapat dilanjutkan tanpa
 mengulang seluruh korpus serta agar kegagalan tetap tercatat pada posisi
 asalnya.
 
-![[]{#_Toc237464123 .anchor}Gambar 3.5 Ekstraksi layerwise, checkpoint,
-manifest dan matriks
-akhir](media/image7.png){width="4.417890419947507in"
+![[]{#_Toc237464123 .anchor}Gambar 3. Ekstraksi *layerwise*,
+*checkpoint*, *manifest* dan matriks
+akhir](media/image10.png){width="4.417890419947507in"
 height="4.811111111111111in"}
 
 Setiap checkpoint sementara .npz menyimpan hasil satu baris dengan
@@ -2297,8 +2343,8 @@ bentuk (13, 768) beserta *metadata* kegagalan. progress.json mencatat
 kemajuan penyelesaian sehingga proses dapat dilanjutkan secara
 deterministik. Setelah ekstraksi selesai, checkpoint dirakit menjadi
 layer_00.npy sampai layer_12.npy; setiap berkas mempunyai bentuk (N,
-768). Baris ke-i pada seluruh matriks selalu merujuk ke baris ke-i pada
-manifes.
+768). Baris ke-*i* pada seluruh matriks selalu merujuk ke baris ke-i
+pada *manifest*.
 
 ### Pembersihan data hasil ekstraksi 
 
@@ -2318,52 +2364,54 @@ Aturan metodologis ini diterapkan sama pada kedua model.
 
 ### Pemilihan lapisan representasi per sel
 
-Titik representasi tidak ditentukan di muka, melainkan dipilih secara
-empiris pada *development set* untuk setiap kombinasi sel dan model.
-Prosedur ini menjaga agar data pengujian tidak ikut menentukan
-konfigurasi, sehingga evaluasi akhir tetap tidak bias. Protokol
-pemilihan lapisan representasi ditetapkan sebagai berikut.
+Titik representasi tidak ditentukan sebelumnya atau dipilih secara acak,
+melainkan dipilih melalui percobaan pada *development set* untuk setiap
+kombinasi sel dan model. Prosedur ini menjaga agar data pengujian tidak
+ikut menentukan konfigurasi, sehingga evaluasi akhir tetap tidak bias.
+Protokol pemilihan lapisan representasi ditetapkan sebagai berikut.
 
-a.  Untuk setiap sel dari 13 sel dan setiap model (Wav2Vec2, Data2Vec),
-    lakukan evaluasi lapisan pada 13 titik (*layer* 0--12).
+a.  Untuk setiap sel dari 13 sel dan setiap model (Wav2vec2, Data2vec)
+    dilakukan evaluasi lapisan pada 13 titik (layer 0-12)
 
-b.  Hitung MAP pada *development set* untuk setiap kombinasi
-    sel-model-lapisan.
+b.  Hitung MAP pada *development set* untuk setiap kombinasi sel, model
+    dan lapisan
 
-c.  Pilih lapisan dengan MAP *development* tertinggi.
+c.  Pilih lapisan dengan MAP development tertinggi
 
-d.  Jika terjadi seri, pilih lapisan dengan indeks lebih kecil.
+d.  Jika terjadi hasil yang sama, pilih lapisan dengan indeks lebih
+    kecil
 
-e.  Gunakan titik terpilih untuk evaluasi akhir pada *test set*.
+e.  Gunakan titik terpilih untuk evaluasi akhir pada *test set*
 
-Dengan protokol tersebut, jumlah evaluasi penyapuan adalah
-$13\ sel\  \times \ 2\ model\  \times \ 13\ titik\  = \ 338$ kombinasi.
-Perbandingan antarlapisan dilakukan langsung pada nilai MAP mentah
-bertipe *float*, bukan pada nilai persen yang telah dibulatkan untuk
-pelaporan. Konsekuensinya, pembulatan pada penyajian tabel tidak pernah
-memengaruhi lapisan yang terpilih: apabila dua lapisan tampak bernilai
-sama setelah dibulatkan, lapisan dengan nilai mentah lebih tinggi tetap
-yang terpilih. Aturan indeks terkecil pada butir d hanya berlaku pada
-seri sempurna, yaitu ketika dua lapisan memiliki nilai MAP mentah yang
-identik, dan terpenuhi secara otomatis karena penelusuran kandidat
-dilakukan menurut urutan indeks lapisan 0 sampai 12. Dengan demikian
-keputusan pemilihan bersifat deterministik dan dapat direproduksi.
+Dengan protokol tersebut, jumlah evaluasi penyapuan pada *development
+set* adalah 13 sel × 2 model × 13 titik = 338 kombinasi. Perbandingan
+antarlapisan dilakukan langsung pada nilai MAP mentah bertipe *float*,
+bukan pada nilai persen yang telah dibulatkan untuk pelaporan.
+Konsekuensinya, pembulatan pada penyajian tabel tidak pernah memengaruhi
+lapisan yang terpilih, apabila dua lapisan tampak bernilai sama setelah
+dibulatkan, lapisan dengan nilai mentah lebih tinggi tetap yang
+terpilih. Jika terjadi hasil MAP seri antar lapisan, aturan indeks
+terkecil hanya berlaku pada seri sempurna, yaitu ketika dua lapisan
+memiliki nilai MAP yang identik, dan terpenuhi secara otomatis karena
+penelusuran kandidat dilakukan menurut urutan indeks lapisan 0 sampai
+12. Dengan demikian keputusan pemilihan bersifat deterministik dan dapat
+direproduksi.
 
 ### Evaluasi MAP *development* per skenario
 
 Hasil penyapuan disusun per skenario agar pola MAP antarlapisan dapat
 dibandingkan pada setiap *owner ratio*. Setiap skenario disajikan
 menggunakan lapisan sebagai baris dan rasio sebagai kolom, dengan nilai
-MAP dinyatakan dalam persen dan dilaporkan terpisah untuk kedua model.
+MAP dinyatkaan dalam persen dan dilaporkan terpisah untuk kedua model.
 Penyajian terpisah tersebut diperlukan karena kedua model dapat memuncak
 pada lapisan yang berbeda meskipun diberi data yang sama.
 
-### Ringkasan pemilihan layer
+### Ringkasan pemilihan *layer*
 
-Seluruh titik terpilih beserta MAP *development*-nya dirangkum dalam satu
-tabel ringkasan dan satu diagram agar pola pemilihan lapisan pada 13 sel
-dapat dibaca sekaligus. Ringkasan ini menjadi dasar konfigurasi yang
-dikunci sebelum *test set* dibuka.
+Seluruh titik terpilih beserta MAP *development*-Nya dirangkum dalam
+satu tabel ringkasan dan satu diagram agar pola pemilihan lapisan pada
+13 sel dapat dibaca sekaligus. Ringkasan ini menjadi dasar konfigurasi
+yang dikunci sebelum himpunan digunakan.
 
 ### Skor dan pemeringkatan 
 
@@ -2371,7 +2419,7 @@ Untuk setiap *query* $q$ dan kandidat *database* $d_{j}$ pada titik
 representasi yang sama, tingkat kemiripan dihitung menggunakan cosine
 similarity \[29\]. Ukuran ini membandingkan arah kedua vektor tanpa
 bergantung secara langsung pada besar atau panjang vektornya. Nilai
-cosine similarity dihitung menggunakan persamaan berikut.
+*cosine similarity* dihitung menggunakan persamaan berikut.
 
   ----------------------------------------------------------------------------------------------------------------
        $$s\left( q,d_{j} \right) = \frac{q^{T}d_{j}}{\text{|}q\text{|}_{2}\text{|}d_{j}\text{|}_{2}}$$   (3. 2)
@@ -2382,45 +2430,26 @@ cosine similarity dihitung menggunakan persamaan berikut.
 Seluruh kandidat diurutkan dari skor terbesar ke terkecil. Hasilnya
 adalah daftar peringkat, bukan keputusan akhir mengenai benar atau
 salah. Daftar ini kemudian dinilai terhadap label relevansi (surah,
-ayat). Pemisahan fungsi tersebut penting: cosine similarity menentukan
+ayat). Pemisahan fungsi tersebut penting *cosine similarity* menentukan
 urutan, sedangkan MAP, MRR, dan Top-K mengukur kualitas urutan.
 
 ## Evaluasi
 
-Evaluasi dirancang untuk membandingkan model pada empat kondisi yang
+Evaluasi dirancang untuk membandingkan model pada tiga kondisi yang
 berbeda. Skenario A menggunakan rekaman mahasiswa sebagai *query* dan
 Quran-MD sebagai *database*. Skenario B menggunakan Quran-MD pada kedua
 sisi dengan qari *query* dan *database* yang saling lepas. Skenario C
 menggunakan rekaman mahasiswa pada kedua sisi dengan mahasiswa yang
-saling lepas. Skenario D menggunakan rekaman mahasiswa sebagai *query*
-dengan *database* gabungan antara rekaman mahasiswa lain dan seluruh
-referensi Quran-MD. Keempatnya menggunakan definisi relevansi,
-ekstraksi, fungsi skor, serta metrik yang sama, sehingga seluruh 13 sel
-evaluasi dapat dibandingkan pada dasar yang setara.
+saling lepas. Ketiganya menggunakan definisi relevansi, ekstraksi,
+fungsi skor, serta metrik yang sama.
 
-Gambar 3.6 menyajikan hubungan sumber data dan protokol
+Gambar 3.8 menyajikan hubungan sumber data dan protokol
 development/test. Diagram ini menekankan bahwa penyapuan titik
 representasi berhenti pada himpunan pengembangan.
 
-![[]{#_Toc237464124 .anchor}Gambar 3.6 Evaluasi skenario A, B, C, dan
-D](media/image8.png){width="4.8597222222222225in"
+![[]{#_Toc237464124 .anchor}Gambar 3. Evaluasi skenario A, B,
+C](media/image11.png){width="4.8597222222222225in"
 height="4.840729440069992in"}
-
-Selain pelaporan metrik, evaluasi menetapkan satu prosedur inferensial
-untuk menilai apakah selisih MAP antarmodel didukung secara statistik.
-Prosedur tersebut menggunakan *bootstrap* berpasangan atas selisih AP
-per *query*, yaitu AP Data2Vec dikurangi AP Wav2Vec2 pada *query* yang
-sama, dengan *query* sebagai unit *resampling* sehingga kedua model
-selalu dinilai pada himpunan *query* identik. Dari distribusi
-*resampling* tersebut dibentuk interval kepercayaan 95% bagi selisih
-rata-rata. Selisih dinyatakan didukung secara statistik apabila interval
-tidak mencakup nol. Jumlah kemenangan AP per *query* dilaporkan sebagai
-informasi pelengkap dan tidak dipakai sebagai penentu signifikansi,
-sebab besar selisih pada setiap *query* juga memengaruhi rata-rata dan
-interval. Ruang lingkup inferensi dibatasi secara tegas pada selisih MAP;
-MRR, Top-1, Top-5, dan Top-10 tidak diuji secara inferensial dan hanya
-dibahas secara deskriptif. Signifikansi statistik juga tidak diartikan
-sebagai kepentingan praktis.
 
 ## *Deployment*
 
@@ -2466,37 +2495,38 @@ Skenario A terdiri atas satu sel tanpa rasio pemilik, sedangkan Skenario
 B, C, dan D masing-masing terdiri atas empat rasio pemilik, yaitu 60:40,
 70:30, 80:20, dan 90:10. Dengan duan model pada setiap sel, hasil akhir
 terdiri atas 26 baris model sel. Seluruh konfiguarasi model dan layer
-representasi dipiilh menggunakan himpungan pengembangan (development
-set). Setelah konfigurasi dipilih, himpunan pengujian (test set)
+representasi dipiilh menggunakan himpungan pengembangan (*development
+set*). Setelah konfigurasi dipilih, himpunan pengujian (*test set*)
 digunakan untuk satu kali evaluasi akhir. Dengan demikian, hasil
 pengujian tidak digunakan untuk memilih ulang konfigurasi.
 
 ##  Hasil *Business Understanding*
 
-Fase business understanding menghasilkan definisi keberhasilan yang
+Fase *business understanding* menghasilkan definisi keberhasilan yang
 berfokus pada validitas eksperimen dan kemampuan menjawab pertanyaan
 penelitian. Alur Wav2Vec2 dan Data2Vec berhasil diimplementasikan untuk
-menghasilkan embedding per ayat pada tiap-tiap layer representasi,
-membentuk daftar peringkat berdasarkan *cosine similarity*, serta
-mengevaluasi peringkat tersebut menggunakan MAP, MRR, Top-1, Top-5, dan
-Top-10.
+menghasilkan data *embedding* per ayat pada tiap-tiap *layer*
+representasi, membentuk daftar peringkat menggunakan *cosine
+similarity*, serta mengevaluasi peringkat tersebut menggunakan MAP, MRR,
+Top-1, Top-5, dan Top-10.
 
 Keberhasilan implementasi tidak berarti sistem harus memenuhi ambang
 batas tertentu. Penelitian tidak menetapkan nilai minimum MAP atau Top-K
 sebagai syarat kesiapan untuk digunakan dalam lingkungan produksi.
 Keberhasilan pada tahap ini berarti bahwa data dapat ditelusuri kembali
-ke sumbernya, kedua model menerima data yang setara, konfigurasi dipilih
-tanpa menggunakan data untuk evaluasi, dan seluruh daftar peringkat
-dapat dievaluasi dengan prosuder yang sama.
+ke sumbernya, kedua model menerima data yang sama, konfigurasi dipilih
+tanpa menggunakan data yang terpisah dari data yang akan digunakan untuk
+evaluasi, dan seluruh daftar peringkat dapat dievaluasi dengan prosuder
+yang sama antara kedua model.
 
 Perbandingan kedua model diatur melalui empat mekanisme. Pertama,
 Wav2vec2 dan Data2vec menerima baris audio yang sama setelah proses
-union filtering. Kedua, embedding dari kedua model memiliki dimensi yang
-sama dan diringkas menggunakan mean pooling. Ketiga dokumen relevan
-ditentukan berdasarkan kesamaan pasangan (surah, ayat). Keempat, layer
-representasi terbaik dipilih secara terpisah untuk setiap model dan
-setiap sel menggunakan MAP pada himpunan pengembangan (*development
-set*).
+*union filtering*. Kedua, *embedding* dari kedua model memiliki dimensi
+yang sama dan diringkas menggunakan *mean pooling*. Ketiga, dokumen
+relevan ditentukan berdasarkan kesamaan pasangan (surah, ayat). Keempat,
+*layer* representasi terbaik dipilih secara terpisah untuk setiap model
+dan setiap sel menggunakan MAP pada data yang dikumpulkan sebagai
+himpunan pengembangan (*development set*).
 
 Empat skenario digunakan untuk memberikan konteks terhadap hasil
 evaluasi.
@@ -2505,11 +2535,11 @@ a.  Skenario A menggunakan seluruh rekaman mahasiswa sebagai *query* dan
     seluruh Quran-MD yang dapat digunakan sebagai *database* referensi
 
 b.  Skenario B menggunakan Quran-MD sebagai sumber *query* dan
-    *database* referensi. Yang dipisahkan berdasarkan qori yang membaca
+    *database* referensi. Yang dipisahkan berdasarkan qari yang membaca
     Al-Qur'annya.
 
-c.  Skenario C menggunakan rekaman mahasiswa sebagai sumber query dan
-    database referensi. Yang mana dipisahkan berdasarkan pembacanya.
+c.  Skenario C menggunakan rekaman mahasiswa sebagai sumber *query* dan
+    *database* referensi. Yang mana dipisahkan berdasarkan pembacanya.
 
 d.  Skenario D menggunakan rekaman mahasiswa sebagai *query* dan
     *database* referensi gabungan yang terdiri atas mahasiswa lain dan
@@ -2521,18 +2551,22 @@ model terbaik menuju pertanyaan yang lebih spesifik, yaitu model mana
 yang memberikan hasil lebih tinggi pada skenario, rasio pemilik dan
 metrik-metrik yang digunakan.
 
+1.  
+2.  
+3.  
+4.  1.  
+
 ##  Hasil *Data Understanding* 
 
 Penyelarasan jumlah pada tahap pengumpulan, segmentasi, validasi, dan
 ekstraksi. Pemisahan ini mencegah angka dari tahap yang berbeda
-disajikan seolah-olah merujuk pada populasi yang sama.
+disajikan seolah-olah merujuk pada populasi yang sama. Gambar 4.1
+merangkum perubahan korpus mahasiswa dan Quran-MD sampai siap dipakai.
+Diagram juga menampilkan tiga kategori provenance klip mahasiswa yang
+jumlahnya tepat sama dengan total *query* final.
 
-Gambar 4.1 merangkum perubahan korpus mahasiswa dan Quran-MD sampai siap
-dipakai. Diagram juga menampilkan tiga kategori provenance klip
-mahasiswa yang jumlahnya tepat sama dengan total *query* final.
-
-![[]{#_Toc236984558 .anchor}Gambar 4.1 Rekonsiliasi
-data](media/image9.png){width="5.508333333333334in"
+![[]{#_Toc236984558 .anchor}Gambar 4. Rekonsiliasi
+data](media/image12.png){width="5.508333333333334in"
 height="4.1930555555555555in"}
 
 Gambar 4.1 menunjukkan bahwa 81 folder adalah jumlah folder mahasiswa
@@ -2589,7 +2623,7 @@ dari hasil kedua model melalui *union filtering*, sehingga tersisa
                                                   model
   -----------------------------------------------------------------------
 
-  : []{#_Toc236984570 .anchor}Tabel 4.1 Rekonsiliasi validasi
+  : []{#_Toc236984570 .anchor}Tabel 4. Rekonsiliasi validasi
 
 Jumlah kategori *provenance* mahasiswa konsisten karena
 $24.872\  + \ 710\  + \ 247\  = \ 25.829$. Kategori tersebut menjelaskan
@@ -2599,48 +2633,76 @@ tepat secara fonetik. Penelitian tidak memiliki anotasi batas waktu
 manual untuk seluruh klip, sehingga ketepatan segmentasi tetap menjadi
 salah satu sumber kepastian data.
 
+Gambar 4.2 memperlihatkan ukuran tiga skenario setelah seluruh validasi.
+Angka pada sisi *query* dan *database* adalah ukuran yang benar-benar
+digunakan untuk membentuk peringkat.
+
+![[]{#_Toc236984559 .anchor}Gambar 4. Ukuran *query* dan *database* pada
+scenario A, B, C](media/image13.png){width="5.508333333333334in"
+height="2.8340277777777776in"}
+
+Skenario A memakai seluruh 25.829 klip mahasiswa sebagai *query*
+terhadap 17.127 referensi Quran-MD. Pada B, pembagian qari menghasilkan
+5.139 *query* dan 11.988 dokumen. Pada C, pembagian mahasiswa
+menghasilkan 7.940 *query* dan 17.889 dokumen. Seluruh *query* memiliki
+sedikitnya satu dokumen relevan, sehingga AP nol tidak muncul hanya
+karena kelas relevan tidak tersedia.
+
+  ----------------------------------------------------------------------------------
+   **Skenario**  **Sumber       **Jumlah **Sumber          **Jumlah    **Pembaca**
+                 *query***     *query*** *database***    *database***  
+  -------------- ----------- ----------- -------------- -------------- -------------
+        A        Mahasiswa        25.829 Quran-MD           17.127     Lintas sumber
+
+        B        Quran-MD          5.139 Quran-MD           11.988     9 qari
+                                                                       berbanding 21
+                                                                       qari
+
+        C        Mahasiswa         7.940 Mahasiswa          17.889     18 mahasiswa
+                                                                       berbanding 42
+                                                                       mahasiswa
+  ----------------------------------------------------------------------------------
+
+  : []{#_Toc236984571 .anchor}Tabel 4. Ukuran final skenario *retrieval*
+
 ##  Hasil *Data Preparation*
 
-Fase *data preparation* dilaksanakan sesuai rancangan pada BAB III
-melalui empat tahap, yaitu seleksi cakupan dan normalisasi identitas,
-segmentasi rekaman mahasiswa, validasi teknis beserta pembentukan
-*manifest*, dan pemisahan data menurut peran sumber. Bagian ini
-menyajikan hasil setiap tahap secara berurutan beserta angka korpus
-aktualnya.
+Fase data preparation dilaksanakan melalui empat tahap, yaitu seleksi
+cakupan dan normalisasi identitas, segmentasi rekaman mahasiswa,
+validasi teknis beserta pembentukan *manifest*, dan pemisahan data
+menurut peran sumber. Bagian ini menyajikan hasil setiap tahap secara
+berurutan beserta angka korpus aktualnya.
 
-### Hasil Seleksi dan normalisasi identitas
+### Hasil seleksi dan normalisasi identitas
 
-Seleksi cakupan menghasilkan dua kelompok surah, yaitu Surah Al-Fatihah
-dan seluruh surah dalam Juz Amma, dengan total 38 surah dan 571 ayat
-sasaran. Inventaris kelengkapan awal memindai 81 folder mahasiswa dan
-memetakan setiap nama berkas ke surah sasaran. Hasil inventaris
-menunjukkan 25 mahasiswa mengunggah rekaman untuk seluruh 38 surah,
-sedangkan 56 mahasiswa belum lengkap dengan jumlah surah yang kurang
-bervariasi. Inventaris ini bersifat administratif dan digunakan untuk
-memantau proses pengumpulan; keputusan inklusi tetap ditentukan oleh
-validasi teknis pada tahap berikutnya.
+Seleksi cakupan menghasilkan dua kelompok surah, yaitu surah Al-Fatiahh
+dan surah-surah dalam Juz Amma dengan total 38 surah dan 571 ayat. Data
+awal memindai 81 folder mahasiswa dan memetakan setiap nama berkas ke
+surah sasaran. Hasilnya menunjukkan 25 mahasiswa menggungah rekaman
+untuk seluruh 38 surah, sedangkan 56 mahasiswa belum lengkap yang mana
+surah yang tidak lengkapnya bervariasi.
 
 Pemetaan identitas surah dijalankan menggunakan tabel alias yang
-dideklarasikan pada BAB III, yang seluruhnya memuat 200 entri alias bagi
-38 surah sasaran, disertai *fallback* penomoran. Pemindaian menemukan
-1.803 berkas rekaman pada 81 folder mahasiswa. Seluruh berkas kandidat
-berhasil dipetakan tanpa penerkaan terhadap variasi yang tidak dikenal.
-Variasi yang tertangani mencakup perbedaan kapitalisasi, penomoran awal,
-simbol pemisah, prefiks label seperti QS dan Surah, deretan digit NIM
-pada akhir nama, serta variasi transliterasi seperti
-*mutaffifin*--*muthoffifin* dan *kausar*--*kautsar*.
+dideklarasikan pada bab sebelumnya, yang seluruhnya memuat 200 entri
+alias bagi 38 surah sasaran, disertai *fallback* penomoran. Pemindaian
+menemukan 1.803 berkas rekaman pada 81 folder mahasiswa. Seluruh berkas
+kandidat berhasil dipetakan tanpa penerkaan terhadap variasi yang tidak
+dikenal. Variasi yang tertangani mencakup perbedaan kapitalisasi,
+penomoran awal, simbol pemisah, prefiks label seperti QS dan Surah,
+deretan digit NIM pada akhir nama, serta variasi transliterasi seperti
+*mutaffifin* dengan *muthoffifin* dan *kausar* dengan *kautsar*.
 
 Ketiga kelas anomali penamaan yang diantisipasi pada BAB III muncul
 dengan frekuensi yang berbeda. Anomali multi-surah terjadi satu kali,
 yaitu satu berkas rekaman gabungan yang memuat rentang 13 surah dari
 surah 102 sampai 114; berkas tersebut dikeluarkan dari segmentasi
 otomatis agar tidak diperlakukan sebagai surah tunggal. Anomali
-duplikasi berkas untuk surah yang sama pada satu mahasiswa tidak terjadi,
-sehingga aturan mempertahankan satu berkas menurut urutan nama tidak
-pernah dipakai. Demikian pula, tidak terdapat berkas yang tetap tidak
-teridentifikasi, sehingga kategori tidak terpetakan tetap kosong. Selain
-itu, 21 dari 81 folder mahasiswa tidak memuat berkas rekaman sama sekali.
-Setelah pengurangan satu berkas multi-surah, 1.802 rekaman lolos
+duplikasi berkas untuk surah yang sama pada satu mahasiswa tidak
+terjadi, sehingga aturan mempertahankan satu berkas menurut urutan nama
+tidak pernah dipakai. Demikian pula, tidak terdapat berkas yang tetap
+tidak teridentifikasi, sehingga kategori tidak terpetakan tetap kosong.
+Selain itu, 21 dari 81 folder mahasiswa tidak memuat berkas rekaman sama
+sekali. Setelah pengurangan satu berkas multi-surah, 1.802 rekaman lolos
 pemetaan dan dikonversi menjadi audio antara mono 16 kHz tanpa mengubah
 nama berkas sumber; pembakuan diterapkan pada identitas numerik surah
 dan nama direktori keluaran yang mengikuti penanda kanonis.
@@ -2651,50 +2713,50 @@ baris telah menyertai identitas qori, surah, dan ayat, serta lolos
 validasi properti audio satu kanal 16 kHz setelah konversi. Cabang ini
 tidak melalui segmentasi karena unit datanya telah berupa ayat.
 
-### Hasil Segmentasi rekaman mahasiswa
+### Hasil segmentasi rekaman mahasiswa
 
 Segmentasi memproses 1.802 rekaman tingkat surah menjadi klip tingkat
-ayat. *WhisperX* menghasilkan stempel waktu tingkat kata, kemudian batas
+ayat. WhisperX menghasilkan stempel waktu tingkat kata, kemudian batas
 ayat dibentuk dengan mengalokasikan urutan kata menurut jumlah kata
 referensi setiap ayat; durasi setiap potongan dipaksa minimal 200 ms.
 Proses ini menghasilkan 25.945 berkas klip kandidat pada penyimpanan.
 
-Berdasarkan catatan audit yang ditempelkan sebagai *metadata*, 24.872
-klip berasal dari rekaman dengan penyelarasan kata yang berhasil, 710
-klip dihasilkan melalui alokasi waktu proporsional, dan 247 klip tidak
-memiliki baris audit namun tetap terlacak pada *manifest*; ketiganya
+Berdasarkan catatan audit yang ditempelkan sebagai metadata, 24.872 klip
+berasal dari rekaman dengan penyelarasan kata yang berhasil, 710 klip
+dihasilkan melalui alokasi waktu proporsional, dan 247 klip tidak
+memiliki baris audit namun tetap terlacak pada manifest; ketiganya
 berjumlah tepat 25.829 klip. Alokasi waktu proporsional terjadi pada 91
 rekaman dengan dua pemicu yang berbeda, sebagaimana dirinci pada Gambar
-4.2: 53 rekaman tidak memiliki kata bacaan setelah bagian pembuka
-(*intro only*) sehingga menghasilkan 285 klip, sedangkan 38 rekaman
-memiliki kata terdeteksi lebih sedikit daripada jumlah ayat sehingga
-menghasilkan 425 klip.
+4.2: 53 rekaman tidak memiliki kata bacaan setelah bagian pembuka (intro
+only) sehingga menghasilkan 285 klip, sedangkan 38 rekaman memiliki kata
+terdeteksi lebih sedikit daripada jumlah ayat sehingga menghasilkan 425
+klip.
 
-![Gambar 4.2 Distribusi pemicu *fallback* alokasi waktu
-proporsional](media/bab4_prep_fallback_triggers.png){width="6.0in"
-height="2.68in"}
+![Gambar 4. Pemicu *fallback* alokasi waktu
+proporsional](media/image14.png){width="5.508333333333334in"
+height="2.457638888888889in"}
 
 Klip hasil segmentasi berdurasi rata-rata 3,59 detik dengan durasi
 minimum 0,2 detik sesuai batas minimal yang dipaksakan, durasi maksimum
 36,68 detik, dan total durasi seluruh klip 92.650 detik atau sekitar
 25,7 jam. Perlu ditegaskan kembali bahwa keberhasilan audit mencerminkan
 keberhasilan prosedur teknis, bukan jaminan manual bahwa setiap batas
-ayat tepat secara fonetik; kategori *fallback* tetap dipertahankan pada
-*metadata* agar ketidakpastian ini tidak disembunyikan.
+ayat tepat secara fonetik; kategori fallback tetap dipertahankan pada
+metadata agar ketidakpastian ini tidak disembunyikan.
 
-### Hasil Validasi dan pembentukan *manifest*
+### Hasil validasi dan pembentukan *manifest*
 
 Validasi akhir menerapkan seluruh gerbang yang dirancang pada BAB III
 terhadap 25.945 berkas kandidat, sebagaimana dirangkum pada Gambar 4.3.
 Sebanyak 116 berkas berukuran nol dikeluarkan sehingga 25.829 klip
 dinyatakan lolos. Seluruh klip yang lolos memenuhi struktur direktori
 baku, terbaca oleh pemeriksa durasi dan keterbacaan audio, berada pada
-rentang jumlah ayat yang sah, dan tidak memuat identitas ganda; setiap
+rentang jumlah ayat yang sah, dan tidak memuat identitas ganda setiap
 penolakan dicatat alasannya.
 
-![Gambar 4.3 Alur validasi dan pembentukan *manifest* tervalidasi
-beserta jumlah berkas](media/bab4_prep_manifest_flow.png){width="6.5in"
-height="2.0in"}
+![Gambar 4. Alur validasi dan pembentukan
+*manifest*](media/image15.png){width="5.508333333333334in"
+height="1.6909722222222223in"}
 
 Konsekuensi kebijakan inklusi terhadap korpus mahasiswa adalah
 berkurangnya populasi dari 81 folder awal menjadi 60 mahasiswa yang
@@ -2702,63 +2764,111 @@ memiliki klip lolos validasi; 21 mahasiswa sisanya tidak memiliki satu
 pun klip yang lolos. Distribusi klip per mahasiswa pada korpus final
 memiliki rata-rata 430 klip dan median 561 klip, dengan 23 mahasiswa
 memiliki klip untuk seluruh 38 surah. Dari sisi rekaman, 1.795 rekaman
-menyumbang klip tervalidasi. *Manifest* tervalidasi yang memuat lima
-belas kolom identitas, lokasi, durasi, dan *provenance* audit menjadi
+menyumbang klip tervalidasi. Manifest tervalidasi yang memuat lima belas
+kolom identitas, lokasi, durasi, dan provenance audit menjadi
 satu-satunya sumber kebenaran bagi pembentukan sel eksperimen;
 rekonsiliasi lengkap antara tahap pengumpulan, segmentasi, validasi, dan
 ekstraksi disajikan pada Tabel 4.1. Pada cabang referensi, 17.130 baris
 Quran-MD menjadi kandidat ekstraksi; tiga baris di antaranya kemudian
 gagal pada ekstraksi representasi dan dikeluarkan secara identik dari
-kedua model melalui *union filtering*, sehingga dibahas pada sub-bab
-Hasil *Modeling*.
+kedua model melalui union filtering, sehingga dibahas pada sub-bab Hasil
+*Modeling*.
 
-### Hasil Pemisahan data dan peran sumber
+### Hasil Pemisahan Dataset dan Peran Sumber data 
 
-Pembentukan 13 sel eksperimen dilaksanakan sesuai rancangan: Skenario A
-tanpa rasio pemilik, serta Skenario B, C, dan D pada empat rasio
-pemilik. Penugasan pemilik dilakukan melalui permutasi acak
-deterministik dengan *seed* 42. Pada korpus 60 mahasiswa, rasio 60:40
-menempatkan 36 mahasiswa pada sisi *database* dan 24 pada sisi *query*;
-rasio 70:30 menghasilkan 42 berbanding 18; rasio 80:20 menghasilkan 48
-berbanding 12; dan rasio 90:10 menghasilkan 54 berbanding 6. Pada korpus
-30 qori Quran-MD, rasio yang sama menghasilkan 18:12, 21:9, 24:6, dan
-27:3. Audit kebocoran seluruh sel menunjukkan tidak ada pemilik yang
-muncul pada kedua sisi, tidak ada jalur berkas yang sama antara *query*
-dan *database*, dan tidak ada identitas ganda.
+Eksperimen ini menggunakan beberapa jenis pemisahan data yang berbeda
+tergantung dengan skenarionya. Pemisahan ini menentukan interpretasi
+hasil dan temuan penelitian. Skenario A menggunakan data lintas domain.
+Skenario A menggunakan seluruh 25.829 klip mahasiswa sebagai *query* dan
+seluruh 17.127 klip Quran-MD sebagai *database* referensi. Tidak ada
+pemisahan data pada domain yang sama karena sumber data sudah berbeda.
+Skenario ini mewakili kondisi pencarian bacaan mahasiswa terhadap
+referensi profesional.
+
+Skenario B, C, D: Pemisahan Berdasarkan Pemilik Tiga skenario ini
+menggunakan rasio pemilik (*owner ratio*) untuk membagi data menjadi
+*query* dan *database* pada domain yang sama. Pemilik didefinisikan
+sebagai:
+
+a.  Skenario B: Qari (pembaca Quran-MD). Setiap qari memiliki beberapa
+    klip ayat.
+
+b.  Skenario C: Mahasiswa (NIM). Setiap mahasiswa memiliki beberapa klip
+    hasil segmentasi.
+
+c.  Skenario D: Mahasiswa untuk *query*, gabungan mahasiswa lain yang
+    ditambahkan dengan seluruh Quran-MD untuk *database* referensi.
+
+*Owner ratio* yang diterapkan terdapat beberapa jenis variasi 60:40,
+70:30, 80:20, 90:10. menentukan proporsi pemilik yang menjadi *query*
+versus *database* referensi. Misalnya, rasio 70:30 berarti 70% pemilik
+(diurutkan berdasarkan NIM/qari) menjadi *database* referensi, sedangkan
+30% sisanya menjadi *query*. Pembagian ini dilakukan secara stratified
+dengan seed 42 untuk menjaga konsistensi antar sel.
+
+Pencegahan Kebocoran Data Untuk skenario B, C, dan D, audit kebocoran
+memastikan. Pertama, tidak ada pemilik yang muncul di kedua sisi
+(*query* dan *database*). Kedua, Tidak ada jalur berkas yang sama antara
+*query* dan *database*. Dan Terakhir untuk skenario D, *database* adalah
+gabungan mahasiswa lain (yang bukan *query*) ditambah seluruh Quran-MD
+
+*Union filtering* ketika ekstraksi embedding gagal untuk beberapa baris
+pada salah satu model, baris tersebut dikeluarkan dari kedua model
+menggunakan union filtering. Pada Quran-MD, 3 dari 17.130 baris gagal
+diekstraksi dan dikeluarkan secara identik dari kedua model, menyisakan
+17.127 baris final. Pada klip mahasiswa, seluruh 25.829 klip berhasil
+diekstraksi oleh kedua model.
+
+Pembagian Development dan Test Setiap sel membagi *query* menjadi dua
+himpunan:
+
+a.  *Development set*: Digunakan untuk penyapuan 13 titik (layer 0-12)
+    dan memilih titik terbaik berdasarkan MAP tertinggi
+
+b.  *Test set*: Terkunci selama pemilihan, hanya digunakan untuk
+    evaluasi final setelah titik terbaik ditetapkan
+
+Pembagian ini dilakukan secara *stratified* per pasangan surah-ayat
+dengan seed 42: pada setiap kelompok ayat, sekitar 70% klip (dibulatkan
+ke bawah, minimal satu klip) masuk development set dan sisanya masuk
+test set. Karena pembulatan dilakukan pada tingkat kelompok ayat,
+proporsi klip development terhadap total *query* bervariasi antar sel
+(57,9%--69,1%). Jumlah development dan test pada setiap sel tercantum
+pada Tabel 4.3.
 
 ####  Ukuran Data Skenario A 
 
-Skenario A tidak menggunakan rasio pemilik. Seluruh klip mahasiswa
+Skenario A ttidak menggunakan rasio pemilik. Seluruh klip mahasiswa
 ditempatkan sebagai *query,* sedangkan seluruh *database* referensi dari
 Quran-MD. Skenario A menghasilkan kondisi lintas sumber karena query dan
 database referensi berasal dari jalur akuisisi serta persiapan yang
-berbeda. Skenario ini terdiri atas satu sel dan tidak menggunakan
+berbeda. Skenario ini teridi atas satu sel dan tidak menggunakan
 pembagian rasio pemilik.
 
   -----------------------------------------------------------------------------------
   **Sel**   **Sumber     **Jumlah    **Sumber        **Jumlah   **Pemisahan data**
             *Query***    *Query***   *database*     *database*  
-                                         referensi**    referensi**   
+                                     referensi**    refensi**   
   --------- ------------ ----------- ------------- ------------ ---------------------
   A         Mahasiswa    25.829      Quran-MD         17.127    Terpisah oleh sumber
                                                                 data
 
   -----------------------------------------------------------------------------------
 
-  : []{#_Toc237464297 .anchor}Tabel 4.2 Ukuran Query dan *database*
+  : []{#_Toc239590203 .anchor}Tabel 4. Ukuran Query dan *database*
   referensi pada Skenario A
 
 ####  Ukuran Data Skenario B 
 
 Skenario B menggunakan Quran-MD pada sisi query dan *database*
-referensi. Identitas qori dibagi secara disjoint berdasarkan rasio
+referensi. Identitas qari dibagi secara disjoint berdasarkan rasio
 pemilik. Peningkatan rasio pemilik database referensi menyebabkan jumlah
-qori dan klip pada *database* bertambah, sedangkan jumlah qori dan klip
+qari dan klip pada *database* bertambah, sedangkan jumlah qari dan klip
 *query* berkurang. Kedua sisi tetap berasal dari Quran-MD, tetapi tidak
-ada qori yang muncul pada kedua sisi.
+ada qari yang muncul pada kedua sisi.
 
   --------------------------------------------------------------------------
-     **Sel**     **Qori query**     **Qori        **Jumlah       **Jumlah
+     **Sel**     **Qari query**     **Qari        **Jumlah       **Jumlah
                                  *database***    *query***     *database***
   -------------- -------------- -------------- -------------- --------------
      B-60:40           12             18           6.849          10.278
@@ -2770,7 +2880,7 @@ ada qori yang muncul pada kedua sisi.
      B-90:10           3              27           1.713          15.414
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464298 .anchor}Tabel 4.3 Ukuran *query* dan *database*
+  : []{#_Toc239590204 .anchor}Tabel 4. Ukuran *query* dan *database*
   referensi pada Skenario B
 
 ####  Ukuran Data Skenario C 
@@ -2795,19 +2905,19 @@ sisi tidak beririsan.
      C-90:10           6              54           1.833          23.996
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464299 .anchor}Tabel 4.4 Ukuran *query* dan *database*
+  : []{#_Toc239590205 .anchor}Tabel 4. Ukuran *query* dan *database*
   referensi pada Skenario C
 
 ####  Ukuran Data Skenario D 
 
 Skenario D menggunakan *query* mahasiswa yang sama dengan Skenario C
-pada rasio terkait. Perbedaannya terletak pada *database.* Database
+pada rasio terkait. Perbedaanya terletak pada *database.* Database
 referensi skenario D terdiri atas mahasiswa lain yang identitasnya
 *disjoint* dari query dan seluruh 17.127 referensi Quran-MD. *Database*
 referensi D selalu lebih besar daripada *database* C pada rasio yang
-sama karena menambahkan seluruh Quran-MD. Sebagai contoh, pada Tabel 4.4
+sama karena menambahkan seluruh Quran-MD. Sebagai contoh, pada Tabel 4.5
 C-60:40 memiliki 16.443 dokumen dalam *database*, sedangkan dalam Tabel
-4.5 D-60:40 memiliki 33.570 dokumen. Selisihnya adalah 17.127 dokumen,
+4.6 D-60:40 memiliki 33.570 dokumen. Selisihnya adalah 17.127 dokumen,
 sesuai dengan jumlah referensi Quran-MD.
 
 Seluruh *query* pada Skenario A, B, C, dan D memiliki sedikitnya satu
@@ -2835,7 +2945,7 @@ muncul hanya karena pasangan (surah, ayat) yang relevan tidak tersedia.
                                                        Quran-MD       
   ----------------------------------------------------------------------------------
 
-  : []{#_Toc237464300 .anchor}Tabel 4.5 Ukuran *query* dan *database*
+  : []{#_Toc239590206 .anchor}Tabel 4. Ukuran *query* dan *database*
   referensi pada Skenario D
 
 ####  Penyaringan data *query* 
@@ -2845,7 +2955,7 @@ Setelah data berhasil dikelompokkan berdasarkan *database* referensi dan
 referensi. Sebuah *query* harus memiliki sedikitnya satu dokumen relevan
 di dalam *database* referensi, agar dapat digunakan untuk menghitung
 metrik *retrieval*. Dokumen relevan ditentukan berdasarkan pasangan
-label (surah, ayat), bukan berdasarkan qori atau mahasiswa.
+label (surah, ayat), bukan berdasarkan qari atau mahasiswa.
 
 *query* yang tidak memiliki dokumen dengan pasangan (surah, ayat) yang
 sesuai di dalam *database* referensi dikeluarkan. Penyaringan ini
@@ -2891,52 +3001,291 @@ Top-5, dan Top-10. Pemisahan tersebut menjaga agar data pengujian tetap
 berfungsi sebagai evaluasi yang tidak digunakan untuk mengambil
 keputusan konfigurasi.
 
-##  Hasil Modeling 
+##  Hasil *Modeling* 
 
-Fase *modeling* dijalankan sesuai rancangan pada BAB III melalui empat
-tahap, yaitu ekstraksi representasi *layerwise*, pembersihan data hasil
-ekstraksi, pemilihan titik representasi per sel, dan penskoran beserta
-pemeringkatan. Sejalan dengan rancangan tersebut, hasil tahap pemilihan
+Fase *Modeling* dijalankan sesuai dilakukan dalam empat tahap yaitu
+ekstraksi *layerwise,* pembersihan data hasil ekstraksi, pemilihan titik
+representasi per sel, dan penskoran beserta pemeringkatan. Sejalan
+dengan rancangan yang dibuat pada bab sebelumnya, hasil tahap pemilihan
 titik representasi disajikan dalam tiga bagian, yaitu hasil penyapuan
 lapisan, hasil MAP *development* per skenario, dan ringkasan titik
-terpilih. Bagian ini menyajikan hasil setiap tahap beserta angka artefak
+terpilih. Bagian ini menyajikan setiap tahap beserta angka artefak
 aktualnya.
 
-### Hasil Ekstraksi representasi *layerwise*
+### Hasil ekstraksi representasi *layerwise*
 
-Ekstraksi final menghasilkan 13 *layers* representasi untuk setiap model
-pada setiap himpunan data. Setiap klip mula-mula menghasilkan
-*checkpoint* berukuran 13 × 768, kemudian embedding dari lapisan yang
-sama dirakit menjadi berkas layer_00.npy hingga layer_12.npy. Setiap
-matriks akhir berukuran N × 768, dan baris ke-i pada matriks selalu
-bersesuaian dengan baris ke-i pada manifes.
+Ekstraksi representasi layerwise dilaksanakan menggunakan dua model
+self-supervised learning, yaitu Wav2vec2 dan Data2vec dalam keadaan
+*frozen.* Kedua model memiliki arsitektur serupa yang teridiri atas
+tujuh lapisan konvolusi sebagai *feature extractor* dan dua belas blok
+Transformer, sehingga masing-masing menghasilkan 13 titk representasi
+dengan dimensi tersembunyi 768. Proses ekstraksi diterapkan pada dua
+himpunan data secara terpisah, yaitu himpunan referensi yang bersumber
+dari Quran-MD dan himpunan *query* yang bersumber dari rekaman
+mahasiswa.
 
-### Hasil Pembersihan data hasil ekstraksi
+Alur ekstraksi untuk setiap klip audio dimulai dengan pemuatan berkas
+audio menjadi gelombang mono pada *sample rate* 16 kHz menggunakna
+*library* *librosa.* Audio tersebut kemudian dinormalisasikan oleh
+feature extractor bawaan model dan diteruskan dengan parameter yang
+menampilkan *hidden states* agar model mengembalikan keluaran dari
+seluruh 13 lapisan, bukan hanya lapisan terkahir. Keluaran setiap
+lapisan berupa tensor tiga dimensi berukuran (1, *T*\_enc, 768), di mana
+*T\_*enc merupakan jumlah *frame* tempral yang bergantung pada durasi
+audio masukan. untuk mengubah representasi panjang *variable* tersebut
+menjadi vektor berdimensi tetap, diterapkan mean pooling terhadap sumbu
+temporal sebagaimana telah diformulasikan pada persamaan 3.1. Operasi
+ini menghasilkan satu vektor berukuran 768 untuk setiap lapisan,
+sehingga satu klip audio menghasilkan 13 vektor yang disusun menjadi
+matriks *checkpoint* berukuran 13 x 768 Gambar 4.5 mengilustrasikan alur
+lengkap proses ini.
+
+![Gambar 4. Alur
+Ekstraksi](media/image16.png){width="5.291666666666667in"
+height="3.5844838145231845in"}
+
+Gambar 4.5 Alur ekstraksi per klip dan assembly berkas per-layer setiap
+checkpoint sementara disimpan secara atomis dalam format terkompresi
+.npz sebelum proses melanjutkan ke klip berikutnya. Mekanisme penulisan
+atomis menggunakan strategi *write-to-temporary-then-replace*, yaitu
+data dituliskan terlebih dahulu ke berkas sementara dan dipindahkan ke
+lokasi akhir melalui operasi *os.replace()* yang bersifat atomis pada
+file system. Strategi ini menjamin bahwa berkas tidak pernah berada
+dalam kondisi setengah tertulis, sehingga kegagalan di tengah proses
+tidak merusak data yang telah berhasil diekstrak sebelumnya. Berkas
+progress.json mencatatat kemajuan penyelesaian secara berkalasa dan
+berfungsi sebagai penanda otoritatif, sehingga proses yang terputus
+dapat dilanjutkan tanpa mengulang seluruh korpus.
+
+Setelah seluruh klip dalam satu himpunan data selesai diekstrak, tahap
+setelah seluruh klip dalam satu himpunan data selesai diekstrak, tahap
+assembly merakit checkpoint-checkpoint per klip mejnadi berkas
+per-lapisan. Pada tahap ini dilakukan transposisi logis, data yang
+semual terorganisasi per klip dikelompokkan berdasarkan indeks lapisan,
+sehingga *embedding* dari lapisan yang sama pada seluruh klip
+digabungkan menjadi satu matriks berukuran N x 768. Hasil akhir berupa
+13 berkas NumPy Bernama layer_00.npy hingga layer_12.npy, di mana setiap
+berkas menyimpan matriks float32 dengan N baris dan 768 kolom. Baris
+ke-I pada setiap matriks selalu bersesuaian dengan baris ke-i pada
+*manifest* keluaran manifest.csv, sehingga identitas klip (surah, ayat
+dan qari atau mahasiswa) dapat dilacak secara konsisten. Gambar di bawah
+mengilustrasikan transformasi dimensi tensor pada setiap tahap.
+
+![Gambar 4. Transformasi dimensi tensor pada setiap tahap
+ekstraksi](media/image17.png){width="5.508333333333334in"
+height="1.15in"}
+
+Validasi artefak akhir dilakukan secara otomatis sebelum status ditandai
+selesai. Prosedur validasi memeriksa keberadaan ke-13 berkas lapisan,
+memverifikasi bahwa setiap berkas memiliki bentuk (N, 768) dengan tipe
+data float32, serta memastikan jumlah baris konsisten dengan *manifest*.
+Hanya setelah seluruh proses tersebut lolos, berkas progress.json di
+update menjadi *complete* dan proses dinyatakan selesai. Tabel 4.7
+merangkum hasil actual ekstraksi pada kedua himpunan data untuk kedua
+model.
+
+  -----------------------------------------------------------------------------------------
+  **Himpunan    **Model**   **Jumlah   **Jumlah   **Bentuk   **Tipe    **Ukuran   **Baris
+  Data**                    Klip (N)** Berkas     Per        Data**    Per        Gagal**
+                                       Layer**    Berkas**             Berkas**   
+  ------------- ----------- ---------- ---------- ---------- --------- ---------- ---------
+  Referensi     Wav2Vec2    17.130     13         (17130,    float32   ≈50,2 MB   3
+  (Quran-MD)                                      768)                            
+
+  Referensi     Data2Vec    17.130     13         (17130,    float32   ≈50,2 MB   3
+  (Quran-MD)                                      768)                            
+
+  Query         Wav2Vec2    25.829     13         (25829,    float32   ≈75,7 MB   0
+  (Mahasiswa)                                     768)                            
+
+  Query         Data2Vec    25.829     13         (25829,    Float32   ≈75,7 MB   0
+  (Mahasiswa)                                     768)                            
+  -----------------------------------------------------------------------------------------
+
+  : Tabel 4. Hasil ekstraksi representasi *layerwise* pada kedua
+  himpunan data
+
+Sebagaimana disajikan pada Tabel 4.7, himpunan referensi menghasilkan
+17.130 baris per model dengan tiga baris gagal, sedangkan himpunan query
+menghasilkan 25.829 baris per model tanpa kegagalan. Secara keseluruhan,
+proses ekstraksi menghasilkan 52 berkas .npy (4 kombinasi himpunan-model
+× 13 lapisan) dengan total kapasitas penyimpanan sekitar 3,2 GB.
+Ekstraksi himpunan *query* yang berjumlah 25.829 klip pada model
+Wav2Vec2. Tiga belas titik representasi yang diekstrak memiliki
+karakteristik yang berbeda berdasarkan kedalamannya dalam arsitektur
+model. Lapisan 0 merupakan keluaran *feature projection*, yaitu proyeksi
+linear dari fitur konvolusi, yang menangkap informasi akustik.
+Karakteristik ini sejalan dengan temuan Pasad, dkk \[35\] yang
+menunjukkan bahwa lapisan-lapisan awal Wav2vec2 memiliki kemiripan
+tinggi dengan fitur akustik. Lapisan 1 hingga 3 merupakan lapisan
+Transformer awal yang mulai menggabungkan konteks lokal dan
+merepresentasikan pola fonetik dasar. Lapisan 4 hingga 6 berada pada
+tingkat menengah dan menangkap pola prosodi serta intonasi bacaan, hal
+ini sejalan dengan hasil Yang, dkk \[36\]. Lapisan 7 hingga 9 sering
+dianggap sebagai zona transisi yang menyeimbangkan informasi akustik dan
+representasi abstrak \[35\]. Lapisan 10 hingga 12 merupakan lapisan
+akhir yang menghasilkan representasi paling kontekstual dan abstrak,
+dioptimalkan untuk *objective* pelatihan masing-masing model.
+Karakteristik ini menjadi dasar bagi penyapuan lapisan pada tahap
+selanjutnya, di mana setiap sel eksperimen memilih titik representasi
+yang menghasilkan MAP development tertinggi.
+
+![Gambar 4. Spektrum abstraksi representasi per
+layer](media/image18.png){width="5.508333333333334in"
+height="2.3826388888888888in"}
+
+Ekstraksi final menghasilkan 13 layers representasi untuk setiaip model
+pada setiap himpunan data. Setiap klip mula-mula menghasilkan checkpoint
+berukuran 13 X 768, kemudian embedding dari lapisan yang sama dirakit
+menjadi berkas layer_00.npy hingga layer_12.npy. setiap matriks akhir
+berukuran N x 768, dan baris ke-I pada matriks selalu bersesuaian dengan
+baris ke -1 pada *manifest*. Ekstraksi final menghasilkan 13 *layers*
+representasi untuk setiap model pada setiap himpunan data. Setiap klip
+mula-mula menghasilkan *checkpoint* berukuran 13 × 768, kemudian
+embedding dari lapisan yang sama dirakit menjadi berkas layer_00.npy
+hingga layer_12.npy. Setiap matriks akhir berukuran N × 768, dan baris
+ke-i pada matriks selalu bersesuaian dengan baris ke-i pada *manifest*.
 
 Seluruh 25.829 klip mahasiswa berhasil diproses oleh Wav2Vec2 dan
 Data2Vec. Dengan demikian, ekstraksi *query* final tidak memiliki baris
-yang ditandai gagal. Pada Quran-MD, seluruh 17.130 baris tetap
-diekstrak dan tersimpan pada berkas layer_00.npy hingga layer_12.npy,
-sehingga matriks pada penyimpanan berisi 17.130 baris. Tiga di antaranya
-ditandai gagal pada *manifest* dan ditulis sebagai vektor nol agar
-kesesuaian baris ke-i antara matriks dan manifes tetap terjaga.
-*Union filtering* kemudian menerapkan *keep-mask* di memori pada tahap
-evaluasi dan mengeluarkan ketiga indeks tersebut dari hasil kedua model,
-sehingga jumlah baris yang benar-benar dievaluasi adalah 17.127 dan
-identik untuk kedua model. Kedua angka tersebut tidak bertentangan:
-17.130 adalah jumlah baris pada penyimpanan, sedangkan 17.127 adalah
-jumlah baris yang dilibatkan dalam evaluasi. Validasi artefak akhir
-memastikan keberadaan 13 *layers*, bentuk (N, 768), tipe float32, dan
-keselarasan jumlah baris dengan manifes.
+yang ditandai gagal. Pada Quran-MD, tiga dari 17.130 baris ditandai
+gagal. *Union filtering* mengeluarkan ketiga indeks tersebut dari hasil
+kedua model dan menyisakan 17.127 baris identik. Sedangkan validasi
+artefak akhir memastikan keberadaan 13 *layers*, bentuk (N, 768), tipe
+float32, dan keselarasan jumlah baris dengan *manifest*.
 
-### Hasil Pemilihan lapisan representasi per sel 
+### Hasil pembersihan data hasil ekstraksi
 
-Penyapuan lapisan dijalankan mengikuti protokol pada BAB III, yaitu 13
-sel × 2 model × 13 titik atau 338 kombinasi, dengan MAP *development*
-sebagai dasar pemilihan dan perbandingan dilakukan pada nilai MAP mentah
-yang belum dibulatkan. Pembagian jumlah *development set* dan *test set* pada
-setiap sel yang menjadi dasar penyapuan tersebut disajikan pada Tabel
-4.6.
+Pembersihan data dilakukan dalam tiga tahap yaitu deteksi pada saat
+ekstraksi, penyaringan gabungan (*union filtering)* lintas kedua model
+yang dibandingkan pada saat evaluasi dan terakhir validasi artefak
+akhir. Ketiga tahap tersebut diterapkan secara identik pada Wav2Vec2 dan
+Data2Vec guna menjamin bahwa perbedaan hasil evaluasi semata-mata
+berasal dari perbedaan representasi, bukan dari perbedaan prosedur
+prapemrosesan.
+
+Pada tahap pertama, setiap klip audio yang telah diekstrak diperiksa
+terhadap dua syarat sebelum disimpan. Syarat pertama adalah kesesuaian
+bentuk tensor keluaran, yaitu model harus menghasilkan tepat 13 lapisan
+dengan dimensi 768 pada setiap lapisan. Syarat kedua adalah keabsahan
+numerik, yaitu seluruh nilai pada vektor harus bersifat finite dan tidak
+mengandung nilai tak-terdefinisi. Apabila salah satu syarat tidak
+terpenuhi misalnya karena berkas audio rusak atau anomali komputasi
+baris tersebut ditandai sebagai gagal pada manifes. Vektor representasi
+untuk baris yang gagal diisi dengan vektor nol berdimensi 13 × 768,
+sehingga posisi indeks pada matriks akhir tidak bergeser. Keputusan
+untuk mempertahankan baris gagal dengan vektor nol, alih-alih
+menghapusnya dari matriks, dipilih agar korespondensi satu-ke-satu
+antara baris matriks dan baris manifes tetap terjaga. Pendekatan
+penghapusan akan menggeser seluruh indeks di bawah baris yang dihapus
+dan berpotensi memutus keterkaitan antara data representasi dan metadata
+identitas klip.
+
+Pada tahap kedua, penyaringan gabungan (union filtering) diterapkan
+sebelum evaluasi dimulai. Prosedur ini membangun mask boolean berdimensi
+N dengan menggabungkan kolom kegagalan dari manifes Wav2Vec2 dan manifes
+Data2Vec melalui operasi konjungsi logis. Dengan pendekatan ini, apabila
+suatu baris ditandai gagal pada salah satu model, baris yang sama turut
+dikeluarkan dari model lainnya. Tujuan penyaringan gabungan adalah
+menyetarakan himpunan klip yang dievaluasi pada kedua model, sehingga
+selisih metrik retrieval tidak tercemari oleh perbedaan jumlah atau
+komposisi query maupun kandidat yang dinilai. Tanpa prosedur ini, satu
+model dapat dievaluasi pada lebih banyak klip dibandingkan model
+lainnya, dan perbandingan metrik menjadi tidak setara.
+
+Hasil kuantitatif pembersihan disajikan pada Tabel 4.X. Pada himpunan
+referensi Quran-MD, tiga baris dari total 17.130 baris ditandai gagal.
+Ketiga baris tersebut berasal dari qari yang sama pada surah 82 ayat 10,
+surah 88 ayat 24, dan surah 88 ayat 26. Kegagalan terjadi secara
+konsisten pada kedua model, sehingga penyaringan gabungan mengeluarkan
+tepat tiga baris dan menyisakan 17.127 baris yang dilibatkan dalam
+evaluasi. Pada himpunan query mahasiswa, satu baris dari total 7.119
+baris ditandai gagal pada surah 105 ayat 1, yang juga gagal pada kedua
+model. Setelah penyaringan gabungan diterapkan, tersisa 7.118 baris yang
+dievaluasi. Rasio kegagalan pada kedua himpunan data sangat kecil, yaitu
+masing-masing 0,018% dan 0,014%, sehingga tidak memengaruhi
+representativitas hasil evaluasi.
+
+Selama proses ekstraksi *layerwise,* setiap klip audio diproses secara
+individual melalui model dan hasilnya langsung diverifikasi sebelum
+disimpan. Pemeriksaan mencakup dua aspek yaitu kelengkapan bentuk tensor
+dan keabsahan numerik. Kelengkapan bentuk tensor mengecek apakah model
+mengembalikan tepat 13 lapisan dengan dimensi 768 pada setiap lapisan,
+sedangkan keabsahan numerik yaitu apakah seluruh nilai pada vektor tidak
+bernilai NaN atau tak hingga. Jika salah satu pemeriksaan gagal baik
+karena audio rusak, format tidak didukung atau anomali pada proses
+komputasi baris tersebut ditandai sebagai klip yang gagal. Pada
+*checkpoint* sementara pada berkas dengan ekstensi *npz*. Vektor
+representasi baris yang gagal diisi dengan vector nol berdimensi 768
+sebagai *placeholder* agar posisi indeks baris pada matriks akhir tetap
+terjaga. Mekanisme ini memastikan bahwa baris ke-*i* pada matriks
+layer_XX.npy selalu bersesuaian dengan baris ke-*i* pada manifes,
+terlepas dari keberhasilan atau kegagalan ekstraksi.
+
+Tabel 4.8 Statistik pembersihan data hasil ekstraksi
+
+  --------------------------------------------------------------------------------
+  **Himpunan    **Total     **Gagal      **Gagal      **Union     **Dievaluasi**
+  Data**        Baris**     Wav2Vec2**   Data2Vec**   Gagal**     
+  ------------- ----------- ------------ ------------ ----------- ----------------
+  Referensi     17.130      3            3            3           17.127
+  (Quran-MD)                                                      
+
+  Query         7.119       1            1            1           7.118
+  (Mahasiswa)                                                     
+  --------------------------------------------------------------------------------
+
+[]{#_Toc237480661 .anchor}
+
+Pada tahap ketiga, validasi artefak akhir dijalankan untuk memastikan
+integritas data sebelum evaluasi dimulai. Validasi ini mencakup empat
+pemeriksaan, yaitu keberadaan 13 berkas lapisan representasi, kesesuaian
+bentuk setiap berkas dengan dimensi (N, 768) sesuai jumlah baris pada
+manifes, kesesuaian tipe data seluruh elemen pada presisi float 32-bit,
+serta ketiadaan nilai tak-terdefinisi atau tak-hingga pada seluruh
+elemen matriks. Apabila salah satu pemeriksaan tidak terpenuhi, proses
+evaluasi dihentikan. Validasi ini berfungsi sebagai pemeriksaan terakhir
+yang menjamin bahwa seluruh komputasi jarak dan metrik retrieval
+beroperasi pada data yang bersih dan konsisten.
+
+Secara keseluruhan, prosedur pembersihan mempertahankan invarian bahwa
+baris ke-i pada setiap berkas lapisan representasi selalu merujuk pada
+klip yang sama dengan baris ke-i pada manifes. Invarian tersebut dijaga
+pada tiga titik, yaitu pada saat ekstraksi melalui penggunaan vektor nol
+yang mempertahankan posisi indeks, pada saat penyaringan gabungan
+melalui penerapan mask secara sinkron pada matriks dan manifes, dan pada
+saat validasi melalui pemeriksaan kesesuaian jumlah baris. Keselarasan
+ini diperlukan karena matriks relevansi pada evaluasi retrieval
+diturunkan dari pasangan identitas surah dan ayat pada manifes. Apabila
+urutan baris antara matriks representasi dan manifes tidak selaras,
+seluruh perhitungan MAP dan MRR akan menghasilkan angka yang tidak
+mencerminkan kinerja sesungguhnya.
+
+### Pemilihan lapisan representasi per Sel 
+
+Pemilihan titik representasi dilakukan melalui Evaluasi tiap lapisan
+yang dilakukan dengan sistematis pada *development set* untuk setiap sel
+dan model. Protokol ini memastikan bahwa pemilihan konfigurasi tidak
+menggunakan data pengujian, sehingga evaluasi akhir tetap tidak bias.
+Protocol pemilihan lapisan representasi sebagai berikut:
+
+a.  Untuk setiap sel yang memiliki jumlah 13 sel dan setiap model
+    (Wav2Vec2, Data2Vec), lakukan evaluasi lapisan pada 13 titik (layer
+    0-12)
+
+b.  Hitung MAP pada *development set* untuk setiap kombinasi
+    sel-model-lapisan
+
+c.  Pilih lapisan dengan MAP tertinggi pada *development set*
+
+d.  Jika terjadi seri, pilih layer lebih kecil
+
+e.  Gunakan titik terpilih untuk evaluasi akhir pada *test set*
+
+Total evaluasi akan sebanyak
+$13\ sel\  \times \ 2\ model\  \times \ 13\ titik\  = \ 338.$ untuk
+pembagian jumlah *development set* dan *test set* pada setiap sel
+terdapat pada tabel 4.7.
 
   -----------------------------------------------------------------------
          **Sel**                        **n_dev**              **n_test**
@@ -2968,7 +3317,7 @@ setiap sel yang menjadi dasar penyapuan tersebut disajikan pada Tabel
          D-90:10                            1.062                     771
   -----------------------------------------------------------------------
 
-  : []{#_Toc237464301 .anchor}Tabel 4.6 Pembagian *development set* dan
+  : []{#_Toc239590207 .anchor}Tabel 4. Pembagian *development set* dan
   *test set* pada setiap sel
 
 Jumlah *development* dan *test* tepat menjumlah ke total *query* pada
@@ -2977,7 +3326,7 @@ representasi, sedangkan *test set* data tetap steril sampai titik
 terbaik ditetapkan. Karena itu, lapisan akhir tidak menjadi dasar
 pemilihan konfigurasi.
 
-### Hasil Evaluasi MAP Development per Skenario 
+### Evaluasi MAP Development per Skenario 
 
 Bagian ini menyajikan tabel untuk keseluruhan hasil uji pencarian layer
 representasi yang paling optimal dengan MAP pada *development set* untuk
@@ -3021,7 +3370,7 @@ rasio pemilik (seluruh mahasiswa vs. seluruh Quran-MD).
             12                     0,48%                   0,56%
   -----------------------------------------------------------------------
 
-  : []{#_Toc237464302 .anchor}Tabel 4.7 Evaluasi layer dengan MAP Skenario
+  : []{#_Toc239590208 .anchor}Tabel 4. Evluasi layer dengan MAP Skenario
   A (n_dev = 17.839)
 
 Pada Skenario A, Wav2Vec2 mencapai MAP tertinggi pada layer 7 (1,40%),
@@ -3065,7 +3414,7 @@ Skenario B menggunakan Quran-MD untuk kedua sisi (*query* dan
         12                3,18%          3,19%          3,06%          2,63%
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464303 .anchor}Tabel 4.8 Evaluasi layer dengan MAP
+  : []{#_Toc239590209 .anchor}Tabel 4. Evaluasi layer dengan MAP
   Skenario B Wav2vec2
 
   --------------------------------------------------------------------------
@@ -3099,7 +3448,7 @@ Skenario B menggunakan Quran-MD untuk kedua sisi (*query* dan
         12                3,12%          3,15%          2,83%          2,49%
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464304 .anchor}Tabel 4.9 Evaluasi layer dengan MAP
+  : []{#_Toc239590210 .anchor}Tabel 4. Evaluasi layer dengan MAP
   Skenario B Data2vec
 
 Pada Skenario B, Wav2Vec2 secara konsisten memilih layer 7 untuk tiga
@@ -3147,7 +3496,7 @@ berdasarkan identitas mahasiswa (NIM).
         12                0,84%          0,80%          0,79%          0,70%
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464305 .anchor}Tabel 4.10 Evaluasi layer dengan MAP
+  : []{#_Toc239590211 .anchor}Tabel 4. Evaluasi layer dengan MAP
   Skenario C Wav2vec2
 
   --------------------------------------------------------------------------
@@ -3181,7 +3530,7 @@ berdasarkan identitas mahasiswa (NIM).
         12                1,12%          1,05%          1,07%          0,93%
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464306 .anchor}Tabel 4.11 Evaluasi layer dengan MAP
+  : []{#_Toc239590212 .anchor}Tabel 4. Evaluasi layer dengan MAP
   Skenario C Data2vec
 
 Pada Skenario C, Wav2Vec2 secara konsisten memilih layer 7 untuk seluruh
@@ -3226,7 +3575,7 @@ performa pada *database* yang lebih besar dan lebih heterogen.
         12                0,54%          0,53%          0,55%          0,50%
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464307 .anchor}Tabel 4.12 Evaluasi layer dengan MAP
+  : []{#_Toc239590213 .anchor}Tabel 4. Evaluasi layer dengan MAP
   Skenario D Wav2vec2
 
   --------------------------------------------------------------------------
@@ -3260,7 +3609,7 @@ performa pada *database* yang lebih besar dan lebih heterogen.
         12                0,70%          0,68%          0,71%          0,65%
   --------------------------------------------------------------------------
 
-  : []{#_Toc237464308 .anchor}Tabel 4.13 Evaluasi layer dengan MAP
+  : []{#_Toc239590214 .anchor}Tabel 4. Evaluation layer dengan MAP
   Skenario D Data2vec
 
 Pada Skenario D, Wav2Vec2 secara konsisten memilih layer 7 untuk seluruh
@@ -3274,7 +3623,7 @@ sama (2,47% vs 2,47%), tetapi nilai tidak-terbulat layer 6 sedikit lebih
 tinggi, sehingga layer 6 terpilih. Karena tidak terjadi seri sempurna
 pada nilai tidak-terbulat, aturan seri tidak terpakai pada kasus ini.
 
-### Hasil Ringkasan Pemilihan Layer 
+### Ringkasan Pemilihan Layer 
 
 Tabel berikut merangkum *layer* terpilih untuk setiap kombinasi sel dan
 model, beserta MAP development yang dicapai.
@@ -3336,7 +3685,7 @@ model, beserta MAP development yang dicapai.
        D-90:10          Data2Vec              6                     2,10%
   -----------------------------------------------------------------------
 
-  : []{#_Toc237464309 .anchor}Tabel 4.14 Ringkasan layer terpilih dan MAP
+  : []{#_Toc239590215 .anchor}Tabel 4. Ringkasan layer terpilih dan MAP
   development
 
 Pola pemilihan layer menunjukkan konsistensi yang kuat
@@ -3365,32 +3714,60 @@ tidak mengukur secara langsung isi setiap titik representasi, sehingga
 interpretasi mengenai kandungan informasi pada lapisan tertentu bersifat
 inferensial.
 
-![[]{#_Toc237463888 .anchor}Gambar 4.4 Layer representasi
-terpilih](media/image11.png){width="3.6818186789151355in"
+![[]{#_Toc239590298 .anchor}Gambar 4. Layer representasi
+terpilih](media/image19.png){width="3.6818186789151355in"
 height="3.124811898512686in"}
 
-Gambar 4.4 merangkum nomor layer yang dipilih berdasarkan MAP pada
+Gambar 4.3 merangkum nomor layer yang dipilih berdasarkan MAP pada
 *development set* untuk setiap sel dan model. Pola visualnya konsisten
-dengan Tabel 4.14. Wav2Vec2 lebih banyak memilih layer 7, sedangkan
+dengan Tabel 4.15. Wav2Vec2 lebih banyak memilih layer 7, sedangkan
 Data2Vec memilih layer 5 atau 6.
 
 ### Hasil Skor dan pemeringkatan
 
-Penskoran dijalankan sesuai rancangan menggunakan *cosine similarity*
-antara embedding *query* dan seluruh kandidat *database* pada titik
-representasi yang sama, kemudian kandidat diurutkan dari skor terbesar ke
-terkecil. Karena kedua model menghasilkan embedding berdimensi 768 dan
-melewati *union filtering* yang identik, setiap *query* dinilai terhadap
-himpunan kandidat yang sama pada kedua model, sehingga selisih metrik
-hanya berasal dari representasi model.
+Setelah titik representasi untuk setiap kombinasi sel dan model
+ditentukan pada tahap sebelumnya, selanjutnya yaitu proses skor dan
+pemeringkatan hasil dari kedua model. Setiap *query* diwakili oleh satu
+vektor berdimensi 768 yang berasal dari titik representasi terpilih pada
+model yang bersangkutan. Vektor *query* tersebut kemudian dibandingkan
+terhadap seluruh vektor kandidat pada *database* referensi menggunakan
+*cosine similarity* sebagaimana didefinisikan pada persamaan 3.2. Ukuran
+ini mengukur kemiripan arah antara dua vektor tanpa bergantung pada
+panjang vektor, sehingga perbedaan amplitude yang mungkin timbul akibat
+variasi durasi audio tidak memengaruhi perhitungan skor. Karena kedua
+model telah melewati *union filtering* yang identik dan menghasilkan
+*embedding* berdimensi sama, setiap *query* dinilai terhadap himpunan
+kandidat yang persis sama pada Wav2vec2 dan Data2Vec. Kesetaraan ini
+menjamin bahwa selisih skor dan posisi peringkat antara kedua model
+murni mencerminkan perbedaan representasi, bukan perbedaan himpunan
+kandidat.
 
-Keluaran tahap ini berupa daftar peringkat, bukan keputusan benar atau
-salah. Pada Skenario A, setiap *query* dinilai terhadap 17.127 kandidat
-Quran-MD, sedangkan pada Skenario B, C, dan D jumlah kandidat mengikuti
-ukuran *database* setiap sel sebagaimana disajikan pada Tabel 4.2 sampai
-Tabel 4.5. Kualitas daftar peringkat tersebut tidak dinilai pada tahap
-ini, melainkan diukur menggunakan MAP, MRR, dan Top-K yang hasilnya
-dibahas pada sub-bab Hasil *Evaluation* dan Pembahasan.
+Penskoran menghasilkan menghasilkan satu matriks kemiripan untuk setiap
+kombinasi sel dan model, dengan dimensi sejumlah *query* pada baris dan
+jumlah kandididat *database* pada kolom. Pada skenario A, setiap query
+dinilai terhadap 17.127 kandidat Quran-MD yang telah dilakukan *union
+filtering*. Pada scenario B, C, dan D, jumlah kandidat mengikuti ukuran
+database setiap sel sebagaimana disajikan pada Tabel 4.2 sampai 4.5,
+yang bervarias sesuai dengan *owner ratio* masing-masing. Seluruh nilai
+pada matriks kemiripan berada pada rentang \[-1, 1\].
+
+Berdasarkan matriks kemiripan tersebut, setiap baris diurutkan dari skor
+terbesar ke terkecil sehingga menghasilkan satu daftar peringkat untuk
+setiap *query*. Kandidat dengan skor tertinggi menempati peringkat
+pertama dan seterusnya. Prosedur pengurutan ini bersifat deterministic
+dan tidak melibatkan ambang batas skor minimum, seluruh kandidat pada
+database turut diperingkatkan tanpa pemotongan. Dengan demikian,
+keluaran tahap ini berupa daftar peringkat lengkap, bukan keputusan
+klasifikasi benar atau salah. Pemisahan fungsi antara penskoran dan
+evaluasi merupakan hal yang perlu ditegaskan. *Cosine similarity*
+berperan semata-mata sebagai fungsi penilaian yang menghasilkan urutan,
+sedangkan kualitas urutan diukur pada tahap evaluasi menggunakan metrik
+MAP, MRR, dan Top-K. Daftar peringkat dinilai terhadap label relevansi
+yang ditentukan oleh pasangan (surah, ayat), bukan oleh skor kemiripan
+itu sendiri. Dengan kata lain, skor *cosine similarity* yang tinggi
+belum tentu menunjukkan bahwa kandidat tersebut adalah ayat yang benar.
+Kesesuaian dengan label relevansi baru dapat diketahui setelah metrik
+evaluasi dihitung.
 
 ##  Hasil Evaluation dan Pembahasan
 
@@ -3400,7 +3777,7 @@ berbeda dengan MAP development yang sebelumnya sudah dijelaskan. MAP
 development digunakan untuk pemilihan layer, sedangkan MAP test
 digunakan untuk evaluasi performa final hasil dari tiap-tiap model.
 
-Tabel 4.15 menyajikan hasil final pada *test set* untuk seluruh 13 sel.
+Tabel 4.16 menyajikan hasil final pada *test set* untuk seluruh 13 sel.
 Dipecah menjadi lima tabel agar lebih memudahkan untuk dibaca. Tabel
 Seluruh nilai dinyatakan dalam persen. Setiap baris memakai titik yang
 telah dipilih pada development set, sehingga tidak ada pencarian titik
@@ -3414,9 +3791,7 @@ tambahan pada data pengujian.
      A     Data2Vec      5       **1,61%**   **9,01%**   **5,37%**   **11,66%**   **15,87%**
   ------------------------------------------------------------------------------------------
 
-  : []{#_Toc237464310 .anchor}Tabel 4.15 Hasil Evaluasi Skenario A
-
-[]{#_Toc236984573 .anchor}
+  : []{#_Toc239590216 .anchor}Tabel 4. Hasil Evaluasi Skenario A
 
 Skenario A merupakan kondisi lintas sumber dataset, sehingga ditampilkan
 terpisah dari skenario B, C, dan D yang memiliki variasi *owner ratio*.
@@ -3444,7 +3819,7 @@ poin persentase.
   D-60:40   Data2Vec         5         **2,18%**       26,09%       18,72%       33,28%       40,28%
   --------------------------------------------------------------------------------------------------
 
-  : []{#_Toc237464311 .anchor}Tabel 4.16 Hasil Evaluasi *Owner Ratio*
+  : []{#_Toc239590217 .anchor}Tabel 4. Hasil Evaluasi *Owner Ratio*
   60:40 pada Skenario B, C, dan D
 
 Pada rasio 60:40, Wav2Vec2 unggul pada seluruh metrik di Skenario B,
@@ -3471,7 +3846,7 @@ lebih tinggi daripada Data2Vec pada kedua skenario tersebut.
   D-70:30   Data2Vec         5         **2,24%**       26,63%       18,93%       33,59%       41,65%
   --------------------------------------------------------------------------------------------------
 
-  : []{#_Toc237464312 .anchor}Tabel 4.17 Hasil Evaluasi *owner ratio*
+  : []{#_Toc239590218 .anchor}Tabel 4. Hasil Evaluasi *owner ratio*
   70:30 pada skenario B, C, dan D
 
 Pada rasio 70:30, Wav2Vec2 kembali unggul pada seluruh metrik di
@@ -3499,7 +3874,7 @@ MRR dan seluruh metrik Top-K.
   D-80:20   Data2Vec         6         **2,38%**       29,39%       21,90%       37,08%       43,81%
   --------------------------------------------------------------------------------------------------
 
-  : []{#_Toc237464313 .anchor}Tabel 4.18 Hasil Evaluasi *owner ratio*
+  : []{#_Toc239590219 .anchor}Tabel 4. Hasil Evaluasi *owner ration*
   80:20 pada skenario B, C, dan D
 
 Pada rasio 80:20, Wav2Vec2 tetap unggul pada seluruh metrik di Skenario
@@ -3528,7 +3903,7 @@ Top-K.
   D-90:10   Data2Vec    6             **2,41%**   **28,67%**   **20,23%**   **38,13%**   **46,30%**
   -------------------------------------------------------------------------------------------------
 
-  : []{#_Toc237464314 .anchor}Tabel 4.19 Hasil Evaluasi owner ratio 90:10
+  : []{#_Toc239590220 .anchor}Tabel 4. Hasil Evaluasi owner ration 90:10
   pada skenario B, C, dan D
 
 Pada rasio 90:10, Wav2Vec2 unggul pada seluruh metrik di Skenario B,
@@ -3562,11 +3937,11 @@ tersebut menunjukkan bahwa MAP, MRR, dan Top-K menangkap aspek
 pemeringkatan yang berbeda dan tidak selalu bergerak dalam arah yang
 sama.
 
-![[]{#_Toc237463889 .anchor}Gambar 4.5 Perbandingan MAP Final per
-Sel](media/image12.png){width="5.508333333333334in"
+![[]{#_Toc239590299 .anchor}Gambar 4. Perbandingan MAP Final per
+Sel](media/image20.png){width="5.508333333333334in"
 height="4.399305555555555in"}
 
-Gambar 4.5 memperlihatkan MAP pada test set untuk dua model di seluruh
+Gambar 4.4 memperlihatkan MAP pada test set untuk dua model di seluruh
 13 sel. Tanda bintang menunjukkan perbedaan signifikan berdasarkan
 bootstrap berpasangan, sedangkan n.s. menunjukkan bahwa perbedaan belum
 signifikan. Visualisasi ini memperlihatkan pola utama evaluasi: Wav2Vec2
@@ -3585,11 +3960,11 @@ pandangan bahwa performa layerwise bergantung pada tugas dan domain,
 sebagaimana ditunjukkan oleh Yang dkk. (2024) secara lintas model dan
 oleh Pasad dkk. (2023) khusus untuk Wav2Vec2.
 
-![[]{#_Toc237463890 .anchor}Gambar 4.6 Tren MAP final terhadap *owner
-ratio* *database*](media/image13.png){width="5.508333333333334in"
+![[]{#_Toc239590300 .anchor}Gambar 4. Tren MAP final terhadap *owner
+ration* *database*](media/image21.png){width="5.508333333333334in"
 height="5.952938538932633in"}
 
-Gambar 4.6 menampilkan MAP *test set* sebagai fungsi *owner ratio
+Gambar 4.5 menampilkan MAP *test set* sebagai fungsi *owner ration
 database* untuk skenario B, C, dan D. Skenario A tidak disertakan karena
 tidak memiliki variasi *owner ratio*. Pada Skenario B, MAP tertinggi
 kedua model tercapai pada rasio 60:40, yaitu rasio dengan *database*
@@ -3599,19 +3974,19 @@ terkecil. Pada Skenario C, MAP tertinggi kedua model tercapai pada rasio
 
 Pola rasio ini bersifat deskriptif dan tidak boleh ditafsirkan sebagai
 hubungan kausal. Perubahan rasio pemilik secara bersamaan mengubah
-komposisi *query*, komposisi *database* (Tabel 4.3 sampai Tabel 4.5),
-dan jumlah *test set* (Tabel 4.6), sehingga kenaikan atau penurunan MAP pada rasio
+komposisi *query*, komposisi *database*, dan jumlah \_test set\_ (Tabel
+4.2 dan Tabel 4.3), sehingga kenaikan atau penurunan MAP pada rasio
 tertentu tidak dapat diisolasi sebagai pengaruh rasio semata. Istilah
-rasio terbaik pada Gambar 4.6 terbatas pada MAP. MRR dan Top-K dapat
+rasio terbaik pada Gambar 4.5 terbatas pada MAP. MRR dan Top-K dapat
 mencapai nilai tertinggi pada rasio yang berbeda, terutama pada Data2Vec
 di skenario C dan D, sehingga pemilihan rasio operasional tetap harus
 mengikuti metrik prioritas sistem.
 
-![[]{#_Toc237463891 .anchor}Gambar 4.7 Ringkasan rasio terbaik per
-metrik](media/image14.png){width="5.508333333333334in"
+![[]{#_Toc239590301 .anchor}Gambar 4. Ringkasan rasio terbaik per
+metrik](media/image22.png){width="5.508333333333334in"
 height="4.120398075240595in"}
 
-Gambar 4.7 merangkum rasio yang menghasilkan nilai tertinggi untuk MAP,
+Gambar 4.6 merangkum rasio yang menghasilkan nilai tertinggi untuk MAP,
 MRR, Top-1, Top-5, dan Top-10 pada setiap pasangan skenario-model. Rasio
 60:40 menjadi yang tertinggi pada seluruh metrik di Skenario B untuk
 kedua model. Pada Wav2Vec2, rasio 80:20 juga menjadi yang tertinggi pada
@@ -3636,68 +4011,36 @@ sebagai perbedaan yang telah terbukti secara inferensial.
 
 ### Perbandingan bootstrap per sel 
 
-Uji bootstrap memakai selisih AP Data2Vec dikurangi Wav2Vec2. Tabel 4.20
+Uji bootstrap memakai selisih AP Data2Vec dikurangi Wav2Vec2. Tabel 4.5
 menyajikan selisih rata-rata dalam poin persentase, interval kepercayaan
 95%, dan jumlah kemenangan AP per *query*. Jumlah kemenangan tidak
 menentukan signifikansi secara mandiri, sebab besarnya selisih AP pada
 setiap *query* juga memengaruhi rata-rata dan interval.
 
-  ------------------------------------------------------------------------------------
-  **Sel**  **Selisih MAP **Interval       **Kemenangan  **Kemenangan  **Interpretasi
-           Data2Vec      kepercayaan      Data2Vec**    Wav2Vec2**    MAP**
-           dikurangi     95%**
-           Wav2Vec2**
-  -------- ------------- ---------------- ------------- ------------- ----------------
-  A        +0,24         [+0,18; +0,31]   4.143         3.847         Data2Vec lebih
-                                                                      tinggi
+  ----------------------------------------------------------------------------------------
+  **Skenario**   **Selisih    **Interval    **Kemenangan   **Kemenangan   **Interpretasi
+                 MAP Data2Vec kepercayaan   Data2Vec**     Wav2Vec2**     MAP**
+                 dikurangi    95%**                                       
+                 Wav2Vec2**                                               
+  -------------- ------------ ------------- -------------- -------------- ----------------
+  A              +0,17 poin   \[+0,10; +    4.078          3.912          Data2Vec lebih
+                 persentase   0,24\]                                      tinggi
 
-  B-60:40  -2,36         [-2,76; -1,96]   872           1.412         Wav2Vec2 lebih
-                                                                      tinggi
+  B              -1,51 poin   \[-1,97; -    671            1.042          Wav2Vec2 lebih
+                 persentase   1,04\]                                      tinggi
 
-  B-70:30  -2,14         [-2,56; -1,73]   640           1.073         Wav2Vec2 lebih
-                                                                      tinggi
+  C              +0,32 poin   \[+0,18; +    1.269          1.340          Data2Vec lebih
+                 persentase   0,47\]                                      tinggi
+  ----------------------------------------------------------------------------------------
 
-  B-80:20  -1,91         [-2,39; -1,42]   460           682           Wav2Vec2 lebih
-                                                                      tinggi
+  : []{#_Toc236984574 .anchor}Tabel 4. Perbandingan *bootstrap* selisih
+  MAP
 
-  B-90:10  -1,30         [-1,96; -0,65]   251           320           Wav2Vec2 lebih
-                                                                      tinggi
-
-  C-60:40  +0,07         [-0,06; +0,21]   1.446         1.583         Belum signifikan
-
-  C-70:30  +0,18         [+0,03; +0,34]   1.202         1.180         Data2Vec lebih
-                                                                      tinggi
-
-  C-80:20  +0,17         [-0,01; +0,36]   752           750           Belum signifikan
-
-  C-90:10  +0,41         [+0,10; +0,72]   402           369           Data2Vec lebih
-                                                                      tinggi
-
-  D-60:40  +0,15         [+0,06; +0,23]   1.506         1.523         Data2Vec lebih
-                                                                      tinggi
-
-  D-70:30  +0,16         [+0,06; +0,25]   1.158         1.224         Data2Vec lebih
-                                                                      tinggi
-
-  D-80:20  +0,12         [+0,00; +0,24]   756           746           Data2Vec lebih
-                                                                      tinggi
-
-  D-90:10  +0,26         [+0,06; +0,46]   400           371           Data2Vec lebih
-                                                                      tinggi
-  ------------------------------------------------------------------------------------
-
-  : []{#_Toc236984574 .anchor}Tabel 4.20 Perbandingan *bootstrap* selisih
-  MAP per sel
-
-Interval kepercayaan tidak mencakup nol pada sebelas dari tiga belas
-sel. Dengan aturan inferensi yang ditetapkan, perbedaan MAP mendapat
-dukungan statistik pada mayoritas sel. Arah perbedaan konsisten dengan
-pola deskriptif pada pembahasan sebelumnya: negatif pada keempat sel B
-sehingga mendukung MAP Wav2Vec2 yang lebih tinggi, sedangkan positif
-pada A, C-70:30, C-90:10, serta keempat sel D sehingga mendukung MAP
-Data2Vec yang lebih tinggi. Dua sel yang tersisa, C-60:40 dan C-80:20,
-memiliki interval yang mencakup nol sehingga perbedaannya belum
-signifikan.
+Ketiga interval kepercayaan tidak mencakup nol. Dengan aturan inferensi
+yang ditetapkan, perbedaan MAP mendapat dukungan statistik pada ketiga
+skenario. Arah perbedaannya positif untuk A dan C sehingga mendukung MAP
+Data2Vec yang lebih tinggi, sedangkan arah negatif pada B mendukung MAP
+Wav2Vec2 yang lebih tinggi.
 
 Makna statistik tersebut terbatas secara tegas pada selisih MAP yang
 dibentuk dari AP per *query*. Penelitian tidak melakukan uji inferensial
@@ -3711,10 +4054,10 @@ kecil dan kinerja absolut rendah.
 Hasil eksperimen mendukung rancangan retrieval sebagai proses dua tahap,
 yaitu penyiapan indeks secara luring dan pencarian secara daring.
 Rancangan ini belum diimplementasikan atau diuji sebagai sistem
-produksi. Gambar 4.8 menampilkan batas tersebut secara eksplisit.
+produksi. Gambar 4.4 menampilkan batas tersebut secara eksplisit.
 
-![[]{#_Toc236984561 .anchor}Gambar 4.8 Rancangan konseptual deployment
-*retrieval*](media/image15.png){width="3.0015594925634295in"
+![[]{#_Toc236984561 .anchor}Gambar 4. Rancangan konseptual deployment
+*retrieval*](media/image23.png){width="3.0015594925634295in"
 height="3.3633213035870515in"}
 
 Pada tahap persiapan audio referensi, seluruh audio dinormalisasi dan
@@ -3743,14 +4086,14 @@ tidak dapat langsung dianggap optimal untuk korpus lain tanpa melalui
 evaluasi pada himpunan pengembangan yang sesuai.
 
 Kinerja pada skenario A menjadi keterbatasan utama dalam penerapan
-sistem. Nilai Top-1 tertinggi hanya mencapai 5,37%, sedangkan Top-10
-tertinggi mencapai 15,87%. Hal ini menunjukkan bahwa, ketika rekaman
+sistem. Nilai Top-1 tertinggi hanya mencapai 5,38%, sedangkan Top-10
+tertinggi mencapai 15,77%. Hal ini menunjukkan bahwa, ketika rekaman
 mahasiswa digunakan sebagai *query* terhadap audio referensi Quran-MD,
 sistem lebih tepat digunakan untuk menghasilkan sejumlah kandidat ayat
 yang selanjutnya diperiksa kembali, bukan untuk menentukan satu ayat
 secara otomatis. Skenario B menunjukkan hasil yang lebih baik karena
 *query* dan audio referensi sama-sama berasal dari Quran-MD. Meskipun
-demikian, nilai Top-1 tertinggi sebesar 52,67% menunjukkan bahwa hasil
+demikian, nilai Top-1 tertinggi sebesar 50,85% menunjukkan bahwa hasil
 peringkat pertama belum selalu benar. Oleh karena itu, verifikasi
 tambahan tetap diperlukan pada penggunaan yang menuntut tingkat
 ketepatan tinggi.
@@ -3988,3 +4331,8 @@ Analysis of Self-Supervised Speech Models," in *ICASSP 2023 - 2023 IEEE
 International Conference on Acoustics, Speech and Signal Processing
 (ICASSP)*, Rhodes Island, Greece: IEEE, Jun. 2023, pp. 1--5. doi:
 10.1109/ICASSP49357.2023.10096149.
+
+\[36\] M. Yang, R. C. M. C. Shekar, O. Kang, and J. H. L. Hansen, "What
+Can an Accent Identifier Learn? Probing Phonetic and Prosodic
+Information in a Wav2vec2-based Accent Identification Model," 2023,
+*arXiv*. doi: 10.48550/ARXIV.2306.06524.

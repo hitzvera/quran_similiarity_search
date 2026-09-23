@@ -1,0 +1,3 @@
+1. Dalam latar belakang disebutkan bahwa Arab monolingual lebih baik dari pre train model dengan Bahasa inggris, terus kenapa ga pake yang arabnya?
+2. dalam bab 3 dijelaskan penelitian berisfatt iterative. bisa dijelaskan secara proses?
+
